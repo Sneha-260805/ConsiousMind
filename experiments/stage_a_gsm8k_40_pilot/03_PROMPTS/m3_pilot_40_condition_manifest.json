@@ -1,0 +1,114 @@
+{
+  "metadata_version": "m3_pilot40_conditions_v1",
+  "source_file": "data/pilot/m3_pilot_40.json",
+  "source_sha256": "2f6ba3f034a3aeb7c57cd5245b59d692aa3b7d95762b5d6d1c02e9b143eec190",
+  "seed": 42,
+  "number_of_items": 40,
+  "number_of_prompts": 200,
+  "condition_counts": {
+    "L0": 40,
+    "V": 40,
+    "L": 40,
+    "L_false": 40,
+    "A": 40
+  },
+  "feedback_templates": {
+    "L0": null,
+    "V": "The final answer in the proposed solution is wrong.",
+    "L": "The final answer in the proposed solution is wrong.\\nThe first mistake is in Step {k}.",
+    "L_false": "The final answer in the proposed solution is wrong.\\nThe first mistake is in Step {k}.",
+    "A": "The correct final answer is {a}."
+  },
+  "true_step_distribution": {
+    "1": 0,
+    "2": 15,
+    "3": 15,
+    "4": 9,
+    "5": 1
+  },
+  "false_step_distribution": {
+    "1": 15,
+    "2": 15,
+    "3": 9,
+    "4": 1,
+    "5": 0
+  },
+  "histogram_L1_distance": 30,
+  "histogram_total_variation": 0.375,
+  "false_step_assignment": {
+    "objective": [
+      "L1 histogram distance",
+      "sum of squared histogram differences",
+      "total step distance"
+    ],
+    "best_objective_value": [
+      30,
+      326,
+      40
+    ],
+    "assignments_evaluated": 3520,
+    "group_compositions": {
+      "2": {
+        "1": 15
+      },
+      "3": {
+        "2": 15
+      },
+      "4": {
+        "3": 9
+      },
+      "5": {
+        "4": 1
+      }
+    },
+    "l1_lower_bound": 30
+  },
+  "true_x_false_crosstab": {
+    "2->1": 15,
+    "3->2": 15,
+    "4->3": 9,
+    "5->4": 1
+  },
+  "distance_distribution": {
+    "1": 40
+  },
+  "false_step_feeds_true_error_step_directly": 34,
+  "trace_length_distribution": {
+    "3": 12,
+    "4": 15,
+    "5": 10,
+    "6": 2,
+    "7": 1
+  },
+  "relative_position_summary": {
+    "true": {
+      "mean": 0.7018,
+      "median": 0.75,
+      "min": 0.4,
+      "max": 0.8333
+    },
+    "false": {
+      "mean": 0.4461,
+      "median": 0.5,
+      "min": 0.2,
+      "max": 0.6667
+    }
+  },
+  "false_step_validity": {
+    "items_checked": 40,
+    "all_pass": true
+  },
+  "prompt_leakage": {
+    "prompts_checked": 200,
+    "violations": 0,
+    "violation_details": [],
+    "natural_question_occurrences": []
+  },
+  "prompt_matching": {
+    "L_vs_L_false_pairs_checked": 40,
+    "L_vs_L_false_differing_beyond_step_number": 0,
+    "V_vs_L_pairs_checked": 40,
+    "V_not_equal_L_minus_location_sentence": 0,
+    "details": []
+  }
+}

@@ -1,0 +1,2402 @@
+{
+  "run_id": "full_768",
+  "TEST_ONLY": false,
+  "dry_run": false,
+  "mode": "full",
+  "created": "2026-10-09T04:21:06.751+00:00",
+  "model_config": {
+    "backend": "hf_transformers",
+    "model": "Qwen/Qwen3-4B",
+    "model_revision": "3101254bbe4169895668a0e7653c3fd1f313576e",
+    "temperature": 0,
+    "max_new_tokens": 768,
+    "seed": 2026,
+    "enable_thinking": false,
+    "decoding": "greedy",
+    "dtype": "float16",
+    "quantization": "none",
+    "device": "cuda:0",
+    "torch_num_threads": null,
+    "min_free_ram_gb": 8,
+    "max_attempts": 1,
+    "retry_backoff_seconds": 0,
+    "notes": "Kaggle free GPU run. Original Qwen/Qwen3-4B checkpoint at the pinned revision (no GGUF/GPTQ/AWQ/bitsandbytes). FP16 on a single CUDA GPU (cuda:0) for T4/P100 compatibility: the checkpoint is stored in BF16, so FP16 is a dtype conversion, not a quantization. Non-thinking mode through the chat-template switch enable_thinking=false; the frozen prompt is never modified. Greedy decoding (temperature 0, do_sample False), max_new_tokens 768 (raised from 512 after the first Kaggle smoke test: m3p_04/A was truncated at 512 tokens; no other setting changed), batch size 1, identical for every condition. This favours deterministic comparison over Qwen's recommended sampling settings."
+  },
+  "effective_generation_settings": {
+    "backend": "hf_transformers",
+    "model": "Qwen/Qwen3-4B",
+    "requested_revision": "3101254bbe4169895668a0e7653c3fd1f313576e",
+    "hub_resolved_revision": "3101254bbe4169895668a0e7653c3fd1f313576e",
+    "transformers_commit_hash": null,
+    "snapshot_path": "/root/.cache/huggingface/hub/models--Qwen--Qwen3-4B/snapshots/3101254bbe4169895668a0e7653c3fd1f313576e",
+    "revision_verification": "HfApi().model_info(repo, revision).sha == requested_revision; loaded from snapshots/<pinned commit>",
+    "decoding": "greedy (do_sample=False, num_beams=1)",
+    "temperature": "ignored (greedy)",
+    "top_p": "ignored (greedy)",
+    "top_k": "ignored (greedy)",
+    "model_generation_config_defaults_overridden": {
+      "do_sample": true,
+      "temperature": 0.6,
+      "top_p": 0.95,
+      "top_k": 20,
+      "repetition_penalty": null
+    },
+    "max_new_tokens": 768,
+    "seed": 2026,
+    "enable_thinking": false,
+    "chat_template_check": {
+      "prompt_verbatim": true,
+      "wrapper_constant": true,
+      "system_message": false,
+      "switch_text_added": false,
+      "enable_thinking_honoured": true,
+      "empty_think_block_prefilled": true,
+      "wrapper_sha256": "7b4002f11d20bdb6dcc415a7c8a83026042784c0df54bf64a775e21d8b8c4174"
+    },
+    "device": "cuda:0",
+    "dtype": "torch.float16",
+    "quantization": "none",
+    "torch_num_threads": 2,
+    "deterministic_algorithms": "torch.use_deterministic_algorithms(True, warn_only=True)",
+    "system_prompt": null,
+    "message_format": "single user message via chat template"
+  },
+  "input_sha256": {
+    "m3_pilot_40.json": "2f6ba3f034a3aeb7c57cd5245b59d692aa3b7d95762b5d6d1c02e9b143eec190",
+    "m3_pilot_40_conditions.jsonl": "b664f96d4a531a95de965ab11f52ed4b5fd183ddde99c700960a1f6dc2b426a1",
+    "m3_pilot_40_far_false_sensitivity.jsonl": "d7327d59dff90b2a9df83fb9c3ac4872ad83d82c3a6271888fa4eb846ef2ca16"
+  },
+  "execution_order": {
+    "file": "outputs/pilot_execution_order.json",
+    "seed": 2026,
+    "shuffled": true,
+    "order_sha256": "2b6e7e0f0895b002976358df618cba33c8bc6dbf38a31f0c9567dc684466ec91"
+  },
+  "execution_order_known_limitation": {
+    "description": "plain seeded shuffle (not stratified by position); conditions are not exactly balanced across early/late positions",
+    "expected_mean_run_index": 112.0,
+    "mean_run_index_by_condition": {
+      "A": 100.4,
+      "L": 120.2,
+      "L0": 104.3,
+      "L_false_far": 116.5,
+      "L_false_near": 117.8,
+      "V": 114.5
+    },
+    "quartile_counts_by_condition": {
+      "A": [
+        11,
+        12,
+        11,
+        6
+      ],
+      "L": [
+        12,
+        4,
+        10,
+        14
+      ],
+      "L0": [
+        11,
+        15,
+        3,
+        11
+      ],
+      "L_false_far": [
+        5,
+        5,
+        9,
+        6
+      ],
+      "L_false_near": [
+        8,
+        11,
+        13,
+        8
+      ],
+      "V": [
+        10,
+        9,
+        10,
+        11
+      ]
+    }
+  },
+  "condition_alias": {
+    "L_false": "L_false_near"
+  },
+  "request_protocol": "one fresh request per prompt; single user message; no system prompt; no history",
+  "retry_policy": {
+    "retry_on": "transport errors only (timeout, connection, HTTP 408/429/5xx)",
+    "never_retry_on": "any model output, including wrong, empty, malformed or refused",
+    "max_attempts": 1
+  },
+  "environment": {
+    "python": "3.13.15",
+    "implementation": "CPython",
+    "platform": "Linux-6.18.48+-x86_64-with-glibc2.39",
+    "machine": "x86_64"
+  },
+  "package_versions": {
+    "transformers": "5.19.0",
+    "torch": "2.11.0+cu128",
+    "accelerate": "1.15.0",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.23.1",
+    "huggingface_hub": "1.33.0",
+    "bitsandbytes": null
+  },
+  "smoke_items": null,
+  "selected_requests": [
+    {
+      "run_index": 0,
+      "request_key": "primary:021",
+      "item_id": "m3p_05",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 21,
+      "prompt_sha256": "98aecd174022423d832fbda86f13811d03f19fbb773b342f4013bccea214a38f"
+    },
+    {
+      "run_index": 1,
+      "request_key": "primary:060",
+      "item_id": "m3p_13",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 60,
+      "prompt_sha256": "3ff7b6aad7e95a8e12eede589204ccab68bb1dc2d8935d4aaaa7507c772d9b6b"
+    },
+    {
+      "run_index": 2,
+      "request_key": "primary:167",
+      "item_id": "m3p_34",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 167,
+      "prompt_sha256": "d78669d6c14d9b4bbb331fdd81aa9bf13791f6c2ee56fe561575f14db8f9a89e"
+    },
+    {
+      "run_index": 3,
+      "request_key": "sensitivity:016",
+      "item_id": "m3p_31",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 16,
+      "prompt_sha256": "b13bb78c558ec32c46584881e4c8db761e6f23a513ebecf79c09a236c4740d0c"
+    },
+    {
+      "run_index": 4,
+      "request_key": "primary:013",
+      "item_id": "m3p_03",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 13,
+      "prompt_sha256": "86ae1f740f9d72c497d7998383aa5fbcf569ee58038a0f6d901773c930bf62b1"
+    },
+    {
+      "run_index": 5,
+      "request_key": "sensitivity:012",
+      "item_id": "m3p_25",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 12,
+      "prompt_sha256": "8d07b44239731e67f78c2653dc58a07b0f97c66702cbd8db4b53a53cfdac7092"
+    },
+    {
+      "run_index": 6,
+      "request_key": "primary:099",
+      "item_id": "m3p_20",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 99,
+      "prompt_sha256": "5b88da5e04130071632e7796e83e66dd355d6b2a7b74e38be2750c7f1724ce20"
+    },
+    {
+      "run_index": 7,
+      "request_key": "primary:039",
+      "item_id": "m3p_08",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 39,
+      "prompt_sha256": "296805a56be16942f5f5a13a8d9eb506aac5f54ca9aa4d0fccde84611fde0b0f"
+    },
+    {
+      "run_index": 8,
+      "request_key": "primary:027",
+      "item_id": "m3p_06",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 27,
+      "prompt_sha256": "afb17ef7406654b71e790bc5d17d02768a4d6998caa9705d7561d24aa560658c"
+    },
+    {
+      "run_index": 9,
+      "request_key": "primary:189",
+      "item_id": "m3p_38",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 189,
+      "prompt_sha256": "e7eb02d241e2e87d5947e11169a3e491619fb8dcf5139321d1a113bebd9d1885"
+    },
+    {
+      "run_index": 10,
+      "request_key": "primary:017",
+      "item_id": "m3p_04",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 17,
+      "prompt_sha256": "71a3dcaa9576e7582ea98ad6b110bd84caf129a47cdd27407ef59f7964f18fca"
+    },
+    {
+      "run_index": 11,
+      "request_key": "sensitivity:009",
+      "item_id": "m3p_21",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 9,
+      "prompt_sha256": "0e3951189e8b2b0d268a786580ac302f777988b98f6a2ebf809a242a9fe3a89f"
+    },
+    {
+      "run_index": 12,
+      "request_key": "primary:007",
+      "item_id": "m3p_02",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 7,
+      "prompt_sha256": "43820e8f5fef04a2687d7bf83eae9949988011988dd23eaa3c5e14722b823ced"
+    },
+    {
+      "run_index": 13,
+      "request_key": "primary:035",
+      "item_id": "m3p_08",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 35,
+      "prompt_sha256": "460e4d546f6c1dcb06b6014722b6a7f386a64ccc66be5c8d50a2249581ae4139"
+    },
+    {
+      "run_index": 14,
+      "request_key": "primary:168",
+      "item_id": "m3p_34",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 168,
+      "prompt_sha256": "65dbbb5703bcee462dd3d1254c6ef4e755f2b84c4098db33338e175521bf175e"
+    },
+    {
+      "run_index": 15,
+      "request_key": "primary:043",
+      "item_id": "m3p_09",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 43,
+      "prompt_sha256": "3f07a70d3cf684de17a1de481eef0b4a1669fc45c55dfdfe2d53f56cf825ac16"
+    },
+    {
+      "run_index": 16,
+      "request_key": "primary:050",
+      "item_id": "m3p_11",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 50,
+      "prompt_sha256": "acdc2a3e084bd7dd84a1f6abfb45294dc7d2c78130505a8d229147f0c50bb202"
+    },
+    {
+      "run_index": 17,
+      "request_key": "primary:090",
+      "item_id": "m3p_19",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 90,
+      "prompt_sha256": "af21a484b1e31941fbc343699d6727ab3e3d8d57a4a8b62aa29b41d78b40b662"
+    },
+    {
+      "run_index": 18,
+      "request_key": "primary:097",
+      "item_id": "m3p_20",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 97,
+      "prompt_sha256": "a8623c1b39866533ed6cc41eff2f243ed153674ca72bd6098a6f4a1d771c328f"
+    },
+    {
+      "run_index": 19,
+      "request_key": "primary:067",
+      "item_id": "m3p_14",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 67,
+      "prompt_sha256": "d85abea475846ccd352db59cddd579366b3a81886389fe7ecae4f7a3a4c580ca"
+    },
+    {
+      "run_index": 20,
+      "request_key": "primary:016",
+      "item_id": "m3p_04",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 16,
+      "prompt_sha256": "831070801a5bd75d7f3aa2cef9b72393d216f3b90566703937bcad194973c190"
+    },
+    {
+      "run_index": 21,
+      "request_key": "primary:179",
+      "item_id": "m3p_36",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 179,
+      "prompt_sha256": "91672de7e896fb0b5510a82b465fc212e67c77ab8c48b40e04810adc4102be05"
+    },
+    {
+      "run_index": 22,
+      "request_key": "primary:072",
+      "item_id": "m3p_15",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 72,
+      "prompt_sha256": "fecaff61292b88dcf84ca284fa0f350e0b8b2b283689b9cdc90ddeecefd1026e"
+    },
+    {
+      "run_index": 23,
+      "request_key": "primary:154",
+      "item_id": "m3p_31",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 154,
+      "prompt_sha256": "79af228f3b1305c4df5e360993f6a9b2573de3612c339fcb3880d921ca023914"
+    },
+    {
+      "run_index": 24,
+      "request_key": "primary:086",
+      "item_id": "m3p_18",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 86,
+      "prompt_sha256": "3c150480fb272a0c0f3440e880b80f620e8f1b468b5438842514992b8da288e1"
+    },
+    {
+      "run_index": 25,
+      "request_key": "primary:176",
+      "item_id": "m3p_36",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 176,
+      "prompt_sha256": "1b527a0e1111f8f535ec215133f4c942a09f18c43d8cce5f42ab4da6ea15ffca"
+    },
+    {
+      "run_index": 26,
+      "request_key": "primary:075",
+      "item_id": "m3p_16",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 75,
+      "prompt_sha256": "41c421d599511b358fa2e700b8ea25b87a9465e8716ec2d56d08524a823cf31e"
+    },
+    {
+      "run_index": 27,
+      "request_key": "primary:194",
+      "item_id": "m3p_39",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 194,
+      "prompt_sha256": "8ebaa6b7d3dd86f8de170384bffba60e2a8dac6af82bbd1f9ac88dde7a70d39c"
+    },
+    {
+      "run_index": 28,
+      "request_key": "primary:184",
+      "item_id": "m3p_37",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 184,
+      "prompt_sha256": "3e5543a42464948b5655c23f0477b48b47e36b00f2c6529586e009caf5c78eb6"
+    },
+    {
+      "run_index": 29,
+      "request_key": "primary:003",
+      "item_id": "m3p_01",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 3,
+      "prompt_sha256": "bcf3babfad32d4530b575d5506447760f2e6a8507b7fa79768a9377869721609"
+    },
+    {
+      "run_index": 30,
+      "request_key": "primary:151",
+      "item_id": "m3p_31",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 151,
+      "prompt_sha256": "6b2f2d9bf1da9f1171c5f5bcf8083fb564b0f749143e1484ce1bc89b89ee3fb5"
+    },
+    {
+      "run_index": 31,
+      "request_key": "primary:051",
+      "item_id": "m3p_11",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 51,
+      "prompt_sha256": "8538893715927687f9247c6ce1a407ad65987cf0ebb3b99529e355a3848ec266"
+    },
+    {
+      "run_index": 32,
+      "request_key": "primary:190",
+      "item_id": "m3p_39",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 190,
+      "prompt_sha256": "9651c01db442a81f6fef17a6a542d2b37550543a36400637841579889d320935"
+    },
+    {
+      "run_index": 33,
+      "request_key": "primary:009",
+      "item_id": "m3p_02",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 9,
+      "prompt_sha256": "5569800b339ec797b140499f79f10d9928416460b64408e93dda246f87c6799c"
+    },
+    {
+      "run_index": 34,
+      "request_key": "primary:170",
+      "item_id": "m3p_35",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 170,
+      "prompt_sha256": "5f2e863d627fc9454d0207bb67a38ff34017d08f163d25bcc2d793f42061f2bd"
+    },
+    {
+      "run_index": 35,
+      "request_key": "primary:041",
+      "item_id": "m3p_09",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 41,
+      "prompt_sha256": "244805e89feae7389c52017bfd1331bd5ec47174407a67921859e3c2cde37899"
+    },
+    {
+      "run_index": 36,
+      "request_key": "primary:171",
+      "item_id": "m3p_35",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 171,
+      "prompt_sha256": "1d8739877f10068d8bba1c1136c7c74eb2d7309c82b2bf85414494059b0731bf"
+    },
+    {
+      "run_index": 37,
+      "request_key": "primary:082",
+      "item_id": "m3p_17",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 82,
+      "prompt_sha256": "88ce382abc428625a97662077e0983f18840573ecc960d15f6be22550c1347ff"
+    },
+    {
+      "run_index": 38,
+      "request_key": "primary:048",
+      "item_id": "m3p_10",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 48,
+      "prompt_sha256": "8d3b450e1ca21a27dde1a065d7d8719b405e82064a2ee9cb04e7f907716ae396"
+    },
+    {
+      "run_index": 39,
+      "request_key": "sensitivity:023",
+      "item_id": "m3p_39",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 23,
+      "prompt_sha256": "85d579f26a5cc89b46679809b8cc78b8224ce12b26242b67a40b0c8226695c32"
+    },
+    {
+      "run_index": 40,
+      "request_key": "primary:070",
+      "item_id": "m3p_15",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 70,
+      "prompt_sha256": "622ebe98449a71206049ffd802064721bf82bbf6ce9bfe79a9df46fdab140698"
+    },
+    {
+      "run_index": 41,
+      "request_key": "primary:161",
+      "item_id": "m3p_33",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 161,
+      "prompt_sha256": "a2bcd6ee9ee186043062cf9c558ab71a140a5f4206205299b63f2be43dd1d5a4"
+    },
+    {
+      "run_index": 42,
+      "request_key": "primary:113",
+      "item_id": "m3p_23",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 113,
+      "prompt_sha256": "c59839d68441ca0c5949efd235cf3bd1432b1acc810f19da88f6ea8bd64c4878"
+    },
+    {
+      "run_index": 43,
+      "request_key": "primary:077",
+      "item_id": "m3p_16",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 77,
+      "prompt_sha256": "4157fc6fffbdc3d3ea29b80fe356d81133137bc35a94b8b6411edece96d9f8c5"
+    },
+    {
+      "run_index": 44,
+      "request_key": "primary:032",
+      "item_id": "m3p_07",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 32,
+      "prompt_sha256": "9b8483e97ce983c98c5afe53a380104fc3203e181036a8b69a1f721c42f90edc"
+    },
+    {
+      "run_index": 45,
+      "request_key": "primary:180",
+      "item_id": "m3p_37",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 180,
+      "prompt_sha256": "3815e1ef45bf6d6cb26e5f0ce2027c0abc9233666660e551a5a0bcee61b84b0b"
+    },
+    {
+      "run_index": 46,
+      "request_key": "primary:038",
+      "item_id": "m3p_08",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 38,
+      "prompt_sha256": "7e32545c00ff08f50d0aecf4bce3cfae71a096b1b2cbf6bdbc95f7b96bac02a2"
+    },
+    {
+      "run_index": 47,
+      "request_key": "primary:130",
+      "item_id": "m3p_27",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 130,
+      "prompt_sha256": "17976e0f07d91c56363ac96f7511b7fffb7ccef056566345920daeeb8d490bf6"
+    },
+    {
+      "run_index": 48,
+      "request_key": "primary:177",
+      "item_id": "m3p_36",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 177,
+      "prompt_sha256": "b2f35b5bbea2b4fcabe5442333cbd7eee82949dd151719c6437dfcdab56adfbd"
+    },
+    {
+      "run_index": 49,
+      "request_key": "sensitivity:024",
+      "item_id": "m3p_40",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 24,
+      "prompt_sha256": "c3a4348b664c082e69b966b1fcf9a2441091d120bb9e182f361e525c7bf7913b"
+    },
+    {
+      "run_index": 50,
+      "request_key": "primary:014",
+      "item_id": "m3p_03",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 14,
+      "prompt_sha256": "313ce0cca5d40ac4e19db1598420c664fdcf5dc261383c310bed86e41a3b84db"
+    },
+    {
+      "run_index": 51,
+      "request_key": "primary:092",
+      "item_id": "m3p_19",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 92,
+      "prompt_sha256": "98610f94b6e8b53feb897c645e750c7e2ea67c002489ce4b3b19feb67ba3ed81"
+    },
+    {
+      "run_index": 52,
+      "request_key": "primary:085",
+      "item_id": "m3p_18",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 85,
+      "prompt_sha256": "0fba872461bc72d0a5fcfb2c5149baf6248332edb2768554fdae6b910e870294"
+    },
+    {
+      "run_index": 53,
+      "request_key": "primary:111",
+      "item_id": "m3p_23",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 111,
+      "prompt_sha256": "f172d8515673a13de67ed17cb5067472324ee1f87aa7301d3faeb6de28c944f7"
+    },
+    {
+      "run_index": 54,
+      "request_key": "primary:044",
+      "item_id": "m3p_09",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 44,
+      "prompt_sha256": "48040397ec5b76b52f3624c12af847b7f6e172d0a21d62f6975d9ad806479fbb"
+    },
+    {
+      "run_index": 55,
+      "request_key": "primary:068",
+      "item_id": "m3p_14",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 68,
+      "prompt_sha256": "163c8df238bc355d8f9828798453fdadaeb878a4f2b2f426ea61fc5de660b31b"
+    },
+    {
+      "run_index": 56,
+      "request_key": "primary:114",
+      "item_id": "m3p_23",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 114,
+      "prompt_sha256": "0a05b54e134f6274fd47cabd62ca729ca873ccada7862248a01a84cb1974bd4a"
+    },
+    {
+      "run_index": 57,
+      "request_key": "primary:049",
+      "item_id": "m3p_10",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 49,
+      "prompt_sha256": "c5e7ef06be3c4e1505dd0bfa0952b6b4ab003ad44bfade31e6842d4699f2a38a"
+    },
+    {
+      "run_index": 58,
+      "request_key": "primary:138",
+      "item_id": "m3p_28",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 138,
+      "prompt_sha256": "4cb53cb387ba8a0bc73c5daccb8e561f6aea2fc2a45f6aa573df2a0816946e12"
+    },
+    {
+      "run_index": 59,
+      "request_key": "primary:104",
+      "item_id": "m3p_21",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 104,
+      "prompt_sha256": "3a733a69823007c9086eb780f7433c49591cb9b7098c06cd57ae1402bac3036e"
+    },
+    {
+      "run_index": 60,
+      "request_key": "primary:042",
+      "item_id": "m3p_09",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 42,
+      "prompt_sha256": "48a4818115a2e9e05e6dd3bf3575bc9b50140e8450d5319ad2f0092f8aa65ae5"
+    },
+    {
+      "run_index": 61,
+      "request_key": "primary:199",
+      "item_id": "m3p_40",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 199,
+      "prompt_sha256": "e3c59016a54aedcfe4c4ed97aaabc941cfc5a96721a3e9ea096e2f6ffc080294"
+    },
+    {
+      "run_index": 62,
+      "request_key": "primary:193",
+      "item_id": "m3p_39",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 193,
+      "prompt_sha256": "e617f1020ee984d883b21bde00bcc5761056658cbdf48bd329a9978f086c012e"
+    },
+    {
+      "run_index": 63,
+      "request_key": "primary:119",
+      "item_id": "m3p_24",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 119,
+      "prompt_sha256": "9a9cd176b0f75a0ac29f3533fb0a3e17c1aa20e4aa2bf5f60ed9b50e753205db"
+    },
+    {
+      "run_index": 64,
+      "request_key": "primary:045",
+      "item_id": "m3p_10",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 45,
+      "prompt_sha256": "ca8fde1b981af49b7b499ee9a65a97b02f6fd6519dc605243e099142f84c6429"
+    },
+    {
+      "run_index": 65,
+      "request_key": "primary:100",
+      "item_id": "m3p_21",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 100,
+      "prompt_sha256": "005677a727be7191aaa571259a6b0f3ad760e9e016380ec2a6089efc67b8bdf6"
+    },
+    {
+      "run_index": 66,
+      "request_key": "primary:005",
+      "item_id": "m3p_02",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 5,
+      "prompt_sha256": "2e03b2f5e7383832adff46736c13eb7c45371f70dab1fdbfe1858ea96552e9f4"
+    },
+    {
+      "run_index": 67,
+      "request_key": "primary:015",
+      "item_id": "m3p_04",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 15,
+      "prompt_sha256": "33ed6edad6427d55a3fd990e6490827c2627181fe4a0ca092f3a5f655b8d68c7"
+    },
+    {
+      "run_index": 68,
+      "request_key": "primary:135",
+      "item_id": "m3p_28",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 135,
+      "prompt_sha256": "24a6dbcc41a2ee7dbda1c1676587565af6dac96c2e8b7b15f2a00034e1ebeabf"
+    },
+    {
+      "run_index": 69,
+      "request_key": "primary:110",
+      "item_id": "m3p_23",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 110,
+      "prompt_sha256": "cfe65f6d14d809ab777085bf3c119dc2eec3d6646c0e7a27d2e738e2694d69af"
+    },
+    {
+      "run_index": 70,
+      "request_key": "primary:010",
+      "item_id": "m3p_03",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 10,
+      "prompt_sha256": "960f17abc20b9f755a22fd90b17b379bb7238b8625db62f0169f482375459891"
+    },
+    {
+      "run_index": 71,
+      "request_key": "primary:069",
+      "item_id": "m3p_14",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 69,
+      "prompt_sha256": "a41adebc4786ce08a9640edfc4b59ad8d1b24eb8392d9a2ca537db0a146ee4e1"
+    },
+    {
+      "run_index": 72,
+      "request_key": "primary:156",
+      "item_id": "m3p_32",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 156,
+      "prompt_sha256": "da29cf94f27445a24aa5f2a021009d7a78274ccf2ff84324cf57f5db3505526f"
+    },
+    {
+      "run_index": 73,
+      "request_key": "sensitivity:001",
+      "item_id": "m3p_03",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 1,
+      "prompt_sha256": "9563ad2dbb732344e0081f962694ffb2d17fecc5cdce6ee4417ebdb121cd8ad4"
+    },
+    {
+      "run_index": 74,
+      "request_key": "primary:011",
+      "item_id": "m3p_03",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 11,
+      "prompt_sha256": "2000262678669c8c7e790a7f453a5e9ea567f96f2677943869a7da105583efdd"
+    },
+    {
+      "run_index": 75,
+      "request_key": "primary:121",
+      "item_id": "m3p_25",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 121,
+      "prompt_sha256": "39efb5ec60ae76ad7baf64d1cb4b989cfcbb9d6ff27ad80ceafea16b80959503"
+    },
+    {
+      "run_index": 76,
+      "request_key": "primary:186",
+      "item_id": "m3p_38",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 186,
+      "prompt_sha256": "c3f1a1fc465fe8c1ee4ebff86a4f0fc11e1fd8f55d302a68c216e5b67c7f5277"
+    },
+    {
+      "run_index": 77,
+      "request_key": "primary:018",
+      "item_id": "m3p_04",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 18,
+      "prompt_sha256": "e45449f3b39e49f5d91e43358b3489f56687af16e41608be58497cf02ecaf66b"
+    },
+    {
+      "run_index": 78,
+      "request_key": "primary:052",
+      "item_id": "m3p_11",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 52,
+      "prompt_sha256": "210d9c007a51b4aa0c95cb402eb8f7d873cb176a4aeb6827ef5df301e54be99e"
+    },
+    {
+      "run_index": 79,
+      "request_key": "primary:024",
+      "item_id": "m3p_05",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 24,
+      "prompt_sha256": "05b255f1f29bf80badf61cdbe37efb5960b3c09a433db855730a1c1cad31b8b5"
+    },
+    {
+      "run_index": 80,
+      "request_key": "primary:095",
+      "item_id": "m3p_20",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 95,
+      "prompt_sha256": "178ff843dbd01fa42dd495098e17b957940a99a22c124f8cb9a44cf25239f53b"
+    },
+    {
+      "run_index": 81,
+      "request_key": "primary:047",
+      "item_id": "m3p_10",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 47,
+      "prompt_sha256": "5622905640956a951fb1a0f3b4ba584dad832ec6075b8d173e38b0326893c084"
+    },
+    {
+      "run_index": 82,
+      "request_key": "primary:103",
+      "item_id": "m3p_21",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 103,
+      "prompt_sha256": "d36e8655f19e33519ec7fd5fb31cf362ce2c1527deec3b111a659e1242af7f8d"
+    },
+    {
+      "run_index": 83,
+      "request_key": "sensitivity:013",
+      "item_id": "m3p_27",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 13,
+      "prompt_sha256": "d6237c08c98a161ca11aaf1154e762f6ef2e293913f2b11236a134d4b6baaaa6"
+    },
+    {
+      "run_index": 84,
+      "request_key": "primary:166",
+      "item_id": "m3p_34",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 166,
+      "prompt_sha256": "41e1a84d490b68d578d1845200e9c355295648e12740928886aac9e40ebe162f"
+    },
+    {
+      "run_index": 85,
+      "request_key": "primary:008",
+      "item_id": "m3p_02",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 8,
+      "prompt_sha256": "a27f09c576f419d1933d2faa64d2f5d1c02fe7e13b2abf67d80d307005ee16c3"
+    },
+    {
+      "run_index": 86,
+      "request_key": "sensitivity:002",
+      "item_id": "m3p_06",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 2,
+      "prompt_sha256": "3da46de3aca98c43340825d2103c77ec04fecc26af97152ba1291479454b838c"
+    },
+    {
+      "run_index": 87,
+      "request_key": "primary:054",
+      "item_id": "m3p_11",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 54,
+      "prompt_sha256": "c5f6de0e18e2d5c91d133bfa31ba18b8043b10971aa5945b5b58deaf4bc3db1e"
+    },
+    {
+      "run_index": 88,
+      "request_key": "primary:164",
+      "item_id": "m3p_33",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 164,
+      "prompt_sha256": "606f05c171f2d150e448de1412536c68608a41cbab2d29b29b1488aa67b41e78"
+    },
+    {
+      "run_index": 89,
+      "request_key": "primary:145",
+      "item_id": "m3p_30",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 145,
+      "prompt_sha256": "d3db9b855ede2e7bd8acd3a413d684bbf5678d9cd7b08565b4a73b135c6cdb07"
+    },
+    {
+      "run_index": 90,
+      "request_key": "sensitivity:011",
+      "item_id": "m3p_24",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 11,
+      "prompt_sha256": "9a6b55eb02f75990f3d2de0d014cd22d79e875c207ce858f77fdb226ca521a08"
+    },
+    {
+      "run_index": 91,
+      "request_key": "primary:105",
+      "item_id": "m3p_22",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 105,
+      "prompt_sha256": "ad9c6287ea1adc1aa2cdcb50bb9e28eebcc429f9736c745af2b96b59fc85f667"
+    },
+    {
+      "run_index": 92,
+      "request_key": "primary:185",
+      "item_id": "m3p_38",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 185,
+      "prompt_sha256": "563edcda9ed83a351d3badb193208f570957d09f8acebdacacb8bdcd21024b18"
+    },
+    {
+      "run_index": 93,
+      "request_key": "primary:158",
+      "item_id": "m3p_32",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 158,
+      "prompt_sha256": "04b10e1625e6bcb167e7bd5ba54d8604ef9b860395100f34d2fc4e3d33f9000b"
+    },
+    {
+      "run_index": 94,
+      "request_key": "primary:056",
+      "item_id": "m3p_12",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 56,
+      "prompt_sha256": "61a31a23ca7d427ec74d67daf7ce0992a25d27d49442cfeb01df50337486edc4"
+    },
+    {
+      "run_index": 95,
+      "request_key": "primary:143",
+      "item_id": "m3p_29",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 143,
+      "prompt_sha256": "ee2534630089d0bae33f11cf54583571cf6291a3a18f9c6b4919f825cdf97dcf"
+    },
+    {
+      "run_index": 96,
+      "request_key": "primary:195",
+      "item_id": "m3p_40",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 195,
+      "prompt_sha256": "913735ffa9c2a7f6319ac2efaa3b0cd91d135b8724bfb927eaad412dcfd6ce24"
+    },
+    {
+      "run_index": 97,
+      "request_key": "primary:040",
+      "item_id": "m3p_09",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 40,
+      "prompt_sha256": "ca9ff7f7946ac245a1067530f052aae1ac930209ea3a5424edf4bf9d20ceeb76"
+    },
+    {
+      "run_index": 98,
+      "request_key": "primary:124",
+      "item_id": "m3p_25",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 124,
+      "prompt_sha256": "3ff2053f3c7ce1eaad2340533a3078bc63fdf363273d9abcf4400e5d9f41f786"
+    },
+    {
+      "run_index": 99,
+      "request_key": "primary:178",
+      "item_id": "m3p_36",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 178,
+      "prompt_sha256": "da6467c56400d723adad8d15c317a23f51eaaa70435c852801e2e8f4b75484dd"
+    },
+    {
+      "run_index": 100,
+      "request_key": "primary:084",
+      "item_id": "m3p_17",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 84,
+      "prompt_sha256": "1683c6e786109c54366e0270a4de9ed98be983658c51ebedf15cd53d7e91f268"
+    },
+    {
+      "run_index": 101,
+      "request_key": "primary:071",
+      "item_id": "m3p_15",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 71,
+      "prompt_sha256": "d26291ac5b5f6cb100c68387a3d0aae308a641a7e0973d709daaf51bcf1a964b"
+    },
+    {
+      "run_index": 102,
+      "request_key": "primary:126",
+      "item_id": "m3p_26",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 126,
+      "prompt_sha256": "23474fd2722e92c6fa6563c220583e6eb487479014df6f15677eecd80cd4c496"
+    },
+    {
+      "run_index": 103,
+      "request_key": "primary:063",
+      "item_id": "m3p_13",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 63,
+      "prompt_sha256": "40f4f5a70ec859115a70dc171a9441fb05b16421b114e021682e8741e02c82fb"
+    },
+    {
+      "run_index": 104,
+      "request_key": "primary:098",
+      "item_id": "m3p_20",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 98,
+      "prompt_sha256": "0d1c7c84f297dc9b4bcf33347fa47bfe036d3ab6ff7d8c26acb3dced6603a849"
+    },
+    {
+      "run_index": 105,
+      "request_key": "primary:065",
+      "item_id": "m3p_14",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 65,
+      "prompt_sha256": "831e9a013d79f3b2072d3591778b670d9b46ad3cf4e11cf25db924174971d584"
+    },
+    {
+      "run_index": 106,
+      "request_key": "primary:059",
+      "item_id": "m3p_12",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 59,
+      "prompt_sha256": "1e238bc86572ff760a11fa543e4a6012c05dbfc7e4ae57b9a0864ad67a8f9d3a"
+    },
+    {
+      "run_index": 107,
+      "request_key": "primary:174",
+      "item_id": "m3p_35",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 174,
+      "prompt_sha256": "ec9a5606c082ca4fe861143824d33b980b283a94e8feb9b6803aa64c331d19ca"
+    },
+    {
+      "run_index": 108,
+      "request_key": "primary:088",
+      "item_id": "m3p_18",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 88,
+      "prompt_sha256": "2829527cca7f16bd9c961303512f8c9eba85d174414b290fca8e9db897708b98"
+    },
+    {
+      "run_index": 109,
+      "request_key": "sensitivity:004",
+      "item_id": "m3p_14",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 4,
+      "prompt_sha256": "b231f5787b9b81d9b071908c84e6e947e52d3dfac7913a445e37980c20d3c04f"
+    },
+    {
+      "run_index": 110,
+      "request_key": "primary:155",
+      "item_id": "m3p_32",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 155,
+      "prompt_sha256": "d7b6c853f923d2b95a73c1bdfa81b03b6345cf144e0b5d6a7a4aba91748eb4e4"
+    },
+    {
+      "run_index": 111,
+      "request_key": "primary:046",
+      "item_id": "m3p_10",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 46,
+      "prompt_sha256": "cc091ca21935d4386d48f7b56ed0aaf2beed70b4cde7b704f6b1e89e4fc65468"
+    },
+    {
+      "run_index": 112,
+      "request_key": "primary:062",
+      "item_id": "m3p_13",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 62,
+      "prompt_sha256": "66d65ce8120ae6f78d1e4c5fe3468e78e6ee52ded59a54909237411e0c9f9717"
+    },
+    {
+      "run_index": 113,
+      "request_key": "primary:152",
+      "item_id": "m3p_31",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 152,
+      "prompt_sha256": "d06fabd3e69c816a71b26f9c2ed689625ba41807f506283df9a608d92ac2ba90"
+    },
+    {
+      "run_index": 114,
+      "request_key": "primary:160",
+      "item_id": "m3p_33",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 160,
+      "prompt_sha256": "d172d706acdd9dc262f9ad2665df60f44e849998262c5269adcab489c20d88d3"
+    },
+    {
+      "run_index": 115,
+      "request_key": "primary:136",
+      "item_id": "m3p_28",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 136,
+      "prompt_sha256": "71cd567b5d1ddce939741a35d0ed5b39f469f7183ff5834cc9a512a542debfe2"
+    },
+    {
+      "run_index": 116,
+      "request_key": "primary:076",
+      "item_id": "m3p_16",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 76,
+      "prompt_sha256": "660841a3697f193acfc8878ad1ff876eaa64991730d7967250781cca9fd61d25"
+    },
+    {
+      "run_index": 117,
+      "request_key": "sensitivity:003",
+      "item_id": "m3p_08",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 3,
+      "prompt_sha256": "7c9cf4af370be2e1237f5a56b59f8807d84fc8ec75f7b12df9d273669400ca3f"
+    },
+    {
+      "run_index": 118,
+      "request_key": "primary:083",
+      "item_id": "m3p_17",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 83,
+      "prompt_sha256": "e6641a7505821a961cbc9512f2e0a1ca6e8970a3a92f6a288f0f9592726a4abc"
+    },
+    {
+      "run_index": 119,
+      "request_key": "primary:181",
+      "item_id": "m3p_37",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 181,
+      "prompt_sha256": "9883ca4699c5427052ec29ed9322095d9384cbe091c0aa8554dcad1955fe40d1"
+    },
+    {
+      "run_index": 120,
+      "request_key": "primary:004",
+      "item_id": "m3p_01",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 4,
+      "prompt_sha256": "ae2da830360f95da484f677f985b23c154859197595985ac838f8ee03f86adcd"
+    },
+    {
+      "run_index": 121,
+      "request_key": "primary:001",
+      "item_id": "m3p_01",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 1,
+      "prompt_sha256": "bd54c27050da3e700a33e7683e5c717ddec6ca7ae4d03eb8e165ac6c23598ffb"
+    },
+    {
+      "run_index": 122,
+      "request_key": "primary:034",
+      "item_id": "m3p_07",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 34,
+      "prompt_sha256": "f15a774d255fbd0a4a29b414a6f9b09d1d882804c1491b9e6f4de784e75286ac"
+    },
+    {
+      "run_index": 123,
+      "request_key": "primary:106",
+      "item_id": "m3p_22",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 106,
+      "prompt_sha256": "1f12385554ff8b16adae92f034ba7ccc3140a29f0e206179c673c76d343895c9"
+    },
+    {
+      "run_index": 124,
+      "request_key": "primary:037",
+      "item_id": "m3p_08",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 37,
+      "prompt_sha256": "67e0a0c56b4c01149bda29fa8210ab441ef93aab0acef97de94395606e1c3498"
+    },
+    {
+      "run_index": 125,
+      "request_key": "sensitivity:008",
+      "item_id": "m3p_20",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 8,
+      "prompt_sha256": "ef56dacbee0d1c484ef3765d4016bff0e1b1b50be3036588b6c9f326ec41cc0d"
+    },
+    {
+      "run_index": 126,
+      "request_key": "primary:055",
+      "item_id": "m3p_12",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 55,
+      "prompt_sha256": "38f5adea034d6f2de56a42a0b4a902179527438fb81bbfaab43c2f2be6c0c497"
+    },
+    {
+      "run_index": 127,
+      "request_key": "primary:148",
+      "item_id": "m3p_30",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 148,
+      "prompt_sha256": "f85dd98faad8ed16d3c768a2fc042d80b164964723a1ab9d288fa6efaefd6539"
+    },
+    {
+      "run_index": 128,
+      "request_key": "primary:162",
+      "item_id": "m3p_33",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 162,
+      "prompt_sha256": "e12fa57c65cd25aaf29e5e1a0b2239132dd65dc978185bbe15b46a285febae30"
+    },
+    {
+      "run_index": 129,
+      "request_key": "sensitivity:022",
+      "item_id": "m3p_38",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 22,
+      "prompt_sha256": "3adc2e805c8875e42fe021d83723139ac2319936bbed2dc2372d6f7a25f35504"
+    },
+    {
+      "run_index": 130,
+      "request_key": "primary:078",
+      "item_id": "m3p_16",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 78,
+      "prompt_sha256": "c5707c092d4915abf5ca4257e92a8f509f9f2c7af6c6f71d24d21a862305bfb1"
+    },
+    {
+      "run_index": 131,
+      "request_key": "primary:182",
+      "item_id": "m3p_37",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 182,
+      "prompt_sha256": "147ad025c7d4801114750fef870c8d29c8ddccab3f9e15a092f5c37ef80dbe7d"
+    },
+    {
+      "run_index": 132,
+      "request_key": "sensitivity:010",
+      "item_id": "m3p_23",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 10,
+      "prompt_sha256": "67cde5b5b358fa10bfccf0e333aa5b22494c0bac84ea97e6d17d057542b9686a"
+    },
+    {
+      "run_index": 133,
+      "request_key": "primary:139",
+      "item_id": "m3p_28",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 139,
+      "prompt_sha256": "e101693d39bf2cf9923a0c377783d260a17f4196734c717ca3a03c068d90c852"
+    },
+    {
+      "run_index": 134,
+      "request_key": "primary:116",
+      "item_id": "m3p_24",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 116,
+      "prompt_sha256": "136dbb4b9b623e6d22deb2733612a4de0cb36f44c48a1edf087261db5ce390b9"
+    },
+    {
+      "run_index": 135,
+      "request_key": "primary:031",
+      "item_id": "m3p_07",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 31,
+      "prompt_sha256": "c67a734bf73860dbf29c87aa1824ac37c91b16f2cb34e871ab48e87c57e164e8"
+    },
+    {
+      "run_index": 136,
+      "request_key": "primary:058",
+      "item_id": "m3p_12",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 58,
+      "prompt_sha256": "93b81471a4949ae85ebd6077912a8c2a0944bd8c36d056d11dd475a22ccaba7e"
+    },
+    {
+      "run_index": 137,
+      "request_key": "primary:123",
+      "item_id": "m3p_25",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 123,
+      "prompt_sha256": "32222d8bfc1d7086ce9d91397c13385870b3af16574cc1c2e3542b46059daceb"
+    },
+    {
+      "run_index": 138,
+      "request_key": "primary:191",
+      "item_id": "m3p_39",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 191,
+      "prompt_sha256": "1cd8e7b50a7c647a6e069885a8cb8ffcc39494252b199ba26480ef0a9c1921f4"
+    },
+    {
+      "run_index": 139,
+      "request_key": "primary:120",
+      "item_id": "m3p_25",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 120,
+      "prompt_sha256": "329f9d4bf2d42fc1481cae8b4ea8dd90a22eba84a1a668caccfa97923ba88488"
+    },
+    {
+      "run_index": 140,
+      "request_key": "primary:109",
+      "item_id": "m3p_22",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 109,
+      "prompt_sha256": "ef7f600d792968e64756b3ee7105ee8cdadbde78e7e01714170a6bcce05fb390"
+    },
+    {
+      "run_index": 141,
+      "request_key": "sensitivity:019",
+      "item_id": "m3p_35",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 19,
+      "prompt_sha256": "dae40d1e97ab5b573ebb3e071e37fdb05abd265765557ce9f5e229f0571d8f14"
+    },
+    {
+      "run_index": 142,
+      "request_key": "primary:133",
+      "item_id": "m3p_27",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 133,
+      "prompt_sha256": "395fb607479a8fdef8f16bfa91c340a53d6e3021a1ad826bebf92d51bc730732"
+    },
+    {
+      "run_index": 143,
+      "request_key": "primary:012",
+      "item_id": "m3p_03",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 12,
+      "prompt_sha256": "a551ae70f096430f08de7d81c34e3011bf954e3ec461324b3e4d36791d0f034f"
+    },
+    {
+      "run_index": 144,
+      "request_key": "primary:033",
+      "item_id": "m3p_07",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 33,
+      "prompt_sha256": "44a29e38809ea217f4fc0729df8b82de70044ef6baca20ce16c26fea5939d8af"
+    },
+    {
+      "run_index": 145,
+      "request_key": "sensitivity:018",
+      "item_id": "m3p_34",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 18,
+      "prompt_sha256": "d93992c37380a5ff5a2c3812c4cdc2efcf9ac859b27df9ce54883cba93bb29da"
+    },
+    {
+      "run_index": 146,
+      "request_key": "primary:169",
+      "item_id": "m3p_34",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 169,
+      "prompt_sha256": "66f81422376a2d2440a4834139fde1743596ab2411ed4641650192507c7c4de3"
+    },
+    {
+      "run_index": 147,
+      "request_key": "primary:132",
+      "item_id": "m3p_27",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 132,
+      "prompt_sha256": "c86b9f908ca4575a8dc7acf2c40d57d9c043d4c973dcec934a555a87603973fb"
+    },
+    {
+      "run_index": 148,
+      "request_key": "primary:183",
+      "item_id": "m3p_37",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 183,
+      "prompt_sha256": "f20219b86ed5fc2bdf1aab6150c28a21ae38a8af6d4f5e56ee2781120c935573"
+    },
+    {
+      "run_index": 149,
+      "request_key": "primary:122",
+      "item_id": "m3p_25",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 122,
+      "prompt_sha256": "a9ba718978ffe3997de63db02d012f1b7fc5d3510e33554b2b8cd71222e491e1"
+    },
+    {
+      "run_index": 150,
+      "request_key": "primary:144",
+      "item_id": "m3p_29",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 144,
+      "prompt_sha256": "cadb79865958150e2a15e539202733f4116dc8fb3c1f77e7710dcf7f48861e3a"
+    },
+    {
+      "run_index": 151,
+      "request_key": "sensitivity:014",
+      "item_id": "m3p_29",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 14,
+      "prompt_sha256": "d4a14455765c3bd34cc4b171574875ce9c5e0c9527546670be30b3c9637098cf"
+    },
+    {
+      "run_index": 152,
+      "request_key": "primary:066",
+      "item_id": "m3p_14",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 66,
+      "prompt_sha256": "667be9c594448dc972b2e8ad9d93a4e43bbf8aefb1f83c9db24a497924510beb"
+    },
+    {
+      "run_index": 153,
+      "request_key": "primary:134",
+      "item_id": "m3p_27",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 134,
+      "prompt_sha256": "2886bf921489dac54818c233f95681cb2afe449c5d8c4c92ba29597c0902d8ae"
+    },
+    {
+      "run_index": 154,
+      "request_key": "primary:188",
+      "item_id": "m3p_38",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 188,
+      "prompt_sha256": "868d13b57ac9b55654a840c59f0a7fd3f97aec9fd93a84d5f8a4546bd0b950f6"
+    },
+    {
+      "run_index": 155,
+      "request_key": "sensitivity:006",
+      "item_id": "m3p_17",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 6,
+      "prompt_sha256": "aad6cc171ab28f64df9a918783fc3726ab4546c44a4ae73d6e6df085d7fdac53"
+    },
+    {
+      "run_index": 156,
+      "request_key": "sensitivity:017",
+      "item_id": "m3p_33",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 17,
+      "prompt_sha256": "4fa4e3cfc17239f441ef945e12ff77fe074f1589070f2d2bf1d2865add7528ec"
+    },
+    {
+      "run_index": 157,
+      "request_key": "primary:129",
+      "item_id": "m3p_26",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 129,
+      "prompt_sha256": "b47e0c9f4842c3dd9853bc91e8086b6021dec30dc00b0f813196a011ad2905d6"
+    },
+    {
+      "run_index": 158,
+      "request_key": "primary:172",
+      "item_id": "m3p_35",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 172,
+      "prompt_sha256": "04300ec37091b07a5eaf5a3acb99490ece62b58fe0210008c76e611923ac4eaf"
+    },
+    {
+      "run_index": 159,
+      "request_key": "primary:029",
+      "item_id": "m3p_06",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 29,
+      "prompt_sha256": "77bd3ff9bad5231d870bbb8ed193c5a66b6a2bf15afb0daf44d6e206d9ae58d5"
+    },
+    {
+      "run_index": 160,
+      "request_key": "primary:127",
+      "item_id": "m3p_26",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 127,
+      "prompt_sha256": "b5e2a094854655afe1ae8c40116c5c1149916074d6d4af40fde736a981ee2ac8"
+    },
+    {
+      "run_index": 161,
+      "request_key": "primary:141",
+      "item_id": "m3p_29",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 141,
+      "prompt_sha256": "fbbdf26c6356eea63911fb6129103fff45704b213ac7b0045d9002ff96a391da"
+    },
+    {
+      "run_index": 162,
+      "request_key": "primary:149",
+      "item_id": "m3p_30",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 149,
+      "prompt_sha256": "d24010235e75cf04a5dcaf1cc5ccc1564a6189aef72de8d5be93352c3ecfb66f"
+    },
+    {
+      "run_index": 163,
+      "request_key": "primary:102",
+      "item_id": "m3p_21",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 102,
+      "prompt_sha256": "fc21183f1e9af7db5b7c2d1b456df59d2419a51ef6c2aa83556dd2c68c23cf88"
+    },
+    {
+      "run_index": 164,
+      "request_key": "primary:023",
+      "item_id": "m3p_05",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 23,
+      "prompt_sha256": "b39a96e62702234d8e065736e5f4176e7ee58e2b58db742e7534be0f028c065b"
+    },
+    {
+      "run_index": 165,
+      "request_key": "primary:108",
+      "item_id": "m3p_22",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 108,
+      "prompt_sha256": "a48126b1ddfcccb3ccd77aadb537aaf57c3b0e1e5c983d899d00f0bf1aca84e6"
+    },
+    {
+      "run_index": 166,
+      "request_key": "primary:118",
+      "item_id": "m3p_24",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 118,
+      "prompt_sha256": "7c4d6928e02c97d4d9666c1f59cd2c405151dac3374d2e94f315438a90d18f19"
+    },
+    {
+      "run_index": 167,
+      "request_key": "primary:093",
+      "item_id": "m3p_19",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 93,
+      "prompt_sha256": "f27f967f53c6a2f31ac030f9ae1b8b1a4b1681a45ee956013458ff51dde06cb9"
+    },
+    {
+      "run_index": 168,
+      "request_key": "primary:094",
+      "item_id": "m3p_19",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 94,
+      "prompt_sha256": "ebc572f131fa2d8a4dfff03d5901e281c722404792b410e9999ad96f26f37be6"
+    },
+    {
+      "run_index": 169,
+      "request_key": "primary:006",
+      "item_id": "m3p_02",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 6,
+      "prompt_sha256": "c4e1a5584d6b49c5c1bde0b584ecabedfedfcab54aadd5cd7819dfaf38b864a8"
+    },
+    {
+      "run_index": 170,
+      "request_key": "primary:079",
+      "item_id": "m3p_16",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 79,
+      "prompt_sha256": "0ca47d4fe5cc32ab83d69fa7c4ebf84c08a2632e5927b2e541dad93dcfa813fb"
+    },
+    {
+      "run_index": 171,
+      "request_key": "primary:147",
+      "item_id": "m3p_30",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 147,
+      "prompt_sha256": "a7f9a5c698b81d49e1b67919f345196193c7e25f2f794477b2cd90fa4d1bb144"
+    },
+    {
+      "run_index": 172,
+      "request_key": "sensitivity:020",
+      "item_id": "m3p_36",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 20,
+      "prompt_sha256": "9f9847ddf1d1f3479ea0bb208bc1a0339e1824603e2d5f4f3d7381fd72dfd2bb"
+    },
+    {
+      "run_index": 173,
+      "request_key": "primary:036",
+      "item_id": "m3p_08",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 36,
+      "prompt_sha256": "7e509fa3264e860cc808d32fea67cbbf54627531149cb6214247b66ac24cb678"
+    },
+    {
+      "run_index": 174,
+      "request_key": "primary:117",
+      "item_id": "m3p_24",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 117,
+      "prompt_sha256": "9942056fcd56c2e7043d74b435cc5f69b2ce488b4c2739dad7a52ab751a11c42"
+    },
+    {
+      "run_index": 175,
+      "request_key": "sensitivity:005",
+      "item_id": "m3p_16",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 5,
+      "prompt_sha256": "dcd34a37390c5a54eae56f69a6815fc2b82fdce5090c7d2391cedef6710354ae"
+    },
+    {
+      "run_index": 176,
+      "request_key": "primary:074",
+      "item_id": "m3p_15",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 74,
+      "prompt_sha256": "c20e8068ff7a7a504092d1d66a077fb3848f25a9be8271477c8dca3115347327"
+    },
+    {
+      "run_index": 177,
+      "request_key": "primary:137",
+      "item_id": "m3p_28",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 137,
+      "prompt_sha256": "c554ec23fde63418f520d6606e35d03e1f12149f2b54e0afb3d7fed373178f25"
+    },
+    {
+      "run_index": 178,
+      "request_key": "sensitivity:015",
+      "item_id": "m3p_30",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 15,
+      "prompt_sha256": "d836a069532e465a9c3cc3dfd04096389652632a8b4220408a393187899cdaf1"
+    },
+    {
+      "run_index": 179,
+      "request_key": "primary:022",
+      "item_id": "m3p_05",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 22,
+      "prompt_sha256": "d86b607e0623790d919159a919b90da353746759426ceed216e040c1d82919cd"
+    },
+    {
+      "run_index": 180,
+      "request_key": "primary:087",
+      "item_id": "m3p_18",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 87,
+      "prompt_sha256": "7fd196554f991498bc413c50fa489a3164a55134e95976c2014c122a08ab743b"
+    },
+    {
+      "run_index": 181,
+      "request_key": "primary:019",
+      "item_id": "m3p_04",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 19,
+      "prompt_sha256": "4cb0db7707435edfb55ae5f10010cb32b4327ca21244cd9ee4a3dbf3f7b0f7fe"
+    },
+    {
+      "run_index": 182,
+      "request_key": "primary:163",
+      "item_id": "m3p_33",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 163,
+      "prompt_sha256": "781484e1b1f9754b0a04d3c29c7a7a9689ce2cebd39f5dc804ebd3f6140cdb14"
+    },
+    {
+      "run_index": 183,
+      "request_key": "sensitivity:021",
+      "item_id": "m3p_37",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 21,
+      "prompt_sha256": "9c5f32a089d39d8bcd8e004d0a3096454bf5ddadc084ec6e206d3d0a2d4780f8"
+    },
+    {
+      "run_index": 184,
+      "request_key": "primary:096",
+      "item_id": "m3p_20",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 96,
+      "prompt_sha256": "5cf1600f0159a33bbc5e2de0f68420746e9631aa385dda94f87b2af56f1ee6c8"
+    },
+    {
+      "run_index": 185,
+      "request_key": "primary:091",
+      "item_id": "m3p_19",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 91,
+      "prompt_sha256": "ebb3ce3679bc0bc74f61d4e90d84699ae525586c6233942ca02b4d9bf840107c"
+    },
+    {
+      "run_index": 186,
+      "request_key": "primary:089",
+      "item_id": "m3p_18",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 89,
+      "prompt_sha256": "612a20d2eef78b9d70e9d46268803ecb0a316e3c49fd8a9f2afc4d12d8520b7e"
+    },
+    {
+      "run_index": 187,
+      "request_key": "primary:064",
+      "item_id": "m3p_13",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 64,
+      "prompt_sha256": "b38c0c95908f42b07c437c8e1ed7f3b021bcff8d74db9d4688280582cd4bed78"
+    },
+    {
+      "run_index": 188,
+      "request_key": "primary:101",
+      "item_id": "m3p_21",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 101,
+      "prompt_sha256": "d50cb505d05368ed2474a531d02b8e21918ef4ec78620e75ee03c9135a44cc7f"
+    },
+    {
+      "run_index": 189,
+      "request_key": "primary:053",
+      "item_id": "m3p_11",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 53,
+      "prompt_sha256": "88c0b92b5e4110fff33ea426f7c5b8a4dfccc74d96405378227a0f0359c7294c"
+    },
+    {
+      "run_index": 190,
+      "request_key": "primary:080",
+      "item_id": "m3p_17",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 80,
+      "prompt_sha256": "186219c2a9d4590a79be47ae106bdef40bc8ca29841126d01734602c96db5dde"
+    },
+    {
+      "run_index": 191,
+      "request_key": "primary:173",
+      "item_id": "m3p_35",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 173,
+      "prompt_sha256": "ca6834eba6afa5b883859a8d6dc9a2a36ee579e45718846c09460245c0a0cf7e"
+    },
+    {
+      "run_index": 192,
+      "request_key": "sensitivity:007",
+      "item_id": "m3p_18",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 7,
+      "prompt_sha256": "880e516f8a168d76103b9fb5c200ff866506fe17b203badd07f34403163a61f3"
+    },
+    {
+      "run_index": 193,
+      "request_key": "primary:175",
+      "item_id": "m3p_36",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 175,
+      "prompt_sha256": "ca368ef89921b896eb42f7eb1bb9e194db92566779315d074d54777cc258a813"
+    },
+    {
+      "run_index": 194,
+      "request_key": "primary:002",
+      "item_id": "m3p_01",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 2,
+      "prompt_sha256": "9d4d4621ec75c0475a5cce677b216e77dadba879f32781887dc36f5c5e718c0b"
+    },
+    {
+      "run_index": 195,
+      "request_key": "primary:115",
+      "item_id": "m3p_24",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 115,
+      "prompt_sha256": "d37c1e52b13d4e23b9e1a5bd1dcc582e893d6dc75e6e92e70de9b9666036adf5"
+    },
+    {
+      "run_index": 196,
+      "request_key": "primary:025",
+      "item_id": "m3p_06",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 25,
+      "prompt_sha256": "5b82ad0e381fb872447c1f26926b89e49e91652e13acb8a8261232cc0da6aa48"
+    },
+    {
+      "run_index": 197,
+      "request_key": "primary:073",
+      "item_id": "m3p_15",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 73,
+      "prompt_sha256": "6e7be7205a1605de7ba019159507b88fe2b5e17ed8771234000018f13788441f"
+    },
+    {
+      "run_index": 198,
+      "request_key": "primary:028",
+      "item_id": "m3p_06",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 28,
+      "prompt_sha256": "0ca95fc8387198b4212193dc632ab2a0d3dd1f3c78ebb1d371aded9a5f798513"
+    },
+    {
+      "run_index": 199,
+      "request_key": "primary:020",
+      "item_id": "m3p_05",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 20,
+      "prompt_sha256": "86c6530ab5f2eb259fb003b90611792689d6364115eb884f01ac358e9ee76507"
+    },
+    {
+      "run_index": 200,
+      "request_key": "primary:157",
+      "item_id": "m3p_32",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 157,
+      "prompt_sha256": "9b9996e406f2801632532dec138db712054e92d7178cf63b5edde67e8e0a4230"
+    },
+    {
+      "run_index": 201,
+      "request_key": "primary:000",
+      "item_id": "m3p_01",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 0,
+      "prompt_sha256": "3d8e78bae3a4fd8d204c61c5f32192be55013102e9edc75c10f76ae1ca2746f7"
+    },
+    {
+      "run_index": 202,
+      "request_key": "primary:061",
+      "item_id": "m3p_13",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 61,
+      "prompt_sha256": "83653bda232f69ab7299f2074f8a9e00fa333e93202de6a377ca6b638806b66a"
+    },
+    {
+      "run_index": 203,
+      "request_key": "primary:112",
+      "item_id": "m3p_23",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 112,
+      "prompt_sha256": "21cea8a596bbfa399a470b1c81eb3ab597b22d3ec6b0bb815b1fa8a88e9fe50f"
+    },
+    {
+      "run_index": 204,
+      "request_key": "primary:150",
+      "item_id": "m3p_31",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 150,
+      "prompt_sha256": "33257aef5c10abebc0d5c48ee6126f04b1961c088cab2f464529e904e133cf9d"
+    },
+    {
+      "run_index": 205,
+      "request_key": "primary:197",
+      "item_id": "m3p_40",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 197,
+      "prompt_sha256": "32771d99ff918633eac13c97c16105a5884c54f196eb132f1af21854da10bd82"
+    },
+    {
+      "run_index": 206,
+      "request_key": "primary:192",
+      "item_id": "m3p_39",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 192,
+      "prompt_sha256": "6d69158d1795e767e3c9835211b7eef250a6c2f25d59fadbf14a4a82e4747934"
+    },
+    {
+      "run_index": 207,
+      "request_key": "primary:125",
+      "item_id": "m3p_26",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 125,
+      "prompt_sha256": "b706d7c04cbeb962b5f504a5cb75f8c5a184a5c0447836e284e458114e62ef11"
+    },
+    {
+      "run_index": 208,
+      "request_key": "primary:196",
+      "item_id": "m3p_40",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 196,
+      "prompt_sha256": "f8bea3d5c8b3263ada59e99a3aafddbc3c77e99013b4403befe697b9ee40adc3"
+    },
+    {
+      "run_index": 209,
+      "request_key": "primary:198",
+      "item_id": "m3p_40",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 198,
+      "prompt_sha256": "369c16c8b1fe39c5a20dc876199352f2f70d9a931e9aa6afd952c19b26334773"
+    },
+    {
+      "run_index": 210,
+      "request_key": "primary:187",
+      "item_id": "m3p_38",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 187,
+      "prompt_sha256": "61bcda4609e42c6a8b68480abb6be25dbbdc6ce187e107d8b7746c87e0a207cc"
+    },
+    {
+      "run_index": 211,
+      "request_key": "primary:140",
+      "item_id": "m3p_29",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 140,
+      "prompt_sha256": "4aa6c164e231181ad55d00cff99f8dc1f215071eb9ae6f539bde3552e9d58d92"
+    },
+    {
+      "run_index": 212,
+      "request_key": "primary:146",
+      "item_id": "m3p_30",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 146,
+      "prompt_sha256": "1ddc20318aa9284e05b5c21320bb03e88716ab6d10c689c8e54f68d043a11190"
+    },
+    {
+      "run_index": 213,
+      "request_key": "sensitivity:000",
+      "item_id": "m3p_02",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 0,
+      "prompt_sha256": "36a29c5d19453e1de740913a4de2b4c65d38afe940422bd50777077e7d683b79"
+    },
+    {
+      "run_index": 214,
+      "request_key": "primary:107",
+      "item_id": "m3p_22",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 107,
+      "prompt_sha256": "3ade2d08af6843106d3e50ec8c2441e5735721ebfe39a3e4476d7adeb04eccc9"
+    },
+    {
+      "run_index": 215,
+      "request_key": "primary:142",
+      "item_id": "m3p_29",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 142,
+      "prompt_sha256": "9b67c04c3d52c58b0b037228163201c6db0944a81ebbe288b437baeb7e5be3ac"
+    },
+    {
+      "run_index": 216,
+      "request_key": "primary:159",
+      "item_id": "m3p_32",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 159,
+      "prompt_sha256": "bde0f938ec9bb9e66e838f0097db315c297318f0f34e672f6bb2f497528b4895"
+    },
+    {
+      "run_index": 217,
+      "request_key": "primary:153",
+      "item_id": "m3p_31",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 153,
+      "prompt_sha256": "f1ee208063f3c86756e17f2ffc5f8e3ebb54bc2f39bcebb4f9ca385dafdfbfca"
+    },
+    {
+      "run_index": 218,
+      "request_key": "primary:057",
+      "item_id": "m3p_12",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 57,
+      "prompt_sha256": "cf76c5c66e29a479e7cbc4a373e0b33a2e8e7b5fa69ea1aa45ff0161c316f3b3"
+    },
+    {
+      "run_index": 219,
+      "request_key": "primary:026",
+      "item_id": "m3p_06",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 26,
+      "prompt_sha256": "2b5e6822f6cf4392f14dd3a6038fbcc35584bd67b786abe35d0612a3a15074f4"
+    },
+    {
+      "run_index": 220,
+      "request_key": "primary:165",
+      "item_id": "m3p_34",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 165,
+      "prompt_sha256": "bc95b9e9d0228d07495f2147a651d8b38a8866dc2553364791535c5e91512f55"
+    },
+    {
+      "run_index": 221,
+      "request_key": "primary:131",
+      "item_id": "m3p_27",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 131,
+      "prompt_sha256": "fcae920c9ef125bcf67829cf429d346e4ffefb9067f826e97fe16668a2109d30"
+    },
+    {
+      "run_index": 222,
+      "request_key": "primary:128",
+      "item_id": "m3p_26",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 128,
+      "prompt_sha256": "fb4668247e6171643dcf879282525d5fee7ed790b357e99d9052b5b9b187cb9c"
+    },
+    {
+      "run_index": 223,
+      "request_key": "primary:081",
+      "item_id": "m3p_17",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 81,
+      "prompt_sha256": "0a0fcd53c59313057da52deae1753ab3d5164ad875598fd72c8e6a6fe1336f0f"
+    },
+    {
+      "run_index": 224,
+      "request_key": "primary:030",
+      "item_id": "m3p_07",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 30,
+      "prompt_sha256": "0db6547e3b9a009c9efadea159d978422b899f358ddf3e775f50e51df0858350"
+    }
+  ]
+}

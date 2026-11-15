@@ -1,0 +1,36 @@
+{
+  "recorded": "2026-10-09T06:23:56+00:00",
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+  "gpu": {
+    "checked": "2026-10-09T04:19:27+00:00",
+    "torch": "2.11.0+cu128",
+    "torch_cuda_build": "12.8",
+    "cuda_available": true,
+    "device_count": 2,
+    "device_name": "Tesla T4",
+    "capability": "7.5",
+    "vram_gb": 15.64,
+    "arch_list": [
+      "sm_75",
+      "sm_80",
+      "sm_86",
+      "sm_90",
+      "sm_100",
+      "sm_120"
+    ],
+    "fp16_kernel_ok": true,
+    "kaggle_kernel_run_type": "Batch"
+  },
+  "package_versions": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.19.0",
+    "accelerate": "1.15.0",
+    "safetensors": "0.8.0",
+    "tokenizers": "0.23.1",
+    "huggingface_hub": "1.33.0"
+  },
+  "kaggle_docker_image": "gcr.io/kaggle-gpu-images/python@sha256:2757e0c7d1e0a9cb43da657b97e223c321a98f5014bdf64f44f2f6b083ad2b2f",
+  "kaggle_kernel_run_type": "Batch",
+  "cublas_workspace_config": ":4096:8",
+  "cudnn_version": 91900
+}

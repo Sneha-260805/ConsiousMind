@@ -1,0 +1,2041 @@
+{
+  "seed": 2026,
+  "shuffled": true,
+  "n_requests": 225,
+  "input_sha256": {
+    "m3_pilot_40.json": "2f6ba3f034a3aeb7c57cd5245b59d692aa3b7d95762b5d6d1c02e9b143eec190",
+    "m3_pilot_40_conditions.jsonl": "b664f96d4a531a95de965ab11f52ed4b5fd183ddde99c700960a1f6dc2b426a1",
+    "m3_pilot_40_far_false_sensitivity.jsonl": "d7327d59dff90b2a9df83fb9c3ac4872ad83d82c3a6271888fa4eb846ef2ca16"
+  },
+  "order_sha256": "2b6e7e0f0895b002976358df618cba33c8bc6dbf38a31f0c9567dc684466ec91",
+  "condition_alias": {
+    "L_false": "L_false_near"
+  },
+  "order": [
+    {
+      "run_index": 0,
+      "request_key": "primary:021",
+      "item_id": "m3p_05",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 21
+    },
+    {
+      "run_index": 1,
+      "request_key": "primary:060",
+      "item_id": "m3p_13",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 60
+    },
+    {
+      "run_index": 2,
+      "request_key": "primary:167",
+      "item_id": "m3p_34",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 167
+    },
+    {
+      "run_index": 3,
+      "request_key": "sensitivity:016",
+      "item_id": "m3p_31",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 16
+    },
+    {
+      "run_index": 4,
+      "request_key": "primary:013",
+      "item_id": "m3p_03",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 13
+    },
+    {
+      "run_index": 5,
+      "request_key": "sensitivity:012",
+      "item_id": "m3p_25",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 12
+    },
+    {
+      "run_index": 6,
+      "request_key": "primary:099",
+      "item_id": "m3p_20",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 99
+    },
+    {
+      "run_index": 7,
+      "request_key": "primary:039",
+      "item_id": "m3p_08",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 39
+    },
+    {
+      "run_index": 8,
+      "request_key": "primary:027",
+      "item_id": "m3p_06",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 27
+    },
+    {
+      "run_index": 9,
+      "request_key": "primary:189",
+      "item_id": "m3p_38",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 189
+    },
+    {
+      "run_index": 10,
+      "request_key": "primary:017",
+      "item_id": "m3p_04",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 17
+    },
+    {
+      "run_index": 11,
+      "request_key": "sensitivity:009",
+      "item_id": "m3p_21",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 9
+    },
+    {
+      "run_index": 12,
+      "request_key": "primary:007",
+      "item_id": "m3p_02",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 7
+    },
+    {
+      "run_index": 13,
+      "request_key": "primary:035",
+      "item_id": "m3p_08",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 35
+    },
+    {
+      "run_index": 14,
+      "request_key": "primary:168",
+      "item_id": "m3p_34",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 168
+    },
+    {
+      "run_index": 15,
+      "request_key": "primary:043",
+      "item_id": "m3p_09",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 43
+    },
+    {
+      "run_index": 16,
+      "request_key": "primary:050",
+      "item_id": "m3p_11",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 50
+    },
+    {
+      "run_index": 17,
+      "request_key": "primary:090",
+      "item_id": "m3p_19",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 90
+    },
+    {
+      "run_index": 18,
+      "request_key": "primary:097",
+      "item_id": "m3p_20",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 97
+    },
+    {
+      "run_index": 19,
+      "request_key": "primary:067",
+      "item_id": "m3p_14",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 67
+    },
+    {
+      "run_index": 20,
+      "request_key": "primary:016",
+      "item_id": "m3p_04",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 16
+    },
+    {
+      "run_index": 21,
+      "request_key": "primary:179",
+      "item_id": "m3p_36",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 179
+    },
+    {
+      "run_index": 22,
+      "request_key": "primary:072",
+      "item_id": "m3p_15",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 72
+    },
+    {
+      "run_index": 23,
+      "request_key": "primary:154",
+      "item_id": "m3p_31",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 154
+    },
+    {
+      "run_index": 24,
+      "request_key": "primary:086",
+      "item_id": "m3p_18",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 86
+    },
+    {
+      "run_index": 25,
+      "request_key": "primary:176",
+      "item_id": "m3p_36",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 176
+    },
+    {
+      "run_index": 26,
+      "request_key": "primary:075",
+      "item_id": "m3p_16",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 75
+    },
+    {
+      "run_index": 27,
+      "request_key": "primary:194",
+      "item_id": "m3p_39",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 194
+    },
+    {
+      "run_index": 28,
+      "request_key": "primary:184",
+      "item_id": "m3p_37",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 184
+    },
+    {
+      "run_index": 29,
+      "request_key": "primary:003",
+      "item_id": "m3p_01",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 3
+    },
+    {
+      "run_index": 30,
+      "request_key": "primary:151",
+      "item_id": "m3p_31",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 151
+    },
+    {
+      "run_index": 31,
+      "request_key": "primary:051",
+      "item_id": "m3p_11",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 51
+    },
+    {
+      "run_index": 32,
+      "request_key": "primary:190",
+      "item_id": "m3p_39",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 190
+    },
+    {
+      "run_index": 33,
+      "request_key": "primary:009",
+      "item_id": "m3p_02",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 9
+    },
+    {
+      "run_index": 34,
+      "request_key": "primary:170",
+      "item_id": "m3p_35",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 170
+    },
+    {
+      "run_index": 35,
+      "request_key": "primary:041",
+      "item_id": "m3p_09",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 41
+    },
+    {
+      "run_index": 36,
+      "request_key": "primary:171",
+      "item_id": "m3p_35",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 171
+    },
+    {
+      "run_index": 37,
+      "request_key": "primary:082",
+      "item_id": "m3p_17",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 82
+    },
+    {
+      "run_index": 38,
+      "request_key": "primary:048",
+      "item_id": "m3p_10",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 48
+    },
+    {
+      "run_index": 39,
+      "request_key": "sensitivity:023",
+      "item_id": "m3p_39",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 23
+    },
+    {
+      "run_index": 40,
+      "request_key": "primary:070",
+      "item_id": "m3p_15",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 70
+    },
+    {
+      "run_index": 41,
+      "request_key": "primary:161",
+      "item_id": "m3p_33",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 161
+    },
+    {
+      "run_index": 42,
+      "request_key": "primary:113",
+      "item_id": "m3p_23",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 113
+    },
+    {
+      "run_index": 43,
+      "request_key": "primary:077",
+      "item_id": "m3p_16",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 77
+    },
+    {
+      "run_index": 44,
+      "request_key": "primary:032",
+      "item_id": "m3p_07",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 32
+    },
+    {
+      "run_index": 45,
+      "request_key": "primary:180",
+      "item_id": "m3p_37",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 180
+    },
+    {
+      "run_index": 46,
+      "request_key": "primary:038",
+      "item_id": "m3p_08",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 38
+    },
+    {
+      "run_index": 47,
+      "request_key": "primary:130",
+      "item_id": "m3p_27",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 130
+    },
+    {
+      "run_index": 48,
+      "request_key": "primary:177",
+      "item_id": "m3p_36",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 177
+    },
+    {
+      "run_index": 49,
+      "request_key": "sensitivity:024",
+      "item_id": "m3p_40",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 24
+    },
+    {
+      "run_index": 50,
+      "request_key": "primary:014",
+      "item_id": "m3p_03",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 14
+    },
+    {
+      "run_index": 51,
+      "request_key": "primary:092",
+      "item_id": "m3p_19",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 92
+    },
+    {
+      "run_index": 52,
+      "request_key": "primary:085",
+      "item_id": "m3p_18",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 85
+    },
+    {
+      "run_index": 53,
+      "request_key": "primary:111",
+      "item_id": "m3p_23",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 111
+    },
+    {
+      "run_index": 54,
+      "request_key": "primary:044",
+      "item_id": "m3p_09",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 44
+    },
+    {
+      "run_index": 55,
+      "request_key": "primary:068",
+      "item_id": "m3p_14",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 68
+    },
+    {
+      "run_index": 56,
+      "request_key": "primary:114",
+      "item_id": "m3p_23",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 114
+    },
+    {
+      "run_index": 57,
+      "request_key": "primary:049",
+      "item_id": "m3p_10",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 49
+    },
+    {
+      "run_index": 58,
+      "request_key": "primary:138",
+      "item_id": "m3p_28",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 138
+    },
+    {
+      "run_index": 59,
+      "request_key": "primary:104",
+      "item_id": "m3p_21",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 104
+    },
+    {
+      "run_index": 60,
+      "request_key": "primary:042",
+      "item_id": "m3p_09",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 42
+    },
+    {
+      "run_index": 61,
+      "request_key": "primary:199",
+      "item_id": "m3p_40",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 199
+    },
+    {
+      "run_index": 62,
+      "request_key": "primary:193",
+      "item_id": "m3p_39",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 193
+    },
+    {
+      "run_index": 63,
+      "request_key": "primary:119",
+      "item_id": "m3p_24",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 119
+    },
+    {
+      "run_index": 64,
+      "request_key": "primary:045",
+      "item_id": "m3p_10",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 45
+    },
+    {
+      "run_index": 65,
+      "request_key": "primary:100",
+      "item_id": "m3p_21",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 100
+    },
+    {
+      "run_index": 66,
+      "request_key": "primary:005",
+      "item_id": "m3p_02",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 5
+    },
+    {
+      "run_index": 67,
+      "request_key": "primary:015",
+      "item_id": "m3p_04",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 15
+    },
+    {
+      "run_index": 68,
+      "request_key": "primary:135",
+      "item_id": "m3p_28",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 135
+    },
+    {
+      "run_index": 69,
+      "request_key": "primary:110",
+      "item_id": "m3p_23",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 110
+    },
+    {
+      "run_index": 70,
+      "request_key": "primary:010",
+      "item_id": "m3p_03",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 10
+    },
+    {
+      "run_index": 71,
+      "request_key": "primary:069",
+      "item_id": "m3p_14",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 69
+    },
+    {
+      "run_index": 72,
+      "request_key": "primary:156",
+      "item_id": "m3p_32",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 156
+    },
+    {
+      "run_index": 73,
+      "request_key": "sensitivity:001",
+      "item_id": "m3p_03",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 1
+    },
+    {
+      "run_index": 74,
+      "request_key": "primary:011",
+      "item_id": "m3p_03",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 11
+    },
+    {
+      "run_index": 75,
+      "request_key": "primary:121",
+      "item_id": "m3p_25",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 121
+    },
+    {
+      "run_index": 76,
+      "request_key": "primary:186",
+      "item_id": "m3p_38",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 186
+    },
+    {
+      "run_index": 77,
+      "request_key": "primary:018",
+      "item_id": "m3p_04",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 18
+    },
+    {
+      "run_index": 78,
+      "request_key": "primary:052",
+      "item_id": "m3p_11",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 52
+    },
+    {
+      "run_index": 79,
+      "request_key": "primary:024",
+      "item_id": "m3p_05",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 24
+    },
+    {
+      "run_index": 80,
+      "request_key": "primary:095",
+      "item_id": "m3p_20",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 95
+    },
+    {
+      "run_index": 81,
+      "request_key": "primary:047",
+      "item_id": "m3p_10",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 47
+    },
+    {
+      "run_index": 82,
+      "request_key": "primary:103",
+      "item_id": "m3p_21",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 103
+    },
+    {
+      "run_index": 83,
+      "request_key": "sensitivity:013",
+      "item_id": "m3p_27",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 13
+    },
+    {
+      "run_index": 84,
+      "request_key": "primary:166",
+      "item_id": "m3p_34",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 166
+    },
+    {
+      "run_index": 85,
+      "request_key": "primary:008",
+      "item_id": "m3p_02",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 8
+    },
+    {
+      "run_index": 86,
+      "request_key": "sensitivity:002",
+      "item_id": "m3p_06",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 2
+    },
+    {
+      "run_index": 87,
+      "request_key": "primary:054",
+      "item_id": "m3p_11",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 54
+    },
+    {
+      "run_index": 88,
+      "request_key": "primary:164",
+      "item_id": "m3p_33",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 164
+    },
+    {
+      "run_index": 89,
+      "request_key": "primary:145",
+      "item_id": "m3p_30",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 145
+    },
+    {
+      "run_index": 90,
+      "request_key": "sensitivity:011",
+      "item_id": "m3p_24",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 11
+    },
+    {
+      "run_index": 91,
+      "request_key": "primary:105",
+      "item_id": "m3p_22",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 105
+    },
+    {
+      "run_index": 92,
+      "request_key": "primary:185",
+      "item_id": "m3p_38",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 185
+    },
+    {
+      "run_index": 93,
+      "request_key": "primary:158",
+      "item_id": "m3p_32",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 158
+    },
+    {
+      "run_index": 94,
+      "request_key": "primary:056",
+      "item_id": "m3p_12",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 56
+    },
+    {
+      "run_index": 95,
+      "request_key": "primary:143",
+      "item_id": "m3p_29",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 143
+    },
+    {
+      "run_index": 96,
+      "request_key": "primary:195",
+      "item_id": "m3p_40",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 195
+    },
+    {
+      "run_index": 97,
+      "request_key": "primary:040",
+      "item_id": "m3p_09",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 40
+    },
+    {
+      "run_index": 98,
+      "request_key": "primary:124",
+      "item_id": "m3p_25",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 124
+    },
+    {
+      "run_index": 99,
+      "request_key": "primary:178",
+      "item_id": "m3p_36",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 178
+    },
+    {
+      "run_index": 100,
+      "request_key": "primary:084",
+      "item_id": "m3p_17",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 84
+    },
+    {
+      "run_index": 101,
+      "request_key": "primary:071",
+      "item_id": "m3p_15",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 71
+    },
+    {
+      "run_index": 102,
+      "request_key": "primary:126",
+      "item_id": "m3p_26",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 126
+    },
+    {
+      "run_index": 103,
+      "request_key": "primary:063",
+      "item_id": "m3p_13",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 63
+    },
+    {
+      "run_index": 104,
+      "request_key": "primary:098",
+      "item_id": "m3p_20",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 98
+    },
+    {
+      "run_index": 105,
+      "request_key": "primary:065",
+      "item_id": "m3p_14",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 65
+    },
+    {
+      "run_index": 106,
+      "request_key": "primary:059",
+      "item_id": "m3p_12",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 59
+    },
+    {
+      "run_index": 107,
+      "request_key": "primary:174",
+      "item_id": "m3p_35",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 174
+    },
+    {
+      "run_index": 108,
+      "request_key": "primary:088",
+      "item_id": "m3p_18",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 88
+    },
+    {
+      "run_index": 109,
+      "request_key": "sensitivity:004",
+      "item_id": "m3p_14",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 4
+    },
+    {
+      "run_index": 110,
+      "request_key": "primary:155",
+      "item_id": "m3p_32",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 155
+    },
+    {
+      "run_index": 111,
+      "request_key": "primary:046",
+      "item_id": "m3p_10",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 46
+    },
+    {
+      "run_index": 112,
+      "request_key": "primary:062",
+      "item_id": "m3p_13",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 62
+    },
+    {
+      "run_index": 113,
+      "request_key": "primary:152",
+      "item_id": "m3p_31",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 152
+    },
+    {
+      "run_index": 114,
+      "request_key": "primary:160",
+      "item_id": "m3p_33",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 160
+    },
+    {
+      "run_index": 115,
+      "request_key": "primary:136",
+      "item_id": "m3p_28",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 136
+    },
+    {
+      "run_index": 116,
+      "request_key": "primary:076",
+      "item_id": "m3p_16",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 76
+    },
+    {
+      "run_index": 117,
+      "request_key": "sensitivity:003",
+      "item_id": "m3p_08",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 3
+    },
+    {
+      "run_index": 118,
+      "request_key": "primary:083",
+      "item_id": "m3p_17",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 83
+    },
+    {
+      "run_index": 119,
+      "request_key": "primary:181",
+      "item_id": "m3p_37",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 181
+    },
+    {
+      "run_index": 120,
+      "request_key": "primary:004",
+      "item_id": "m3p_01",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 4
+    },
+    {
+      "run_index": 121,
+      "request_key": "primary:001",
+      "item_id": "m3p_01",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 1
+    },
+    {
+      "run_index": 122,
+      "request_key": "primary:034",
+      "item_id": "m3p_07",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 34
+    },
+    {
+      "run_index": 123,
+      "request_key": "primary:106",
+      "item_id": "m3p_22",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 106
+    },
+    {
+      "run_index": 124,
+      "request_key": "primary:037",
+      "item_id": "m3p_08",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 37
+    },
+    {
+      "run_index": 125,
+      "request_key": "sensitivity:008",
+      "item_id": "m3p_20",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 8
+    },
+    {
+      "run_index": 126,
+      "request_key": "primary:055",
+      "item_id": "m3p_12",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 55
+    },
+    {
+      "run_index": 127,
+      "request_key": "primary:148",
+      "item_id": "m3p_30",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 148
+    },
+    {
+      "run_index": 128,
+      "request_key": "primary:162",
+      "item_id": "m3p_33",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 162
+    },
+    {
+      "run_index": 129,
+      "request_key": "sensitivity:022",
+      "item_id": "m3p_38",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 22
+    },
+    {
+      "run_index": 130,
+      "request_key": "primary:078",
+      "item_id": "m3p_16",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 78
+    },
+    {
+      "run_index": 131,
+      "request_key": "primary:182",
+      "item_id": "m3p_37",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 182
+    },
+    {
+      "run_index": 132,
+      "request_key": "sensitivity:010",
+      "item_id": "m3p_23",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 10
+    },
+    {
+      "run_index": 133,
+      "request_key": "primary:139",
+      "item_id": "m3p_28",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 139
+    },
+    {
+      "run_index": 134,
+      "request_key": "primary:116",
+      "item_id": "m3p_24",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 116
+    },
+    {
+      "run_index": 135,
+      "request_key": "primary:031",
+      "item_id": "m3p_07",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 31
+    },
+    {
+      "run_index": 136,
+      "request_key": "primary:058",
+      "item_id": "m3p_12",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 58
+    },
+    {
+      "run_index": 137,
+      "request_key": "primary:123",
+      "item_id": "m3p_25",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 123
+    },
+    {
+      "run_index": 138,
+      "request_key": "primary:191",
+      "item_id": "m3p_39",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 191
+    },
+    {
+      "run_index": 139,
+      "request_key": "primary:120",
+      "item_id": "m3p_25",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 120
+    },
+    {
+      "run_index": 140,
+      "request_key": "primary:109",
+      "item_id": "m3p_22",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 109
+    },
+    {
+      "run_index": 141,
+      "request_key": "sensitivity:019",
+      "item_id": "m3p_35",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 19
+    },
+    {
+      "run_index": 142,
+      "request_key": "primary:133",
+      "item_id": "m3p_27",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 133
+    },
+    {
+      "run_index": 143,
+      "request_key": "primary:012",
+      "item_id": "m3p_03",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 12
+    },
+    {
+      "run_index": 144,
+      "request_key": "primary:033",
+      "item_id": "m3p_07",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 33
+    },
+    {
+      "run_index": 145,
+      "request_key": "sensitivity:018",
+      "item_id": "m3p_34",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 18
+    },
+    {
+      "run_index": 146,
+      "request_key": "primary:169",
+      "item_id": "m3p_34",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 169
+    },
+    {
+      "run_index": 147,
+      "request_key": "primary:132",
+      "item_id": "m3p_27",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 132
+    },
+    {
+      "run_index": 148,
+      "request_key": "primary:183",
+      "item_id": "m3p_37",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 183
+    },
+    {
+      "run_index": 149,
+      "request_key": "primary:122",
+      "item_id": "m3p_25",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 122
+    },
+    {
+      "run_index": 150,
+      "request_key": "primary:144",
+      "item_id": "m3p_29",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 144
+    },
+    {
+      "run_index": 151,
+      "request_key": "sensitivity:014",
+      "item_id": "m3p_29",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 14
+    },
+    {
+      "run_index": 152,
+      "request_key": "primary:066",
+      "item_id": "m3p_14",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 66
+    },
+    {
+      "run_index": 153,
+      "request_key": "primary:134",
+      "item_id": "m3p_27",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 134
+    },
+    {
+      "run_index": 154,
+      "request_key": "primary:188",
+      "item_id": "m3p_38",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 188
+    },
+    {
+      "run_index": 155,
+      "request_key": "sensitivity:006",
+      "item_id": "m3p_17",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 6
+    },
+    {
+      "run_index": 156,
+      "request_key": "sensitivity:017",
+      "item_id": "m3p_33",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 17
+    },
+    {
+      "run_index": 157,
+      "request_key": "primary:129",
+      "item_id": "m3p_26",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 129
+    },
+    {
+      "run_index": 158,
+      "request_key": "primary:172",
+      "item_id": "m3p_35",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 172
+    },
+    {
+      "run_index": 159,
+      "request_key": "primary:029",
+      "item_id": "m3p_06",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 29
+    },
+    {
+      "run_index": 160,
+      "request_key": "primary:127",
+      "item_id": "m3p_26",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 127
+    },
+    {
+      "run_index": 161,
+      "request_key": "primary:141",
+      "item_id": "m3p_29",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 141
+    },
+    {
+      "run_index": 162,
+      "request_key": "primary:149",
+      "item_id": "m3p_30",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 149
+    },
+    {
+      "run_index": 163,
+      "request_key": "primary:102",
+      "item_id": "m3p_21",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 102
+    },
+    {
+      "run_index": 164,
+      "request_key": "primary:023",
+      "item_id": "m3p_05",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 23
+    },
+    {
+      "run_index": 165,
+      "request_key": "primary:108",
+      "item_id": "m3p_22",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 108
+    },
+    {
+      "run_index": 166,
+      "request_key": "primary:118",
+      "item_id": "m3p_24",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 118
+    },
+    {
+      "run_index": 167,
+      "request_key": "primary:093",
+      "item_id": "m3p_19",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 93
+    },
+    {
+      "run_index": 168,
+      "request_key": "primary:094",
+      "item_id": "m3p_19",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 94
+    },
+    {
+      "run_index": 169,
+      "request_key": "primary:006",
+      "item_id": "m3p_02",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 6
+    },
+    {
+      "run_index": 170,
+      "request_key": "primary:079",
+      "item_id": "m3p_16",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 79
+    },
+    {
+      "run_index": 171,
+      "request_key": "primary:147",
+      "item_id": "m3p_30",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 147
+    },
+    {
+      "run_index": 172,
+      "request_key": "sensitivity:020",
+      "item_id": "m3p_36",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 20
+    },
+    {
+      "run_index": 173,
+      "request_key": "primary:036",
+      "item_id": "m3p_08",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 36
+    },
+    {
+      "run_index": 174,
+      "request_key": "primary:117",
+      "item_id": "m3p_24",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 117
+    },
+    {
+      "run_index": 175,
+      "request_key": "sensitivity:005",
+      "item_id": "m3p_16",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 5
+    },
+    {
+      "run_index": 176,
+      "request_key": "primary:074",
+      "item_id": "m3p_15",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 74
+    },
+    {
+      "run_index": 177,
+      "request_key": "primary:137",
+      "item_id": "m3p_28",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 137
+    },
+    {
+      "run_index": 178,
+      "request_key": "sensitivity:015",
+      "item_id": "m3p_30",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 15
+    },
+    {
+      "run_index": 179,
+      "request_key": "primary:022",
+      "item_id": "m3p_05",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 22
+    },
+    {
+      "run_index": 180,
+      "request_key": "primary:087",
+      "item_id": "m3p_18",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 87
+    },
+    {
+      "run_index": 181,
+      "request_key": "primary:019",
+      "item_id": "m3p_04",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 19
+    },
+    {
+      "run_index": 182,
+      "request_key": "primary:163",
+      "item_id": "m3p_33",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 163
+    },
+    {
+      "run_index": 183,
+      "request_key": "sensitivity:021",
+      "item_id": "m3p_37",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 21
+    },
+    {
+      "run_index": 184,
+      "request_key": "primary:096",
+      "item_id": "m3p_20",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 96
+    },
+    {
+      "run_index": 185,
+      "request_key": "primary:091",
+      "item_id": "m3p_19",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 91
+    },
+    {
+      "run_index": 186,
+      "request_key": "primary:089",
+      "item_id": "m3p_18",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 89
+    },
+    {
+      "run_index": 187,
+      "request_key": "primary:064",
+      "item_id": "m3p_13",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 64
+    },
+    {
+      "run_index": 188,
+      "request_key": "primary:101",
+      "item_id": "m3p_21",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 101
+    },
+    {
+      "run_index": 189,
+      "request_key": "primary:053",
+      "item_id": "m3p_11",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 53
+    },
+    {
+      "run_index": 190,
+      "request_key": "primary:080",
+      "item_id": "m3p_17",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 80
+    },
+    {
+      "run_index": 191,
+      "request_key": "primary:173",
+      "item_id": "m3p_35",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 173
+    },
+    {
+      "run_index": 192,
+      "request_key": "sensitivity:007",
+      "item_id": "m3p_18",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 7
+    },
+    {
+      "run_index": 193,
+      "request_key": "primary:175",
+      "item_id": "m3p_36",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 175
+    },
+    {
+      "run_index": 194,
+      "request_key": "primary:002",
+      "item_id": "m3p_01",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 2
+    },
+    {
+      "run_index": 195,
+      "request_key": "primary:115",
+      "item_id": "m3p_24",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 115
+    },
+    {
+      "run_index": 196,
+      "request_key": "primary:025",
+      "item_id": "m3p_06",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 25
+    },
+    {
+      "run_index": 197,
+      "request_key": "primary:073",
+      "item_id": "m3p_15",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 73
+    },
+    {
+      "run_index": 198,
+      "request_key": "primary:028",
+      "item_id": "m3p_06",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 28
+    },
+    {
+      "run_index": 199,
+      "request_key": "primary:020",
+      "item_id": "m3p_05",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 20
+    },
+    {
+      "run_index": 200,
+      "request_key": "primary:157",
+      "item_id": "m3p_32",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 157
+    },
+    {
+      "run_index": 201,
+      "request_key": "primary:000",
+      "item_id": "m3p_01",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 0
+    },
+    {
+      "run_index": 202,
+      "request_key": "primary:061",
+      "item_id": "m3p_13",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 61
+    },
+    {
+      "run_index": 203,
+      "request_key": "primary:112",
+      "item_id": "m3p_23",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 112
+    },
+    {
+      "run_index": 204,
+      "request_key": "primary:150",
+      "item_id": "m3p_31",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 150
+    },
+    {
+      "run_index": 205,
+      "request_key": "primary:197",
+      "item_id": "m3p_40",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 197
+    },
+    {
+      "run_index": 206,
+      "request_key": "primary:192",
+      "item_id": "m3p_39",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 192
+    },
+    {
+      "run_index": 207,
+      "request_key": "primary:125",
+      "item_id": "m3p_26",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 125
+    },
+    {
+      "run_index": 208,
+      "request_key": "primary:196",
+      "item_id": "m3p_40",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 196
+    },
+    {
+      "run_index": 209,
+      "request_key": "primary:198",
+      "item_id": "m3p_40",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 198
+    },
+    {
+      "run_index": 210,
+      "request_key": "primary:187",
+      "item_id": "m3p_38",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 187
+    },
+    {
+      "run_index": 211,
+      "request_key": "primary:140",
+      "item_id": "m3p_29",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 140
+    },
+    {
+      "run_index": 212,
+      "request_key": "primary:146",
+      "item_id": "m3p_30",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 146
+    },
+    {
+      "run_index": 213,
+      "request_key": "sensitivity:000",
+      "item_id": "m3p_02",
+      "condition_source": "L_false_far",
+      "analysis_condition": "L_false_far",
+      "source_file": "m3_pilot_40_far_false_sensitivity.jsonl",
+      "row_index": 0
+    },
+    {
+      "run_index": 214,
+      "request_key": "primary:107",
+      "item_id": "m3p_22",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 107
+    },
+    {
+      "run_index": 215,
+      "request_key": "primary:142",
+      "item_id": "m3p_29",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 142
+    },
+    {
+      "run_index": 216,
+      "request_key": "primary:159",
+      "item_id": "m3p_32",
+      "condition_source": "A",
+      "analysis_condition": "A",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 159
+    },
+    {
+      "run_index": 217,
+      "request_key": "primary:153",
+      "item_id": "m3p_31",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 153
+    },
+    {
+      "run_index": 218,
+      "request_key": "primary:057",
+      "item_id": "m3p_12",
+      "condition_source": "L",
+      "analysis_condition": "L",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 57
+    },
+    {
+      "run_index": 219,
+      "request_key": "primary:026",
+      "item_id": "m3p_06",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 26
+    },
+    {
+      "run_index": 220,
+      "request_key": "primary:165",
+      "item_id": "m3p_34",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 165
+    },
+    {
+      "run_index": 221,
+      "request_key": "primary:131",
+      "item_id": "m3p_27",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 131
+    },
+    {
+      "run_index": 222,
+      "request_key": "primary:128",
+      "item_id": "m3p_26",
+      "condition_source": "L_false",
+      "analysis_condition": "L_false_near",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 128
+    },
+    {
+      "run_index": 223,
+      "request_key": "primary:081",
+      "item_id": "m3p_17",
+      "condition_source": "V",
+      "analysis_condition": "V",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 81
+    },
+    {
+      "run_index": 224,
+      "request_key": "primary:030",
+      "item_id": "m3p_07",
+      "condition_source": "L0",
+      "analysis_condition": "L0",
+      "source_file": "m3_pilot_40_conditions.jsonl",
+      "row_index": 30
+    }
+  ]
+}

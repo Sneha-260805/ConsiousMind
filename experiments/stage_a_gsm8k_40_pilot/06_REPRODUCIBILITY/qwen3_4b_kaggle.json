@@ -1,0 +1,18 @@
+{
+  "backend": "hf_transformers",
+  "model": "Qwen/Qwen3-4B",
+  "model_revision": "3101254bbe4169895668a0e7653c3fd1f313576e",
+  "temperature": 0,
+  "max_new_tokens": 768,
+  "seed": 2026,
+  "enable_thinking": false,
+  "decoding": "greedy",
+  "dtype": "float16",
+  "quantization": "none",
+  "device": "cuda:0",
+  "torch_num_threads": null,
+  "min_free_ram_gb": 8,
+  "max_attempts": 1,
+  "retry_backoff_seconds": 0,
+  "notes": "Kaggle free GPU run. Original Qwen/Qwen3-4B checkpoint at the pinned revision (no GGUF/GPTQ/AWQ/bitsandbytes). FP16 on a single CUDA GPU (cuda:0) for T4/P100 compatibility: the checkpoint is stored in BF16, so FP16 is a dtype conversion, not a quantization. Non-thinking mode through the chat-template switch enable_thinking=false; the frozen prompt is never modified. Greedy decoding (temperature 0, do_sample False), max_new_tokens 768 (raised from 512 after the first Kaggle smoke test: m3p_04/A was truncated at 512 tokens; no other setting changed), batch size 1, identical for every condition. This favours deterministic comparison over Qwen's recommended sampling settings."
+}

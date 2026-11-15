@@ -1,0 +1,2003 @@
+{
+  "seed": 42,
+  "source_problems_examined": 7473,
+  "structurally_eligible_problems": 2200,
+  "problems_with_an_automatically_valid_m3_corruption": 268,
+  "automatic_rejections": {
+    "structural: error_step_is_step_1": 13110,
+    "structural: relative_difference_too_large": 1714,
+    "structural: non_integer_value_where_integer_expected": 1634,
+    "structural: corrupted_value_collides_with_existing_number": 1064,
+    "realism: single-digit * fact": 722,
+    "structural: affected_value_restated_in_prose": 709,
+    "realism: doubling is mental arithmetic": 665,
+    "realism: addition/subtraction of round numbers is mental arithmetic": 620,
+    "realism: round-number addition/subtraction leaves the ones digit trivial": 319,
+    "structural: negative_value": 291,
+    "realism: * by a power of ten": 275,
+    "structural: non_integer_correct_result": 270,
+    "realism: simple fraction/percentage": 268,
+    "realism: halving is mental arithmetic": 202,
+    "realism: single-digit + fact": 197,
+    "realism: operands make the result visibly a multiple of 5": 194,
+    "realism: times-table fact up to 12": 171,
+    "realism: counting step": 136,
+    "realism: sum of single-digit numbers": 131,
+    "realism: small-number fact": 117,
+    "structural: zero_value": 115,
+    "realism: operands make the result visibly a multiple of 100": 106,
+    "realism: round percentage of a multiple of 100": 100,
+    "realism: operands make the result visibly a multiple of 25": 93,
+    "realism (pilot rule): carry-free addition": 87,
+    "realism: single-digit - fact": 86,
+    "realism: a product with an even factor must be even": 86,
+    "realism: simple fraction": 85,
+    "realism: operands make the result visibly a multiple of 10": 82,
+    "structural: final_scale_change_too_large": 75,
+    "gold-text flag (automatic)": 59,
+    "realism: multiplication with no carries": 56,
+    "structural: corrupted_value_equals_gold_final": 54,
+    "realism: operands make the result visibly a multiple of 50": 54,
+    "realism (pilot rule): borrow-free subtraction": 46,
+    "realism: times-table division fact": 44,
+    "realism: +10 only changes one digit": 44,
+    "realism: operands make the result visibly a multiple of 500": 36,
+    "realism: operands make the result visibly a multiple of 1000": 24,
+    "realism: single-digit subtraction without a borrow": 22,
+    "realism: single-digit addition without a carry": 19,
+    "realism: -10 only changes one digit": 19,
+    "realism: operands make the result visibly a multiple of 2500": 18,
+    "structural: non_terminating_or_too_many_decimals": 14,
+    "structural: no_dependent_calculation": 14,
+    "realism: +100 only changes one digit": 12,
+    "realism: operands make the result visibly a multiple of 125": 12,
+    "realism: / by a power of ten": 9,
+    "realism: -1000 only changes one digit": 8,
+    "realism (pilot rule): a product of odd factors must be odd": 6,
+    "structural: final_equals_gold": 6,
+    "realism: operands make the result visibly a multiple of 10000": 4
+  },
+  "problems_excluded_gold_text_automatic": 12,
+  "problems_excluded_gold_text_reviewer": 72,
+  "corruptions_rejected_reviewer_semantic": 201,
+  "reviewer_semantic_rejections": [
+    {
+      "key": [
+        7057,
+        1,
+        49
+      ],
+      "reason": "calculation site: 50% of 96: halving"
+    },
+    {
+      "key": [
+        7057,
+        1,
+        46
+      ],
+      "reason": "calculation site: 50% of 96: halving"
+    },
+    {
+      "key": [
+        7057,
+        1,
+        47
+      ],
+      "reason": "calculation site: 50% of 96: halving"
+    },
+    {
+      "key": [
+        7057,
+        1,
+        38
+      ],
+      "reason": "calculation site: 50% of 96: halving"
+    },
+    {
+      "key": [
+        183,
+        1,
+        34
+      ],
+      "reason": "calculation site: 20 + 8 + 5: small mental sum"
+    },
+    {
+      "key": [
+        183,
+        1,
+        35
+      ],
+      "reason": "calculation site: 20 + 8 + 5: small mental sum"
+    },
+    {
+      "key": [
+        6296,
+        1,
+        70
+      ],
+      "reason": "calculation site: 5 x 16: mental"
+    },
+    {
+      "key": [
+        6296,
+        3,
+        110
+      ],
+      "reason": "calculation site: 15 x 8: mental"
+    },
+    {
+      "key": [
+        6296,
+        1,
+        90
+      ],
+      "reason": "calculation site: 5 x 16: mental"
+    },
+    {
+      "key": [
+        6296,
+        3,
+        130
+      ],
+      "reason": "calculation site: 15 x 8: mental"
+    },
+    {
+      "key": [
+        1587,
+        1,
+        83
+      ],
+      "reason": "calculation site: 70% of 120: 7 x 12 times table"
+    },
+    {
+      "key": [
+        1587,
+        1,
+        82
+      ],
+      "reason": "calculation site: 70% of 120: 7 x 12 times table"
+    },
+    {
+      "key": [
+        1587,
+        1,
+        74
+      ],
+      "reason": "calculation site: 70% of 120: 7 x 12 times table"
+    },
+    {
+      "key": [
+        1587,
+        1,
+        85
+      ],
+      "reason": "calculation site: 70% of 120: 7 x 12 times table"
+    },
+    {
+      "key": [
+        1587,
+        1,
+        86
+      ],
+      "reason": "calculation site: 70% of 120: 7 x 12 times table"
+    },
+    {
+      "key": [
+        1587,
+        1,
+        94
+      ],
+      "reason": "calculation site: 70% of 120: 7 x 12 times table"
+    },
+    {
+      "key": [
+        6725,
+        1,
+        35
+      ],
+      "reason": "calculation site: 15 x 3: recalled multiple"
+    },
+    {
+      "key": [
+        6725,
+        1,
+        55
+      ],
+      "reason": "calculation site: 15 x 3: recalled multiple"
+    },
+    {
+      "key": [
+        5067,
+        2,
+        15010
+      ],
+      "reason": "calculation site: 750000 x 0.02: round"
+    },
+    {
+      "key": [
+        5067,
+        2,
+        15002
+      ],
+      "reason": "calculation site: 750000 x 0.02: round"
+    },
+    {
+      "key": [
+        5067,
+        2,
+        14990
+      ],
+      "reason": "calculation site: 750000 x 0.02: round"
+    },
+    {
+      "key": [
+        5067,
+        2,
+        14998
+      ],
+      "reason": "calculation site: 750000 x 0.02: round"
+    },
+    {
+      "key": [
+        6327,
+        1,
+        97
+      ],
+      "reason": "calculation site: 20% of 480: mental"
+    },
+    {
+      "key": [
+        5606,
+        1,
+        160
+      ],
+      "reason": "calculation site: 45 + 60 + 30 + 15: round-ish addends"
+    },
+    {
+      "key": [
+        5606,
+        1,
+        140
+      ],
+      "reason": "calculation site: 45 + 60 + 30 + 15: round-ish addends"
+    },
+    {
+      "key": [
+        996,
+        2,
+        106
+      ],
+      "reason": "calculation site: 16 x 6: mental"
+    },
+    {
+      "key": [
+        996,
+        3,
+        120
+      ],
+      "reason": "calculation site: 96 + 14: units complete to 10"
+    },
+    {
+      "key": [
+        3309,
+        1,
+        17
+      ],
+      "reason": "calculation site: 10.5 + 5.5: halves complete"
+    },
+    {
+      "key": [
+        3309,
+        1,
+        18
+      ],
+      "reason": "calculation site: 10.5 + 5.5: halves complete"
+    },
+    {
+      "key": [
+        3309,
+        1,
+        14
+      ],
+      "reason": "calculation site: 10.5 + 5.5: halves complete"
+    },
+    {
+      "key": [
+        4951,
+        1,
+        170
+      ],
+      "reason": "calculation site: 2/5 of 450: mental"
+    },
+    {
+      "key": [
+        4951,
+        1,
+        179
+      ],
+      "reason": "calculation site: 2/5 of 450: mental"
+    },
+    {
+      "key": [
+        4951,
+        1,
+        178
+      ],
+      "reason": "calculation site: 2/5 of 450: mental"
+    },
+    {
+      "key": [
+        4951,
+        1,
+        190
+      ],
+      "reason": "calculation site: 2/5 of 450: mental"
+    },
+    {
+      "key": [
+        4951,
+        1,
+        181
+      ],
+      "reason": "calculation site: 2/5 of 450: mental"
+    },
+    {
+      "key": [
+        4951,
+        1,
+        182
+      ],
+      "reason": "calculation site: 2/5 of 450: mental"
+    },
+    {
+      "key": [
+        6777,
+        2,
+        350
+      ],
+      "reason": "calculation site: 4 x 85: mental"
+    },
+    {
+      "key": [
+        6777,
+        2,
+        330
+      ],
+      "reason": "calculation site: 4 x 85: mental"
+    },
+    {
+      "key": [
+        6111,
+        1,
+        32
+      ],
+      "reason": "calculation site: 12 x 3.5: mental"
+    },
+    {
+      "key": [
+        6111,
+        3,
+        44
+      ],
+      "reason": "calculation site: 12 x 4.5: mental"
+    },
+    {
+      "key": [
+        6111,
+        1,
+        40
+      ],
+      "reason": "calculation site: 12 x 3.5: mental"
+    },
+    {
+      "key": [
+        6111,
+        3,
+        64
+      ],
+      "reason": "calculation site: 12 x 4.5: mental"
+    },
+    {
+      "key": [
+        6111,
+        1,
+        44
+      ],
+      "reason": "calculation site: 12 x 3.5: mental"
+    },
+    {
+      "key": [
+        6111,
+        3,
+        56
+      ],
+      "reason": "calculation site: 12 x 4.5: mental"
+    },
+    {
+      "key": [
+        7080,
+        2,
+        51
+      ],
+      "reason": "calculation site: 18 + 12 + 20: units complete to 10"
+    },
+    {
+      "key": [
+        7080,
+        2,
+        48
+      ],
+      "reason": "calculation site: 18 + 12 + 20: units complete to 10"
+    },
+    {
+      "key": [
+        7080,
+        2,
+        49
+      ],
+      "reason": "calculation site: 18 + 12 + 20: units complete to 10"
+    },
+    {
+      "key": [
+        7080,
+        2,
+        40
+      ],
+      "reason": "calculation site: 18 + 12 + 20: units complete to 10"
+    },
+    {
+      "key": [
+        5347,
+        1,
+        16
+      ],
+      "reason": "calculation site: 12 x 1.5: mental"
+    },
+    {
+      "key": [
+        5347,
+        1,
+        20
+      ],
+      "reason": "calculation site: 12 x 1.5: mental"
+    },
+    {
+      "key": [
+        3619,
+        1,
+        5
+      ],
+      "reason": "calculation site: 25% of 16: mental"
+    },
+    {
+      "key": [
+        3619,
+        1,
+        3
+      ],
+      "reason": "calculation site: 25% of 16: mental"
+    },
+    {
+      "key": [
+        5519,
+        2,
+        170
+      ],
+      "reason": "calculation site: 15 x 12: times table"
+    },
+    {
+      "key": [
+        5519,
+        3,
+        1010
+      ],
+      "reason": "calculation site: 360 + 480 + 180: round addends"
+    },
+    {
+      "key": [
+        5519,
+        2,
+        190
+      ],
+      "reason": "calculation site: 15 x 12: times table"
+    },
+    {
+      "key": [
+        5519,
+        3,
+        1030
+      ],
+      "reason": "calculation site: 360 + 480 + 180: round addends"
+    },
+    {
+      "key": [
+        1408,
+        1,
+        510
+      ],
+      "reason": "calculation site: 20 x 26: doubling then x10"
+    },
+    {
+      "key": [
+        1408,
+        2,
+        770
+      ],
+      "reason": "calculation site: 30 x 26: mental (3 x 26)"
+    },
+    {
+      "key": [
+        1408,
+        1,
+        530
+      ],
+      "reason": "calculation site: 20 x 26: doubling then x10"
+    },
+    {
+      "key": [
+        1408,
+        2,
+        790
+      ],
+      "reason": "calculation site: 30 x 26: mental (3 x 26)"
+    },
+    {
+      "key": [
+        6088,
+        1,
+        14
+      ],
+      "reason": "calculation site: 48 / 3: mental"
+    },
+    {
+      "key": [
+        6088,
+        1,
+        15
+      ],
+      "reason": "calculation site: 48 / 3: mental"
+    },
+    {
+      "key": [
+        6088,
+        1,
+        17
+      ],
+      "reason": "calculation site: 48 / 3: mental"
+    },
+    {
+      "key": [
+        1500,
+        3,
+        94
+      ],
+      "reason": "calculation site: 80 + 8 + 4: mental"
+    },
+    {
+      "key": [
+        1500,
+        2,
+        3
+      ],
+      "reason": "calculation site: 5% of 80: mental"
+    },
+    {
+      "key": [
+        1500,
+        3,
+        91
+      ],
+      "reason": "calculation site: 80 + 8 + 4: mental"
+    },
+    {
+      "key": [
+        7208,
+        1,
+        16
+      ],
+      "reason": "calculation site: 3/4 of 20: mental"
+    },
+    {
+      "key": [
+        7208,
+        1,
+        17
+      ],
+      "reason": "calculation site: 3/4 of 20: mental"
+    },
+    {
+      "key": [
+        7208,
+        1,
+        14
+      ],
+      "reason": "calculation site: 3/4 of 20: mental"
+    },
+    {
+      "key": [
+        7208,
+        1,
+        13
+      ],
+      "reason": "calculation site: 3/4 of 20: mental"
+    },
+    {
+      "key": [
+        3143,
+        1,
+        220
+      ],
+      "reason": "calculation site: 35 x 6: recalled multiple"
+    },
+    {
+      "key": [
+        3143,
+        2,
+        260
+      ],
+      "reason": "calculation site: 5 + 35 + 210: units complete to 10"
+    },
+    {
+      "key": [
+        2809,
+        2,
+        750002
+      ],
+      "reason": "calculation site: 15000 / .02: an odd result on round operands is absurd"
+    },
+    {
+      "key": [
+        2809,
+        2,
+        750001
+      ],
+      "reason": "calculation site: 15000 / .02: an odd result on round operands is absurd"
+    },
+    {
+      "key": [
+        2809,
+        2,
+        750010
+      ],
+      "reason": "calculation site: 15000 / .02: an odd result on round operands is absurd"
+    },
+    {
+      "key": [
+        2809,
+        2,
+        749998
+      ],
+      "reason": "calculation site: 15000 / .02: an odd result on round operands is absurd"
+    },
+    {
+      "key": [
+        2809,
+        2,
+        749999
+      ],
+      "reason": "calculation site: 15000 / .02: an odd result on round operands is absurd"
+    },
+    {
+      "key": [
+        2809,
+        2,
+        749990
+      ],
+      "reason": "calculation site: 15000 / .02: an odd result on round operands is absurd"
+    },
+    {
+      "key": [
+        5183,
+        1,
+        17
+      ],
+      "reason": "calculation site: 1/4 of 60: mental"
+    },
+    {
+      "key": [
+        5183,
+        1,
+        13
+      ],
+      "reason": "calculation site: 1/4 of 60: mental"
+    },
+    {
+      "key": [
+        5183,
+        1,
+        14
+      ],
+      "reason": "calculation site: 1/4 of 60: mental"
+    },
+    {
+      "key": [
+        5640,
+        1,
+        55
+      ],
+      "reason": "calculation site: 3 x 15: recalled multiple"
+    },
+    {
+      "key": [
+        2870,
+        1,
+        49
+      ],
+      "reason": "calculation site: 1/3 of 150: mental"
+    },
+    {
+      "key": [
+        2870,
+        2,
+        74
+      ],
+      "reason": "calculation site: 1/2 of 150: halving"
+    },
+    {
+      "key": [
+        2870,
+        1,
+        48
+      ],
+      "reason": "calculation site: 1/3 of 150: mental"
+    },
+    {
+      "key": [
+        2870,
+        2,
+        73
+      ],
+      "reason": "calculation site: 1/2 of 150: halving"
+    },
+    {
+      "key": [
+        2870,
+        1,
+        40
+      ],
+      "reason": "calculation site: 1/3 of 150: mental"
+    },
+    {
+      "key": [
+        2870,
+        2,
+        65
+      ],
+      "reason": "calculation site: 1/2 of 150: halving"
+    },
+    {
+      "key": [
+        2870,
+        1,
+        51
+      ],
+      "reason": "calculation site: 1/3 of 150: mental"
+    },
+    {
+      "key": [
+        2870,
+        2,
+        76
+      ],
+      "reason": "calculation site: 1/2 of 150: halving"
+    },
+    {
+      "key": [
+        2870,
+        2,
+        77
+      ],
+      "reason": "calculation site: 1/2 of 150: halving"
+    },
+    {
+      "key": [
+        2870,
+        2,
+        85
+      ],
+      "reason": "calculation site: 1/2 of 150: halving"
+    },
+    {
+      "key": [
+        1780,
+        1,
+        530
+      ],
+      "reason": "calculation site: 5 x 108: mental (half of 1080)"
+    },
+    {
+      "key": [
+        4836,
+        1,
+        130
+      ],
+      "reason": "calculation site: 5 x 24: mental"
+    },
+    {
+      "key": [
+        4836,
+        1,
+        110
+      ],
+      "reason": "calculation site: 5 x 24: mental"
+    },
+    {
+      "key": [
+        5953,
+        1,
+        17
+      ],
+      "reason": "calculation site: 23 - 4: small mental subtraction"
+    },
+    {
+      "key": [
+        5953,
+        1,
+        20
+      ],
+      "reason": "calculation site: 23 - 4: small mental subtraction"
+    },
+    {
+      "key": [
+        5245,
+        2,
+        92
+      ],
+      "reason": "calculation site: 72 x 1.25: mental"
+    },
+    {
+      "key": [
+        5245,
+        2,
+        88
+      ],
+      "reason": "calculation site: 72 x 1.25: mental"
+    },
+    {
+      "key": [
+        5245,
+        2,
+        80
+      ],
+      "reason": "calculation site: 72 x 1.25: mental"
+    },
+    {
+      "key": [
+        300,
+        3,
+        27
+      ],
+      "reason": "calculation site: 17.5 + 10.5: halves complete"
+    },
+    {
+      "key": [
+        300,
+        3,
+        26
+      ],
+      "reason": "calculation site: 17.5 + 10.5: halves complete"
+    },
+    {
+      "key": [
+        300,
+        3,
+        29
+      ],
+      "reason": "calculation site: 17.5 + 10.5: halves complete"
+    },
+    {
+      "key": [
+        2280,
+        2,
+        9
+      ],
+      "reason": "two-thirds of 15 is mental arithmetic; 9 is not a realistic slip"
+    },
+    {
+      "key": [
+        1019,
+        1,
+        40
+      ],
+      "reason": "calculation site: 5 + 36: small mental sum"
+    },
+    {
+      "key": [
+        1019,
+        2,
+        121
+      ],
+      "reason": "calculation site: 81 + 41: carry-free sum"
+    },
+    {
+      "key": [
+        1019,
+        1,
+        39
+      ],
+      "reason": "calculation site: 5 + 36: small mental sum"
+    },
+    {
+      "key": [
+        1019,
+        2,
+        120
+      ],
+      "reason": "calculation site: 81 + 41: carry-free sum"
+    },
+    {
+      "key": [
+        1019,
+        1,
+        31
+      ],
+      "reason": "calculation site: 5 + 36: small mental sum"
+    },
+    {
+      "key": [
+        1019,
+        2,
+        112
+      ],
+      "reason": "calculation site: 81 + 41: carry-free sum"
+    },
+    {
+      "key": [
+        1019,
+        1,
+        43
+      ],
+      "reason": "calculation site: 5 + 36: small mental sum"
+    },
+    {
+      "key": [
+        1019,
+        2,
+        124
+      ],
+      "reason": "calculation site: 81 + 41: carry-free sum"
+    },
+    {
+      "key": [
+        1019,
+        1,
+        51
+      ],
+      "reason": "calculation site: 5 + 36: small mental sum"
+    },
+    {
+      "key": [
+        1019,
+        2,
+        132
+      ],
+      "reason": "calculation site: 81 + 41: carry-free sum"
+    },
+    {
+      "key": [
+        3612,
+        2,
+        37
+      ],
+      "reason": "calculation site: 1800 / 50: reduces to 180 / 5"
+    },
+    {
+      "key": [
+        3612,
+        2,
+        38
+      ],
+      "reason": "calculation site: 1800 / 50: reduces to 180 / 5"
+    },
+    {
+      "key": [
+        3612,
+        2,
+        35
+      ],
+      "reason": "calculation site: 1800 / 50: reduces to 180 / 5"
+    },
+    {
+      "key": [
+        3612,
+        2,
+        34
+      ],
+      "reason": "calculation site: 1800 / 50: reduces to 180 / 5"
+    },
+    {
+      "key": [
+        64,
+        4,
+        230
+      ],
+      "reason": "calculation site: 15 x 16: mental"
+    },
+    {
+      "key": [
+        64,
+        4,
+        250
+      ],
+      "reason": "calculation site: 15 x 16: mental"
+    },
+    {
+      "key": [
+        4211,
+        1,
+        80
+      ],
+      "reason": "15 + 30 + 20 + 25 are small multiples of 5 summed mentally; 80 is not a realistic slip"
+    },
+    {
+      "key": [
+        7068,
+        1,
+        348
+      ],
+      "reason": "calculation site: 150 x 2 + 50: round-number mental arithmetic"
+    },
+    {
+      "key": [
+        7068,
+        1,
+        340
+      ],
+      "reason": "calculation site: 150 x 2 + 50: round-number mental arithmetic"
+    },
+    {
+      "key": [
+        7068,
+        1,
+        352
+      ],
+      "reason": "calculation site: 150 x 2 + 50: round-number mental arithmetic"
+    },
+    {
+      "key": [
+        7068,
+        1,
+        360
+      ],
+      "reason": "calculation site: 150 x 2 + 50: round-number mental arithmetic"
+    },
+    {
+      "key": [
+        3401,
+        1,
+        17
+      ],
+      "reason": "calculation site: 21 - 5: small mental subtraction"
+    },
+    {
+      "key": [
+        3401,
+        1,
+        15
+      ],
+      "reason": "calculation site: 21 - 5: small mental subtraction"
+    },
+    {
+      "key": [
+        1987,
+        2,
+        38
+      ],
+      "reason": "calculation site: 5/9 of 72: times table (72 / 9)"
+    },
+    {
+      "key": [
+        1987,
+        2,
+        39
+      ],
+      "reason": "calculation site: 5/9 of 72: times table (72 / 9)"
+    },
+    {
+      "key": [
+        1987,
+        2,
+        41
+      ],
+      "reason": "calculation site: 5/9 of 72: times table (72 / 9)"
+    },
+    {
+      "key": [
+        1987,
+        2,
+        50
+      ],
+      "reason": "calculation site: 5/9 of 72: times table (72 / 9)"
+    },
+    {
+      "key": [
+        1112,
+        1,
+        15
+      ],
+      "reason": "calculation site: 42 / 3: recalled division fact"
+    },
+    {
+      "key": [
+        1112,
+        1,
+        16
+      ],
+      "reason": "calculation site: 42 / 3: recalled division fact"
+    },
+    {
+      "key": [
+        1112,
+        1,
+        13
+      ],
+      "reason": "calculation site: 42 / 3: recalled division fact"
+    },
+    {
+      "key": [
+        6363,
+        2,
+        92
+      ],
+      "reason": "calculation site: 6 x 12 + 22: mental"
+    },
+    {
+      "key": [
+        6363,
+        2,
+        84
+      ],
+      "reason": "calculation site: 6 x 12 + 22: mental"
+    },
+    {
+      "key": [
+        4093,
+        1,
+        9
+      ],
+      "reason": "calculation site: 2/3 of 15: mental fraction"
+    },
+    {
+      "key": [
+        4093,
+        1,
+        8
+      ],
+      "reason": "calculation site: 2/3 of 15: mental fraction"
+    },
+    {
+      "key": [
+        7040,
+        2,
+        9
+      ],
+      "reason": "calculation site: 2/3 of 15: mental"
+    },
+    {
+      "key": [
+        5769,
+        1,
+        29
+      ],
+      "reason": "calculation site: 24 + 7: small mental sum"
+    },
+    {
+      "key": [
+        5769,
+        1,
+        33
+      ],
+      "reason": "calculation site: 24 + 7: small mental sum"
+    },
+    {
+      "key": [
+        5769,
+        1,
+        32
+      ],
+      "reason": "calculation site: 24 + 7: small mental sum"
+    },
+    {
+      "key": [
+        4284,
+        3,
+        452
+      ],
+      "reason": "calculation site: 3/4 of 600: mental"
+    },
+    {
+      "key": [
+        4284,
+        3,
+        451
+      ],
+      "reason": "calculation site: 3/4 of 600: mental"
+    },
+    {
+      "key": [
+        4284,
+        3,
+        460
+      ],
+      "reason": "calculation site: 3/4 of 600: mental"
+    },
+    {
+      "key": [
+        4284,
+        3,
+        448
+      ],
+      "reason": "calculation site: 3/4 of 600: mental"
+    },
+    {
+      "key": [
+        4284,
+        3,
+        449
+      ],
+      "reason": "calculation site: 3/4 of 600: mental"
+    },
+    {
+      "key": [
+        4284,
+        3,
+        440
+      ],
+      "reason": "calculation site: 3/4 of 600: mental"
+    },
+    {
+      "key": [
+        4127,
+        3,
+        240
+      ],
+      "reason": "45 + 65 + 120 pairs into round numbers mentally; 240 is not a realistic slip"
+    },
+    {
+      "key": [
+        5748,
+        2,
+        12010
+      ],
+      "reason": "calculation site: 3/5 of 20,000: mental"
+    },
+    {
+      "key": [
+        5748,
+        2,
+        12001
+      ],
+      "reason": "calculation site: 3/5 of 20,000: mental"
+    },
+    {
+      "key": [
+        5748,
+        2,
+        12002
+      ],
+      "reason": "calculation site: 3/5 of 20,000: mental"
+    },
+    {
+      "key": [
+        5748,
+        2,
+        11990
+      ],
+      "reason": "calculation site: 3/5 of 20,000: mental"
+    },
+    {
+      "key": [
+        5748,
+        2,
+        11999
+      ],
+      "reason": "calculation site: 3/5 of 20,000: mental"
+    },
+    {
+      "key": [
+        5748,
+        2,
+        11998
+      ],
+      "reason": "calculation site: 3/5 of 20,000: mental"
+    },
+    {
+      "key": [
+        6421,
+        1,
+        29
+      ],
+      "reason": "calculation site: 27 + 4: small mental sum"
+    },
+    {
+      "key": [
+        6421,
+        1,
+        32
+      ],
+      "reason": "calculation site: 27 + 4: small mental sum"
+    },
+    {
+      "key": [
+        6421,
+        1,
+        33
+      ],
+      "reason": "calculation site: 27 + 4: small mental sum"
+    },
+    {
+      "key": [
+        6652,
+        2,
+        16
+      ],
+      "reason": "calculation site: 35 x 0.4: mental"
+    },
+    {
+      "key": [
+        6652,
+        2,
+        15
+      ],
+      "reason": "calculation site: 35 x 0.4: mental"
+    },
+    {
+      "key": [
+        6652,
+        2,
+        13
+      ],
+      "reason": "calculation site: 35 x 0.4: mental"
+    },
+    {
+      "key": [
+        3117,
+        1,
+        11
+      ],
+      "reason": "calculation site: 20% of 45: mental percentage"
+    },
+    {
+      "key": [
+        3117,
+        1,
+        10
+      ],
+      "reason": "calculation site: 20% of 45: mental percentage"
+    },
+    {
+      "key": [
+        3117,
+        1,
+        8
+      ],
+      "reason": "calculation site: 20% of 45: mental percentage"
+    },
+    {
+      "key": [
+        3340,
+        2,
+        150
+      ],
+      "reason": "calculation site: 20 + 40 + 80: round addends"
+    },
+    {
+      "key": [
+        3340,
+        2,
+        130
+      ],
+      "reason": "calculation site: 20 + 40 + 80: round addends"
+    },
+    {
+      "key": [
+        1075,
+        2,
+        98
+      ],
+      "reason": "calculation site: 110 - 11: mental"
+    },
+    {
+      "key": [
+        1075,
+        1,
+        9
+      ],
+      "reason": "calculation site: 10% of 110: mental percentage"
+    },
+    {
+      "key": [
+        1075,
+        2,
+        97
+      ],
+      "reason": "calculation site: 110 - 11: mental"
+    },
+    {
+      "key": [
+        1075,
+        2,
+        89
+      ],
+      "reason": "calculation site: 110 - 11: mental"
+    },
+    {
+      "key": [
+        1075,
+        1,
+        13
+      ],
+      "reason": "calculation site: 10% of 110: mental percentage"
+    },
+    {
+      "key": [
+        1075,
+        2,
+        101
+      ],
+      "reason": "calculation site: 110 - 11: mental"
+    },
+    {
+      "key": [
+        1075,
+        2,
+        109
+      ],
+      "reason": "calculation site: 110 - 11: mental"
+    },
+    {
+      "key": [
+        3880,
+        2,
+        370
+      ],
+      "reason": "calculation site: 18 x 20: doubling then x10"
+    },
+    {
+      "key": [
+        3880,
+        2,
+        350
+      ],
+      "reason": "calculation site: 18 x 20: doubling then x10"
+    },
+    {
+      "key": [
+        3291,
+        2,
+        80
+      ],
+      "reason": "115 - 30 - 15 is mental arithmetic on round-ish values; 80 is not a realistic slip"
+    },
+    {
+      "key": [
+        4680,
+        1,
+        22
+      ],
+      "reason": "calculation site: 2.5 x 8: mental product"
+    },
+    {
+      "key": [
+        4680,
+        1,
+        18
+      ],
+      "reason": "calculation site: 2.5 x 8: mental product"
+    },
+    {
+      "key": [
+        6167,
+        2,
+        106
+      ],
+      "reason": "calculation site: 13 x 8: small recalled product (cf. 16 x 3, 15 x 8)"
+    },
+    {
+      "key": [
+        6167,
+        2,
+        114
+      ],
+      "reason": "calculation site: 13 x 8: small recalled product (cf. 16 x 3, 15 x 8)"
+    },
+    {
+      "key": [
+        6167,
+        3,
+        550
+      ],
+      "reason": "calculation site: 27 x 20: doubling then x10"
+    },
+    {
+      "key": [
+        6167,
+        2,
+        102
+      ],
+      "reason": "calculation site: 13 x 8: small recalled product (cf. 16 x 3, 15 x 8)"
+    },
+    {
+      "key": [
+        6167,
+        2,
+        94
+      ],
+      "reason": "calculation site: 13 x 8: small recalled product (cf. 16 x 3, 15 x 8)"
+    },
+    {
+      "key": [
+        6167,
+        3,
+        530
+      ],
+      "reason": "calculation site: 27 x 20: doubling then x10"
+    },
+    {
+      "key": [
+        3380,
+        2,
+        18
+      ],
+      "reason": "calculation site: 4% of 475 = 20 reads as rounding"
+    },
+    {
+      "key": [
+        3435,
+        3,
+        240
+      ],
+      "reason": "calculation site: 2000 / 8: round-number division"
+    },
+    {
+      "key": [
+        3435,
+        3,
+        248
+      ],
+      "reason": "calculation site: 2000 / 8: round-number division"
+    },
+    {
+      "key": [
+        3108,
+        2,
+        48
+      ],
+      "reason": "calculation site: 32 + 18: units sum to 10, mental"
+    },
+    {
+      "key": [
+        3108,
+        2,
+        40
+      ],
+      "reason": "calculation site: 32 + 18: units sum to 10, mental"
+    },
+    {
+      "key": [
+        6955,
+        3,
+        230
+      ],
+      "reason": "90 + 45 + 55 + 50 pairs into round numbers mentally; 230 is not a realistic slip"
+    },
+    {
+      "key": [
+        3389,
+        2,
+        11
+      ],
+      "reason": "calculation site: 20% of 65: mental (65 / 5)"
+    },
+    {
+      "key": [
+        7126,
+        2,
+        19
+      ],
+      "reason": "calculation site: 10% of 170: mental"
+    },
+    {
+      "key": [
+        7126,
+        2,
+        15
+      ],
+      "reason": "calculation site: 10% of 170: mental"
+    },
+    {
+      "key": [
+        3841,
+        2,
+        230
+      ],
+      "reason": "calculation site: 108 + 132: units complete to 10"
+    },
+    {
+      "key": [
+        3841,
+        2,
+        242
+      ],
+      "reason": "calculation site: 108 + 132: units complete to 10"
+    },
+    {
+      "key": [
+        5190,
+        2,
+        74
+      ],
+      "reason": "calculation site: 60% of 120: mental (6 x 12)"
+    },
+    {
+      "key": [
+        5190,
+        2,
+        82
+      ],
+      "reason": "calculation site: 60% of 120: mental (6 x 12)"
+    },
+    {
+      "key": [
+        5190,
+        2,
+        70
+      ],
+      "reason": "calculation site: 60% of 120: mental (6 x 12)"
+    },
+    {
+      "key": [
+        5190,
+        2,
+        62
+      ],
+      "reason": "calculation site: 60% of 120: mental (6 x 12)"
+    },
+    {
+      "key": [
+        4811,
+        2,
+        92
+      ],
+      "reason": "calculation site: 50 + 25 + 19: mental"
+    },
+    {
+      "key": [
+        5050,
+        3,
+        530
+      ],
+      "reason": "calculation site: 100 + 160 + 140 + 120: round addends"
+    }
+  ],
+  "gold_text_rejections_reviewer": [
+    {
+      "source_index": 7261,
+      "reason": "question grammar error ('What the volume of fuel oil that was used')"
+    },
+    {
+      "source_index": 2999,
+      "reason": "question calls the marbles 'balls' ('50% fewer green balls than yellow balls')"
+    },
+    {
+      "source_index": 5435,
+      "reason": "gold mislabels protein POWDER as 'grams of protein per day' in step 2"
+    },
+    {
+      "source_index": 6599,
+      "reason": "question grammar error ('twice as much potatoes')"
+    },
+    {
+      "source_index": 5834,
+      "reason": "awkward gold sentence ('Since half of the spaces are filled then, 38 x 1/2 ...')"
+    },
+    {
+      "source_index": 5198,
+      "reason": "question typo ('pairs that Sandra bought' for 'brought'); gold 'Three times more than Lisa bought' misstates the operation"
+    },
+    {
+      "source_index": 3305,
+      "reason": "gold uses the malformed phrase 'Du Chin remains with'"
+    },
+    {
+      "source_index": 6858,
+      "reason": "question typo ('Few weeks had past')"
+    },
+    {
+      "source_index": 2080,
+      "reason": "gold step 5 mislabels a weekly total as 'per month'"
+    },
+    {
+      "source_index": 2016,
+      "reason": "gold unit error ('10 \u00d7 $42' puts the dollar sign on the 42 hours) and the non-standard 'earnt'"
+    },
+    {
+      "source_index": 6085,
+      "reason": "gold steps 1-4 are verbless fragments ('8 gallons of water added during the first hour')"
+    },
+    {
+      "source_index": 3900,
+      "reason": "question opens with a sentence fragment ('If the wages of 15 workers for 6 days is $9450.')"
+    },
+    {
+      "source_index": 122,
+      "reason": "gold apostrophe error ('the chair's capacity' for the chairs')"
+    },
+    {
+      "source_index": 3303,
+      "reason": "question/gold grammar error ('a 500 pages book')"
+    },
+    {
+      "source_index": 2463,
+      "reason": "gold reasoning error: gold step 1 says athletes left 'on Saturday morning', but the question says 'the next morning' (Sunday) and gold step 3 says Sunday"
+    },
+    {
+      "source_index": 2596,
+      "reason": "malformed gold sentence ('which is his History score is = total/3 = ...')"
+    },
+    {
+      "source_index": 4104,
+      "reason": "gold grammar error ('Annie spend')"
+    },
+    {
+      "source_index": 2692,
+      "reason": "gold grammar error ('The sum of Randy's score' for 'scores')"
+    },
+    {
+      "source_index": 5100,
+      "reason": "gold step 3 justification is vague ('If he still needs to buy more lights' omits the 5)"
+    },
+    {
+      "source_index": 841,
+      "reason": "gold uses the non-standard phrase 'she remains with'"
+    },
+    {
+      "source_index": 3061,
+      "reason": "gold grammar error ('her total expenses was')"
+    },
+    {
+      "source_index": 658,
+      "reason": "question mixes currencies ($950 vs a non-dollar symbol before 920) while gold uses $ throughout"
+    },
+    {
+      "source_index": 2595,
+      "reason": "malformed gold sentence ('there are with 120 / 15 = 8 groups')"
+    },
+    {
+      "source_index": 251,
+      "reason": "question grammar error ('Each pie is having 3 pieces')"
+    },
+    {
+      "source_index": 1521,
+      "reason": "gold renames Selene as 'Selena' and has 'Two instant camera cost'"
+    },
+    {
+      "source_index": 4696,
+      "reason": "question is an imperative ending in '?' and has the awkward 'pick-up point station'"
+    },
+    {
+      "source_index": 4694,
+      "reason": "gold reasoning error: the question says 3/4 of the SECOND week's shed leaves, but gold takes 3/4 of the remaining 360"
+    },
+    {
+      "source_index": 5390,
+      "reason": "question typo 'A milk teas shop'"
+    },
+    {
+      "source_index": 3047,
+      "reason": "gold grammar error ('the earnings from the play is')"
+    },
+    {
+      "source_index": 632,
+      "reason": "gold switches from 'watermelon seeds' to 'melon seeds'"
+    },
+    {
+      "source_index": 5283,
+      "reason": "malformed gold sentence ('Since he paid half his price was 34/2')"
+    },
+    {
+      "source_index": 2458,
+      "reason": "gold step 4 has a grammar error ('his total expenses last month was')"
+    },
+    {
+      "source_index": 3208,
+      "reason": "gold typo 'Saah' (for Sarah)"
+    },
+    {
+      "source_index": 2520,
+      "reason": "garbled question ('equally divided among the 6000 war supplies they have in total')"
+    },
+    {
+      "source_index": 1274,
+      "reason": "question has a mid-sentence capital ('ate Pizza'), cf. train[1245]"
+    },
+    {
+      "source_index": 4838,
+      "reason": "gold reasoning error: question says SIX sections, gold multiplies by 4 ('the four sections')"
+    },
+    {
+      "source_index": 2847,
+      "reason": "gold reasons with fractional mushrooms (38 / 4 = 9.5); suspicious gold reasoning"
+    },
+    {
+      "source_index": 671,
+      "reason": "gold formatting typo ('240-144 =96')"
+    },
+    {
+      "source_index": 59,
+      "reason": "gold steps 1-4 are verbless fragments ('15 coins collected in hour one')"
+    },
+    {
+      "source_index": 4627,
+      "reason": "gold uses the non-standard phrase 'The total she remains with'"
+    },
+    {
+      "source_index": 6367,
+      "reason": "question typo ('How Much money')"
+    },
+    {
+      "source_index": 4824,
+      "reason": "suspicious gold reasoning: treats running/playing/barking dogs as disjoint groups without the question saying so"
+    },
+    {
+      "source_index": 1178,
+      "reason": "question/gold wording ('3/4 times as many', '96* $100')"
+    },
+    {
+      "source_index": 3154,
+      "reason": "gold step 3 is malformed ('She needs to buy this many cans of whipped cream 29 x 2')"
+    },
+    {
+      "source_index": 4501,
+      "reason": "inconsistent capitalisation of school names ('Roosevelt High school' / 'Roosevelt high school')"
+    },
+    {
+      "source_index": 3297,
+      "reason": "question typo ('Tom's puts 30 miles')"
+    },
+    {
+      "source_index": 2150,
+      "reason": "gold formatting typo ('4 x 7= 28'); question ambiguous ('son and daughter eat 2 eggs')"
+    },
+    {
+      "source_index": 2837,
+      "reason": "gold formatting ('Leila should pay: 22 * 6', '36 +132')"
+    },
+    {
+      "source_index": 6093,
+      "reason": "problem statement is ambiguous (yesterday/today/'5 more than the previous day'); gold interpretation is debatable"
+    },
+    {
+      "source_index": 4009,
+      "reason": "gold says 'to his friends' where the question has one friend"
+    },
+    {
+      "source_index": 1245,
+      "reason": "question has a mid-sentence capital ('today, How many')"
+    },
+    {
+      "source_index": 4401,
+      "reason": "apostrophe plurals in question and gold ('Adidas's', 'Nike's', 'Reebok's')"
+    },
+    {
+      "source_index": 4197,
+      "reason": "gold grammar error ('Her total earnings ... is'), cf. train[3047]"
+    },
+    {
+      "source_index": 6382,
+      "reason": "question grammar error ('comprising of 4 groups')"
+    },
+    {
+      "source_index": 7046,
+      "reason": "question opens with a comma splice ('The rainy season is here, Jan collected'), cf. train[7261]"
+    },
+    {
+      "source_index": 5763,
+      "reason": "gold grammar error ('their Saturday earnings was')"
+    },
+    {
+      "source_index": 4648,
+      "reason": "gold step 3 has a grammar error ('his monthly expenses is')"
+    },
+    {
+      "source_index": 457,
+      "reason": "gold formatting typo ('108 +54 = 162')"
+    },
+    {
+      "source_index": 311,
+      "reason": "question wording error ('16 people climb' for 'board')"
+    },
+    {
+      "source_index": 2660,
+      "reason": "gold step 3 has the typo 'Ha had' (excluded by user decision)"
+    },
+    {
+      "source_index": 751,
+      "reason": "gold says 'Tuesday to Wednesday' where the question says Tuesday to Thursday"
+    },
+    {
+      "source_index": 2631,
+      "reason": "gold grammar error ('for making pair of pants')"
+    },
+    {
+      "source_index": 3100,
+      "reason": "gold muddles apples and blueberries ('135 apples which are 3 times as many blueberries')"
+    },
+    {
+      "source_index": 4870,
+      "reason": "question wording is unidiomatic ('the concert organizer made his accounts')"
+    },
+    {
+      "source_index": 1375,
+      "reason": "gold step 5 is garbled ('Therefore, the earn the farmer')"
+    },
+    {
+      "source_index": 5733,
+      "reason": "question contains the typo 'multiples the number' (for 'multiplies')"
+    },
+    {
+      "source_index": 5284,
+      "reason": "question contains a sentence fragment ('If Kelly sells these eggs for $5 a dozen.'), cf. train[161]"
+    },
+    {
+      "source_index": 6141,
+      "reason": "gold has the typo 'Mallory gammy's house'"
+    },
+    {
+      "source_index": 4018,
+      "reason": "gold formatting typo ('18 x $14= $252')"
+    },
+    {
+      "source_index": 4571,
+      "reason": "gold names the wrong animal ('then Rover has 18*5=90 spots' should be Granger)"
+    },
+    {
+      "source_index": 1564,
+      "reason": "question contains a sentence fragment ('If she watches 138 minutes of the show on Monday.')"
+    },
+    {
+      "source_index": 3876,
+      "reason": "gold omits the article ('Meat Market sold an extra')"
+    }
+  ],
+  "pending_reviewer_checks": 0,
+  "status": "COMPLETE",
+  "final_items": 40,
+  "distinct_source_problems": 40,
+  "error_direction": {
+    "under": 20,
+    "over": 20
+  },
+  "operator_family": {
+    "-": 13,
+    "*": 6,
+    "mixed": 4,
+    "+": 13,
+    "/": 4
+  },
+  "error_step": {
+    "2": 15,
+    "3": 15,
+    "4": 9,
+    "5": 1
+  },
+  "trace_length_steps": {
+    "3": 12,
+    "4": 15,
+    "5": 10,
+    "6": 2,
+    "7": 1
+  },
+  "absolute_error": {
+    "1": 18,
+    "2": 13,
+    "10": 9
+  },
+  "relative_error_median": 0.0369,
+  "relative_error_min_max": [
+    0.0006,
+    0.1667
+  ],
+  "leakage_violations": 0,
+  "all_validation_pass": true
+}

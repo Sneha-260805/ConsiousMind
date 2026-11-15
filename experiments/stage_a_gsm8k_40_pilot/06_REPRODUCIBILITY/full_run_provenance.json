@@ -1,0 +1,46 @@
+{
+  "model": "Qwen/Qwen3-4B",
+  "requested_revision": "3101254bbe4169895668a0e7653c3fd1f313576e",
+  "hub_resolved_revision": "3101254bbe4169895668a0e7653c3fd1f313576e",
+  "transformers_commit_hash": null,
+  "snapshot_path": "/root/.cache/huggingface/hub/models--Qwen--Qwen3-4B/snapshots/3101254bbe4169895668a0e7653c3fd1f313576e",
+  "dtype": "torch.float16",
+  "device": "cuda:0",
+  "gpu": "Tesla T4",
+  "decoding": "greedy (do_sample=False, num_beams=1)",
+  "temperature": 0,
+  "enable_thinking": false,
+  "max_new_tokens": 768,
+  "batch_size": 1,
+  "request_protocol": "stateless; one user message; no system message; no history",
+  "config_sha256": "3118f86d5e0a1fae7228c7db086b2e2ba15210c23d67ee3dc0560ab01c98a77f",
+  "execution_order_sha256": "2b6e7e0f0895b002976358df618cba33c8bc6dbf38a31f0c9567dc684466ec91",
+  "frozen_input_sha256": {
+    "data/pilot/m3_pilot_40.json": "2f6ba3f034a3aeb7c57cd5245b59d692aa3b7d95762b5d6d1c02e9b143eec190",
+    "data/pilot/m3_pilot_40_conditions.jsonl": "b664f96d4a531a95de965ab11f52ed4b5fd183ddde99c700960a1f6dc2b426a1",
+    "data/pilot/m3_pilot_40_far_false_sensitivity.jsonl": "d7327d59dff90b2a9df83fb9c3ac4872ad83d82c3a6271888fa4eb846ef2ca16",
+    "outputs/pilot_execution_order.json": "1678c95a21655671b1a8445f63ef5f19798255533eab58cf5b8d85d8205d384b"
+  },
+  "input_sha256": {
+    "m3_pilot_40.json": "2f6ba3f034a3aeb7c57cd5245b59d692aa3b7d95762b5d6d1c02e9b143eec190",
+    "m3_pilot_40_conditions.jsonl": "b664f96d4a531a95de965ab11f52ed4b5fd183ddde99c700960a1f6dc2b426a1",
+    "m3_pilot_40_far_false_sensitivity.jsonl": "d7327d59dff90b2a9df83fb9c3ac4872ad83d82c3a6271888fa4eb846ef2ca16"
+  },
+  "bundle_version": 5,
+  "bundle_files_sha256": {
+    "data/pilot/m3_pilot_40.json": "2f6ba3f034a3aeb7c57cd5245b59d692aa3b7d95762b5d6d1c02e9b143eec190",
+    "data/pilot/m3_pilot_40_conditions.jsonl": "b664f96d4a531a95de965ab11f52ed4b5fd183ddde99c700960a1f6dc2b426a1",
+    "data/pilot/m3_pilot_40_far_false_sensitivity.jsonl": "d7327d59dff90b2a9df83fb9c3ac4872ad83d82c3a6271888fa4eb846ef2ca16",
+    "outputs/pilot_execution_order.json": "1678c95a21655671b1a8445f63ef5f19798255533eab58cf5b8d85d8205d384b",
+    "scripts/pilot_common.py": "8e6af1273241cb4fce0bc872038ea51dd3b49e7d65e17d6b230ed3b5be55a419",
+    "scripts/parse_answers.py": "e334615ab462a46950fa73ef9852b62d208faf4dd16d6d1e532db264cf64f5d7",
+    "scripts/score_pilot.py": "5dc88f7a824c4110f4f2cc50c6a73d2f46f29fb9d0513dba61f781f97a54f168",
+    "scripts/run_pilot.py": "ab438c144e1b1661e31b08435932fa3e11af7c3bad89ae53db7996a342659ab8",
+    "scripts/backends.py": "a1b61b54f93991e9394380ecc079ba212e0e21c9ad6ad61fa34bce0f774096f3",
+    "scripts/kaggle_runner.py": "3b0118e8458e9112b72777ce5eefde53f4e375a0489411e7bd54dd840baff932",
+    "scripts/kaggle_full_run.py": "e72a66470a541aad57f2e71eb6d5d735eacceddaa750bcdddb613bc62a430042",
+    "configs/qwen3_4b_kaggle.json": "3118f86d5e0a1fae7228c7db086b2e2ba15210c23d67ee3dc0560ab01c98a77f"
+  },
+  "kaggle_kernel_run_type": "Batch",
+  "note": "fresh-session rerun of the frozen 225-request pilot (first run's files were lost); no protocol change"
+}

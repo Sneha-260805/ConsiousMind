@@ -1,0 +1,206 @@
+pilot_id,source_split,source_index,question,answer,gold_answer
+m3p_01,gsm8k/train.jsonl,6479,"Cheyenne is a craftswoman making pots for sale. On a particular week, she made 80 clay pots. However, when she put them in the sun to dry, 2/5 of the pots cracked and could not be sold. How much money did Cheyenne make from selling the remaining items at $40 per clay pot?","When she put them in the sun to dry, 2/5*80 = <<2/5*80=32>>32 of the clay pots that Cheyenne made cracked and could not be sold.
+The number of pots that were good for sale is 80-32 = <<80-32=48>>48
+If she sold each clay pot at $40, she earned $40*48 = $<<40*48=1920>>1920 from selling the good pots.
+#### 1920",1920
+m3p_02,gsm8k/train.jsonl,183,"A small poultry farm has 300 chickens, 200 turkeys and 80 guinea fowls. A strange, incurable disease hit the farm and every day the farmer lost 20 chickens, 8 turkeys and 5 guinea fowls. After a week, how many birds will be left in the poultry?","There are 300+200+80 = <<300+200+80=580>>580 birds in total
+Every day 20+8+5 = <<20+8+5=33>>33 birds are lost
+After a week which is 7 days, 33*7 = <<33*7=231>>231 birds would be lost
+There would be 580-231 = <<580-231=349>>349 birds left in the poultry
+#### 349",349
+m3p_03,gsm8k/train.jsonl,6946,"A ship left a port and headed due west, having 400 pounds of food for the journey's supply. After one day of sailing, 2/5 of the supplies had been used by the sailors in the ship. After another two days of sailing, the sailors used 3/5 of the remaining supplies. Calculate the number of supplies remaining in the ship to last the sailors until they dock.","After one day of sailing, 2/5*400 = <<2/5*400=160>>160 pounds of food supplies had been used.
+The total number of supplies remaining in the ship is 400-160 = <<400-160=240>>240 pounds.
+After another 2 days of sailing, 3/5*240 = <<3/5*240=144>>144 pounds of food had been used.
+The total number of supplies remaining in the ship is now 240-144 = <<240-144=96>>96 pounds.
+#### 96",96
+m3p_04,gsm8k/train.jsonl,287,"Bran's tuition fee is $90. He does a part-time job that pays him $15 per month and he has a scholarship that takes care of 30% of his tuition fee. If he needs to pay his tuition fee within 3 months, how much does Bran still need to pay?","Bran's scholarship pays $90 x 0.30 = $<<90*0.30=27>>27 to his tuition fee.
+So, the total amount he still needs to pay is $90 - $27 = $<<90-27=63>>63.
+And Bran will be able to earn $15 x 3 = $<<15*3=45>>45 after working for 3 months.
+Therefore, the total amount he still needs to pay is $63 - $45 = $<<63-45=18>>18.
+#### 18",18
+m3p_05,gsm8k/train.jsonl,7410,"Boris has 24 books and he donates a fourth of his books to the library. Cameron has 30 books and he donates a third of his books to the library. After donating their books, how many books in total do Boris and Cameron have together?","Boris donates 24 / 4 = <<24/4=6>>6 books
+Then Boris has a total of 24 - 6 = <<24-6=18>>18 books
+Cameron donates 30 / 3 = <<30/3=10>>10 books
+Then Cameron has a total of 30 - 10 = <<30-10=20>>20 books
+Altogether, Boris and Cameron have 18 + 20 = <<18+20=38>>38 books
+#### 38",38
+m3p_06,gsm8k/train.jsonl,6327,"Out of 480 employees, 10% got a salary increase while 20% got a travel allowance increase. How many employees did not get any increase?","480 x 10/100 = <<480*10/100=48>>48 employees got a salary increase.
+480 x 20/100 = <<480*20/100=96>>96 employees got a travel allowance increase.
+So a total of 48 + 96 = <<48+96=144>>144 employees got an increase.
+Therefore, 480 - 144 = <<480-144=336>>336 employees did not get any increase.
+#### 336",336
+m3p_07,gsm8k/train.jsonl,7299,"In the fall, a tree drops a tenth of its initial quantity of leaves each day over the course of four days, then abruptly drops the rest on the fifth day. If it had 340 leaves before they started to fall, how many leaves does it drop on the fifth day?","The tree drops 340 / 10 = <<340/10=34>>34 leaves for each of the four days.
+Thus, it drops 34 * 4 = <<34*4=136>>136 leaves over the first four days.
+Therefore, it drops 340 - 136 = <<340-136=204>>204 leaves on the fifth day.
+#### 204",204
+m3p_08,gsm8k/train.jsonl,5481,"Calvin and Phoebe each have 8 more pastries than Frank but only five less than Grace. If Grace has 30 pastries, calculate the total number of pastries that the four have?","If Grace has 30 pastries, then both Phoebe and Calvin each have 30-5 = <<30-5=25>>25 pastries.
+The total number of pastries that Phoebe and Calvin have is 25+25 = <<25+25=50>>50
+Together, Phoebe, Calvin, and Grace have 50+30 = <<50+30=80>>80 pastries.
+Since Calvin and Phoebe each have 8 more pastries than Frank, then Frank has 25-8 = <<25-8=17>>17 pastries.
+Altogether, the four have 17+80 = <<17+80=97>>97 pastries.
+#### 97",97
+m3p_09,gsm8k/train.jsonl,6981,Boris has 100 pieces of Halloween candy. His daughter eats 8 pieces of candy. He separates the remaining pieces of candy into equal portions into 4 different bowls. Then he takes away 3 pieces of candy from each bowl to keep for himself. How many pieces of candy are in one bowl?,"After his daughter eats some candy, Boris has 100 - 8 = <<100-8=92>>92 pieces of candy
+In one bowl, there are 92 / 4 = <<92/4=23>>23 pieces of candy
+After Boris takes some candy for himself, there are 23 - 3 = <<23-3=20>>20 pieces of candy in one bowl
+#### 20",20
+m3p_10,gsm8k/train.jsonl,2282,"Marcus wants to buy a new pair of shoes. He decided to pay not more than $130 for them. He found a pair for $120, on which he got a discount of 30%. How much money will he manage to save by buying these shoes and not spending the assumed maximum amount?","The discount on the shoes Marcus found is 120 * 30/100 = $<<120*30/100=36>>36.
+That means he only had to pay 120 - 36 = $<<120-36=84>>84.
+So Marcus was able to save 130 - 84 = $<<130-84=46>>46.
+#### 46",46
+m3p_11,gsm8k/train.jsonl,2483,Josie received $50 as a gift. She plans to buy two cassette tapes that cost $9 each and a headphone set that costs $25. How much money will she have left?,"The cassette tapes will cost 2 × 9 = $<<2*9=18>>18.
+She spends 18 + 25 = $<<18+25=43>>43 in total.
+Josie will have 50 - 43 = $<<50-43=7>>7 left.
+#### 7",7
+m3p_12,gsm8k/train.jsonl,3567,"On the night of the dance, 400 students show up to the party. 70% of the students who showed up were invited. If 40% of those invited to the party had their invitation revoked and were not allowed into the party, how many invited students attended the party?","On the night of the dance 70/100*400 = <<70/100*400=280>>280 students who showed up to the party were invited.
+If 40% of those invited to the party had their invitation revoked, there were 40/100*280 = <<40/100*280=112>>112 students who showed up and had their invitation revoked.
+The number of invited students who attended the party is 280-112 = <<280-112=168>>168
+#### 168",168
+m3p_13,gsm8k/train.jsonl,7365,"Frank and Bill have $42 and they bought 3 large pizzas with the money. Each pizza cost $11 and Frank paid for all three pizzas. Frank gave the rest of his money to Bill. If Bill had $30 already, how much money does Bill have now?","Frank spent 11*3 = <<11*3=33>>33 dollars on pizza.
+Frank gives 42-33 = <<42-33=9>>9 dollars to Bill.
+Bill now has 30+9 = <<30+9=39>>39 dollars.
+#### 39",39
+m3p_14,gsm8k/train.jsonl,6888,"A supermarket has pints of strawberries on sale. They sold 54 pints and made $216, which was $108 less than they would have made selling the same number of pints without the sale. How many more dollars does a pint of strawberries cost when not on sale?","On sale, a pint of strawberries costs 216 / 54 = $<<216/54=4>>4.
+The supermarket would have made 216 + 108 = $<<216+108=324>>324 if the strawberries were not on sale.
+Thus, a pint of strawberries not on sale costs 324 / 54 = $<<324/54=6>>6.
+Hence, a pint of strawberries costs 6 - 4 = $<<6-4=2>>2 more when not on sale.
+#### 2",2
+m3p_15,gsm8k/train.jsonl,6887,"Amber buys 7 guppies for her pond.  Several days later, she sees 3 dozen baby guppies swimming around.  Two days after that, she sees 9 more baby guppies.  How many guppies does she have now?","3 dozen baby guppies make 3 x 12 = <<3*12=36>>36 baby guppies.
+There are a total of 36 + 9 = <<36+9=45>>45 baby guppies.
+Adding the adult guppies, there are 7 + 45 = <<7+45=52>>52 guppies.
+#### 52",52
+m3p_16,gsm8k/train.jsonl,134,"A couple with two children, ages 6 and 10 years old, decided to go to an amusement park. The regular ticket costs $109, but children below 12 years old have a $5 discount. If they gave the cashier $500, how much change will they receive?","The ticket costs 109 - 5 = $<<109-5=104>>104 for each child.
+So the ticket cost of the two children is 104 x 2 = $<<104*2=208>>208.
+The couple needs to pay the regular price, so it's 109 x 2 = $<<109*2=218>>218.
+Thus, the family needs to pay a total of 208 + 218 = $<<208+218=426>>426.
+Therefore, their change is 500 - 426 = $<<500-426=74>>74.
+#### 74",74
+m3p_17,gsm8k/train.jsonl,1836,"Caleb, Andy and Billy went on a picnic with their father. Billy took 6 candies with him, Caleb took 11 and Andy left with 9. On the way, their father bought a packet of 36 candies. He gave 8 candies to Billy, 11 to Caleb and the rest to Andy. How many more candies does Andy now have than Caleb?","Billy took some candies and got more from his father for a total of 6+8 = <<6+8=14>>14 candies
+Caleb has a total of 11+11 = <<11+11=22>>22 candies
+Their father gave out 8+11 = <<8+11=19>>19 candies from a pack of 36
+He gave the rest which is 36-19 = <<36-19=17>>17 candies to Andy
+Andy has a total of 9+17 = <<9+17=26>>26 candies
+Andy has 26-22 = <<26-22=4>>4 more candies than Caleb
+#### 4",4
+m3p_18,gsm8k/train.jsonl,3680,"Tirzah has a lot of purses and handbags; in total she has 26 purses and 24 handbags. Half the purses and 1/4 the handbags are fake. If the rest are authentic, how many purses and handbags in total are genuine?","26/2=<<26/2=13>>13 of the purses are genuine.
+24/4=<<24/4=6>>6 of the handbags are fake.
+24-6=<<24-6=18>>18 of the handbags are genuine.
+There are 13+18=<<13+18=31>>31 genuine purses and handbags
+#### 31",31
+m3p_19,gsm8k/train.jsonl,1544,"Ben will receive a bonus of $1496. He chooses to allocate this amount as follows: 1/22 for the kitchen, 1/4 for holidays and 1/8 for Christmas gifts for his 3 children. How much money will he still have left after these expenses?","Ben's spending for the kitchen is $1496 x 1/22 = $<<1496*1/22=68>>68.
+Ben's spending for holidays is $1496 x 1/4 = $<<1496*1/4=374>>374.
+Ben's spending for children's gifts is $1496 x 1/8 = $<<1496*1/8=187>>187.
+The total amount spent is $68 + $374 + $187 = $<<68+374+187=629>>629.
+So, Ben still has $1496 - $629 = $<<1496-629=867>>867 left.
+#### 867",867
+m3p_20,gsm8k/train.jsonl,5640,"Phantom's mom gave him $50 to buy printer-inks. At the store, he bought two black printer inks which cost $11 each, three red printer inks which cost $15 each, and two yellow printer inks which cost $13 each. Phantom found out that his money is not enough to buy all the printer inks. How much more money should he ask his mom to be able to buy the printer inks?","Black printer inks will cost him 2 x $11 = $<<2*11=22>>22.
+Red printer inks will cost him 3 x $15 = $<<3*15=45>>45.
+And yellow printer inks will cost him 2 x $13 = $<<2*13=26>>26.
+The total amount he has to pay for the printer inks is $22 + $45 + $26 = $<<22+45+26=93>>93
+Therefore, Phantom has to ask $93 - $50 = $<<93-50=43>>43 more from his mom to be able to buy the printer inks.
+#### 43",43
+m3p_21,gsm8k/train.jsonl,1780,"Faith is getting paid $13.50 per hour. She normally works 8 hours a day, 5 days a week, plus 2 hours of overtime per day. How much will she earn by the end of the week?","Faith earns $13.50 x 8 = $<<13.5*8=108>>108 per day.
+Since she works 5 days a week, she earns 5 x $108 = $<<5*108=540>>540 per week.
+She gets an additional 2 x $13.50 = $<<2*13.5=27>>27 per day for the overtime pay.
+She earns a total of $27 x 5 = $<<27*5=135>>135 additional pay for her weekly overtime.
+Therefore, Faith earns $540 + $135 = $<<540+135=675>>675 per week.
+#### 675",675
+m3p_22,gsm8k/train.jsonl,3706,"Bobby received his weekly paycheck today.  Although his salary is $450 per week, his actual paycheck is reduced in size because there are some taxes, insurance payments, and fees removed from his pay before his employer writes the check.  If the government removes 1/3 in federal taxes and 8% in state taxes, the health insurance removes $50 per week, the life insurance removes $20 per week, and the city charges him a fee of $10 per week for parking, then what is the final amount left in Bobby's paycheck, in dollars?","The federal government takes out 1/3*450=<<1/3*450=150>>150 dollars.
+The state takes out 0.08*450=<<0.08*450=36>>36 dollars.
+Then the final amount remaining after all the deductions are removed is 450-150-36-50-20-10=<<450-150-36-50-20-10=184>>184 dollars
+#### 184",184
+m3p_23,gsm8k/train.jsonl,6730,"A cook had 300 carrots in a bucket he was using to cook meals for a restaurant. Before lunch, he had used 2/5 of the carrots. By the end of the day, he had chopped and used 3/5 of the remaining carrots. How many carrots were not used that day?","Before lunch, the cook had used 2/5*300 = <<2/5*300=120>>120 carrots.
+The number of remaining carrots after the cook used 2/5 of them is 300-120 = <<300-120=180>>180.
+The cook had used 3/5*180 = <<3/5*180=108>>108 of the remaining carrots by the end of the day.
+The number of carrots that the cook did not use that day is 180-108 = <<180-108=72>>72.
+#### 72",72
+m3p_24,gsm8k/train.jsonl,3465,Wyatt's mother gave him $74 to go to the store. Wyatt bought 5 loaves of bread and 4 cartons of orange juice. Each loaf of bread cost $5 and each carton of orange juice cost $2. How much money does Wyatt have left?,"The loaves of bread cost 5 * $5 = $<<5*5=25>>25.
+The orange juice cost 4 * $2 = $<<4*2=8>>8.
+Wyatt’s total cost is $25 + $8 = $<<25+8=33>>33.
+Wyatt is left with the initial $74 - $33 = $<<74-33=41>>41.
+#### 41",41
+m3p_25,gsm8k/train.jsonl,2454,"In a classroom of 81 students, two-thirds are wearing striped shirts while the others are wearing checkered shirts. If there are 19 more students wearing shorts than checkered shirts, how many more students are wearing striped shirts than shorts?","81/3 = <<81/3=27>>27 students are wearing checkered shirts.
+27 x 2 = <<27*2=54>>54 students are wearing striped shirts.
+27 + 19 = <<27+19=46>>46 students are wearing shorts.
+54 - 46 = <<54-46=8>>8 more students are wearing striped shirts than shorts.
+#### 8",8
+m3p_26,gsm8k/train.jsonl,2976,"Abigail built 10 fences. Each fence took her 30 minutes to build. If she builds fences for the next 8 hours, how many fences would she have built in total?","8*60 = <<8*60=480>>480 minutes are in the next 8 hours.
+Abigail builds 480/30 = <<480/30=16>>16 fences.
+Abigail will have built 10+16 = <<10+16=26>>26 fences in total.
+#### 26",26
+m3p_27,gsm8k/train.jsonl,366,"Keaton climbed a 30 feet ladder twenty times while working at the construction site. Reece, also working at the same site, climbed a ladder 4 feet shorter than Keaton's ladder 15 times. What's the total length of the ladders that both workers climbed in inches?","If Keaton climbed his ladder twenty times, he covered a length of 30*20 = <<30*20=600>>600 feet.
+Reece's ladder, 4 feet shorter than Keaton's ladder, was 30-4 = <<30-4=26>>26 feet long.
+If Reece climbed the ladder 15 times, he covered a length of 15*26 = <<15*26=390>>390 feet.
+Keaton and Reece's total length covered while climbing the ladders is 390+600 = <<390+600=990>>990 feet.
+Since one foot is equal to 12 inches, the total length they climbed the ladders in inches is 12*990 = <<12*990=11880>>11880 inches.
+#### 11880",11880
+m3p_28,gsm8k/train.jsonl,4609,Lizette scored 92 on her third quiz giving her an average of 94. What is Lizette's average in her first two quizzes?,"If Lizette's average on the 3 quizzes is 94, then the sum of her scores in the 3 quizzes is 94 x 3 = <<94*3=282>>282.
+This means that the sum of her scores in the first 2 quizzes is 282 - 92 = <<282-92=190>>190.
+Thus, her average for the first 2 quizzes is 190/2 = <<190/2=95>>95.
+#### 95",95
+m3p_29,gsm8k/train.jsonl,6942,Mark has kangaroos and goats.  Kangaroos have two legs and goats have four legs.  If he has 23 kangaroos and three times as many goats as kangaroos what is the total number of legs of all his animals?,"His kangaroos have a total of 23*2=<<23*2=46>>46 legs
+He has 23*3=<<23*3=69>>69 goats
+The goats have 69*4=<<69*4=276>>276 legs
+So in total his animals have 276+46=<<276+46=322>>322 legs
+#### 322",322
+m3p_30,gsm8k/train.jsonl,1267,"On Tuesday, Liza had $800 in her checking account. On Wednesday, she paid her rent, $450. On Thursday, she deposited her $1500 paycheck. On Friday, she paid her electricity and internet bills which were $117 and $100, respectively. Then on Saturday, she paid her phone bill, $70. How much money is left in Liza's account?","On Wednesday, Liza had $800 - $450 = $<<800-450=350>>350 left in her account.
+After depositing on Thursday, she had $350 + $1500 = $<<350+1500=1850>>1850 in her account.
+On Friday, she paid a total of $117 + $100 = $<<117+100=217>>217 for her electricity and internet bills.
+So, $1850 - $217 = $<<1850-217=1633>>1633 was left on her account on Friday.
+After paying her phone bill, Liza has $1633 - $70 = $<<1633-70=1563>>1563 left in her account.
+#### 1563",1563
+m3p_31,gsm8k/train.jsonl,2521,Janet has 9 cards more than Brenda. Mara has twice as many cards as Janet. How many cards do they have in all if Mara has 40 cards less than 150?,"Mara has 150 - 40 = <<150-40=110>>110 cards.
+Janet has 110/2 = <<110/2=55>>55 cards since Mara has twice as many as Janet.
+Brenda has 55 - 9 = <<55-9=46>>46 cards since Janet has 9 cards more than Brenda.
+Therefore, they all have 110 + 55 + 46 = <<110+55+46=211>>211 cards.
+#### 211",211
+m3p_32,gsm8k/train.jsonl,5705,"Kiki likes to spend her money on hats and scarves. When she buys twice as many hats as scarves, she spends 60% of her money on hats and the rest on scarves. If she currently has $90, how many scarves will she buy if they are sold at $2 each?","Kiki spends 60/100*$90=$<<60/100*90=54>>54 of her money on hats.
+The amount she spends on buying scarves is $90-$54=$<<90-54=36>>36
+If each scarf is sold at $2, Kiki will buy $36/$2=<<36/2=18>>18 scarves.
+#### 18",18
+m3p_33,gsm8k/train.jsonl,3380,"A bag was originally priced at $500. A week after, the price was reduced by 5%. Since the bag was still not sold, the selling price was reduced by 4% a month after. How much was the total reduction from the original selling price?","The original price of the bag was reduced by $500 x 5/100 = $<<500*5/100=25>>25.
+So its selling price after a week was $500 - $25 = $<<500-25=475>>475.
+The price of the bag was again reduced by $475 x 4/100 = $<<475*4/100=19>>19.
+So, its selling price now is $475 - $19 = $<<475-19=456>>456.
+Therefore, the total reduction from the selling price is $500 - $456 = $<<500-456=44>>44.
+#### 44",44
+m3p_34,gsm8k/train.jsonl,6939,John watches a TV show and they announce they are going to do 1 more season.  Each season is 22 episodes except for the last season which is 4 episodes longer.  There were 9 seasons before the announcement.  If each episode is .5 hours how long will it take to watch them all after the last season finishes?,"There are currently 9*22=<<9*22=198>>198 episodes out
+The new season will have 22+4=<<22+4=26>>26 episodes
+So the total number of episodes is 198+26=<<198+26=224>>224 episodes
+So it will take 224*.5=<<224*.5=112>>112 hours to watch them all
+#### 112",112
+m3p_35,gsm8k/train.jsonl,1644,John has taken 10 pictures every day for the past 3 years.  He saves them in raw format so each memory card can store 50 images.  Each memory card costs $60.  How much does he spend on memory cards?,"He takes pictures for 3*365=<<3*365=1095>>1095 days
+So he takes 10*1095=<<10*1095=10950>>10,950 pictures
+That means he needs 10950/50=<<10950/50=219>>219 memory cards
+So he spends 219*60=$<<219*60=13140>>13140 on memory cards
+#### 13140",13140
+m3p_36,gsm8k/train.jsonl,4492,Jane bought 2 skirts for $13 each. She also bought 3 blouses for $6 each. She paid the cashier $100. How much change did she receive?,"The 2 skirts cost $13 x 2 = $<<13*2=26>>26.
+The 3 blouses cost $6 x 3 = $<<6*3=18>>18.
+The total cost for 2 skirts and 3 blouses is $26 + $18 = $<<26+18=44>>44.
+Jane received $100 - $44 = $<<100-44=56>>56 change.
+#### 56",56
+m3p_37,gsm8k/train.jsonl,2120,"In the first round of bowling, Patrick knocked down a total of 70 pins and Richard knocked down 15 more pins than Patrick. In the second round, Patrick knocked down twice as many pins as Richard in the first round and Richard knocked down 3 less than Patrick. How many more pins in total did Richard knock down than Patrick?","In the first round, Richard knocked down 70 + 15 = <<70+15=85>>85 pins.
+In the second round, Patrick knocked down 85 x 2 = <<85*2=170>>170 pins.
+In the second round, Richard knocked down 170 - 3 = <<170-3=167>>167 pins.
+In total, Patrick knocked down 70 + 170 = <<70+170=240>>240 pins
+In total, Richard knocked down 85 + 167 = <<85+167=252>>252 pins
+Richard knocked down 252 - 240 = <<252-240=12>>12 pins more than Patrick.
+#### 12",12
+m3p_38,gsm8k/train.jsonl,2764,"In Fred the Farmer's barn, there were 100 horses, 29 sheep, and 9 chickens. Brian bought half of the animals and sold them at the market. Jeremy then gifted Fred an additional 37 goats. If exactly half of the animals in the barn are male animals, how many male animals are there in the barn?","Fred's barn started with 100 + 29 + 9 = <<100+29+9=138>>138 animals.
+Brian bought half of these, so there were 138 / 2 = <<138/2=69>>69 remaining.
+After Jeremy gifted Fred 37 goats, there were 69 + 37 = <<69+37=106>>106 animals in the barn.
+So, 106 / 2 = <<106/2=53>>53 of these animals are male.
+#### 53",53
+m3p_39,gsm8k/train.jsonl,4932,"A movie theater charges $5 for matinee tickets, $7 for evening tickets, and $10 for opening night tickets. A bucket of popcorn costs $10. On Friday, they had 32 matinee customers, 40 evening customers, and 58 customers for an opening night showing of a movie. If half the customers bought popcorn, how much money in dollars did the theater make on Friday night?","The movie theater made 5 * 32 = $<<5*32=160>>160 in matinee tickets.
+It made 7 * 40 = $<<7*40=280>>280 in evening tickets.
+It made 10 * 58 = $<<10*58=580>>580 in opening night tickets.
+There were 32 + 40 + 58 = <<32+40+58=130>>130 customers.
+Half of the customers bought popcorn, so 130 / 2 = <<130/2=65>>65 bought popcorn.
+Thus, the theater made 10 * 65 = $<<10*65=650>>650 from popcorn.
+Therefore, in all, the theater made 160 + 280 + 580 + 650 = $<<160+280+580+650=1670>>1670 on Friday night.
+#### 1670",1670
+m3p_40,gsm8k/train.jsonl,4149,"A parking garage of a mall is four stories tall. On the first level, there are 90 parking spaces. The second level has 8 more parking spaces than on the first level, and there are 12 more available parking spaces on the third level than on the second level. The fourth level has 9 fewer parking spaces than the third level. If 100 cars are already parked, how many cars can be accommodated by the parking garage?","The second level has 90 + 8 = <<90+8=98>>98 parking spaces.
+The third level has 98 + 12 = <<98+12=110>>110 parking spaces.
+The fourth level has 110 - 9 = <<110-9=101>>101 parking spaces.
+So the parking garage can accommodate 90 + 98 + 110 + 101 = <<90+98+110+101=399>>399 cars.
+Thus, the parking garage can still accommodate 399 - 100 = <<399-100=299>>299 cars.
+#### 299",299
