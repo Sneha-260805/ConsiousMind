@@ -1,0 +1,131 @@
+{
+  "TEST_ONLY": false,
+  "banner": "REAL MODEL RESULTS",
+  "oracle_status": "ORACLE STATUS: Stage B uses two oracle components - (1) the gold answer decides whether Stage 1 failed and therefore whether escalation is triggered; (2) L_true/N_true use the expert-annotated first-error step. This is NOT a deployable system: it tests whether diagnostic escalation has potential value IF failure detection and localisation were available.",
+  "limitations": "LIMITATION (possible training contamination): items come from the GSM8K-test and MATH-test source problems, which Qwen3-4B may have seen in training. Absolute accuracy/repair rates are NOT uncontaminated capability estimates; the quantities of interest are paired within-item differences between feedback conditions.",
+  "n_pool": 265,
+  "n_stage1_failures": 76,
+  "n_review_excluded": 15,
+  "n_primary_stage2": 61,
+  "n_l_false": 61,
+  "n_analysis_population": 250,
+  "stage1_repair_rate": 0.7132,
+  "failure_gate": {
+    "min_stage1_failures": 50,
+    "n_stage1_failures": 76,
+    "n_stage1_items": 265,
+    "stage1_failure_rate": 0.2868,
+    "passed": true
+  },
+  "annotation_review": {
+    "n_reviewed": 76,
+    "n_primary_stage2": 61,
+    "n_excluded_first_error": 15,
+    "n_l_false_eligible": 61,
+    "first_error_verdicts": {
+      "CONFIRM": 61,
+      "DISAGREE": 15,
+      "UNCLEAR": 0
+    },
+    "false_step_verdicts": {
+      "CORRECT": 0,
+      "NOT_CORRECT": 0,
+      "UNCLEAR": 0,
+      "PASS1_IMPLIED": 61,
+      "NOT_REVIEWED": 15
+    },
+    "min_primary_items": 50,
+    "primary_gate_passed": true
+  },
+  "rescue": {
+    "VV": 0.0656,
+    "N_true": 0.1148,
+    "L_true": 0.1639,
+    "L_false": 0.1311
+  },
+  "final_repair": {
+    "V (one-shot)": 0.756,
+    "V -> V": 0.772,
+    "V -> N_true": 0.784,
+    "V -> L_true": 0.796,
+    "V -> L_false": 0.788
+  },
+  "primary": {
+    "comparison": "V->L_true vs V->VV",
+    "A": "L_true",
+    "B": "VV",
+    "n_paired": 61,
+    "both_rescue": 3,
+    "A_only_rescues": 7,
+    "B_only_rescues": 1,
+    "neither_rescues": 50,
+    "rescue_A": 0.1639,
+    "rescue_B": 0.0656,
+    "delta_rescue": 0.0984,
+    "delta_rescue_ci_low": 0.0164,
+    "delta_rescue_ci_high": 0.1803,
+    "ci_half_width": 0.082,
+    "mcnemar_exact_p": 0.0703,
+    "n_population": 250,
+    "delta_final_repair": 0.024,
+    "delta_final_ci_low": 0.004,
+    "delta_final_ci_high": 0.044,
+    "bootstrap": "10000 paired resamples, seed 4242, percentile CI",
+    "scope": "all",
+    "role": "PRIMARY"
+  },
+  "diagnostic_content_contrast": {
+    "comparison": "V->L_true vs V->L_false",
+    "A": "L_true",
+    "B": "L_false",
+    "n_paired": 61,
+    "both_rescue": 6,
+    "A_only_rescues": 4,
+    "B_only_rescues": 2,
+    "neither_rescues": 49,
+    "rescue_A": 0.1639,
+    "rescue_B": 0.1311,
+    "delta_rescue": 0.0328,
+    "delta_rescue_ci_low": -0.0492,
+    "delta_rescue_ci_high": 0.1148,
+    "ci_half_width": 0.082,
+    "mcnemar_exact_p": 0.6875,
+    "n_population": 250,
+    "delta_final_repair": 0.008,
+    "delta_final_ci_low": -0.012,
+    "delta_final_ci_high": 0.028,
+    "bootstrap": "10000 paired resamples, seed 4243, percentile CI",
+    "scope": "all",
+    "role": "DIAGNOSTIC-CONTENT CONTRAST (separate; not in the label)"
+  },
+  "l_false_validity_basis": {
+    "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)": 61
+  },
+  "pass2_waiver": "A separate Pass-2 human recheck was waived for feasibility (amendment A6) because it would duplicate the same reviewer's earlier Pass-1 judgment: a Pass-1 CONFIRM of Step k as the earliest substantive error implies that every preceding step, including the false-location candidate f = k-1, contains no earlier substantive error.",
+  "power_note": null,
+  "interpretation": {
+    "label": "INCONCLUSIVE",
+    "delta_rescue": 0.0984,
+    "ci95": [
+      0.0164,
+      0.1803
+    ],
+    "meaningful_effect": 0.1,
+    "rule": {
+      "STRONG": "CI lower bound > 0 AND point estimate >= +0.10",
+      "NO_SUPPORT": "CI upper bound < +0.10",
+      "INCONCLUSIVE": "otherwise"
+    },
+    "rule_frozen": true
+  },
+  "inputs": {
+    "stage1_source_sha256": "2042a50fc0954c41b3f325ab281a84252fc6cd9f989a505839c6305b8165e85f",
+    "stage2_source_sha256": "421fbfd84306d5365da0484d3b57346357e715c92dd6966e9274ed1506d8518d",
+    "failures_sha256": "c69bf6061f41cf0ccad9a06b7cb9e7425875fa51bbae5c364d85b78a237a080e",
+    "stage2_requests_sha256": "cdd1c1bb7c13a04efe006be757ace0f015401291f1f8ddb508125518be46a19f",
+    "annotation_review_decisions_sha256": "b78abe7b126fac4246ff3cdb39d07ad754c8f33bbc2e38273c682f102bc16e04"
+  },
+  "figures": {
+    "skipped": "matplotlib not installed; tables are complete without figures"
+  }
+}

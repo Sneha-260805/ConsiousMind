@@ -1,0 +1,30 @@
+{
+  "frozen": "2026-10-14T11:09:27+00:00",
+  "TEST_ONLY": false,
+  "reviewer": "Sneha (A5 human Pass 1; A6 Pass-2 waiver)",
+  "failures_sha256": "c69bf6061f41cf0ccad9a06b7cb9e7425875fa51bbae5c364d85b78a237a080e",
+  "packet_sha256": "d01a7eecfe5b9a2341d9d27954a9fc4af10b1b0fcdc8d285646a36790bf031ec",
+  "filled_form_sha256": "11a9b7c53da097e340baace374d963babb229a8a8b01960c5443070d0fa97803",
+  "decisions_sha256": "b78abe7b126fac4246ff3cdb39d07ad754c8f33bbc2e38273c682f102bc16e04",
+  "summary": {
+    "n_reviewed": 76,
+    "n_primary_stage2": 61,
+    "n_excluded_first_error": 15,
+    "n_l_false_eligible": 61,
+    "first_error_verdicts": {
+      "CONFIRM": 61,
+      "DISAGREE": 15,
+      "UNCLEAR": 0
+    },
+    "false_step_verdicts": {
+      "CORRECT": 0,
+      "NOT_CORRECT": 0,
+      "UNCLEAR": 0,
+      "PASS1_IMPLIED": 61,
+      "NOT_REVIEWED": 15
+    },
+    "min_primary_items": 50,
+    "primary_gate_passed": true
+  },
+  "rule": "Frozen before any Stage-2 prompt; Stage-2 outcomes are never used for exclusions."
+}

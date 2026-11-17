@@ -1,0 +1,624 @@
+{
+  "pass1_lock_sha256": "bf074582214403804475ca03096b589920ce11e6e8c68501b2700bf997b10cbc",
+  "computed": "2026-10-14T11:00:31+00:00",
+  "rule": {
+    "same step as frozen k": "CONFIRM",
+    "different definite step or NO_ERROR": "DISAGREE",
+    "UNCLEAR": "UNCLEAR"
+  },
+  "no_substitution": "the reviewer's step is recorded only; it is never substituted into any Stage-2 prompt and the ProcessBench annotation is never repaired",
+  "counts": {
+    "DISAGREE": 15,
+    "CONFIRM": 61
+  },
+  "rows": [
+    {
+      "item_id": "sb_math-478",
+      "human_judgment": 1,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "DISAGREE",
+      "reviewer_first_error_step": 1
+    },
+    {
+      "item_id": "sb_gsm8k-132",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-31",
+      "human_judgment": 7,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 7,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-24",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-133",
+      "human_judgment": 3,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-22",
+      "human_judgment": 3,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-414",
+      "human_judgment": 7,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 7,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-215",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-139",
+      "human_judgment": 3,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-97",
+      "human_judgment": 4,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "DISAGREE",
+      "reviewer_first_error_step": 4
+    },
+    {
+      "item_id": "sb_math-401",
+      "human_judgment": 3,
+      "confidence": "MEDIUM",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-117",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-135",
+      "human_judgment": 3,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-69",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 8,
+      "first_error_verdict": "DISAGREE",
+      "reviewer_first_error_step": 2
+    },
+    {
+      "item_id": "sb_math-402",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 6,
+      "first_error_verdict": "DISAGREE",
+      "reviewer_first_error_step": 2
+    },
+    {
+      "item_id": "sb_gsm8k-101",
+      "human_judgment": 3,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-198",
+      "human_judgment": 5,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 5,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-370",
+      "human_judgment": 4,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 4,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-475",
+      "human_judgment": 4,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 4,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-174",
+      "human_judgment": 3,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-84",
+      "human_judgment": 4,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 4,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-61",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-114",
+      "human_judgment": 3,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-77",
+      "human_judgment": 3,
+      "confidence": "MEDIUM",
+      "annotated_first_error_step": 4,
+      "first_error_verdict": "DISAGREE",
+      "reviewer_first_error_step": 3
+    },
+    {
+      "item_id": "sb_gsm8k-83",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 4,
+      "first_error_verdict": "DISAGREE",
+      "reviewer_first_error_step": 2
+    },
+    {
+      "item_id": "sb_math-488",
+      "human_judgment": 1,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "DISAGREE",
+      "reviewer_first_error_step": 1
+    },
+    {
+      "item_id": "sb_math-361",
+      "human_judgment": 4,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 4,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-59",
+      "human_judgment": 2,
+      "confidence": "MEDIUM",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "DISAGREE",
+      "reviewer_first_error_step": 2
+    },
+    {
+      "item_id": "sb_math-188",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-474",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "DISAGREE",
+      "reviewer_first_error_step": 2
+    },
+    {
+      "item_id": "sb_gsm8k-79",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-13",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-182",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-158",
+      "human_judgment": 3,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-144",
+      "human_judgment": 2,
+      "confidence": "MEDIUM",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-143",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-127",
+      "human_judgment": 3,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-72",
+      "human_judgment": 4,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 4,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-455",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-16",
+      "human_judgment": 3,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-398",
+      "human_judgment": 6,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 7,
+      "first_error_verdict": "DISAGREE",
+      "reviewer_first_error_step": 6
+    },
+    {
+      "item_id": "sb_gsm8k-136",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-256",
+      "human_judgment": 6,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 6,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-178",
+      "human_judgment": 3,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-148",
+      "human_judgment": 4,
+      "confidence": "MEDIUM",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "DISAGREE",
+      "reviewer_first_error_step": 4
+    },
+    {
+      "item_id": "sb_gsm8k-140",
+      "human_judgment": 4,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 4,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-484",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-148",
+      "human_judgment": 3,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-183",
+      "human_judgment": 5,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 5,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-56",
+      "human_judgment": 3,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-108",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-80",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "DISAGREE",
+      "reviewer_first_error_step": 2
+    },
+    {
+      "item_id": "sb_math-355",
+      "human_judgment": 5,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 5,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-345",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-63",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-275",
+      "human_judgment": 5,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 5,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-456",
+      "human_judgment": 7,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 10,
+      "first_error_verdict": "DISAGREE",
+      "reviewer_first_error_step": 7
+    },
+    {
+      "item_id": "sb_gsm8k-165",
+      "human_judgment": 3,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-36",
+      "human_judgment": 4,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 4,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-178",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-457",
+      "human_judgment": 4,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 4,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-288",
+      "human_judgment": 3,
+      "confidence": "MEDIUM",
+      "annotated_first_error_step": 7,
+      "first_error_verdict": "DISAGREE",
+      "reviewer_first_error_step": 3
+    },
+    {
+      "item_id": "sb_gsm8k-43",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-113",
+      "human_judgment": 4,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 4,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-107",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-309",
+      "human_judgment": 4,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 4,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-470",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-48",
+      "human_judgment": 1,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "DISAGREE",
+      "reviewer_first_error_step": 1
+    },
+    {
+      "item_id": "sb_gsm8k-1",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_gsm8k-171",
+      "human_judgment": 3,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 3,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-344",
+      "human_judgment": 4,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 4,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-186",
+      "human_judgment": 5,
+      "confidence": "MEDIUM",
+      "annotated_first_error_step": 5,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-124",
+      "human_judgment": 4,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 4,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-146",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-411",
+      "human_judgment": 2,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 2,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    },
+    {
+      "item_id": "sb_math-238",
+      "human_judgment": 4,
+      "confidence": "HIGH",
+      "annotated_first_error_step": 4,
+      "first_error_verdict": "CONFIRM",
+      "reviewer_first_error_step": null
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "recorded": "2026-10-14T11:13:27+00:00",
+  "archive": "data/stage1_records/stage_b_stage1_qwen3_4b_FINAL.zip",
+  "archive_sha256": "2042a50fc0954c41b3f325ab281a84252fc6cd9f989a505839c6305b8165e85f",
+  "archive_bytes": 4377353,
+  "matches_STAGE1_FAILURES_FROZEN_source_sha256": true,
+  "archive_members": 44,
+  "archive_member_hashes_verified": true,
+  "run_id": "stage_b_stage1_qwen3_4b",
+  "stage": 1,
+  "raw_outputs_sha256": "4b189fcf51cdfcbc221adbdd0a649114447749b8bd5e6fe8b7a3195d8f7e8bfe",
+  "requests_sha256": "3382a4944c62cebc3b9e24e884d8dd75bcc7413b4fdb9ec4b4d887bcc08a7166",
+  "execution_order_sha256": "ccf175cb8155ea80da730c7cb91fa8988f79f05209104eb93ed8ed912588bddd",
+  "completed": 265,
+  "planned": 265,
+  "failures_sha256": "c69bf6061f41cf0ccad9a06b7cb9e7425875fa51bbae5c364d85b78a237a080e",
+  "responses_sha256": "0a1f13127d558b199adf04fb3a91500d2f3dbd796b5eae6becd4dbb037655902",
+  "history": "Full Stage-1 FINAL archive produced on Kaggle 2026-10-13; the local copy went missing after the failure set was frozen, and was restored by the researcher to data/stage1_records/; the restored copy is byte-identical to the archive the failure set was frozen from (sha256 above).",
+  "bundle_note": "The archive itself stays local (Stage-2 inference uses the frozen failure responses); the Kaggle bundle carries this provenance record. Stage-B analysis (scripts/11) reads the archive locally."
+}

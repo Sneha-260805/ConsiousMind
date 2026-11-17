@@ -1,0 +1,45 @@
+{
+  "stage": 1,
+  "condition": "V",
+  "n_requests": 265,
+  "request_key_format": "s1::<item_id>::V",
+  "execution_order_seed": 5101,
+  "order_sha256": "c4c7e7aacc2302ccb24440f3b4a875e00dc28c125e5cfff618363f4bae114103",
+  "items_sha256": "a673751ec2b16f4fcd9191201ffad950210ba56e05a96bbfca8341b02160ca6a",
+  "prompt_chars": {
+    "min": 677,
+    "median": 1729,
+    "max": 5186
+  },
+  "by_domain": {
+    "gsm8k": 121,
+    "math": 144
+  },
+  "audit": "passed (unique keys, identical scaffold, no forbidden terms, 1..n step numbering)",
+  "smoke_request_keys": [
+    "s1::sb_math-172::V",
+    "s1::sb_math-186::V",
+    "s1::sb_math-275::V",
+    "s1::sb_math-470::V",
+    "s1::sb_gsm8k-183::V",
+    "s1::sb_math-64::V",
+    "s1::sb_gsm8k-64::V",
+    "s1::sb_math-46::V",
+    "s1::sb_gsm8k-69::V",
+    "s1::sb_math-346::V",
+    "s1::sb_gsm8k-99::V",
+    "s1::sb_math-268::V",
+    "s1::sb_gsm8k-43::V",
+    "s1::sb_math-413::V",
+    "s1::sb_gsm8k-185::V",
+    "s1::sb_math-150::V",
+    "s1::sb_gsm8k-82::V",
+    "s1::sb_math-114::V",
+    "s1::sb_gsm8k-101::V",
+    "s1::sb_math-7::V"
+  ],
+  "artifacts_sha256": {
+    "data/processed/stage1_requests.jsonl": "3382a4944c62cebc3b9e24e884d8dd75bcc7413b4fdb9ec4b4d887bcc08a7166",
+    "data/processed/stage1_execution_order.json": "ccf175cb8155ea80da730c7cb91fa8988f79f05209104eb93ed8ed912588bddd"
+  }
+}

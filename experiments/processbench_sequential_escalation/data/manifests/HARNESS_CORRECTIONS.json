@@ -1,0 +1,84 @@
+{
+  "note": "Code / test-harness corrections. NOT scientific protocol amendments: they change no model, prompt, request, data, parser, scorer, gate or rule, and each is made before the affected inference produced any output.",
+  "corrections": [
+    {
+      "id": "H1",
+      "date": "2026-10-13",
+      "type": "test-harness correction (not a protocol amendment)",
+      "trigger": "Kaggle review_smoke run with bundle v5 stopped in Cell 4 (local test suite) at test_real_reviewer_refused_locally: the test expected SystemExit, but on Kaggle the real reviewer is correctly permitted (it loaded Qwen2.5-Math-7B-Instruct inside the test). No reviewer request was sent; no reviewer output exists.",
+      "fix": [
+        "test_real_reviewer_refused_locally: unchanged assertion, now skipped on hosts where model loading is permitted (Kaggle marker or STAGE_B_ALLOW_MODEL_LOAD)",
+        "new environment-independent tests (no model load): refusal off Kaggle (simulated), refusal on Kaggle without CUDA (simulated), loader accepts ONLY the registered revision / NF4 config / bitsandbytes version / device / context / fixed chat rendering (unchanged QwenMathReviewer.__init__ run against fake torch/transformers/bitsandbytes), review runner refuses changed request / order / config / prompt module hashes",
+        "bundle version 5 -> 6"
+      ],
+      "files_before_sha256": {
+        "tests/test_stage_b.py": "2888d51c98673190b7c96ea1ba88abc8c15c76381b218cfd3450eaf372dade88",
+        "scripts/13_build_kaggle_bundle.py": "4c4bb8a5bf4ff48593ffd0688e35d336e8b46c3d884af16d7b735fb8734aa321"
+      },
+      "files_after_sha256": {
+        "tests/test_stage_b.py": "9ae6774d04a60f6a3049ed4e9a9041455034f1f36e866e59133267616cf6ecc6",
+        "scripts/13_build_kaggle_bundle.py": "cfcae72e6ed9f95da66dbab1f713db29b5ea17d8f2a7cfd0d46be371ed950516"
+      },
+      "unchanged_verified_sha256": {
+        "configs/stage_b.json": "0e5e57930fe5684aff9af202cdb8fa3906058e00998b14c6bb2d5961a5c3a4ff",
+        "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90",
+        "src/scorer.py": "42370d9bf3a6e1aad2240859f00fee142fea3cb4e97a42ea0e67b40e68a9ea22",
+        "src/llm_review.py": "5d490aa7fb5912004c70110f5c58d1a91ba6d957ee6184799cee63b95b90852f",
+        "src/reviewer_loader.py": "32e451668c5d4576e0165f51164a950769d235be417843c4d3d1370de9d343c7",
+        "src/llm_review_runner.py": "376d5b532f96b20839850bea4d2050e2ba0fc97cc59a3135f0c440c8a5fff7e5",
+        "data/processed/llm_review/pass1_requests.jsonl": "c64eff43322efa700a8c5e17b1456e005427b05f74c8636b8aae7c65899f2028",
+        "data/processed/llm_review/pass2_requests.jsonl": "9659b3178cb7b1984e42d60828941938b965c5af9d5512f38a9a70291d41551e",
+        "data/processed/llm_review/review_order.json": "9a136f68ac8cc69c4a537372768fad2634b533bbdce2f52fc93f13741f63b95d",
+        "data/manifests/llm_review_request_manifest.json": "24658e3eabfb20afcf2d76bd12e589d3761fa63779a9fa0918d573e7811fa9a0",
+        "data/processed/stage1_failures.json": "c69bf6061f41cf0ccad9a06b7cb9e7425875fa51bbae5c364d85b78a237a080e",
+        "data/processed/stage_b_items.json": "a673751ec2b16f4fcd9191201ffad950210ba56e05a96bbfca8341b02160ca6a",
+        "data/manifests/PROTOCOL_AMENDMENTS.json": "ce4955deb95c274702740c2dfbeb1cbf70e07285956d412a9109a1526525c349",
+        "data/manifests/INTERPRETATION_RULE_FROZEN.json": "e9c42563ea9300397465fdc3f9f569b291c56c54f768671abda2402dc4c6fc2a"
+      },
+      "unchanged": "model/revision, quantization, prompts, request files/order, failure set, Stage-B protocol, A3 wording, parser/scorer, review smoke items, reviewer code (src/*)",
+      "logged": "2026-10-13T13:49:47+00:00"
+    },
+    {
+      "id": "H2",
+      "date": "2026-10-14",
+      "type": "test-harness correction (not a protocol amendment)",
+      "trigger": "Kaggle diag_headroom run with bundle v10 stopped in Cell 4 (local test suite) at test_mock_diagnostic_isolated: the test ran scripts/22_diag_headroom.py --solver qwen and expected a nonzero exit (real-model refusal off Kaggle); on Kaggle loading is correctly permitted, the command returned 0 and the assertion failed. Logs (researcher): bundle v10 verified, T4/CUDA and package checks passed, only this assertion failed, the notebook stopped before the diag_headroom cell. No diagnostic result exists.",
+      "note_on_hidden_generation": "Exit code 0 from scripts/22 is only possible after its single generation completes, so one real 4096-token generation of s2::sb_math-355::VV almost certainly ran INSIDE the test harness: output written to outputs/test_runs/_unittest/diag/q/ (deleted by tests/run_all.py at the end of the suite), stdout captured and never shown. It was never seen, is not preserved and is NOT a diagnostic result; nothing is derived from it.",
+      "lesson": "repeat of H1: a test invoked a real-model path unpatched; on the GPU host that path is permitted",
+      "fix": [
+        "test_mock_diagnostic_isolated: mock-only (the --solver qwen invocation removed)",
+        "new test_real_diagnostic_refused_off_kaggle_simulated: scripts/22 main() in-process with --solver qwen, Kaggle markers / override / suite flag removed and the pilot backend loader booby-trapped -> refused before any load",
+        "new test_real_diagnostic_never_loaded_by_test_suite: same with Kaggle markers + override SET -> refused by the suite flag before any load",
+        "src/solver_loader.guard_real_model refuses whenever STAGE_B_TEST_SUITE=1; tests/run_all.py and the test module set it, so no test (or subprocess started by a test) can load Qwen3-4B on any host. The notebook's real diagnostic cell runs outside the suite and does not inherit the flag",
+        "verified: full suite also passes with Kaggle markers simulated (KAGGLE_KERNEL_RUN_TYPE + STAGE_B_ALLOW_MODEL_LOAD)",
+        "bundle version 10 -> 11"
+      ],
+      "diagnostic_script_semantics": "unchanged (scripts/22_diag_headroom.py byte-identical): only s2::sb_math-355::VV, frozen prompt/model/revision/greedy non-thinking, only max_new_tokens 2048 -> 4096, diagnostic-only output, no scoring or substitution",
+      "files_before_sha256": {
+        "tests/test_stage_b.py": "a97d91b736322c664f967b1aa940b8ce5c98c6d215bde9b199720ad33ad08296",
+        "tests/run_all.py": "e018297d01f5fc30b26032753d7813cba4a52210ed36030f82c4b9ed7e9b4f2c",
+        "src/solver_loader.py": "a4e49147bc0442435da988666931122248668e2a48c49ef21f1d33a5c61de44f",
+        "scripts/13_build_kaggle_bundle.py": "65728eea6e8e9af02854744cd52ab30f746e771fb2306ef798e931f8c00c806a"
+      },
+      "files_after_sha256": {
+        "tests/test_stage_b.py": "610cb4b4a755a47b3c1aa179a47114c9054f2cc84f7defa9ff0e00ac3e1e4f0d",
+        "tests/run_all.py": "2432ebc27c28e7b8fb7ec30450dcb4657bdb28a86cdb5957de92dd11dce63a2c",
+        "src/solver_loader.py": "215de8660306763983708166054b5750cc770534de446ba31328f00d5f5e2402",
+        "scripts/13_build_kaggle_bundle.py": "0f7934158eaa91042270056d669280d0b9077c858133fd4941adcb86604f8830"
+      },
+      "unchanged_verified_sha256": {
+        "configs/stage_b.json": "9d8407752ae071e83735eb978abf32851f79884c3a324430254759d93eb91e83",
+        "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90",
+        "src/scorer.py": "42370d9bf3a6e1aad2240859f00fee142fea3cb4e97a42ea0e67b40e68a9ea22",
+        "scripts/22_diag_headroom.py": "ebf602ef0e52e3b5bcc4e823e1be2b7487bdada86687ec019e2408e622f2dcf1",
+        "data/processed/stage2_requests.jsonl": "cdd1c1bb7c13a04efe006be757ace0f015401291f1f8ddb508125518be46a19f",
+        "data/processed/stage2_execution_order.json": "1b88a135278c75587bdd2f0608f026a4eff3d66f8afd47270bb36716d8dbe796",
+        "data/manifests/stage2_request_manifest.json": "3f22f484c0376878175d4f11941776a450e798f3611caae10313da0e8ebf3904",
+        "data/manifests/stage2_smoke_selection.json": "5fb15874e83633682fe729227d8fecb0274bfc869258a8226820f5c95137a22c",
+        "data/processed/annotation_review_decisions.json": "b78abe7b126fac4246ff3cdb39d07ad754c8f33bbc2e38273c682f102bc16e04",
+        "data/manifests/INTERPRETATION_RULE_FROZEN.json": "e9c42563ea9300397465fdc3f9f569b291c56c54f768671abda2402dc4c6fc2a",
+        "data/manifests/STAGE2_SMOKE_V9_NOGO.json": "6c505dfcbf1111ae5c5426541ab35fd32eaf079002f8aca65e2455c3a80f6ad4"
+      }
+    }
+  ]
+}

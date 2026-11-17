@@ -1,0 +1,145 @@
+{
+  "LABEL": "DIAGNOSTIC ONLY - follow-up to the v9 Stage-2 smoke NO-GO; not Stage-2 data, not scored, never substituted for any Stage-2 output, not a scientific protocol result",
+  "recorded": "2026-10-14T16:09:49+00:00",
+  "archive": "data/smoke_records/diag_headroom_v11/stage_b_diag_headroom_RESULTS.zip",
+  "archive_sha256": "72af3dd8f4032c839a5d1387df11cdb96437c4ee73f1ca6b8e93ed0906a254e8",
+  "archive_files": [
+    "bundle_manifest.json",
+    "diag_headroom_sb_math-355_VV_4096/diagnostic.json",
+    "diag_headroom_sb_math-355_VV_4096/environment.json",
+    "diag_headroom_sb_math-355_VV_4096/raw_output.json"
+  ],
+  "raw_output_json_sha256": "9f56ca11f8be857b828ca9871115157f77ede9d564b9e7b5d4ec2a551f58c064",
+  "diagnostic_json_sha256": "6a8214132fd745e33c16a2be151ed6e1ca7ec209a659f1d703d8bc4de1ff9798",
+  "raw_response_sha256": "2797b2295926902829842a719ba026f5bc9e3ab1d4764269990c562b3264bce9",
+  "bundle_version": 11,
+  "bundle_code_fingerprint": "6971c83c7ed2b474cf78b3724034907c7f12a7fdaa56869a40866e405cac8889",
+  "effective_settings": {
+    "backend": "hf_transformers",
+    "model": "Qwen/Qwen3-4B",
+    "requested_revision": "3101254bbe4169895668a0e7653c3fd1f313576e",
+    "hub_resolved_revision": "3101254bbe4169895668a0e7653c3fd1f313576e",
+    "transformers_commit_hash": null,
+    "snapshot_path": "/root/.cache/huggingface/hub/models--Qwen--Qwen3-4B/snapshots/3101254bbe4169895668a0e7653c3fd1f313576e",
+    "revision_verification": "HfApi().model_info(repo, revision).sha == requested_revision; loaded from snapshots/<pinned commit>",
+    "decoding": "greedy (do_sample=False, num_beams=1)",
+    "temperature": "ignored (greedy)",
+    "top_p": "ignored (greedy)",
+    "top_k": "ignored (greedy)",
+    "model_generation_config_defaults_overridden": {
+      "do_sample": true,
+      "temperature": 0.6,
+      "top_p": 0.95,
+      "top_k": 20,
+      "repetition_penalty": null
+    },
+    "max_new_tokens": 4096,
+    "seed": 2026,
+    "enable_thinking": false,
+    "chat_template_check": {
+      "prompt_verbatim": true,
+      "wrapper_constant": true,
+      "system_message": false,
+      "switch_text_added": false,
+      "enable_thinking_honoured": true,
+      "empty_think_block_prefilled": true,
+      "wrapper_sha256": "7b4002f11d20bdb6dcc415a7c8a83026042784c0df54bf64a775e21d8b8c4174"
+    },
+    "device": "cuda:0",
+    "dtype": "torch.float16",
+    "quantization": "none",
+    "torch_num_threads": 2,
+    "deterministic_algorithms": "torch.use_deterministic_algorithms(True, warn_only=True)",
+    "system_prompt": null,
+    "message_format": "single user message via chat template"
+  },
+  "solver": {
+    "model": "Qwen/Qwen3-4B",
+    "model_revision": "3101254bbe4169895668a0e7653c3fd1f313576e",
+    "frozen_config_sha256": "3118f86d5e0a1fae7228c7db086b2e2ba15210c23d67ee3dc0560ab01c98a77f",
+    "max_new_tokens_frozen_stage2": 2048,
+    "max_new_tokens_diagnostic": 4096,
+    "only_difference": "max_new_tokens 2048 -> 4096 (in-memory copy of the solver config)"
+  },
+  "diagnostic_quoted": {
+    "request_key": "s2::sb_math-355::VV",
+    "finish_reason": "length",
+    "generated_tokens": 4096,
+    "max_new_tokens": 4096,
+    "prompt_tokens": 2879,
+    "hit_cap": true,
+    "final_answer_label_present": false,
+    "numeric_parse_status": "missing",
+    "prefix_identical_to_2048_smoke_output": true,
+    "repetition_full": {
+      "long_lines_repeated_3plus": 9,
+      "max_line_repeats": 14,
+      "phrase_counts": {
+        "go back": 7,
+        "not correct": 7,
+        "\\bwait\\b": 7,
+        "let.s try again": 0,
+        "recompute": 0
+      },
+      "last_quarter_50char_shingles_seen_earlier": 1.0,
+      "most_repeated_lines": [
+        [
+          "P(1) = \\prod_{\\epsilon_1, \\epsilon_2, \\epsilon_3 = \\pm 1} \\left( 1 - (\\epsilon_1 \\sqrt{2} + \\epsilon_2 \\sqrt{3} + \\epsilon_3 \\sqrt{5}) \\right)",
+          14
+        ],
+        [
+          "P(x) = \\prod_{\\epsilon_1, \\epsilon_2, \\epsilon_3 = \\pm 1} \\left( x - (\\epsilon_1 \\sqrt{2} + \\epsilon_2 \\sqrt{3} + \\epsilon_3 \\sqrt{5}) \\right)",
+          7
+        ],
+        [
+          "But this is **not** the correct answer. The correct value is:",
+          7
+        ],
+        [
+          "Wait — that’s not correct either. Let’s go back.",
+          7
+        ],
+        [
+          "Let’s consider the **product** of all $ 1 - (\\epsilon_1 \\sqrt{2} + \\epsilon_2 \\sqrt{3} + \\epsilon_3 \\sqrt{5}) $, over all 8 combinations of $ \\epsilon_i = \\pm 1 $.",
+          7
+        ]
+      ]
+    },
+    "repetition_beyond_2048_output": {
+      "long_lines_repeated_3plus": 9,
+      "max_line_repeats": 8,
+      "phrase_counts": {
+        "go back": 4,
+        "not correct": 4,
+        "\\bwait\\b": 4,
+        "let.s try again": 0,
+        "recompute": 0
+      },
+      "last_quarter_50char_shingles_seen_earlier": 1.0,
+      "most_repeated_lines": [
+        [
+          "P(1) = \\prod_{\\epsilon_1, \\epsilon_2, \\epsilon_3 = \\pm 1} \\left( 1 - (\\epsilon_1 \\sqrt{2} + \\epsilon_2 \\sqrt{3} + \\epsilon_3 \\sqrt{5}) \\right)",
+          8
+        ],
+        [
+          "P(x) = \\prod_{\\epsilon_1, \\epsilon_2, \\epsilon_3 = \\pm 1} \\left( x - (\\epsilon_1 \\sqrt{2} + \\epsilon_2 \\sqrt{3} + \\epsilon_3 \\sqrt{5}) \\right)",
+          4
+        ],
+        [
+          "Now, consider the **product** of all $ 1 - (\\epsilon_1 \\sqrt{2} + \\epsilon_2 \\sqrt{3} + \\epsilon_3 \\sqrt{5}) $, over all 8 combinations of $ \\epsilon_i = \\pm 1 $.",
+          4
+        ],
+        [
+          "This is a known result in algebra: the value of this product is:",
+          4
+        ],
+        [
+          "But this is **not** the correct answer. The correct value is:",
+          4
+        ]
+      ]
+    },
+    "raw_output_sha256": "9f56ca11f8be857b828ca9871115157f77ede9d564b9e7b5d4ec2a551f58c064"
+  },
+  "researcher_conclusion_2026_10_14": "the model is genuinely stuck in a repetitive repair loop; increasing Stage-2 max_new_tokens is not justified (A7: cap stays 2048)"
+}

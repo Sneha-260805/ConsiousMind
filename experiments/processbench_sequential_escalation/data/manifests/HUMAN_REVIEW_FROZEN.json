@@ -1,0 +1,23 @@
+{
+  "frozen": "2026-10-14T11:09:26+00:00",
+  "amendment": "A6",
+  "TEST_ONLY": false,
+  "reviewer": "Sneha",
+  "pass2_waived": true,
+  "pass2_waiver": "A separate Pass-2 human recheck was waived for feasibility (amendment A6) because it would duplicate the same reviewer's earlier Pass-1 judgment: a Pass-1 CONFIRM of Step k as the earliest substantive error implies that every preceding step, including the false-location candidate f = k-1, contains no earlier substantive error.",
+  "l_false_validity_label": "Pass-1-implied false-step validity (not independently Pass-2-validated)",
+  "failures_sha256": "c69bf6061f41cf0ccad9a06b7cb9e7425875fa51bbae5c364d85b78a237a080e",
+  "blank_form_sha256": "5f08573bf8c94f98d92b3ce9986f285e4b83c35a860c03e2b115c86b047250cb",
+  "pass1_files_sha256_unchanged": {
+    "data/processed/human_review/pass1_view.json": "50fcd8880380286679b26d0bbebc650f31c71ce2ce1a02ebf18f9552e53f6369",
+    "data/processed/human_review/pass1_log.jsonl": "665d552f690e1a4c35dcf6b2ecbec3bc6376add34d4ee709b26f3a6701b41682",
+    "data/processed/human_review/pass1_final.json": "ae0cd5ba7f9336bf86683e18e51b6f513f4b9bbc478b9f406c787b232fe9152b",
+    "data/processed/human_review/pass1_mapping.json": "4b7557dc013af091bdd8afa0b48389368b5425facb414d11e456ba69ac6f8ccd",
+    "data/manifests/HUMAN_REVIEW_PASS1_FROZEN.json": "bf074582214403804475ca03096b589920ce11e6e8c68501b2700bf997b10cbc",
+    "data/manifests/HUMAN_REVIEW_EXPORT.json": "8bbfe3d3b09734d8e00949c9a5b539d08dc90ec472d10fe0b3bb75ae29789c27",
+    "data/processed/human_review/pass2_view.json": "eead88e5a18ce64a29e473ae33003bcc146ae4d3dc48ffade44414a25a8d9992",
+    "data/manifests/HUMAN_REVIEW_PASS2_EXPORT.json": "f80795cf41cb0fca5e89139cf09f49e7a1bb806d746472864f44dbacd9c462c1"
+  },
+  "judgments_sha256": "75746c8fe59e6b18f574ab6c1d05e73847cc41d0b33ce96b5507fc0f2a519f68",
+  "filled_form_sha256": "11a9b7c53da097e340baace374d963babb229a8a8b01960c5443070d0fa97803"
+}

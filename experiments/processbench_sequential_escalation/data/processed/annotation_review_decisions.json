@@ -1,0 +1,794 @@
+{
+  "TEST_ONLY": false,
+  "reviewer": "Sneha (A5 human Pass 1; A6 Pass-2 waiver)",
+  "frozen": "2026-10-14T11:09:27+00:00",
+  "rules": {
+    "primary_stage2_set": "Stage-1 failures whose first_error_verdict == CONFIRM. Items with DISAGREE/UNCLEAR are excluded from Stage 2 entirely (all conditions, so pairing is preserved); a reviewer-suggested alternative step is recorded but NEVER used to re-point L_true/N_true.",
+    "l_false": "Built only for primary-set items whose false_step_verdict == CORRECT; otherwise the item is ineligible ONLY for L_false.",
+    "l_false_A6": "Since A6: built for primary-set items whose false_step_verdict is in l_false_eligible_verdicts (CORRECT or PASS1_IMPLIED); with the Pass-1-only review every CONFIRM item is PASS1_IMPLIED.",
+    "min_primary_items": 50,
+    "below_min": "If fewer than min_primary_items items pass review, STOP and report (Stage-2 build needs an explicit researcher override)."
+  },
+  "summary": {
+    "n_reviewed": 76,
+    "n_primary_stage2": 61,
+    "n_excluded_first_error": 15,
+    "n_l_false_eligible": 61,
+    "first_error_verdicts": {
+      "CONFIRM": 61,
+      "DISAGREE": 15,
+      "UNCLEAR": 0
+    },
+    "false_step_verdicts": {
+      "CORRECT": 0,
+      "NOT_CORRECT": 0,
+      "UNCLEAR": 0,
+      "PASS1_IMPLIED": 61,
+      "NOT_REVIEWED": 15
+    },
+    "min_primary_items": 50,
+    "primary_gate_passed": true
+  },
+  "decisions": [
+    {
+      "item_id": "sb_gsm8k-1",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-101",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 3/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-107",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-108",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-113",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 4/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-127",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 3/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-13",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-132",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-135",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 3/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-136",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-139",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 3/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-140",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 4/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-143",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-144",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/MEDIUM; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-148",
+      "first_error_verdict": "DISAGREE",
+      "false_step_verdict": "NOT_REVIEWED",
+      "reviewer_first_error_step": 4,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 4/MEDIUM; A6: separate Pass 2 waived",
+      "primary_stage2": false,
+      "l_false_eligible": false,
+      "false_step_validity_basis": null
+    },
+    {
+      "item_id": "sb_gsm8k-158",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 3/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-165",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 3/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-171",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 3/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-174",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 3/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-178",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-198",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 5/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-24",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-31",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 7/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-36",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 4/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-43",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-56",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 3/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-59",
+      "first_error_verdict": "DISAGREE",
+      "false_step_verdict": "NOT_REVIEWED",
+      "reviewer_first_error_step": 2,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/MEDIUM; A6: separate Pass 2 waived",
+      "primary_stage2": false,
+      "l_false_eligible": false,
+      "false_step_validity_basis": null
+    },
+    {
+      "item_id": "sb_gsm8k-61",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-72",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 4/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-79",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-80",
+      "first_error_verdict": "DISAGREE",
+      "false_step_verdict": "NOT_REVIEWED",
+      "reviewer_first_error_step": 2,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived",
+      "primary_stage2": false,
+      "l_false_eligible": false,
+      "false_step_validity_basis": null
+    },
+    {
+      "item_id": "sb_gsm8k-83",
+      "first_error_verdict": "DISAGREE",
+      "false_step_verdict": "NOT_REVIEWED",
+      "reviewer_first_error_step": 2,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived",
+      "primary_stage2": false,
+      "l_false_eligible": false,
+      "false_step_validity_basis": null
+    },
+    {
+      "item_id": "sb_gsm8k-84",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 4/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_gsm8k-97",
+      "first_error_verdict": "DISAGREE",
+      "false_step_verdict": "NOT_REVIEWED",
+      "reviewer_first_error_step": 4,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 4/HIGH; A6: separate Pass 2 waived",
+      "primary_stage2": false,
+      "l_false_eligible": false,
+      "false_step_validity_basis": null
+    },
+    {
+      "item_id": "sb_math-114",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 3/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-117",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-124",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 4/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-133",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 3/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-146",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-148",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 3/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-16",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 3/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-178",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 3/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-182",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-183",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 5/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-186",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 5/MEDIUM; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-188",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-215",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-22",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 3/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-238",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 4/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-256",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 6/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-275",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 5/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-288",
+      "first_error_verdict": "DISAGREE",
+      "false_step_verdict": "NOT_REVIEWED",
+      "reviewer_first_error_step": 3,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 3/MEDIUM; A6: separate Pass 2 waived",
+      "primary_stage2": false,
+      "l_false_eligible": false,
+      "false_step_validity_basis": null
+    },
+    {
+      "item_id": "sb_math-309",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 4/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-344",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 4/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-345",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-355",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 5/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-361",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 4/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-370",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 4/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-398",
+      "first_error_verdict": "DISAGREE",
+      "false_step_verdict": "NOT_REVIEWED",
+      "reviewer_first_error_step": 6,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 6/HIGH; A6: separate Pass 2 waived",
+      "primary_stage2": false,
+      "l_false_eligible": false,
+      "false_step_validity_basis": null
+    },
+    {
+      "item_id": "sb_math-401",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 3/MEDIUM; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-402",
+      "first_error_verdict": "DISAGREE",
+      "false_step_verdict": "NOT_REVIEWED",
+      "reviewer_first_error_step": 2,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived",
+      "primary_stage2": false,
+      "l_false_eligible": false,
+      "false_step_validity_basis": null
+    },
+    {
+      "item_id": "sb_math-411",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-414",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 7/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-455",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-456",
+      "first_error_verdict": "DISAGREE",
+      "false_step_verdict": "NOT_REVIEWED",
+      "reviewer_first_error_step": 7,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 7/HIGH; A6: separate Pass 2 waived",
+      "primary_stage2": false,
+      "l_false_eligible": false,
+      "false_step_validity_basis": null
+    },
+    {
+      "item_id": "sb_math-457",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 4/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-470",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-474",
+      "first_error_verdict": "DISAGREE",
+      "false_step_verdict": "NOT_REVIEWED",
+      "reviewer_first_error_step": 2,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived",
+      "primary_stage2": false,
+      "l_false_eligible": false,
+      "false_step_validity_basis": null
+    },
+    {
+      "item_id": "sb_math-475",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 4/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-478",
+      "first_error_verdict": "DISAGREE",
+      "false_step_verdict": "NOT_REVIEWED",
+      "reviewer_first_error_step": 1,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 1/HIGH; A6: separate Pass 2 waived",
+      "primary_stage2": false,
+      "l_false_eligible": false,
+      "false_step_validity_basis": null
+    },
+    {
+      "item_id": "sb_math-48",
+      "first_error_verdict": "DISAGREE",
+      "false_step_verdict": "NOT_REVIEWED",
+      "reviewer_first_error_step": 1,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 1/HIGH; A6: separate Pass 2 waived",
+      "primary_stage2": false,
+      "l_false_eligible": false,
+      "false_step_validity_basis": null
+    },
+    {
+      "item_id": "sb_math-484",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-488",
+      "first_error_verdict": "DISAGREE",
+      "false_step_verdict": "NOT_REVIEWED",
+      "reviewer_first_error_step": 1,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 1/HIGH; A6: separate Pass 2 waived",
+      "primary_stage2": false,
+      "l_false_eligible": false,
+      "false_step_validity_basis": null
+    },
+    {
+      "item_id": "sb_math-63",
+      "first_error_verdict": "CONFIRM",
+      "false_step_verdict": "PASS1_IMPLIED",
+      "reviewer_first_error_step": null,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived; false step Pass-1-implied valid (not independently Pass-2-validated)",
+      "primary_stage2": true,
+      "l_false_eligible": true,
+      "false_step_validity_basis": "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)"
+    },
+    {
+      "item_id": "sb_math-69",
+      "first_error_verdict": "DISAGREE",
+      "false_step_verdict": "NOT_REVIEWED",
+      "reviewer_first_error_step": 2,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 2/HIGH; A6: separate Pass 2 waived",
+      "primary_stage2": false,
+      "l_false_eligible": false,
+      "false_step_validity_basis": null
+    },
+    {
+      "item_id": "sb_math-77",
+      "first_error_verdict": "DISAGREE",
+      "false_step_verdict": "NOT_REVIEWED",
+      "reviewer_first_error_step": 3,
+      "notes": "A5 HUMAN blinded Pass-1 review (Sneha); pass1 3/MEDIUM; A6: separate Pass 2 waived",
+      "primary_stage2": false,
+      "l_false_eligible": false,
+      "false_step_validity_basis": null
+    }
+  ]
+}

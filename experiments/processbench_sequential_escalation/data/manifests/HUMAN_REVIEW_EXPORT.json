@@ -1,0 +1,21 @@
+{
+  "exported": "2026-10-14T05:05:00+00:00",
+  "amendment": "A5",
+  "TEST_ONLY": false,
+  "n_items": 76,
+  "failures_sha256": "c69bf6061f41cf0ccad9a06b7cb9e7425875fa51bbae5c364d85b78a237a080e",
+  "blank_form_sha256": "5f08573bf8c94f98d92b3ce9986f285e4b83c35a860c03e2b115c86b047250cb",
+  "packet_order_seed": 6303,
+  "item_ids_sha256": "ed63fff6230e62e500f83767c8517ef3cd3f61d9d471f840f28798bd812fcfd8",
+  "pass1_view_sha256": "50fcd8880380286679b26d0bbebc650f31c71ce2ce1a02ebf18f9552e53f6369",
+  "instructions_sha256": "b14d8bbdad9813b020e4fa333e6b8f925fe99926b317a9cc90f5acd42a525753",
+  "pass1_fields_shown": [
+    "index",
+    "item_id",
+    "question",
+    "steps",
+    "gold_answer",
+    "original_answer"
+  ],
+  "blinding_audit": "passed (exact keys; mutation test vs annotation fields; no Stage-1 response text)"
+}

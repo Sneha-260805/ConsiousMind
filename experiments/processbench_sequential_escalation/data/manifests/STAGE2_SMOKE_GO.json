@@ -1,0 +1,198 @@
+{
+  "artifact": "Stage-2 smoke GO (bundle v12, amendment A7 gate) - official pre-full-run smoke; preserved byte-for-byte, never rescored",
+  "LABEL": "INTEGRITY ONLY - no repair / rescue rates were computed, displayed or inspected from the smoke",
+  "recorded": "2026-10-14T18:16:51+00:00",
+  "approved_by": "researcher (2026-10-14 instruction, independent inspection of the v12 smoke: GO under A7)",
+  "archive": "data/smoke_records/stage2_smoke_v12_go/stage_b_stage2_smoke_RESULTS.zip",
+  "archive_sha256": "0a287c77a3c60baa25a18875c28b13b34a0cc07dda4e5cc8ddb18aa9cd0b2e42",
+  "archive_files": [
+    "bundle_manifest.json",
+    "smoke_stage2_qwen/checkpoints/checkpoint_0010.zip",
+    "smoke_stage2_qwen/checkpoints/checkpoint_FINAL.zip",
+    "smoke_stage2_qwen/checkpoints/checkpoint_log.txt",
+    "smoke_stage2_qwen/diagnostics/determinism.json",
+    "smoke_stage2_qwen/diagnostics/environment.json",
+    "smoke_stage2_qwen/raw_outputs.jsonl",
+    "smoke_stage2_qwen/run_diagnostics.json",
+    "smoke_stage2_qwen/run_log.txt",
+    "smoke_stage2_qwen/run_manifest.json",
+    "smoke_stage2_qwen/scored_outputs.jsonl",
+    "smoke_stage2_qwen/smoke_gate.json",
+    "smoke_stage2_qwen/state.json"
+  ],
+  "gate_decision": "GO",
+  "gate_version": "A7_stage2_pipeline_integrity_gate",
+  "gate_reason": "pipeline/integrity checks passed; 8/8 normally finished responses parsed",
+  "protocol_amendments": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7"
+  ],
+  "bundle_version": 12,
+  "bundle_phase": "stage2_A7",
+  "bundle_code_fingerprint": "9a58eac6258a453d059180b9989ded0c9c3beae1ea14816a86583c83d913e5dc",
+  "requests_sha256": "cdd1c1bb7c13a04efe006be757ace0f015401291f1f8ddb508125518be46a19f",
+  "execution_order_sha256": "1b88a135278c75587bdd2f0608f026a4eff3d66f8afd47270bb36716d8dbe796",
+  "smoke_selection_sha256": "5fb15874e83633682fe729227d8fecb0274bfc869258a8226820f5c95137a22c",
+  "smoke_items": [
+    "sb_gsm8k-107",
+    "sb_math-275",
+    "sb_math-355"
+  ],
+  "model": "Qwen/Qwen3-4B",
+  "model_revision": "3101254bbe4169895668a0e7653c3fd1f313576e",
+  "frozen_solver_config_sha256": "3118f86d5e0a1fae7228c7db086b2e2ba15210c23d67ee3dc0560ab01c98a77f",
+  "max_new_tokens": 2048,
+  "parser_sha256": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90",
+  "integrity_findings": {
+    "n_requests": 12,
+    "completed": 12,
+    "planned": 12,
+    "duplicate_keys": 0,
+    "transport_failure_records": 0,
+    "retries_used": 0,
+    "technical_checks": {
+      "prompt_audit_passed": true,
+      "all_completed": true,
+      "no_persistent_technical_failures": true,
+      "prompts_match_frozen_sha": true,
+      "no_visible_thinking": true,
+      "deterministic_repeat_identical": true,
+      "resume_generates_nothing": true
+    },
+    "persistence_checks": {
+      "every_output_persisted_once": true,
+      "persisted_text_reparses_identically": true,
+      "finish_reason_recorded_stop_or_length": true,
+      "token_count_recorded": true,
+      "no_output_over_cap": true,
+      "cap_hits_exactly_at_cap": true,
+      "parse_status_recorded": true,
+      "effective_cap_is_frozen_2048": true
+    },
+    "audit_problems": [],
+    "visible_think_tags": [],
+    "determinism_repeats": [
+      {
+        "request_key": "s2::sb_gsm8k-107::L_true",
+        "identical_text": true
+      },
+      {
+        "request_key": "s2::sb_math-275::N_true",
+        "identical_text": true
+      }
+    ],
+    "n_finished_normally": 8,
+    "n_finished_normally_parsed": 8,
+    "cap_hits_descriptive_only": {
+      "keys": [
+        "s2::sb_math-355::L_false",
+        "s2::sb_math-355::L_true",
+        "s2::sb_math-355::N_true",
+        "s2::sb_math-355::VV"
+      ],
+      "n": 4,
+      "without_valid_answer": [
+        "s2::sb_math-355::L_false",
+        "s2::sb_math-355::L_true",
+        "s2::sb_math-355::N_true",
+        "s2::sb_math-355::VV"
+      ],
+      "note": "genuine model behaviour under A7; remain failed repairs"
+    },
+    "per_request_finish_tokens_parse_status": {
+      "s2::sb_gsm8k-107::L_true": {
+        "finish_reason": "stop",
+        "new_tokens": 589,
+        "numeric_parse_status": "ok"
+      },
+      "s2::sb_math-275::N_true": {
+        "finish_reason": "stop",
+        "new_tokens": 949,
+        "numeric_parse_status": "ok"
+      },
+      "s2::sb_math-355::L_false": {
+        "finish_reason": "length",
+        "new_tokens": 2048,
+        "numeric_parse_status": "missing"
+      },
+      "s2::sb_math-275::L_true": {
+        "finish_reason": "stop",
+        "new_tokens": 798,
+        "numeric_parse_status": "ok"
+      },
+      "s2::sb_gsm8k-107::N_true": {
+        "finish_reason": "stop",
+        "new_tokens": 305,
+        "numeric_parse_status": "ok"
+      },
+      "s2::sb_math-355::VV": {
+        "finish_reason": "length",
+        "new_tokens": 2048,
+        "numeric_parse_status": "missing"
+      },
+      "s2::sb_math-355::N_true": {
+        "finish_reason": "length",
+        "new_tokens": 2048,
+        "numeric_parse_status": "missing"
+      },
+      "s2::sb_gsm8k-107::L_false": {
+        "finish_reason": "stop",
+        "new_tokens": 343,
+        "numeric_parse_status": "ok"
+      },
+      "s2::sb_math-275::VV": {
+        "finish_reason": "stop",
+        "new_tokens": 805,
+        "numeric_parse_status": "ok"
+      },
+      "s2::sb_math-275::L_false": {
+        "finish_reason": "stop",
+        "new_tokens": 786,
+        "numeric_parse_status": "ok"
+      },
+      "s2::sb_gsm8k-107::VV": {
+        "finish_reason": "stop",
+        "new_tokens": 207,
+        "numeric_parse_status": "ok"
+      },
+      "s2::sb_math-355::L_true": {
+        "finish_reason": "length",
+        "new_tokens": 2048,
+        "numeric_parse_status": "missing"
+      }
+    },
+    "generated_tokens_max": 2048,
+    "prompt_tokens_max": 3051
+  },
+  "protocol_files_sha256_equal_to_bundle_that_ran": {
+    "configs/stage_b.json": "074617ad73f42e3d8a597be98470087e088012954cada277b093e338212845f3",
+    "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90",
+    "src/scorer.py": "42370d9bf3a6e1aad2240859f00fee142fea3cb4e97a42ea0e67b40e68a9ea22",
+    "src/smoke_gate.py": "02f95adbbafe5a901ab8ad8407f9a3039f4e7919b79fda44d70e00db455eb933",
+    "src/analysis.py": "3437cdca88c153ec0cb8f3152f08ff440a683b80674573a943c834014242237e",
+    "src/runner_core.py": "6c7544563ca1d59acf9f39a0a216d2a879100d266e75ec46d3f51dc492346f01",
+    "src/stage2_runner.py": "96c84352a2181969eac0e651a9791602804e3ddadcc91cd8a68d1fd11d65cde4",
+    "src/solver_loader.py": "215de8660306763983708166054b5750cc770534de446ba31328f00d5f5e2402",
+    "scripts/09_stage2_smoke_test.py": "c257e93ccd0764456cb73685bce49e003f51955e96c909170b8669ad6a3e8fe2",
+    "scripts/10_run_stage2.py": "8a32adf4d647b868e38ae1bfd65ee5b97c3f74e7268bae505a29051156fadbd7",
+    "data/processed/stage2_requests.jsonl": "cdd1c1bb7c13a04efe006be757ace0f015401291f1f8ddb508125518be46a19f",
+    "data/processed/stage2_execution_order.json": "1b88a135278c75587bdd2f0608f026a4eff3d66f8afd47270bb36716d8dbe796",
+    "data/manifests/stage2_request_manifest.json": "3f22f484c0376878175d4f11941776a450e798f3611caae10313da0e8ebf3904",
+    "data/manifests/stage2_smoke_selection.json": "5fb15874e83633682fe729227d8fecb0274bfc869258a8226820f5c95137a22c",
+    "data/processed/annotation_review_decisions.json": "b78abe7b126fac4246ff3cdb39d07ad754c8f33bbc2e38273c682f102bc16e04",
+    "data/manifests/INTERPRETATION_RULE_FROZEN.json": "e9c42563ea9300397465fdc3f9f569b291c56c54f768671abda2402dc4c6fc2a"
+  },
+  "preserved_records_unchanged": {
+    "data/manifests/STAGE2_SMOKE_V9_NOGO.json": "6c505dfcbf1111ae5c5426541ab35fd32eaf079002f8aca65e2455c3a80f6ad4",
+    "data/manifests/DIAG_HEADROOM_V11_RECORD.json": "8f2965318021035688bf67c5d580af223c4bfb178f3a910f3bad693ff363ee1d",
+    "data/smoke_records/stage2_smoke_v9/stage_b_stage2_smoke_RESULTS.zip": "c5bd1fb6ad615618e968847fe695fbb44cae9fbe375620c56b9c226aaf900eca",
+    "data/smoke_records/diag_headroom_v11/stage_b_diag_headroom_RESULTS.zip": "72af3dd8f4032c839a5d1387df11cdb96437c4ee73f1ca6b8e93ed0906a254e8"
+  },
+  "interpretation_rule_sha256": "595b3100e2fa1bd5588309d24976006465f630f10252152b004be749751b78cb",
+  "unlocks": "full Stage-2 run (244 frozen requests) - scripts/10_run_stage2.py --solver qwen / notebook MODE stage2 with APPROVED_STAGE2_SMOKE_SHA256 == archive_sha256"
+}

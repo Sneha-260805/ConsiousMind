@@ -1,0 +1,331 @@
+{
+  "source": {
+    "repo": "Qwen/ProcessBench (Hugging Face dataset)",
+    "paper": "arXiv:2412.06559",
+    "revision": "3bdcd5371ed567559a78f559c01c13a6deee7604",
+    "files_sha256": {
+      "README.md": "525e4455e981213919c574146196258ddb63986c11637116f58d7ba8b990c6f5",
+      "gsm8k.json": "fb1c59dfd1e83e1c5a48dbe598db27e4bc0b8bc524a09445f2d4b69178f61349",
+      "math.json": "60cb0d7a69cbec98d43cf50855b9b7e7294599c3c9a24bdd031abd18c3b6b136",
+      "olympiadbench.json": "e9d801c9f3c03f949adbfa08e90cb21ad85c0b9224bc5e98326f8215c218aa55",
+      "omnimath.json": "e8d7cf4512c82168dae2fe48b1718069a3002e7910af1d180a27ee0d9948ba47"
+    },
+    "hub_git_blob_oids": {
+      "gsm8k.json": "e0de3bcd65fd4dcf0cfd0ec68c57d84336beabe8",
+      "math.json": "8832b851776f6cc17d44f40e0098e492651ec368"
+    }
+  },
+  "schema": {
+    "id": "str",
+    "generator": "str",
+    "problem": "str",
+    "steps": "list",
+    "final_answer_correct": "bool",
+    "label": "int"
+  },
+  "schema_notes": [
+    "label = 0-indexed earliest erroneous step; -1 = no error",
+    "NO reference-answer field in any split",
+    "steps are pre-segmented strings; shown to the solver as 'Step i:' with i = index + 1"
+  ],
+  "splits": {
+    "gsm8k": {
+      "n_records": 400,
+      "n_distinct_problems": 375,
+      "label_distribution_0indexed": {
+        "-1": 193,
+        "0": 37,
+        "1": 61,
+        "2": 50,
+        "3": 31,
+        "4": 13,
+        "5": 12,
+        "6": 2,
+        "7": 1
+      },
+      "final_answer_correct_x_has_error": {
+        "fac=False|error=True": 200,
+        "fac=True|error=False": 193,
+        "fac=True|error=True": 7
+      },
+      "generators": {
+        "Llama-3.1-8B-Instruct": 61,
+        "Qwen2-7B-Instruct": 52,
+        "Qwen2.5-1.5B-Instruct": 42,
+        "Qwen2-1.5B-Instruct": 41,
+        "Llama-3.1-70B-Instruct": 35,
+        "Meta-Llama-3-70B-Instruct": 31,
+        "Qwen2.5-7B-Instruct": 27,
+        "Meta-Llama-3-8B-Instruct": 24,
+        "Qwen2.5-72B-Instruct": 23,
+        "Qwen2.5-Math-7B-Instruct": 22,
+        "Qwen2.5-Math-72B-Instruct": 22,
+        "Qwen2-72B-Instruct": 20
+      },
+      "n_steps": {
+        "min": 2,
+        "max": 16,
+        "distribution": {
+          "2": 5,
+          "3": 34,
+          "4": 122,
+          "5": 95,
+          "6": 71,
+          "7": 39,
+          "8": 18,
+          "9": 6,
+          "10": 7,
+          "12": 2,
+          "16": 1
+        }
+      },
+      "trace_chars_max": 3457,
+      "original_trace_has_boxed": 338,
+      "original_trace_boxed_numeric": 332,
+      "reference_lookup": {
+        "ok": 400
+      },
+      "reference_numeric_parseable": 400
+    },
+    "math": {
+      "n_records": 1000,
+      "n_distinct_problems": 955,
+      "label_distribution_0indexed": {
+        "-1": 406,
+        "0": 115,
+        "1": 147,
+        "2": 121,
+        "3": 95,
+        "4": 38,
+        "5": 32,
+        "6": 20,
+        "7": 7,
+        "8": 8,
+        "9": 4,
+        "10": 3,
+        "11": 1,
+        "12": 1,
+        "13": 1,
+        "14": 1
+      },
+      "final_answer_correct_x_has_error": {
+        "fac=False|error=True": 500,
+        "fac=True|error=False": 406,
+        "fac=True|error=True": 94
+      },
+      "generators": {
+        "Meta-Llama-3-70B-Instruct": 141,
+        "Llama-3.1-8B-Instruct": 139,
+        "Qwen2-7B-Instruct": 131,
+        "Qwen2-72B-Instruct": 107,
+        "Qwen2.5-Math-72B-Instruct": 98,
+        "Qwen2.5-7B-Instruct": 97,
+        "Qwen2.5-Math-7B-Instruct": 96,
+        "Qwen2.5-1.5B-Instruct": 74,
+        "Meta-Llama-3-8B-Instruct": 70,
+        "Qwen2-1.5B-Instruct": 47
+      },
+      "n_steps": {
+        "min": 2,
+        "max": 32,
+        "distribution": {
+          "2": 18,
+          "3": 90,
+          "4": 169,
+          "5": 187,
+          "6": 154,
+          "7": 98,
+          "8": 90,
+          "9": 52,
+          "10": 39,
+          "11": 27,
+          "12": 25,
+          "13": 13,
+          "14": 10,
+          "15": 8,
+          "16": 9,
+          "17": 1,
+          "18": 4,
+          "19": 2,
+          "23": 1,
+          "24": 2,
+          "32": 1
+        }
+      },
+      "trace_chars_max": 6438,
+      "original_trace_has_boxed": 861,
+      "original_trace_boxed_numeric": 541,
+      "reference_lookup": {
+        "ok": 1000
+      },
+      "reference_numeric_parseable": 661,
+      "math500_crosscheck": {
+        "overlapping_records": 112,
+        "agree": 112,
+        "disagree": 0
+      }
+    },
+    "olympiadbench": {
+      "n_records": 1000,
+      "n_distinct_problems": 561,
+      "label_distribution_0indexed": {
+        "-1": 339,
+        "0": 48,
+        "1": 131,
+        "2": 151,
+        "3": 99,
+        "4": 71,
+        "5": 48,
+        "6": 28,
+        "7": 28,
+        "8": 14,
+        "9": 12,
+        "10": 12,
+        "11": 6,
+        "12": 3,
+        "13": 5,
+        "14": 1,
+        "15": 1,
+        "17": 1,
+        "22": 1,
+        "25": 1
+      },
+      "final_answer_correct_x_has_error": {
+        "fac=False|error=True": 500,
+        "fac=True|error=False": 339,
+        "fac=True|error=True": 161
+      },
+      "generators": {
+        "Llama-3.1-8B-Instruct": 164,
+        "Qwen2.5-Math-7B-Instruct": 147,
+        "Qwen2.5-Math-72B-Instruct": 124,
+        "Qwen2.5-7B-Instruct": 123,
+        "Llama-3.1-70B-Instruct": 117,
+        "Qwen2-72B-Instruct": 112,
+        "Qwen2-7B-Instruct": 108,
+        "Qwen2.5-72B-Instruct": 105
+      },
+      "n_steps": {
+        "min": 2,
+        "max": 47,
+        "distribution": {
+          "2": 3,
+          "3": 8,
+          "4": 64,
+          "5": 117,
+          "6": 163,
+          "7": 104,
+          "8": 122,
+          "9": 103,
+          "10": 70,
+          "11": 58,
+          "12": 45,
+          "13": 28,
+          "14": 25,
+          "15": 18,
+          "16": 13,
+          "17": 7,
+          "18": 8,
+          "19": 8,
+          "20": 9,
+          "21": 6,
+          "22": 3,
+          "23": 6,
+          "24": 2,
+          "25": 2,
+          "26": 1,
+          "27": 3,
+          "28": 1,
+          "29": 1,
+          "35": 1,
+          "47": 1
+        }
+      },
+      "trace_chars_max": 7623,
+      "original_trace_has_boxed": 916,
+      "original_trace_boxed_numeric": 531,
+      "reference_lookup": "not attempted (domain not used in Stage B; answers mostly symbolic)"
+    },
+    "omnimath": {
+      "n_records": 1000,
+      "n_distinct_problems": 951,
+      "label_distribution_0indexed": {
+        "-1": 241,
+        "0": 72,
+        "1": 188,
+        "2": 170,
+        "3": 98,
+        "4": 76,
+        "5": 57,
+        "6": 32,
+        "7": 23,
+        "8": 10,
+        "9": 7,
+        "10": 7,
+        "11": 5,
+        "13": 3,
+        "14": 2,
+        "15": 2,
+        "16": 3,
+        "18": 2,
+        "20": 1,
+        "21": 1
+      },
+      "final_answer_correct_x_has_error": {
+        "fac=False|error=True": 500,
+        "fac=True|error=False": 241,
+        "fac=True|error=True": 259
+      },
+      "generators": {
+        "Llama-3.1-8B-Instruct": 162,
+        "Qwen2.5-Math-7B-Instruct": 132,
+        "Qwen2-7B-Instruct": 131,
+        "Qwen2.5-Math-72B-Instruct": 127,
+        "Qwen2.5-72B-Instruct": 126,
+        "Llama-3.1-70B-Instruct": 122,
+        "Qwen2.5-7B-Instruct": 104,
+        "Qwen2-72B-Instruct": 96
+      },
+      "n_steps": {
+        "min": 2,
+        "max": 35,
+        "distribution": {
+          "2": 2,
+          "3": 18,
+          "4": 81,
+          "5": 118,
+          "6": 153,
+          "7": 143,
+          "8": 116,
+          "9": 95,
+          "10": 73,
+          "11": 53,
+          "12": 37,
+          "13": 30,
+          "14": 14,
+          "15": 14,
+          "16": 13,
+          "17": 9,
+          "18": 7,
+          "19": 2,
+          "20": 3,
+          "21": 4,
+          "22": 1,
+          "23": 4,
+          "24": 1,
+          "25": 1,
+          "26": 3,
+          "27": 1,
+          "30": 2,
+          "32": 1,
+          "35": 1
+        }
+      },
+      "trace_chars_max": 7574,
+      "original_trace_has_boxed": 911,
+      "original_trace_boxed_numeric": 525,
+      "reference_lookup": "not attempted (domain not used in Stage B; answers mostly symbolic)"
+    }
+  },
+  "total_records": 3400
+}

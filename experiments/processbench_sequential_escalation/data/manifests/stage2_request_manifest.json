@@ -1,0 +1,71 @@
+{
+  "stage": 2,
+  "TEST_ONLY": false,
+  "conditions": [
+    "VV",
+    "N_true",
+    "L_true",
+    "L_false"
+  ],
+  "n_stage1_failures": 76,
+  "n_items": 61,
+  "n_requests": 244,
+  "annotation_review_decisions_sha256": "b78abe7b126fac4246ff3cdb39d07ad754c8f33bbc2e38273c682f102bc16e04",
+  "annotation_review_summary": {
+    "n_reviewed": 76,
+    "n_primary_stage2": 61,
+    "n_excluded_first_error": 15,
+    "n_l_false_eligible": 61,
+    "first_error_verdicts": {
+      "CONFIRM": 61,
+      "DISAGREE": 15,
+      "UNCLEAR": 0
+    },
+    "false_step_verdicts": {
+      "CORRECT": 0,
+      "NOT_CORRECT": 0,
+      "UNCLEAR": 0,
+      "PASS1_IMPLIED": 61,
+      "NOT_REVIEWED": 15
+    },
+    "min_primary_items": 50,
+    "primary_gate_passed": true
+  },
+  "request_key_format": "s2::<item_id>::<condition>",
+  "failures_sha256": "c69bf6061f41cf0ccad9a06b7cb9e7425875fa51bbae5c364d85b78a237a080e",
+  "responses_sha256": "0a1f13127d558b199adf04fb3a91500d2f3dbd796b5eae6becd4dbb037655902",
+  "order_sha256": "92efb02d322732e1f68cd1d08171491b620e7e2100552450bc85d4395a3fca2f",
+  "prompt_chars": {
+    "min": 1639,
+    "median": 3544,
+    "max": 8304
+  },
+  "underpowered_override": false,
+  "audit": "passed",
+  "artifacts_sha256": {
+    "requests": "cdd1c1bb7c13a04efe006be757ace0f015401291f1f8ddb508125518be46a19f",
+    "order": "1b88a135278c75587bdd2f0608f026a4eff3d66f8afd47270bb36716d8dbe796"
+  },
+  "requests_by_condition": {
+    "L_false": 61,
+    "L_true": 61,
+    "N_true": 61,
+    "VV": 61
+  },
+  "primary_endpoint": "paired rescue difference V -> L_true vs V -> V (unchanged; interpretation rule lock 595b3100e2fa1bd5588309d24976006465f630f10252152b004be749751b78cb)",
+  "l_false_validity_basis": {
+    "Pass-1-implied false-step validity (A6; not independently Pass-2-validated)": 61
+  },
+  "excluded_from_stage2": {
+    "n": 15,
+    "first_error_verdicts": {
+      "DISAGREE": 15
+    }
+  },
+  "amendment_A6": {
+    "pass2_waived": true,
+    "statement": "A separate Pass-2 human recheck was waived for feasibility (amendment A6) because it would duplicate the same reviewer's earlier Pass-1 judgment: a Pass-1 CONFIRM of Step k as the earliest substantive error implies that every preceding step, including the false-location candidate f = k-1, contains no earlier substantive error.",
+    "l_false_validity_label": "Pass-1-implied false-step validity (not independently Pass-2-validated)",
+    "primary_set": "the Pass-1 CONFIRM items only (61 of 76); the 15 DISAGREE items are excluded from the primary Stage-2 analysis"
+  }
+}

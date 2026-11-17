@@ -1,0 +1,270 @@
+{
+  "note": "SHA-256 of every frozen Stage-B artifact; runners verify these before use.",
+  "updated": "2026-10-14T18:16:51+00:00",
+  "files": {
+    "configs/stage_b.json": "074617ad73f42e3d8a597be98470087e088012954cada277b093e338212845f3",
+    "data/manifests/ANNOTATION_REVIEW_EXPORT.json": "94f88f2d82ede811c2671bb0678664879eed1dc2b4ea9bea71ae3152d8f7e52d",
+    "data/manifests/ANNOTATION_REVIEW_FROZEN.json": "ef93d59128fc0f5549890647e692162fc920ed11720bc79c96fdaf0631954993",
+    "data/manifests/DIAG_HEADROOM_V11_RECORD.json": "8f2965318021035688bf67c5d580af223c4bfb178f3a910f3bad693ff363ee1d",
+    "data/manifests/HARNESS_CORRECTIONS.json": "db99f896668d9a451f87136f5768bd256e96de58a45a509e6b839bec4c446180",
+    "data/manifests/HUMAN_REVIEW_EXPORT.json": "8bbfe3d3b09734d8e00949c9a5b539d08dc90ec472d10fe0b3bb75ae29789c27",
+    "data/manifests/HUMAN_REVIEW_FROZEN.json": "35463eafaead6547a061996bb76bca12042a247eca595ef07f1aaee84fe5ceec",
+    "data/manifests/HUMAN_REVIEW_PASS1_FROZEN.json": "bf074582214403804475ca03096b589920ce11e6e8c68501b2700bf997b10cbc",
+    "data/manifests/HUMAN_REVIEW_PASS2_EXPORT.json": "f80795cf41cb0fca5e89139cf09f49e7a1bb806d746472864f44dbacd9c462c1",
+    "data/manifests/INTERPRETATION_RULE_FROZEN.json": "e9c42563ea9300397465fdc3f9f569b291c56c54f768671abda2402dc4c6fc2a",
+    "data/manifests/PROTOCOL_AMENDMENTS.json": "4d360ca16809fcc384fdd7d2ce4e29eb92e211a98b60ad4dd4bc6f6a81964247",
+    "data/manifests/STAGE1_FAILURES_FROZEN.json": "be57d2d1322efc28e5cee1e2efee54e245c1135b527a7187265abe33259182f7",
+    "data/manifests/STAGE1_FINAL_ARCHIVE_PROVENANCE.json": "844896e056289ce17a484e74ed83d8a2f3c3d790f88c88a2b9cf7414685ceb17",
+    "data/manifests/STAGE2_SMOKE_GO.json": "2abddfb3fb24eabeb81596c20e21161725e6d2d06dfe0d87a81f04fe52b6d327",
+    "data/manifests/STAGE2_SMOKE_V9_NOGO.json": "6c505dfcbf1111ae5c5426541ab35fd32eaf079002f8aca65e2455c3a80f6ad4",
+    "data/manifests/dataset_manifest.json": "9997cf393547d4103a0357046b01e940be0b534657d45b461aa44308c7cb8994",
+    "data/manifests/llm_review_request_manifest.json": "02b3bf278f6e78d11e962f4de16f093e7acb3852e232f99849bb7ef304f3c26c",
+    "data/manifests/stage1_request_manifest.json": "5c0957f3fbef6d8ba9ad984e9f8df7897492510118e58ef4687355304202cb11",
+    "data/manifests/stage2_request_manifest.json": "3f22f484c0376878175d4f11941776a450e798f3611caae10313da0e8ebf3904",
+    "data/manifests/stage2_smoke_selection.json": "5fb15874e83633682fe729227d8fecb0274bfc869258a8226820f5c95137a22c",
+    "data/processed/annotation_review/annotation_review_form.csv": "5f08573bf8c94f98d92b3ce9986f285e4b83c35a860c03e2b115c86b047250cb",
+    "data/processed/annotation_review/annotation_review_form_FILLED.csv": "11a9b7c53da097e340baace374d963babb229a8a8b01960c5443070d0fa97803",
+    "data/processed/annotation_review/annotation_review_packet.md": "d01a7eecfe5b9a2341d9d27954a9fc4af10b1b0fcdc8d285646a36790bf031ec",
+    "data/processed/annotation_review_decisions.json": "b78abe7b126fac4246ff3cdb39d07ad754c8f33bbc2e38273c682f102bc16e04",
+    "data/processed/candidates_all.jsonl": "a8c1a3828ea0eb90b1606eddd70d9693bfbd669efbdaa33fbf4abc8aac9541fd",
+    "data/processed/human_review/REVIEWER_INSTRUCTIONS.md": "b14d8bbdad9813b020e4fa333e6b8f925fe99926b317a9cc90f5acd42a525753",
+    "data/processed/human_review/human_review_judgments.json": "75746c8fe59e6b18f574ab6c1d05e73847cc41d0b33ce96b5507fc0f2a519f68",
+    "data/processed/human_review/pass1_final.json": "ae0cd5ba7f9336bf86683e18e51b6f513f4b9bbc478b9f406c787b232fe9152b",
+    "data/processed/human_review/pass1_log.jsonl": "665d552f690e1a4c35dcf6b2ecbec3bc6376add34d4ee709b26f3a6701b41682",
+    "data/processed/human_review/pass1_mapping.json": "4b7557dc013af091bdd8afa0b48389368b5425facb414d11e456ba69ac6f8ccd",
+    "data/processed/human_review/pass1_view.json": "50fcd8880380286679b26d0bbebc650f31c71ce2ce1a02ebf18f9552e53f6369",
+    "data/processed/human_review/pass2_view.json": "eead88e5a18ce64a29e473ae33003bcc146ae4d3dc48ffade44414a25a8d9992",
+    "data/processed/llm_review/pass1_requests.jsonl": "8b568ffaa37f417118cb8058aec5f9aaaa65f8ad249211c875acb9cab730ba6f",
+    "data/processed/llm_review/pass2_requests.jsonl": "6315cd786b086c8b962225610d8674d9ee434204212b4dee0fb052a634225fb6",
+    "data/processed/llm_review/review_order.json": "9a136f68ac8cc69c4a537372768fad2634b533bbdce2f52fc93f13741f63b95d",
+    "data/processed/stage1_execution_order.json": "ccf175cb8155ea80da730c7cb91fa8988f79f05209104eb93ed8ed912588bddd",
+    "data/processed/stage1_failure_responses.jsonl": "0a1f13127d558b199adf04fb3a91500d2f3dbd796b5eae6becd4dbb037655902",
+    "data/processed/stage1_failures.json": "c69bf6061f41cf0ccad9a06b7cb9e7425875fa51bbae5c364d85b78a237a080e",
+    "data/processed/stage1_requests.jsonl": "3382a4944c62cebc3b9e24e884d8dd75bcc7413b4fdb9ec4b4d887bcc08a7166",
+    "data/processed/stage2_execution_order.json": "1b88a135278c75587bdd2f0608f026a4eff3d66f8afd47270bb36716d8dbe796",
+    "data/processed/stage2_requests.jsonl": "cdd1c1bb7c13a04efe006be757ace0f015401291f1f8ddb508125518be46a19f",
+    "data/processed/stage_b_items.json": "a673751ec2b16f4fcd9191201ffad950210ba56e05a96bbfca8341b02160ca6a",
+    "data/smoke_records/diag_headroom_v11/stage_b_diag_headroom_RESULTS.zip": "72af3dd8f4032c839a5d1387df11cdb96437c4ee73f1ca6b8e93ed0906a254e8",
+    "data/smoke_records/review_smoke_a3/stage_b_llm_review_smoke_RESULTS.zip": "9205bdda17367f4fb71e4f2520193a95d94af2cf02b11b65cab2da53a0bc934a",
+    "data/smoke_records/review_smoke_a4/stage_b_llm_review_smoke_RESULTS.zip": "dd15c0cb7bcb2ace9cf1132cbca2e44d9ff0993988590e604f2d015035c9fca9",
+    "data/smoke_records/smoke1/stage_b_smoke1_RESULTS.zip": "c8e965fb87402da84f9298ce584aa91842c702fa02059757d92e5234cafd81b1",
+    "data/smoke_records/smoke2/stage_b_smoke2_RESULTS.zip": "e95729e470f55f67cb59595d7c60e3cbf8c09b1bff9d88f1cc876cb671d58c59",
+    "data/smoke_records/smoke3/stage_b_smoke3_RESULTS.zip": "e87a0bfedf87a599540c7b759b59a490727eb096fa3ca6b471d0e3885725f039",
+    "data/smoke_records/stage2_smoke_v12_go/stage_b_stage2_smoke_RESULTS.zip": "0a287c77a3c60baa25a18875c28b13b34a0cc07dda4e5cc8ddb18aa9cd0b2e42",
+    "data/smoke_records/stage2_smoke_v9/stage_b_stage2_smoke_RESULTS.zip": "c5bd1fb6ad615618e968847fe695fbb44cae9fbe375620c56b9c226aaf900eca",
+    "data/stage1_records/stage_b_stage1_qwen3_4b_FINAL.zip": "2042a50fc0954c41b3f325ab281a84252fc6cd9f989a505839c6305b8165e85f",
+    "scripts/08_build_stage2_requests.py": "f47a895d7ffa61c3a5aae76adf66c97c60ebbd4b6c2c8f20f46f3c6133f6b7dc",
+    "scripts/09_stage2_smoke_test.py": "c257e93ccd0764456cb73685bce49e003f51955e96c909170b8669ad6a3e8fe2",
+    "scripts/10_run_stage2.py": "8a32adf4d647b868e38ae1bfd65ee5b97c3f74e7268bae505a29051156fadbd7",
+    "scripts/21_freeze_pass1_only_review.py": "8cf40a503b4d6163d7051ae86c86ec3b244550138e1a1c9dd71f36c31f7059ad",
+    "src/analysis.py": "3437cdca88c153ec0cb8f3152f08ff440a683b80674573a943c834014242237e",
+    "src/annotation_review.py": "4649ce6602f450a42639d55fa31a9006da78dc043dad967cece1e3bb9c714286",
+    "src/human_review.py": "e25432fd26cec12bcd44ba45062f056f5142757a304c04915b2d3e57bd7a5239",
+    "src/llm_review.py": "80aeed8aa03aa8d6e984129c57150215c1b66ca26340f4cd01fdb09954f8c9b7",
+    "src/llm_review_runner.py": "5f1b3f51c13f76dcb1622260bc47dbcb8a574852967692fcf26520f0ae3fef21",
+    "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90",
+    "src/reviewer_loader.py": "7d4e0188c33d3583b5fec4554996dce00161daf46f5f90bae60208019c927d8c",
+    "src/smoke_gate.py": "02f95adbbafe5a901ab8ad8407f9a3039f4e7919b79fda44d70e00db455eb933",
+    "src/stage2_runner.py": "96c84352a2181969eac0e651a9791602804e3ddadcc91cd8a68d1fd11d65cde4"
+  },
+  "change_log": [
+    {
+      "time": "2026-10-12T11:50:27+00:00",
+      "file": "data/processed/stage_b_items.json",
+      "old_sha256": "6f718ac6258133023017e017fdcf21e786ed64045e5eef9b6aece2c3f217984c",
+      "new_sha256": "a673751ec2b16f4fcd9191201ffad950210ba56e05a96bbfca8341b02160ca6a",
+      "reason": "researcher protocol change 2026-10-12 (pre-inference): Stage 1 uses all 265 eligible items"
+    },
+    {
+      "time": "2026-10-12T11:50:27+00:00",
+      "file": "data/manifests/dataset_manifest.json",
+      "old_sha256": "5283b098fea6e35e65790a349e1a779ea06cf5a83bf29caf06fcfd95a52b1444",
+      "new_sha256": "9997cf393547d4103a0357046b01e940be0b534657d45b461aa44308c7cb8994",
+      "reason": "researcher protocol change 2026-10-12 (pre-inference): Stage 1 uses all 265 eligible items"
+    },
+    {
+      "time": "2026-10-12T11:50:28+00:00",
+      "file": "data/processed/stage1_requests.jsonl",
+      "old_sha256": "95414490095ea346f32be8ccb39cae67e7317218fddf292da2de5540c9281dc5",
+      "new_sha256": "3382a4944c62cebc3b9e24e884d8dd75bcc7413b4fdb9ec4b4d887bcc08a7166",
+      "reason": "researcher protocol change 2026-10-12 (pre-inference): Stage 1 uses all 265 eligible items"
+    },
+    {
+      "time": "2026-10-12T11:50:28+00:00",
+      "file": "data/processed/stage1_execution_order.json",
+      "old_sha256": "876158e3b33f5ab0bf74b2b060c8bcc2490e8fe5fe3b50ff0a41e3a9f19d0909",
+      "new_sha256": "ccf175cb8155ea80da730c7cb91fa8988f79f05209104eb93ed8ed912588bddd",
+      "reason": "researcher protocol change 2026-10-12 (pre-inference): Stage 1 uses all 265 eligible items"
+    },
+    {
+      "time": "2026-10-12T11:50:28+00:00",
+      "file": "data/manifests/stage1_request_manifest.json",
+      "old_sha256": "840cc5e362a1a46a8c32f927dc7375ae13b9a5508d1ff93d1e051fcfd1f02f06",
+      "new_sha256": "5c0957f3fbef6d8ba9ad984e9f8df7897492510118e58ef4687355304202cb11",
+      "reason": "researcher protocol change 2026-10-12 (pre-inference): Stage 1 uses all 265 eligible items"
+    },
+    {
+      "time": "2026-10-12T11:56:06+00:00",
+      "file": "data/manifests/INTERPRETATION_RULE_FROZEN.json",
+      "old_sha256": "0e8ddae84d32bad056491fc775f61374a43924590069013b8c332932c362bbe6",
+      "new_sha256": "e9c42563ea9300397465fdc3f9f569b291c56c54f768671abda2402dc4c6fc2a",
+      "reason": "extend rule lock to also cover the analysis settings that define the CI (pre-inference)"
+    },
+    {
+      "time": "2026-10-12T13:16:40+00:00",
+      "file": "configs/stage_b.json",
+      "old_sha256": "19cec1fc86f17e11b94560b3f99cfb478112f2cde8a69555fd43470cdd4f6ef3",
+      "new_sha256": "d1e800ec1cca71c45c61d9b2aeeab37025bc48a8e06863548e67dedf75482873",
+      "reason": "protocol amendment A1 (researcher-approved pre-full-run smoke-test correction after smoke1 NO-GO): solver.stage_b_overrides.max_new_tokens 768 -> 1536 (Stage 1 AND Stage 2); numeric answer parser: frozen pilot parser 2.0 -> Stage-B parser stage_b_numeric_v1 (see parser); pilot strict parser kept as the format-compliance diagnostic",
+      "note": "first registration; old = version in use before"
+    },
+    {
+      "time": "2026-10-12T13:16:40+00:00",
+      "file": "src/parser.py",
+      "old_sha256": "20640523d8653172aec0bbb710c9d43ae7b58892b30b4d963b7f6b1ffda32d4c",
+      "new_sha256": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90",
+      "reason": "protocol amendment A1 (researcher-approved pre-full-run smoke-test correction after smoke1 NO-GO): solver.stage_b_overrides.max_new_tokens 768 -> 1536 (Stage 1 AND Stage 2); numeric answer parser: frozen pilot parser 2.0 -> Stage-B parser stage_b_numeric_v1 (see parser); pilot strict parser kept as the format-compliance diagnostic",
+      "note": "first registration; old = version in use before"
+    },
+    {
+      "time": "2026-10-13T05:19:17+00:00",
+      "file": "configs/stage_b.json",
+      "old_sha256": "d1e800ec1cca71c45c61d9b2aeeab37025bc48a8e06863548e67dedf75482873",
+      "new_sha256": "128c0df96bd2a6f1f321123568121fed46ce59eddd5b19a638cb9b6b3abeb92e",
+      "reason": "protocol amendment A2 (researcher-approved pre-full-run smoke-test correction after smoke2 NO-GO): solver.stage_b_overrides.max_new_tokens 1536 -> 2048 (Stage 1 AND Stage 2)"
+    },
+    {
+      "time": "2026-10-13T05:19:17+00:00",
+      "file": "data/manifests/PROTOCOL_AMENDMENTS.json",
+      "old_sha256": "1fa97ed1175b2e9f8fb6cedfac8eb1cef09bea3f429fe789be60bfaac61d1cd0",
+      "new_sha256": "54dd1e3081500bab9a0f7f5dd7b7513c0ad1c518575dde535b4f45f8284053b0",
+      "reason": "protocol amendment A2 (researcher-approved pre-full-run smoke-test correction after smoke2 NO-GO): solver.stage_b_overrides.max_new_tokens 1536 -> 2048 (Stage 1 AND Stage 2)"
+    },
+    {
+      "time": "2026-10-13T13:23:39+00:00",
+      "file": "configs/stage_b.json",
+      "old_sha256": "128c0df96bd2a6f1f321123568121fed46ce59eddd5b19a638cb9b6b3abeb92e",
+      "new_sha256": "0e5e57930fe5684aff9af202cdb8fa3906058e00998b14c6bb2d5961a5c3a4ff",
+      "reason": "protocol amendment A3 (researcher decision, pre-Stage-2): annotation-fidelity review: manual human review -> blinded two-pass LLM-assisted review (llm_review section; reviewer Qwen/Qwen2.5-Math-7B-Instruct @ ef9926d75ab1d54532f6a30dd5e760355eb9aa4d, 4-bit NF4, greedy, batch 1); new frozen review code + requests: src/llm_review.py, src/reviewer_loader.py, src/llm_review_runner.py, data/processed/llm_review/*, data/manifests/llm_review_request_manifest.json"
+    },
+    {
+      "time": "2026-10-13T13:23:39+00:00",
+      "file": "data/manifests/PROTOCOL_AMENDMENTS.json",
+      "old_sha256": "54dd1e3081500bab9a0f7f5dd7b7513c0ad1c518575dde535b4f45f8284053b0",
+      "new_sha256": "ce4955deb95c274702740c2dfbeb1cbf70e07285956d412a9109a1526525c349",
+      "reason": "protocol amendment A3 (researcher decision, pre-Stage-2): annotation-fidelity review: manual human review -> blinded two-pass LLM-assisted review (llm_review section; reviewer Qwen/Qwen2.5-Math-7B-Instruct @ ef9926d75ab1d54532f6a30dd5e760355eb9aa4d, 4-bit NF4, greedy, batch 1); new frozen review code + requests: src/llm_review.py, src/reviewer_loader.py, src/llm_review_runner.py, data/processed/llm_review/*, data/manifests/llm_review_request_manifest.json"
+    },
+    {
+      "time": "2026-10-13T13:27:10+00:00",
+      "file": "src/reviewer_loader.py",
+      "old_sha256": "d3b43023bde5251a1a5cc5f8cdf6e4d3edd9b282b94e7745136fd76bd5428a12",
+      "new_sha256": "32e451668c5d4576e0165f51164a950769d235be417843c4d3d1370de9d343c7",
+      "reason": "A3 pre-run fix (no reviewer output exists): post-load quantization check reads BitsAndBytesConfig attributes directly (enum-safe), counts bitsandbytes Linear4bit layers and checks the bitsandbytes version; reviewer configuration, prompts and requests unchanged"
+    },
+    {
+      "time": "2026-10-13T15:08:38+00:00",
+      "file": "configs/stage_b.json",
+      "old_sha256": "0e5e57930fe5684aff9af202cdb8fa3906058e00998b14c6bb2d5961a5c3a4ff",
+      "new_sha256": "e306831eddfa3bee9754039654fe47dc253a29b982b845aff649ab3b26a9411d",
+      "reason": "protocol amendment A4 (researcher-approved pre-full-review reviewer replacement after review_smoke_a3 NO-GO): llm_review.reviewer: Qwen/Qwen2.5-Math-7B-Instruct @ ef9926d75ab1d54532f6a30dd5e760355eb9aa4d -> Qwen/Qwen2.5-7B-Instruct @ a09a35458c702b33eeacc393d103063234e8bc28 (pinned before inference; max_context_tokens 4096 -> 32768 = the model's max_position_embeddings); llm_review.reviewer.max_new_tokens 768 -> 192; llm_review.reviewer.repetition_penalty: explicitly 1.0 (pure greedy; overrides the checkpoint generation_config value 1.05); fixed SYSTEM prompt (src/llm_review.py, prompt version llm_review_prompts_v1 -> v2): rewritten only to state that this is a classification task, not a request to solve the problem conversationally, and that the reply is one JSON object only; Pass-1 / Pass-2 user prompts, questions and output schemas byte-identical; reviewer smoke gate: adds an exact-schema check (the whole output is one JSON object with exactly the allowed keys and valid values); every earlier check kept; review request files rebuilt only because their rendered_sha256 field includes the system prompt; prompts, prompt_sha256, items and order byte-identical (logged in FROZEN_HASHES)"
+    },
+    {
+      "time": "2026-10-13T15:08:38+00:00",
+      "file": "src/llm_review.py",
+      "old_sha256": "5d490aa7fb5912004c70110f5c58d1a91ba6d957ee6184799cee63b95b90852f",
+      "new_sha256": "80aeed8aa03aa8d6e984129c57150215c1b66ca26340f4cd01fdb09954f8c9b7",
+      "reason": "protocol amendment A4 (researcher-approved pre-full-review reviewer replacement after review_smoke_a3 NO-GO): llm_review.reviewer: Qwen/Qwen2.5-Math-7B-Instruct @ ef9926d75ab1d54532f6a30dd5e760355eb9aa4d -> Qwen/Qwen2.5-7B-Instruct @ a09a35458c702b33eeacc393d103063234e8bc28 (pinned before inference; max_context_tokens 4096 -> 32768 = the model's max_position_embeddings); llm_review.reviewer.max_new_tokens 768 -> 192; llm_review.reviewer.repetition_penalty: explicitly 1.0 (pure greedy; overrides the checkpoint generation_config value 1.05); fixed SYSTEM prompt (src/llm_review.py, prompt version llm_review_prompts_v1 -> v2): rewritten only to state that this is a classification task, not a request to solve the problem conversationally, and that the reply is one JSON object only; Pass-1 / Pass-2 user prompts, questions and output schemas byte-identical; reviewer smoke gate: adds an exact-schema check (the whole output is one JSON object with exactly the allowed keys and valid values); every earlier check kept; review request files rebuilt only because their rendered_sha256 field includes the system prompt; prompts, prompt_sha256, items and order byte-identical (logged in FROZEN_HASHES)"
+    },
+    {
+      "time": "2026-10-13T15:08:38+00:00",
+      "file": "src/reviewer_loader.py",
+      "old_sha256": "32e451668c5d4576e0165f51164a950769d235be417843c4d3d1370de9d343c7",
+      "new_sha256": "7d4e0188c33d3583b5fec4554996dce00161daf46f5f90bae60208019c927d8c",
+      "reason": "protocol amendment A4 (researcher-approved pre-full-review reviewer replacement after review_smoke_a3 NO-GO): llm_review.reviewer: Qwen/Qwen2.5-Math-7B-Instruct @ ef9926d75ab1d54532f6a30dd5e760355eb9aa4d -> Qwen/Qwen2.5-7B-Instruct @ a09a35458c702b33eeacc393d103063234e8bc28 (pinned before inference; max_context_tokens 4096 -> 32768 = the model's max_position_embeddings); llm_review.reviewer.max_new_tokens 768 -> 192; llm_review.reviewer.repetition_penalty: explicitly 1.0 (pure greedy; overrides the checkpoint generation_config value 1.05); fixed SYSTEM prompt (src/llm_review.py, prompt version llm_review_prompts_v1 -> v2): rewritten only to state that this is a classification task, not a request to solve the problem conversationally, and that the reply is one JSON object only; Pass-1 / Pass-2 user prompts, questions and output schemas byte-identical; reviewer smoke gate: adds an exact-schema check (the whole output is one JSON object with exactly the allowed keys and valid values); every earlier check kept; review request files rebuilt only because their rendered_sha256 field includes the system prompt; prompts, prompt_sha256, items and order byte-identical (logged in FROZEN_HASHES)"
+    },
+    {
+      "time": "2026-10-13T15:08:38+00:00",
+      "file": "src/llm_review_runner.py",
+      "old_sha256": "376d5b532f96b20839850bea4d2050e2ba0fc97cc59a3135f0c440c8a5fff7e5",
+      "new_sha256": "5f1b3f51c13f76dcb1622260bc47dbcb8a574852967692fcf26520f0ae3fef21",
+      "reason": "protocol amendment A4 (researcher-approved pre-full-review reviewer replacement after review_smoke_a3 NO-GO): llm_review.reviewer: Qwen/Qwen2.5-Math-7B-Instruct @ ef9926d75ab1d54532f6a30dd5e760355eb9aa4d -> Qwen/Qwen2.5-7B-Instruct @ a09a35458c702b33eeacc393d103063234e8bc28 (pinned before inference; max_context_tokens 4096 -> 32768 = the model's max_position_embeddings); llm_review.reviewer.max_new_tokens 768 -> 192; llm_review.reviewer.repetition_penalty: explicitly 1.0 (pure greedy; overrides the checkpoint generation_config value 1.05); fixed SYSTEM prompt (src/llm_review.py, prompt version llm_review_prompts_v1 -> v2): rewritten only to state that this is a classification task, not a request to solve the problem conversationally, and that the reply is one JSON object only; Pass-1 / Pass-2 user prompts, questions and output schemas byte-identical; reviewer smoke gate: adds an exact-schema check (the whole output is one JSON object with exactly the allowed keys and valid values); every earlier check kept; review request files rebuilt only because their rendered_sha256 field includes the system prompt; prompts, prompt_sha256, items and order byte-identical (logged in FROZEN_HASHES)"
+    },
+    {
+      "time": "2026-10-13T15:08:38+00:00",
+      "file": "data/processed/llm_review/pass1_requests.jsonl",
+      "old_sha256": "c64eff43322efa700a8c5e17b1456e005427b05f74c8636b8aae7c65899f2028",
+      "new_sha256": "8b568ffaa37f417118cb8058aec5f9aaaa65f8ad249211c875acb9cab730ba6f",
+      "reason": "protocol amendment A4 (researcher-approved pre-full-review reviewer replacement after review_smoke_a3 NO-GO): llm_review.reviewer: Qwen/Qwen2.5-Math-7B-Instruct @ ef9926d75ab1d54532f6a30dd5e760355eb9aa4d -> Qwen/Qwen2.5-7B-Instruct @ a09a35458c702b33eeacc393d103063234e8bc28 (pinned before inference; max_context_tokens 4096 -> 32768 = the model's max_position_embeddings); llm_review.reviewer.max_new_tokens 768 -> 192; llm_review.reviewer.repetition_penalty: explicitly 1.0 (pure greedy; overrides the checkpoint generation_config value 1.05); fixed SYSTEM prompt (src/llm_review.py, prompt version llm_review_prompts_v1 -> v2): rewritten only to state that this is a classification task, not a request to solve the problem conversationally, and that the reply is one JSON object only; Pass-1 / Pass-2 user prompts, questions and output schemas byte-identical; reviewer smoke gate: adds an exact-schema check (the whole output is one JSON object with exactly the allowed keys and valid values); every earlier check kept; review request files rebuilt only because their rendered_sha256 field includes the system prompt; prompts, prompt_sha256, items and order byte-identical (logged in FROZEN_HASHES)"
+    },
+    {
+      "time": "2026-10-13T15:08:38+00:00",
+      "file": "data/processed/llm_review/pass2_requests.jsonl",
+      "old_sha256": "9659b3178cb7b1984e42d60828941938b965c5af9d5512f38a9a70291d41551e",
+      "new_sha256": "6315cd786b086c8b962225610d8674d9ee434204212b4dee0fb052a634225fb6",
+      "reason": "protocol amendment A4 (researcher-approved pre-full-review reviewer replacement after review_smoke_a3 NO-GO): llm_review.reviewer: Qwen/Qwen2.5-Math-7B-Instruct @ ef9926d75ab1d54532f6a30dd5e760355eb9aa4d -> Qwen/Qwen2.5-7B-Instruct @ a09a35458c702b33eeacc393d103063234e8bc28 (pinned before inference; max_context_tokens 4096 -> 32768 = the model's max_position_embeddings); llm_review.reviewer.max_new_tokens 768 -> 192; llm_review.reviewer.repetition_penalty: explicitly 1.0 (pure greedy; overrides the checkpoint generation_config value 1.05); fixed SYSTEM prompt (src/llm_review.py, prompt version llm_review_prompts_v1 -> v2): rewritten only to state that this is a classification task, not a request to solve the problem conversationally, and that the reply is one JSON object only; Pass-1 / Pass-2 user prompts, questions and output schemas byte-identical; reviewer smoke gate: adds an exact-schema check (the whole output is one JSON object with exactly the allowed keys and valid values); every earlier check kept; review request files rebuilt only because their rendered_sha256 field includes the system prompt; prompts, prompt_sha256, items and order byte-identical (logged in FROZEN_HASHES)"
+    },
+    {
+      "time": "2026-10-13T15:08:38+00:00",
+      "file": "data/manifests/llm_review_request_manifest.json",
+      "old_sha256": "24658e3eabfb20afcf2d76bd12e589d3761fa63779a9fa0918d573e7811fa9a0",
+      "new_sha256": "02b3bf278f6e78d11e962f4de16f093e7acb3852e232f99849bb7ef304f3c26c",
+      "reason": "protocol amendment A4 (researcher-approved pre-full-review reviewer replacement after review_smoke_a3 NO-GO): llm_review.reviewer: Qwen/Qwen2.5-Math-7B-Instruct @ ef9926d75ab1d54532f6a30dd5e760355eb9aa4d -> Qwen/Qwen2.5-7B-Instruct @ a09a35458c702b33eeacc393d103063234e8bc28 (pinned before inference; max_context_tokens 4096 -> 32768 = the model's max_position_embeddings); llm_review.reviewer.max_new_tokens 768 -> 192; llm_review.reviewer.repetition_penalty: explicitly 1.0 (pure greedy; overrides the checkpoint generation_config value 1.05); fixed SYSTEM prompt (src/llm_review.py, prompt version llm_review_prompts_v1 -> v2): rewritten only to state that this is a classification task, not a request to solve the problem conversationally, and that the reply is one JSON object only; Pass-1 / Pass-2 user prompts, questions and output schemas byte-identical; reviewer smoke gate: adds an exact-schema check (the whole output is one JSON object with exactly the allowed keys and valid values); every earlier check kept; review request files rebuilt only because their rendered_sha256 field includes the system prompt; prompts, prompt_sha256, items and order byte-identical (logged in FROZEN_HASHES)"
+    },
+    {
+      "time": "2026-10-13T15:08:38+00:00",
+      "file": "data/manifests/PROTOCOL_AMENDMENTS.json",
+      "old_sha256": "ce4955deb95c274702740c2dfbeb1cbf70e07285956d412a9109a1526525c349",
+      "new_sha256": "dbc9aff5db8f5b95a78374bf1049790263dd0020aad31bcc3fbeb9da9f21b230",
+      "reason": "protocol amendment A4 (researcher-approved pre-full-review reviewer replacement after review_smoke_a3 NO-GO): llm_review.reviewer: Qwen/Qwen2.5-Math-7B-Instruct @ ef9926d75ab1d54532f6a30dd5e760355eb9aa4d -> Qwen/Qwen2.5-7B-Instruct @ a09a35458c702b33eeacc393d103063234e8bc28 (pinned before inference; max_context_tokens 4096 -> 32768 = the model's max_position_embeddings); llm_review.reviewer.max_new_tokens 768 -> 192; llm_review.reviewer.repetition_penalty: explicitly 1.0 (pure greedy; overrides the checkpoint generation_config value 1.05); fixed SYSTEM prompt (src/llm_review.py, prompt version llm_review_prompts_v1 -> v2): rewritten only to state that this is a classification task, not a request to solve the problem conversationally, and that the reply is one JSON object only; Pass-1 / Pass-2 user prompts, questions and output schemas byte-identical; reviewer smoke gate: adds an exact-schema check (the whole output is one JSON object with exactly the allowed keys and valid values); every earlier check kept; review request files rebuilt only because their rendered_sha256 field includes the system prompt; prompts, prompt_sha256, items and order byte-identical (logged in FROZEN_HASHES)"
+    },
+    {
+      "time": "2026-10-14T05:03:18+00:00",
+      "file": "configs/stage_b.json",
+      "old_sha256": "e306831eddfa3bee9754039654fe47dc253a29b982b845aff649ab3b26a9411d",
+      "new_sha256": "cab39db4e024fba2a54bbd3436f2b5bfbb94f0e7c552aaf619bc54ea8b97889f",
+      "reason": "protocol amendment A5 (researcher decision after review_smoke_a4 NO-GO: LLM reviewer stopped, blinded human review): annotation-fidelity reviewer: the A3/A4 LLM-assisted reviewer -> a blinded HUMAN reviewer (section human_review); scripts 15 / 16 refuse the real reviewer and 17 refuses to freeze into data/ (mock / TEST-ONLY use kept for the regression tests); human review workflow: local browser interface (scripts/19_human_review_server.py, standard library, 127.0.0.1 only) writing an append-only, hash-chained judgment log per pass; every save (including revisions) is kept with its UTC timestamp; Pass 1 is frozen (scripts/20_freeze_human_review.py --pass 1) BEFORE the ProcessBench step is read or any agreement computed; the Pass-2 view file is generated only at that freeze; Pass-2 freeze fills annotation_review_form_FILLED.csv under the unchanged decision rules (notes: HUMAN blinded review); 07b then freezes decisions only after researcher approval"
+    },
+    {
+      "time": "2026-10-14T05:03:18+00:00",
+      "file": "data/manifests/PROTOCOL_AMENDMENTS.json",
+      "old_sha256": "dbc9aff5db8f5b95a78374bf1049790263dd0020aad31bcc3fbeb9da9f21b230",
+      "new_sha256": "e36de6657362937d3182e705f197166c6c9f5a20003347f4c2f60ab7dfbb3fe2",
+      "reason": "protocol amendment A5 (researcher decision after review_smoke_a4 NO-GO: LLM reviewer stopped, blinded human review): annotation-fidelity reviewer: the A3/A4 LLM-assisted reviewer -> a blinded HUMAN reviewer (section human_review); scripts 15 / 16 refuse the real reviewer and 17 refuses to freeze into data/ (mock / TEST-ONLY use kept for the regression tests); human review workflow: local browser interface (scripts/19_human_review_server.py, standard library, 127.0.0.1 only) writing an append-only, hash-chained judgment log per pass; every save (including revisions) is kept with its UTC timestamp; Pass 1 is frozen (scripts/20_freeze_human_review.py --pass 1) BEFORE the ProcessBench step is read or any agreement computed; the Pass-2 view file is generated only at that freeze; Pass-2 freeze fills annotation_review_form_FILLED.csv under the unchanged decision rules (notes: HUMAN blinded review); 07b then freezes decisions only after researcher approval"
+    },
+    {
+      "time": "2026-10-14T11:08:54+00:00",
+      "file": "configs/stage_b.json",
+      "old_sha256": "cab39db4e024fba2a54bbd3436f2b5bfbb94f0e7c552aaf619bc54ea8b97889f",
+      "new_sha256": "9d8407752ae071e83735eb978abf32851f79884c3a324430254759d93eb91e83",
+      "reason": "protocol amendment A6 (researcher decision, pre-Stage-2): annotation_review.false_step_verdicts += PASS1_IMPLIED (CONFIRM items: f = k-1 implied valid by the frozen Pass-1 CONFIRM) and NOT_REVIEWED (DISAGREE / UNCLEAR items; no Pass 2 judgment exists); annotation_review.decision_rules.l_false: primary-set items with false_step_verdict CORRECT or PASS1_IMPLIED (decision field false_step_validity_basis records which); human_review.pass2: waived (scripts 19 / 20 refuse --pass 2); the already generated pass2_view.json + HUMAN_REVIEW_PASS2_EXPORT.json are kept unchanged and unused; scripts/21_freeze_pass1_only_review.py fills annotation_review_form_FILLED.csv from the frozen Pass-1 mapping only (verifies every Pass-1 file against its registered sha256 first); 07b then freezes the decisions; Stage-2 request manifest and analysis outputs carry the A6 statement and the L_false validity label"
+    },
+    {
+      "time": "2026-10-14T11:08:54+00:00",
+      "file": "data/manifests/PROTOCOL_AMENDMENTS.json",
+      "old_sha256": "e36de6657362937d3182e705f197166c6c9f5a20003347f4c2f60ab7dfbb3fe2",
+      "new_sha256": "245a5210f719e3e8c5d968e507244f25b35fca0f216e25e8b8dd94c282c7280d",
+      "reason": "protocol amendment A6 (researcher decision, pre-Stage-2): annotation_review.false_step_verdicts += PASS1_IMPLIED (CONFIRM items: f = k-1 implied valid by the frozen Pass-1 CONFIRM) and NOT_REVIEWED (DISAGREE / UNCLEAR items; no Pass 2 judgment exists); annotation_review.decision_rules.l_false: primary-set items with false_step_verdict CORRECT or PASS1_IMPLIED (decision field false_step_validity_basis records which); human_review.pass2: waived (scripts 19 / 20 refuse --pass 2); the already generated pass2_view.json + HUMAN_REVIEW_PASS2_EXPORT.json are kept unchanged and unused; scripts/21_freeze_pass1_only_review.py fills annotation_review_form_FILLED.csv from the frozen Pass-1 mapping only (verifies every Pass-1 file against its registered sha256 first); 07b then freezes the decisions; Stage-2 request manifest and analysis outputs carry the A6 statement and the L_false validity label"
+    },
+    {
+      "time": "2026-10-14T13:04:07+00:00",
+      "file": "data/manifests/HARNESS_CORRECTIONS.json",
+      "old_sha256": "8694e2c918533dd80ddb24954525c0639b1f4489e548e28678c6c1bdbd94791c",
+      "new_sha256": "db99f896668d9a451f87136f5768bd256e96de58a45a509e6b839bec4c446180",
+      "reason": "harness correction H2 (test harness only; no protocol change)"
+    },
+    {
+      "time": "2026-10-14T16:09:49+00:00",
+      "file": "configs/stage_b.json",
+      "old_sha256": "9d8407752ae071e83735eb978abf32851f79884c3a324430254759d93eb91e83",
+      "new_sha256": "074617ad73f42e3d8a597be98470087e088012954cada277b093e338212845f3",
+      "reason": "protocol amendment A7 (researcher-approved pre-full-Stage-2 smoke-gate clarification after the v9 NO-GO + DIAGNOSTIC-ONLY headroom result): stage2.smoke.gate = A7_stage2_pipeline_integrity_gate (src/smoke_gate.decide_stage2_a7, used by scripts/09_stage2_smoke_test.py): technical checks (unchanged) + persistence/integrity checks must all pass; cap hits and >90%-of-limit responses are reported descriptively and no longer decide the gate; the parse thresholds (GO <= 1 unparsed, REVIEW 2, NO-GO > 2) apply to the responses that finished normally (finish_reason stop); the DIAGNOSTIC-ONLY headroom result is preserved byte-for-byte under data/smoke_records/diag_headroom_v11/ with data/manifests/DIAG_HEADROOM_V11_RECORD.json; it is not scored and never substituted for any Stage-2 output; full Stage 2 stays locked: scripts/10_run_stage2.py --solver qwen refuses unless a registered data/manifests/STAGE2_SMOKE_GO.json records a NEW smoke archive with decision GO under the A7 gate (none exists in bundle v12)"
+    },
+    {
+      "time": "2026-10-14T16:09:49+00:00",
+      "file": "data/manifests/PROTOCOL_AMENDMENTS.json",
+      "old_sha256": "245a5210f719e3e8c5d968e507244f25b35fca0f216e25e8b8dd94c282c7280d",
+      "new_sha256": "4d360ca16809fcc384fdd7d2ce4e29eb92e211a98b60ad4dd4bc6f6a81964247",
+      "reason": "protocol amendment A7 (researcher-approved pre-full-Stage-2 smoke-gate clarification after the v9 NO-GO + DIAGNOSTIC-ONLY headroom result): stage2.smoke.gate = A7_stage2_pipeline_integrity_gate (src/smoke_gate.decide_stage2_a7, used by scripts/09_stage2_smoke_test.py): technical checks (unchanged) + persistence/integrity checks must all pass; cap hits and >90%-of-limit responses are reported descriptively and no longer decide the gate; the parse thresholds (GO <= 1 unparsed, REVIEW 2, NO-GO > 2) apply to the responses that finished normally (finish_reason stop); the DIAGNOSTIC-ONLY headroom result is preserved byte-for-byte under data/smoke_records/diag_headroom_v11/ with data/manifests/DIAG_HEADROOM_V11_RECORD.json; it is not scored and never substituted for any Stage-2 output; full Stage 2 stays locked: scripts/10_run_stage2.py --solver qwen refuses unless a registered data/manifests/STAGE2_SMOKE_GO.json records a NEW smoke archive with decision GO under the A7 gate (none exists in bundle v12)"
+    }
+  ]
+}

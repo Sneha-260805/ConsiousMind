@@ -1,0 +1,10 @@
+{
+  "exported": "2026-10-13T12:25:53+00:00",
+  "TEST_ONLY": false,
+  "n_items": 76,
+  "failures_sha256": "c69bf6061f41cf0ccad9a06b7cb9e7425875fa51bbae5c364d85b78a237a080e",
+  "packet_sha256": "d01a7eecfe5b9a2341d9d27954a9fc4af10b1b0fcdc8d285646a36790bf031ec",
+  "blank_form_sha256": "5f08573bf8c94f98d92b3ce9986f285e4b83c35a860c03e2b115c86b047250cb",
+  "blinding": "no Stage-1 response, answer or outcome; seeded random item order",
+  "packet_order_seed": 6303
+}

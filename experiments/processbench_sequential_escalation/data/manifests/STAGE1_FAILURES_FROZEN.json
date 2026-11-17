@@ -1,0 +1,20 @@
+{
+  "frozen": "2026-10-13T12:25:21+00:00",
+  "TEST_ONLY": false,
+  "failures_file": "stage1_failures.json",
+  "failures_sha256": "c69bf6061f41cf0ccad9a06b7cb9e7425875fa51bbae5c364d85b78a237a080e",
+  "responses_file": "stage1_failure_responses.jsonl",
+  "responses_sha256": "0a1f13127d558b199adf04fb3a91500d2f3dbd796b5eae6becd4dbb037655902",
+  "source": "stage_b_stage1_qwen3_4b_FINAL.zip",
+  "source_sha256": "2042a50fc0954c41b3f325ab281a84252fc6cd9f989a505839c6305b8165e85f",
+  "source_run_id": "stage_b_stage1_qwen3_4b",
+  "n_failures": 76,
+  "failure_gate": {
+    "min_stage1_failures": 50,
+    "n_stage1_failures": 76,
+    "n_stage1_items": 265,
+    "stage1_failure_rate": 0.2868,
+    "passed": true
+  },
+  "rule": "Stage-2 eligibility = Stage-1 V failure. Frozen before any Stage-2 prompt is built; never modified after Stage-2 outcomes are seen."
+}

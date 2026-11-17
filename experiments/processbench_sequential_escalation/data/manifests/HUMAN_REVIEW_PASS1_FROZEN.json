@@ -1,0 +1,18 @@
+{
+  "frozen": "2026-10-14T11:00:31+00:00",
+  "amendment": "A5",
+  "pass": 1,
+  "TEST_ONLY": false,
+  "reviewer": "Sneha",
+  "n_items": 76,
+  "n_log_lines": 91,
+  "n_revisions": 15,
+  "first_save": "2026-10-14T06:03:07+00:00",
+  "last_save": "2026-10-14T10:57:44+00:00",
+  "view_sha256": "50fcd8880380286679b26d0bbebc650f31c71ce2ce1a02ebf18f9552e53f6369",
+  "log_sha256": "665d552f690e1a4c35dcf6b2ecbec3bc6376add34d4ee709b26f3a6701b41682",
+  "final_sha256": "ae0cd5ba7f9336bf86683e18e51b6f513f4b9bbc478b9f406c787b232fe9152b",
+  "failures_sha256": "c69bf6061f41cf0ccad9a06b7cb9e7425875fa51bbae5c364d85b78a237a080e",
+  "export_lock_sha256": "8bbfe3d3b09734d8e00949c9a5b539d08dc90ec472d10fe0b3bb75ae29789c27",
+  "statement": "Pass-1 judgments frozen BEFORE the ProcessBench annotation was read or any agreement computed."
+}
