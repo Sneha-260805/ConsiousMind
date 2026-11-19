@@ -1,0 +1,44 @@
+{
+  "frozen": "2026-10-12T11:56:06+00:00",
+  "approved_by": "researcher (written approval 2026-10-12, before any Stage-B model output)",
+  "rule_sha256": "595b3100e2fa1bd5588309d24976006465f630f10252152b004be749751b78cb",
+  "locked": "interpretation_rule + analysis settings (bootstrap resamples/seed/CI level, primary and secondary comparisons)",
+  "interpretation_rule": {
+    "status": "FROZEN by researcher decision 2026-10-12 before any Stage-B model output (lock: data/manifests/INTERPRETATION_RULE_FROZEN.json)",
+    "population": "primary Stage-2 set = frozen Stage-1 failures that passed the blinded annotation review",
+    "delta": "Delta_rescue = Rescue(V->L_true) - Rescue(V->V), paired; 95% CI = paired bootstrap percentile interval (analysis.bootstrap_resamples, analysis.bootstrap_seed)",
+    "meaningful_effect": 0.1,
+    "STRONG": "CI lower bound > 0 AND point estimate >= +0.10",
+    "NO_SUPPORT": "CI upper bound < +0.10",
+    "INCONCLUSIVE": "otherwise",
+    "diagnostic_content_contrast": "V->L_true vs V->L_false is reported as a SEPARATE paired contrast (same statistics); it does not enter the label.",
+    "not_in_label": "False-location gain, truncation/parse robustness and domain subgroups are reported as secondary/sensitivity analyses only."
+  },
+  "analysis": {
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 4242,
+    "ci_level": 0.95,
+    "primary_comparison": [
+      "L_true",
+      "VV"
+    ],
+    "secondary_comparisons": [
+      [
+        "N_true",
+        "VV"
+      ],
+      [
+        "L_false",
+        "VV"
+      ],
+      [
+        "L_true",
+        "N_true"
+      ],
+      [
+        "L_true",
+        "L_false"
+      ]
+    ]
+  }
+}

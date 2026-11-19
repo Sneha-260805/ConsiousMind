@@ -1,0 +1,15 @@
+comparison,A,B,n_paired,both_rescue,A_only_rescues,B_only_rescues,neither_rescues,rescue_A,rescue_B,delta_rescue,delta_rescue_ci_low,delta_rescue_ci_high,ci_half_width,mcnemar_exact_p,n_population,delta_final_repair,delta_final_ci_low,delta_final_ci_high,bootstrap,scope,role
+V->L_true vs V->VV,L_true,VV,61,3,7,1,50,0.1639,0.0656,0.0984,0.0164,0.1803,0.082,0.0703,250,0.024,0.004,0.044,"10000 paired resamples, seed 4242, percentile CI",all,PRIMARY
+V->L_true vs V->L_false,L_true,L_false,61,6,4,2,49,0.1639,0.1311,0.0328,-0.0492,0.1148,0.082,0.6875,250,0.008,-0.012,0.028,"10000 paired resamples, seed 4243, percentile CI",all,DIAGNOSTIC-CONTENT CONTRAST (separate; not in the label)
+V->N_true vs V->VV,N_true,VV,61,2,5,2,52,0.1148,0.0656,0.0492,-0.0328,0.1311,0.082,0.4531,250,0.012,-0.008,0.032,"10000 paired resamples, seed 4244, percentile CI",all,secondary
+V->L_false vs V->VV,L_false,VV,61,3,5,1,52,0.1311,0.0656,0.0656,0.0,0.1475,0.0738,0.2188,250,0.016,0.0,0.036,"10000 paired resamples, seed 4245, percentile CI",all,secondary
+V->L_true vs V->N_true,L_true,N_true,61,6,4,1,50,0.1639,0.1148,0.0492,-0.0164,0.1311,0.0738,0.375,250,0.012,-0.004,0.032,"10000 paired resamples, seed 4246, percentile CI",all,secondary
+V->L_true vs V->VV,L_true,VV,29,0,6,1,22,0.2069,0.0345,0.1724,0.0,0.3448,0.1724,0.125,250,0.02,0.0,0.04,"10000 paired resamples, seed 4247, percentile CI",gsm8k,descriptive stratum
+V->L_true vs V->VV,L_true,VV,32,3,1,0,28,0.125,0.0938,0.0312,0.0,0.0938,0.0469,1.0,250,0.004,0.0,0.012,"10000 paired resamples, seed 4248, percentile CI",math,descriptive stratum
+V->L_true vs V->VV,L_true,VV,0,0,0,0,0,,,,,,,1.0,250,,,,"10000 paired resamples, seed 4249, percentile CI",math Level 1,descriptive stratum
+V->L_true vs V->VV,L_true,VV,3,0,0,0,3,0.0,0.0,0.0,0.0,0.0,0.0,1.0,250,0.0,0.0,0.0,"10000 paired resamples, seed 4250, percentile CI",math Level 2,descriptive stratum
+V->L_true vs V->VV,L_true,VV,3,0,0,0,3,0.0,0.0,0.0,0.0,0.0,0.0,1.0,250,0.0,0.0,0.0,"10000 paired resamples, seed 4251, percentile CI",math Level 3,descriptive stratum
+V->L_true vs V->VV,L_true,VV,11,2,0,0,9,0.1818,0.1818,0.0,0.0,0.0,0.0,1.0,250,0.0,0.0,0.0,"10000 paired resamples, seed 4252, percentile CI",math Level 4,descriptive stratum
+V->L_true vs V->VV,L_true,VV,15,1,1,0,13,0.1333,0.0667,0.0667,0.0,0.2,0.1,1.0,250,0.004,0.0,0.012,"10000 paired resamples, seed 4253, percentile CI",math Level 5,descriptive stratum
+V->L_true vs V->VV,L_true,VV,50,3,6,1,40,0.18,0.08,0.1,0.0,0.2,0.1,0.125,250,0.02,0.0,0.04,"10000 paired resamples, seed 4254, percentile CI",sensitivity: excl. items with truncated/unparsed VV or L_true Stage-2 output,sensitivity
+V->L_true vs V->VV,L_true,VV,52,3,7,1,41,0.1923,0.0769,0.1154,0.0192,0.2308,0.1058,0.0703,250,0.024,0.004,0.048,"10000 paired resamples, seed 4255, percentile CI",sensitivity: excl. items whose Stage-1 response was truncated,sensitivity

@@ -1,0 +1,877 @@
+{
+  "note": "Researcher-approved protocol amendments made BEFORE any full Stage-B run. Each is triggered by a preserved real smoke record; that record is never altered or rescored.",
+  "amendments": [
+    {
+      "id": "A1",
+      "date": "2026-10-12",
+      "status": "approved by the researcher (pre-full-run smoke-test correction)",
+      "trigger": "real-model Stage-1 smoke test smoke1 -> NO-GO (12/20 parsed; 6/20 truncated at 768 tokens; 0 headroom). All technical checks passed.",
+      "trigger_archive": "stage_b_smoke1_RESULTS.zip",
+      "trigger_archive_sha256": "c8e965fb87402da84f9298ce584aa91842c702fa02059757d92e5234cafd81b1",
+      "changes": [
+        "solver.stage_b_overrides.max_new_tokens 768 -> 1536 (Stage 1 AND Stage 2)",
+        "numeric answer parser: frozen pilot parser 2.0 -> Stage-B parser stage_b_numeric_v1 (see parser); pilot strict parser kept as the format-compliance diagnostic"
+      ],
+      "unchanged": "dataset items, Stage-1 requests/prompts/execution order, smoke selection (same 20 requests), conditions, feedback wording, gates, interpretation rule + analysis settings, model + revision, greedy non-thinking decoding",
+      "smoke1_record": "preserved unaltered and NOT rescored (data/smoke_records/smoke1/); it is the record that triggered A1",
+      "next": "smoke2 = same 20 frozen smoke requests with the amended settings; same gate",
+      "approved_by": "researcher (chat approval 2026-10-12, after smoke1 NO-GO)",
+      "registered": "2026-10-12T13:16:40+00:00",
+      "trigger_record": "data/smoke_records/smoke1/stage_b_smoke1_RESULTS.zip",
+      "trigger_smoke_gate_quoted": {
+        "decision": "NO-GO",
+        "reason": "truncation / headroom check failed: no_truncation_at_max_new_tokens, no_response_over_90pct_of_limit",
+        "n": 20,
+        "n_parsed": 12,
+        "numeric_parse_status": {
+          "ok": 12,
+          "missing": 7,
+          "ambiguous": 1
+        },
+        "unparsed_request_keys": [
+          "s1::sb_math-64::V",
+          "s1::sb_math-268::V",
+          "s1::sb_math-150::V",
+          "s1::sb_gsm8k-82::V",
+          "s1::sb_math-7::V",
+          "s1::sb_math-172::V",
+          "s1::sb_math-186::V",
+          "s1::sb_math-275::V"
+        ],
+        "truncated": [
+          "s1::sb_math-150::V",
+          "s1::sb_math-114::V",
+          "s1::sb_math-7::V",
+          "s1::sb_math-470::V",
+          "s1::sb_math-172::V",
+          "s1::sb_math-275::V"
+        ],
+        "max_new_tokens": 768,
+        "generated_tokens_max": 768,
+        "technical_checks": {
+          "all_completed": true,
+          "no_persistent_technical_failures": true,
+          "no_duplicate_keys": true,
+          "prompts_match_frozen_sha": true,
+          "no_visible_thinking": true,
+          "deterministic_repeat_identical": true,
+          "resume_generates_nothing": true,
+          "checkpoint_final_written": true,
+          "state_json_complete": true,
+          "canary_passed": true
+        },
+        "truncation_checks": {
+          "no_truncation_at_max_new_tokens": false,
+          "no_response_over_90pct_of_limit": false
+        }
+      },
+      "smoke1_bundle": {
+        "bundle_version": 2,
+        "code_fingerprint": "08c1f227cfa9cba1f9f67b694ae999cc83aa5c2ac936a69c658707618309b833"
+      },
+      "files_before_sha256": {
+        "configs/stage_b.json": "19cec1fc86f17e11b94560b3f99cfb478112f2cde8a69555fd43470cdd4f6ef3",
+        "src/parser.py": "20640523d8653172aec0bbb710c9d43ae7b58892b30b4d963b7f6b1ffda32d4c"
+      },
+      "files_after_sha256": {
+        "configs/stage_b.json": "d1e800ec1cca71c45c61d9b2aeeab37025bc48a8e06863548e67dedf75482873",
+        "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90"
+      },
+      "max_new_tokens_after": 1536,
+      "parser_version_after": "stage_b_numeric_v1 (FINAL_ANSWER field > terminal \\boxed{}; pilot strict 2.0 diagnostic)"
+    },
+    {
+      "id": "A2",
+      "date": "2026-10-13",
+      "status": "approved by the researcher (pre-full-run smoke-test correction; smoke2 independently inspected)",
+      "trigger": "real-model Stage-1 smoke test smoke2 (A1 settings) -> NO-GO on generation headroom only: 19/20 parsed; sb_math-150 hit 1536/1536 tokens (truncated, no valid answer); sb_math-7 completed at 1422 tokens > 90% threshold 1382.4. Zero transport failures/retries; prompt/hash integrity, determinism, resume, canary and no-visible-thinking checks all passed; the Stage-B parser amendment (A1) appears successful.",
+      "trigger_archive": "stage_b_smoke2_RESULTS.zip",
+      "trigger_archive_sha256": "e95729e470f55f67cb59595d7c60e3cbf8c09b1bff9d88f1cc876cb671d58c59",
+      "trigger_smoke_label": "smoke2",
+      "changes": [
+        "solver.stage_b_overrides.max_new_tokens 1536 -> 2048 (Stage 1 AND Stage 2)"
+      ],
+      "unchanged": "dataset items, Stage-1 requests/prompts/execution order, smoke selection (same 20 requests), conditions, feedback wording, parser (stage_b_numeric_v1, src/parser.py byte-identical), scorer, gates, interpretation rule + analysis settings / statistical plan, model + revision, greedy non-thinking decoding",
+      "smoke_records": "smoke1 and smoke2 preserved byte-for-byte and NOT rescored (data/smoke_records/smoke1/, data/smoke_records/smoke2/); smoke2 is the record that triggered A2",
+      "next": "smoke3 = same 20 frozen smoke requests at max_new_tokens 2048; same gate, 90% headroom threshold = 1843.2 tokens",
+      "approved_by": "researcher (chat approval 2026-10-13, after independent inspection of smoke2 NO-GO)",
+      "registered": "2026-10-13T05:19:17+00:00",
+      "trigger_record": "data/smoke_records/smoke2/stage_b_smoke2_RESULTS.zip",
+      "trigger_smoke_gate_quoted": {
+        "decision": "NO-GO",
+        "reason": "truncation / headroom check failed: no_truncation_at_max_new_tokens, no_response_over_90pct_of_limit",
+        "n": 20,
+        "n_parsed": 19,
+        "numeric_parse_status": {
+          "ok": 19,
+          "missing": 1
+        },
+        "unparsed_request_keys": [
+          "s1::sb_math-150::V"
+        ],
+        "truncated": [
+          "s1::sb_math-150::V"
+        ],
+        "max_new_tokens": 1536,
+        "headroom_limit_tokens": 1382.4,
+        "generated_tokens_max": 1536,
+        "transport_failures_retried": 0,
+        "technical_checks": {
+          "all_completed": true,
+          "no_persistent_technical_failures": true,
+          "no_duplicate_keys": true,
+          "prompts_match_frozen_sha": true,
+          "no_visible_thinking": true,
+          "deterministic_repeat_identical": true,
+          "resume_generates_nothing": true,
+          "checkpoint_final_written": true,
+          "state_json_complete": true,
+          "canary_passed": true
+        },
+        "truncation_checks": {
+          "no_truncation_at_max_new_tokens": false,
+          "no_response_over_90pct_of_limit": false
+        }
+      },
+      "trigger_responses_over_headroom": [
+        {
+          "request_key": "s1::sb_math-150::V",
+          "new_tokens": 1536,
+          "finish_reason": "length"
+        },
+        {
+          "request_key": "s1::sb_math-7::V",
+          "new_tokens": 1422,
+          "finish_reason": "stop"
+        }
+      ],
+      "smoke2_bundle": {
+        "bundle_version": 3,
+        "code_fingerprint": "6035a755fc1de976339a1e35b31b398cc306718d9997a6dc04819e24520eac52"
+      },
+      "files_before_sha256": {
+        "configs/stage_b.json": "d1e800ec1cca71c45c61d9b2aeeab37025bc48a8e06863548e67dedf75482873",
+        "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90"
+      },
+      "files_after_sha256": {
+        "configs/stage_b.json": "128c0df96bd2a6f1f321123568121fed46ce59eddd5b19a638cb9b6b3abeb92e",
+        "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90"
+      },
+      "max_new_tokens_before": 1536,
+      "max_new_tokens_after": 2048,
+      "headroom_limit_tokens_after": 1843.2,
+      "parser_version_after": "stage_b_numeric_v1 (FINAL_ANSWER field > terminal \\boxed{}; pilot strict 2.0 diagnostic)"
+    },
+    {
+      "id": "A3",
+      "date": "2026-10-13",
+      "status": "approved by the researcher (pre-Stage-2 procedure change; no Stage-2 inference run, no annotation decision frozen)",
+      "trigger": "researcher decision: Stage-B feasibility annotation review will use a blinded LLM-assisted reviewer rather than a human reviewer. These judgments are provisional, must never be described as human-validated, and final-scale experiments should receive human validation.",
+      "trigger_archive": null,
+      "changes": [
+        "annotation-fidelity review: manual human review -> blinded two-pass LLM-assisted review (llm_review section; reviewer Qwen/Qwen2.5-Math-7B-Instruct @ ef9926d75ab1d54532f6a30dd5e760355eb9aa4d, 4-bit NF4, greedy, batch 1)",
+        "new frozen review code + requests: src/llm_review.py, src/reviewer_loader.py, src/llm_review_runner.py, data/processed/llm_review/*, data/manifests/llm_review_request_manifest.json"
+      ],
+      "unchanged": "76-item frozen Stage-1 failure set, Stage-1 outputs, dataset, parser, scorer, Stage-2 conditions, feedback wording, annotation_review decision rules (CONFIRM -> primary set; CORRECT -> L_false; >= 50 primary items), interpretation rule + analysis settings, solver model/decoding",
+      "next": "5-item reviewer smoke test on Kaggle (scripts/15); the 76-item review (scripts/16) only after the smoke passes and the researcher approves",
+      "approved_by": "researcher (chat approval 2026-10-13: blinded LLM-assisted review, reviewer Qwen/Qwen2.5-Math-7B-Instruct NF4; provisional, not human-validated)",
+      "registered": "2026-10-13T13:23:39+00:00",
+      "files_before_sha256": {
+        "configs/stage_b.json": "128c0df96bd2a6f1f321123568121fed46ce59eddd5b19a638cb9b6b3abeb92e",
+        "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90"
+      },
+      "files_after_sha256": {
+        "configs/stage_b.json": "0e5e57930fe5684aff9af202cdb8fa3906058e00998b14c6bb2d5961a5c3a4ff",
+        "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90"
+      },
+      "new_files_sha256": {
+        "src/llm_review.py": "5d490aa7fb5912004c70110f5c58d1a91ba6d957ee6184799cee63b95b90852f",
+        "src/reviewer_loader.py": "d3b43023bde5251a1a5cc5f8cdf6e4d3edd9b282b94e7745136fd76bd5428a12",
+        "src/llm_review_runner.py": "376d5b532f96b20839850bea4d2050e2ba0fc97cc59a3135f0c440c8a5fff7e5"
+      },
+      "reviewer": {
+        "reviewer_tag": "qwen2.5-math-7b-instruct@ef9926d7 nf4 (A3 reviewer)",
+        "model": "Qwen/Qwen2.5-Math-7B-Instruct",
+        "model_revision": "ef9926d75ab1d54532f6a30dd5e760355eb9aa4d",
+        "quantization": {
+          "method": "bitsandbytes",
+          "load_in_4bit": true,
+          "bnb_4bit_quant_type": "nf4",
+          "bnb_4bit_compute_dtype": "float16",
+          "bnb_4bit_use_double_quant": false
+        },
+        "_quantization_note": "float16 compute because the Kaggle T4 has no bfloat16 support; no double quantization.",
+        "bitsandbytes_version": "0.50.2",
+        "device": "cuda:0",
+        "batch_size": 1,
+        "decoding": "greedy (do_sample=False, num_beams=1)",
+        "max_new_tokens": 768,
+        "max_context_tokens": 4096,
+        "seed": 0,
+        "message_format": "fixed system message (src/llm_review.py SYSTEM_PROMPT; replaces the template's default \boxed{} system prompt) + one user message; no history",
+        "tools": null,
+        "web_access": null,
+        "stage1_outputs_shown": false,
+        "regeneration": "never: every output is stored once and parsed by fixed rules; a judgment is never regenerated because it appears wrong; only transport errors are retried"
+      },
+      "provisional_statement": "PROVISIONAL LLM-assisted annotation review (feasibility study only). NOT human-validated and must never be described as human-validated; final-scale experiments should receive human validation."
+    },
+    {
+      "id": "A4",
+      "date": "2026-10-13",
+      "status": "approved by the researcher (pre-full-review reviewer replacement; no full review run, no annotation decision frozen)",
+      "trigger": "A3 reviewer smoke (Qwen/Qwen2.5-Math-7B-Instruct @ ef9926d7, NF4, max_new_tokens 768) -> NO-GO: pinned revision / NF4 load, all 20 generations, blinding, deterministic repeats, context window and resume all passed, but Pass-1 valid JSON 0/5 and Pass-2 valid JSON 0/5 (the model ignored the JSON-only format and wrote long mathematical reasoning ending in boxed pseudo-JSON); one Pass-1 item hit 768 tokens. The parser is NOT relaxed to infer classifications from prose.",
+      "trigger_archive": "stage_b_llm_review_smoke_RESULTS.zip",
+      "trigger_archive_sha256": "9205bdda17367f4fb71e4f2520193a95d94af2cf02b11b65cab2da53a0bc934a",
+      "trigger_smoke_label": "review_smoke_a3",
+      "trigger_kind": "review_smoke",
+      "changes": [
+        "llm_review.reviewer: Qwen/Qwen2.5-Math-7B-Instruct @ ef9926d75ab1d54532f6a30dd5e760355eb9aa4d -> Qwen/Qwen2.5-7B-Instruct @ a09a35458c702b33eeacc393d103063234e8bc28 (pinned before inference; max_context_tokens 4096 -> 32768 = the model's max_position_embeddings)",
+        "llm_review.reviewer.max_new_tokens 768 -> 192",
+        "llm_review.reviewer.repetition_penalty: explicitly 1.0 (pure greedy; overrides the checkpoint generation_config value 1.05)",
+        "fixed SYSTEM prompt (src/llm_review.py, prompt version llm_review_prompts_v1 -> v2): rewritten only to state that this is a classification task, not a request to solve the problem conversationally, and that the reply is one JSON object only; Pass-1 / Pass-2 user prompts, questions and output schemas byte-identical",
+        "reviewer smoke gate: adds an exact-schema check (the whole output is one JSON object with exactly the allowed keys and valid values); every earlier check kept",
+        "review request files rebuilt only because their rendered_sha256 field includes the system prompt; prompts, prompt_sha256, items and order byte-identical (logged in FROZEN_HASHES)"
+      ],
+      "unchanged": "76-item frozen Stage-1 failure set, the five smoke items, Stage-1 outputs, dataset, Stage-B answer parser + scorer, blinded two-pass review procedure (fields shown / hidden, questions, outputs, CONFIRM / DISAGREE / UNCLEAR mapping, no substitution), review parse rules (parse_output), A3 wording, 4-bit NF4 float16 compute, bitsandbytes 0.50.2, batch 1, greedy do_sample=False, no tools / web / history, never regenerate, Stage-2 conditions, feedback wording, decision rules, interpretation rule + analysis settings",
+      "superseded_reviewer": "Qwen/Qwen2.5-Math-7B-Instruct @ ef9926d75ab1d54532f6a30dd5e760355eb9aa4d (A3); its smoke record is preserved byte-for-byte in data/smoke_records/review_smoke_a3/ and is never rescored",
+      "next": "new 5-item reviewer smoke (same five frozen smoke items, 20 generations) on Kaggle; the 152-generation full review only after the smoke passes and the researcher approves",
+      "approved_by": "researcher (chat approval 2026-10-13, after the A3 reviewer smoke NO-GO: Pass-1/Pass-2 valid JSON 0/5; reviewer -> Qwen/Qwen2.5-7B-Instruct NF4, max_new_tokens 192; parser not relaxed)",
+      "registered": "2026-10-13T15:08:38+00:00",
+      "trigger_record": "data/smoke_records/review_smoke_a3/stage_b_llm_review_smoke_RESULTS.zip",
+      "trigger_smoke_gate_quoted": {
+        "decision": "NO-GO",
+        "reason": "failed: pass1_json_parses, pass1_earliest_error_step_valid, pass1_confidence_valid, pass2_json_parses_and_valid, no_truncation",
+        "checks": {
+          "model_loaded_pinned_revision_nf4": true,
+          "all_smoke_requests_completed": true,
+          "pass1_json_parses": false,
+          "pass1_earliest_error_step_valid": false,
+          "pass1_confidence_valid": false,
+          "pass2_json_parses_and_valid": false,
+          "pass1_no_hidden_annotation_exposed": true,
+          "deterministic_repeat_same_structured_judgment": true,
+          "no_truncation": false,
+          "within_context_window": true,
+          "resume_generates_nothing": true
+        },
+        "deterministic_repeat_identical_raw_text": true,
+        "max_prompt_plus_max_new_tokens": 2828,
+        "judgments": {
+          "pass1": [
+            {
+              "item_id": "sb_math-478",
+              "parse_status": "no_json",
+              "judgment": null,
+              "confidence": null,
+              "new_tokens": 588,
+              "prompt_tokens": 656,
+              "finish_reason": "stop"
+            },
+            {
+              "item_id": "sb_gsm8k-132",
+              "parse_status": "no_json",
+              "judgment": null,
+              "confidence": null,
+              "new_tokens": 506,
+              "prompt_tokens": 444,
+              "finish_reason": "stop"
+            },
+            {
+              "item_id": "sb_gsm8k-31",
+              "parse_status": "no_json",
+              "judgment": null,
+              "confidence": null,
+              "new_tokens": 270,
+              "prompt_tokens": 625,
+              "finish_reason": "stop"
+            },
+            {
+              "item_id": "sb_math-133",
+              "parse_status": "no_json",
+              "judgment": null,
+              "confidence": null,
+              "new_tokens": 676,
+              "prompt_tokens": 618,
+              "finish_reason": "stop"
+            },
+            {
+              "item_id": "sb_math-186",
+              "parse_status": "no_json",
+              "judgment": null,
+              "confidence": null,
+              "new_tokens": 768,
+              "prompt_tokens": 2060,
+              "finish_reason": "length"
+            }
+          ],
+          "pass2": [
+            {
+              "item_id": "sb_math-478",
+              "parse_status": "no_json",
+              "judgment": null,
+              "confidence": null,
+              "new_tokens": 545,
+              "prompt_tokens": 402,
+              "finish_reason": "stop"
+            },
+            {
+              "item_id": "sb_gsm8k-132",
+              "parse_status": "no_json",
+              "judgment": null,
+              "confidence": null,
+              "new_tokens": 260,
+              "prompt_tokens": 340,
+              "finish_reason": "stop"
+            },
+            {
+              "item_id": "sb_gsm8k-31",
+              "parse_status": "no_json",
+              "judgment": null,
+              "confidence": null,
+              "new_tokens": 313,
+              "prompt_tokens": 552,
+              "finish_reason": "stop"
+            },
+            {
+              "item_id": "sb_math-133",
+              "parse_status": "no_json",
+              "judgment": null,
+              "confidence": null,
+              "new_tokens": 323,
+              "prompt_tokens": 471,
+              "finish_reason": "stop"
+            },
+            {
+              "item_id": "sb_math-186",
+              "parse_status": "no_json",
+              "judgment": null,
+              "confidence": null,
+              "new_tokens": 763,
+              "prompt_tokens": 746,
+              "finish_reason": "stop"
+            }
+          ]
+        },
+        "n_generations": 20
+      },
+      "trigger_reviewer_settings_quoted": {
+        "backend": "hf_transformers_bnb4",
+        "model": "Qwen/Qwen2.5-Math-7B-Instruct",
+        "requested_revision": "ef9926d75ab1d54532f6a30dd5e760355eb9aa4d",
+        "hub_resolved_revision": "ef9926d75ab1d54532f6a30dd5e760355eb9aa4d",
+        "snapshot_path": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-Math-7B-Instruct/snapshots/ef9926d75ab1d54532f6a30dd5e760355eb9aa4d",
+        "applied_quantization": {
+          "quant_method": "bitsandbytes",
+          "load_in_4bit": true,
+          "bnb_4bit_quant_type": "nf4",
+          "bnb_4bit_compute_dtype": "float16",
+          "bnb_4bit_use_double_quant": false,
+          "n_linear4bit_modules": 196,
+          "bitsandbytes_version": "0.50.2"
+        },
+        "is_loaded_in_4bit": true,
+        "device": "cuda:0",
+        "max_context_tokens": 4096,
+        "decoding": "greedy (do_sample=False, num_beams=1)",
+        "batch_size": 1,
+        "max_new_tokens": 768,
+        "seed": 0,
+        "system_prompt_sha256": "611b8aac8e8cb7f5b661f6aad75008117ad6854c24bfdedb1647e6e4fdaa1309",
+        "tools": null,
+        "web_access": null,
+        "deterministic_algorithms": "torch.use_deterministic_algorithms(True, warn_only=True)",
+        "package_versions": {
+          "torch": "2.11.0+cu128",
+          "transformers": "5.19.0",
+          "accelerate": "1.15.0",
+          "bitsandbytes": "0.50.2",
+          "tokenizers": "0.23.1",
+          "safetensors": "0.8.0",
+          "huggingface_hub": "1.33.0"
+        }
+      },
+      "files_before_sha256": {
+        "configs/stage_b.json": "0e5e57930fe5684aff9af202cdb8fa3906058e00998b14c6bb2d5961a5c3a4ff",
+        "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90",
+        "src/llm_review.py": "5d490aa7fb5912004c70110f5c58d1a91ba6d957ee6184799cee63b95b90852f",
+        "src/reviewer_loader.py": "32e451668c5d4576e0165f51164a950769d235be417843c4d3d1370de9d343c7",
+        "src/llm_review_runner.py": "376d5b532f96b20839850bea4d2050e2ba0fc97cc59a3135f0c440c8a5fff7e5",
+        "data/processed/llm_review/pass1_requests.jsonl": "c64eff43322efa700a8c5e17b1456e005427b05f74c8636b8aae7c65899f2028",
+        "data/processed/llm_review/pass2_requests.jsonl": "9659b3178cb7b1984e42d60828941938b965c5af9d5512f38a9a70291d41551e",
+        "data/processed/llm_review/review_order.json": "9a136f68ac8cc69c4a537372768fad2634b533bbdce2f52fc93f13741f63b95d",
+        "data/manifests/llm_review_request_manifest.json": "24658e3eabfb20afcf2d76bd12e589d3761fa63779a9fa0918d573e7811fa9a0"
+      },
+      "files_after_sha256": {
+        "configs/stage_b.json": "e306831eddfa3bee9754039654fe47dc253a29b982b845aff649ab3b26a9411d",
+        "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90",
+        "src/llm_review.py": "80aeed8aa03aa8d6e984129c57150215c1b66ca26340f4cd01fdb09954f8c9b7",
+        "src/reviewer_loader.py": "7d4e0188c33d3583b5fec4554996dce00161daf46f5f90bae60208019c927d8c",
+        "src/llm_review_runner.py": "5f1b3f51c13f76dcb1622260bc47dbcb8a574852967692fcf26520f0ae3fef21",
+        "data/processed/llm_review/pass1_requests.jsonl": "8b568ffaa37f417118cb8058aec5f9aaaa65f8ad249211c875acb9cab730ba6f",
+        "data/processed/llm_review/pass2_requests.jsonl": "6315cd786b086c8b962225610d8674d9ee434204212b4dee0fb052a634225fb6",
+        "data/processed/llm_review/review_order.json": "9a136f68ac8cc69c4a537372768fad2634b533bbdce2f52fc93f13741f63b95d",
+        "data/manifests/llm_review_request_manifest.json": "02b3bf278f6e78d11e962f4de16f093e7acb3852e232f99849bb7ef304f3c26c"
+      },
+      "request_rebuild": "rendered_sha256 only (system prompt); prompt / prompt_sha256 / items / order / smoke selection byte-identical (checked before writing)",
+      "reviewer_before": {
+        "model": "Qwen/Qwen2.5-Math-7B-Instruct",
+        "revision": "ef9926d75ab1d54532f6a30dd5e760355eb9aa4d",
+        "max_new_tokens": 768,
+        "max_context_tokens": 4096,
+        "system_prompt_sha256": "611b8aac8e8cb7f5b661f6aad75008117ad6854c24bfdedb1647e6e4fdaa1309"
+      },
+      "reviewer_after": {
+        "reviewer_tag": "qwen2.5-7b-instruct@a09a3545 nf4 (A4 reviewer)",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "_revision_note": "Hub main commit resolved 2026-10-13 (lastModified 2025-01-12), pinned before any inference; config max_position_embeddings 32768; Apache-2.0; not gated.",
+        "quantization": {
+          "method": "bitsandbytes",
+          "load_in_4bit": true,
+          "bnb_4bit_quant_type": "nf4",
+          "bnb_4bit_compute_dtype": "float16",
+          "bnb_4bit_use_double_quant": false
+        },
+        "_quantization_note": "float16 compute because the Kaggle T4 has no bfloat16 support; no double quantization.",
+        "bitsandbytes_version": "0.50.2",
+        "device": "cuda:0",
+        "batch_size": 1,
+        "decoding": "greedy (do_sample=False, num_beams=1)",
+        "max_new_tokens": 192,
+        "max_context_tokens": 32768,
+        "repetition_penalty": 1.0,
+        "_decoding_note": "pure greedy: do_sample=False, num_beams=1, repetition_penalty 1.0 passed explicitly (the checkpoint generation_config has do_sample true, temperature 0.7, top_p 0.8, top_k 20, repetition_penalty 1.05 - none of them apply).",
+        "seed": 0,
+        "message_format": "fixed system message (src/llm_review.py SYSTEM_PROMPT: classification task, one JSON object only; replaces the template's default system prompt) + one user message; no history",
+        "tools": null,
+        "web_access": null,
+        "stage1_outputs_shown": false,
+        "regeneration": "never: every output is stored once and parsed by fixed rules; a judgment is never regenerated because it appears wrong; only transport errors are retried"
+      },
+      "system_prompt_sha256_after": "28d0441634f764ff51a3b470aeebf27b3445c99ff53291ea2f81bee9dbbe1389",
+      "provisional_statement": "PROVISIONAL LLM-assisted annotation review (feasibility study only). NOT human-validated and must never be described as human-validated; final-scale experiments should receive human validation."
+    },
+    {
+      "id": "A5",
+      "date": "2026-10-14",
+      "status": "approved by the researcher (pre-full-review; no full LLM review run, no annotation decision frozen, no Stage-2 request built)",
+      "trigger": "A4 reviewer smoke (Qwen/Qwen2.5-7B-Instruct @ a09a3545, NF4, max_new_tokens 192) -> NO-GO: every infrastructure check passed (pinned NF4 load, all 20 generations, blinding, no truncation, deterministic repeats, context window, resume), but valid structured judgments were only Pass 1 3/5 and Pass 2 4/5 (some invalid JSON from unescaped LaTeX backslashes), and - decisive - manual inspection found self-contradictory reviewer reasoning on smoke items. This is NOT repaired by loosening the parser or changing the JSON format: development of the provisional LLM reviewer is STOPPED.",
+      "trigger_archive": "stage_b_llm_review_smoke_RESULTS.zip",
+      "trigger_archive_sha256": "dd15c0cb7bcb2ace9cf1132cbca2e44d9ff0993988590e604f2d015035c9fca9",
+      "trigger_smoke_label": "review_smoke_a4",
+      "trigger_kind": "review_smoke_stop",
+      "changes": [
+        "annotation-fidelity reviewer: the A3/A4 LLM-assisted reviewer -> a blinded HUMAN reviewer (section human_review); scripts 15 / 16 refuse the real reviewer and 17 refuses to freeze into data/ (mock / TEST-ONLY use kept for the regression tests)",
+        "human review workflow: local browser interface (scripts/19_human_review_server.py, standard library, 127.0.0.1 only) writing an append-only, hash-chained judgment log per pass; every save (including revisions) is kept with its UTC timestamp",
+        "Pass 1 is frozen (scripts/20_freeze_human_review.py --pass 1) BEFORE the ProcessBench step is read or any agreement computed; the Pass-2 view file is generated only at that freeze",
+        "Pass-2 freeze fills annotation_review_form_FILLED.csv under the unchanged decision rules (notes: HUMAN blinded review); 07b then freezes decisions only after researcher approval"
+      ],
+      "unchanged": "76-item frozen Stage-1 failure set and its packet order (seed 6303), Stage-1 outputs, dataset, Stage-B answer parser + scorer, blinded two-pass procedure (Pass-1 fields shown: item id, problem, numbered original solution, gold answer, original final answer; Pass-2: problem, Steps 1..f, candidate step f = k-1), Pass-1 / Pass-2 questions (verbatim from src/llm_review.py), CONFIRM / DISAGREE / UNCLEAR mapping, no substitution of the reviewer's step, decision rules (CONFIRM -> primary set; L_false only if CORRECT; min 50), Stage-2 conditions, feedback wording, interpretation rule + analysis settings",
+      "superseded_reviewer": "Qwen/Qwen2.5-7B-Instruct @ a09a35458c702b33eeacc393d103063234e8bc28 (A4); its smoke record is preserved byte-for-byte in data/smoke_records/review_smoke_a4/ as a NO-GO record and is never rescored",
+      "next": "export the blinded Pass-1 view (scripts/18_export_human_review.py); the human reviewer completes Pass 1; freeze Pass 1; complete Pass 2; freeze Pass 2; report; 07b and Stage 2 only after researcher approval",
+      "approved_by": "researcher (2026-10-14 instruction)",
+      "registered": "2026-10-14T05:03:18+00:00",
+      "trigger_record": "data/smoke_records/review_smoke_a4/stage_b_llm_review_smoke_RESULTS.zip",
+      "trigger_smoke_gate_quoted": {
+        "decision": "NO-GO",
+        "reason": "failed: pass1_json_parses, pass1_exact_schema, pass1_earliest_error_step_valid, pass1_confidence_valid, pass2_json_parses_and_valid, pass2_exact_schema, pass2_candidate_step_verdict_valid",
+        "checks": {
+          "model_loaded_pinned_revision_nf4": true,
+          "all_smoke_requests_completed": true,
+          "pass1_json_parses": false,
+          "pass1_exact_schema": false,
+          "pass1_earliest_error_step_valid": false,
+          "pass1_confidence_valid": false,
+          "pass2_json_parses_and_valid": false,
+          "pass2_exact_schema": false,
+          "pass2_candidate_step_verdict_valid": false,
+          "pass1_no_hidden_annotation_exposed": true,
+          "deterministic_repeat_same_structured_judgment": true,
+          "no_truncation": true,
+          "within_context_window": true,
+          "resume_generates_nothing": true
+        },
+        "deterministic_repeat_identical_raw_text": true,
+        "max_prompt_plus_max_new_tokens": 2316,
+        "judgments": {
+          "pass1": [
+            {
+              "item_id": "sb_math-478",
+              "parse_status": "no_json",
+              "judgment": null,
+              "confidence": null,
+              "new_tokens": 105,
+              "prompt_tokens": 720,
+              "finish_reason": "stop"
+            },
+            {
+              "item_id": "sb_gsm8k-132",
+              "parse_status": "no_json",
+              "judgment": null,
+              "confidence": null,
+              "new_tokens": 75,
+              "prompt_tokens": 508,
+              "finish_reason": "stop"
+            },
+            {
+              "item_id": "sb_gsm8k-31",
+              "parse_status": "ok",
+              "judgment": 7,
+              "confidence": "HIGH",
+              "new_tokens": 44,
+              "prompt_tokens": 689,
+              "finish_reason": "stop"
+            },
+            {
+              "item_id": "sb_math-133",
+              "parse_status": "ok",
+              "judgment": 3,
+              "confidence": "HIGH",
+              "new_tokens": 71,
+              "prompt_tokens": 682,
+              "finish_reason": "stop"
+            },
+            {
+              "item_id": "sb_math-186",
+              "parse_status": "ok",
+              "judgment": 24,
+              "confidence": "HIGH",
+              "new_tokens": 44,
+              "prompt_tokens": 2124,
+              "finish_reason": "stop"
+            }
+          ],
+          "pass2": [
+            {
+              "item_id": "sb_math-478",
+              "parse_status": "ok",
+              "judgment": "NOT_CORRECT",
+              "confidence": "HIGH",
+              "new_tokens": 53,
+              "prompt_tokens": 466,
+              "finish_reason": "stop"
+            },
+            {
+              "item_id": "sb_gsm8k-132",
+              "parse_status": "no_json",
+              "judgment": null,
+              "confidence": null,
+              "new_tokens": 57,
+              "prompt_tokens": 404,
+              "finish_reason": "stop"
+            },
+            {
+              "item_id": "sb_gsm8k-31",
+              "parse_status": "ok",
+              "judgment": "CORRECT",
+              "confidence": "HIGH",
+              "new_tokens": 34,
+              "prompt_tokens": 616,
+              "finish_reason": "stop"
+            },
+            {
+              "item_id": "sb_math-133",
+              "parse_status": "ok",
+              "judgment": "CORRECT",
+              "confidence": "HIGH",
+              "new_tokens": 48,
+              "prompt_tokens": 535,
+              "finish_reason": "stop"
+            },
+            {
+              "item_id": "sb_math-186",
+              "parse_status": "ok",
+              "judgment": "CORRECT",
+              "confidence": "HIGH",
+              "new_tokens": 36,
+              "prompt_tokens": 810,
+              "finish_reason": "stop"
+            }
+          ]
+        },
+        "n_generations": 20
+      },
+      "trigger_reviewer_settings_quoted": {
+        "backend": "hf_transformers_bnb4",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "requested_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "hub_resolved_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "snapshot_path": "/root/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+        "applied_quantization": {
+          "quant_method": "bitsandbytes",
+          "load_in_4bit": true,
+          "bnb_4bit_quant_type": "nf4",
+          "bnb_4bit_compute_dtype": "float16",
+          "bnb_4bit_use_double_quant": false,
+          "n_linear4bit_modules": 196,
+          "bitsandbytes_version": "0.50.2"
+        },
+        "is_loaded_in_4bit": true,
+        "device": "cuda:0",
+        "max_context_tokens": 32768,
+        "decoding": "greedy (do_sample=False, num_beams=1)",
+        "batch_size": 1,
+        "max_new_tokens": 192,
+        "seed": 0,
+        "generation_kwargs": {
+          "max_new_tokens": 192,
+          "do_sample": false,
+          "num_beams": 1,
+          "temperature": null,
+          "top_p": null,
+          "top_k": null,
+          "repetition_penalty": 1.0
+        },
+        "system_prompt_sha256": "28d0441634f764ff51a3b470aeebf27b3445c99ff53291ea2f81bee9dbbe1389",
+        "tools": null,
+        "web_access": null,
+        "deterministic_algorithms": "torch.use_deterministic_algorithms(True, warn_only=True)",
+        "package_versions": {
+          "torch": "2.11.0+cu128",
+          "transformers": "5.19.0",
+          "accelerate": "1.15.0",
+          "bitsandbytes": "0.50.2",
+          "tokenizers": "0.23.1",
+          "safetensors": "0.8.0",
+          "huggingface_hub": "1.33.0"
+        }
+      },
+      "files_before_sha256": {
+        "configs/stage_b.json": "e306831eddfa3bee9754039654fe47dc253a29b982b845aff649ab3b26a9411d",
+        "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90"
+      },
+      "files_after_sha256": {
+        "configs/stage_b.json": "cab39db4e024fba2a54bbd3436f2b5bfbb94f0e7c552aaf619bc54ea8b97889f",
+        "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90"
+      },
+      "new_files_sha256": {
+        "src/human_review.py": "e25432fd26cec12bcd44ba45062f056f5142757a304c04915b2d3e57bd7a5239"
+      },
+      "unchanged_files_sha256": {
+        "src/llm_review.py": "80aeed8aa03aa8d6e984129c57150215c1b66ca26340f4cd01fdb09954f8c9b7",
+        "src/reviewer_loader.py": "7d4e0188c33d3583b5fec4554996dce00161daf46f5f90bae60208019c927d8c",
+        "src/llm_review_runner.py": "5f1b3f51c13f76dcb1622260bc47dbcb8a574852967692fcf26520f0ae3fef21",
+        "data/processed/llm_review/pass1_requests.jsonl": "8b568ffaa37f417118cb8058aec5f9aaaa65f8ad249211c875acb9cab730ba6f",
+        "data/processed/llm_review/pass2_requests.jsonl": "6315cd786b086c8b962225610d8674d9ee434204212b4dee0fb052a634225fb6",
+        "data/processed/llm_review/review_order.json": "9a136f68ac8cc69c4a537372768fad2634b533bbdce2f52fc93f13741f63b95d",
+        "data/manifests/llm_review_request_manifest.json": "02b3bf278f6e78d11e962f4de16f093e7acb3852e232f99849bb7ef304f3c26c",
+        "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90"
+      },
+      "llm_reviewer_stopped": {
+        "reviewer_tag": "qwen2.5-7b-instruct@a09a3545 nf4 (A4 reviewer)",
+        "model": "Qwen/Qwen2.5-7B-Instruct",
+        "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+        "_revision_note": "Hub main commit resolved 2026-10-13 (lastModified 2025-01-12), pinned before any inference; config max_position_embeddings 32768; Apache-2.0; not gated.",
+        "quantization": {
+          "method": "bitsandbytes",
+          "load_in_4bit": true,
+          "bnb_4bit_quant_type": "nf4",
+          "bnb_4bit_compute_dtype": "float16",
+          "bnb_4bit_use_double_quant": false
+        },
+        "_quantization_note": "float16 compute because the Kaggle T4 has no bfloat16 support; no double quantization.",
+        "bitsandbytes_version": "0.50.2",
+        "device": "cuda:0",
+        "batch_size": 1,
+        "decoding": "greedy (do_sample=False, num_beams=1)",
+        "max_new_tokens": 192,
+        "max_context_tokens": 32768,
+        "repetition_penalty": 1.0,
+        "_decoding_note": "pure greedy: do_sample=False, num_beams=1, repetition_penalty 1.0 passed explicitly (the checkpoint generation_config has do_sample true, temperature 0.7, top_p 0.8, top_k 20, repetition_penalty 1.05 - none of them apply).",
+        "seed": 0,
+        "message_format": "fixed system message (src/llm_review.py SYSTEM_PROMPT: classification task, one JSON object only; replaces the template's default system prompt) + one user message; no history",
+        "tools": null,
+        "web_access": null,
+        "stage1_outputs_shown": false,
+        "regeneration": "never: every output is stored once and parsed by fixed rules; a judgment is never regenerated because it appears wrong; only transport errors are retried"
+      }
+    },
+    {
+      "id": "A6",
+      "date": "2026-10-14",
+      "status": "approved by the researcher (pre-Stage-2; Pass 1 frozen, no Pass-2 judgment made, no Stage-2 request built, no Stage-2 inference)",
+      "trigger": "researcher decision after the frozen human Pass 1 (61 CONFIRM / 15 DISAGREE / 0 UNCLEAR of 76)",
+      "trigger_archive": null,
+      "trigger_kind": "researcher_decision_pass2_waiver",
+      "wording": "A separate manual Pass-2 review is no longer required. For the 61 items whose ProcessBench first-error step k the human reviewer marked CONFIRM in the frozen Pass 1, that judgment already asserts that Step k is the EARLIEST substantive error; all preceding steps, including the predetermined false-location candidate f = k-1, were therefore implicitly judged not to contain an earlier substantive error. A separate Pass-2 human recheck is waived for feasibility because it would duplicate the same reviewer's earlier judgment. Stage-2 true-location analyses use only the 61 Pass-1 CONFIRM items. L_false uses only those 61 items and the frozen candidate f = k-1; its validity is labelled 'Pass-1-implied false-step validity', NOT independently Pass-2-validated. The 15 DISAGREE items are not used in the primary Stage-2 analysis (excluded from Stage 2 in all conditions; the reviewer's alternative step is recorded only and never substituted). The frozen Pass-1 files and hashes are preserved unchanged and Pass 1 is not reopened. The primary endpoint is unchanged: paired rescue difference V -> L_true vs V -> V.",
+      "changes": [
+        "annotation_review.false_step_verdicts += PASS1_IMPLIED (CONFIRM items: f = k-1 implied valid by the frozen Pass-1 CONFIRM) and NOT_REVIEWED (DISAGREE / UNCLEAR items; no Pass 2 judgment exists)",
+        "annotation_review.decision_rules.l_false: primary-set items with false_step_verdict CORRECT or PASS1_IMPLIED (decision field false_step_validity_basis records which)",
+        "human_review.pass2: waived (scripts 19 / 20 refuse --pass 2); the already generated pass2_view.json + HUMAN_REVIEW_PASS2_EXPORT.json are kept unchanged and unused",
+        "scripts/21_freeze_pass1_only_review.py fills annotation_review_form_FILLED.csv from the frozen Pass-1 mapping only (verifies every Pass-1 file against its registered sha256 first); 07b then freezes the decisions",
+        "Stage-2 request manifest and analysis outputs carry the A6 statement and the L_false validity label"
+      ],
+      "unchanged": "frozen Pass-1 view / log / final judgments / mapping / lock (byte-identical, re-verified), 76-item failure set, Stage-1 outputs, Stage-2 conditions + prompts + feedback wording, interpretation rule + analysis settings (rule lock unchanged; primary comparison L_true vs VV), min_primary_items 50, no substitution of the reviewer's step",
+      "next": "21 -> 07b -> 08 (build + audit Stage-2 requests) -> report counts; no Stage-2 inference before researcher approval",
+      "approved_by": "researcher (2026-10-14 instruction)",
+      "registered": "2026-10-14T11:08:54+00:00",
+      "files_before_sha256": {
+        "configs/stage_b.json": "cab39db4e024fba2a54bbd3436f2b5bfbb94f0e7c552aaf619bc54ea8b97889f",
+        "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90"
+      },
+      "files_after_sha256": {
+        "configs/stage_b.json": "9d8407752ae071e83735eb978abf32851f79884c3a324430254759d93eb91e83",
+        "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90"
+      },
+      "code_files_sha256": {
+        "src/annotation_review.py": "4649ce6602f450a42639d55fa31a9006da78dc043dad967cece1e3bb9c714286",
+        "src/analysis.py": "3437cdca88c153ec0cb8f3152f08ff440a683b80674573a943c834014242237e",
+        "scripts/21_freeze_pass1_only_review.py": "8cf40a503b4d6163d7051ae86c86ec3b244550138e1a1c9dd71f36c31f7059ad",
+        "scripts/08_build_stage2_requests.py": "f47a895d7ffa61c3a5aae76adf66c97c60ebbd4b6c2c8f20f46f3c6133f6b7dc"
+      },
+      "pass1_files_sha256_unchanged": {
+        "data/processed/human_review/pass1_view.json": "50fcd8880380286679b26d0bbebc650f31c71ce2ce1a02ebf18f9552e53f6369",
+        "data/processed/human_review/pass1_log.jsonl": "665d552f690e1a4c35dcf6b2ecbec3bc6376add34d4ee709b26f3a6701b41682",
+        "data/processed/human_review/pass1_final.json": "ae0cd5ba7f9336bf86683e18e51b6f513f4b9bbc478b9f406c787b232fe9152b",
+        "data/processed/human_review/pass1_mapping.json": "4b7557dc013af091bdd8afa0b48389368b5425facb414d11e456ba69ac6f8ccd",
+        "data/manifests/HUMAN_REVIEW_EXPORT.json": "8bbfe3d3b09734d8e00949c9a5b539d08dc90ec472d10fe0b3bb75ae29789c27",
+        "data/manifests/HUMAN_REVIEW_PASS1_FROZEN.json": "bf074582214403804475ca03096b589920ce11e6e8c68501b2700bf997b10cbc",
+        "data/processed/human_review/pass2_view.json": "eead88e5a18ce64a29e473ae33003bcc146ae4d3dc48ffade44414a25a8d9992",
+        "data/manifests/HUMAN_REVIEW_PASS2_EXPORT.json": "f80795cf41cb0fca5e89139cf09f49e7a1bb806d746472864f44dbacd9c462c1",
+        "src/human_review.py": "e25432fd26cec12bcd44ba45062f056f5142757a304c04915b2d3e57bd7a5239"
+      },
+      "interpretation_rule_sha256": "595b3100e2fa1bd5588309d24976006465f630f10252152b004be749751b78cb",
+      "pass2_waiver": {
+        "pass2_waived": true,
+        "statement": "A separate Pass-2 human recheck was waived for feasibility (amendment A6) because it would duplicate the same reviewer's earlier Pass-1 judgment: a Pass-1 CONFIRM of Step k as the earliest substantive error implies that every preceding step, including the false-location candidate f = k-1, contains no earlier substantive error.",
+        "l_false_validity_label": "Pass-1-implied false-step validity (not independently Pass-2-validated)",
+        "primary_set": "the Pass-1 CONFIRM items only (61 of 76); the 15 DISAGREE items are excluded from the primary Stage-2 analysis"
+      }
+    },
+    {
+      "id": "A7",
+      "date": "2026-10-14",
+      "status": "approved by the researcher (pre-full-Stage-2 smoke-gate clarification; no full Stage-2 inference has run)",
+      "trigger": "v9 Stage-2 smoke NO-GO (truncation/headroom checks only: sb_math-355 hit 2048/2048 in all 4 conditions; all technical checks passed) + DIAGNOSTIC-ONLY headroom generation (bundle v11): s2::sb_math-355::VV at max_new_tokens 4096 -> finish_reason length, 4096/4096 tokens, no FINAL_ANSWER, parse status missing, first 2048 tokens identical to the v9 output, repetition continues beyond 2048 (go back 4, not correct 4, wait 4; last-quarter repeated-shingle share 1.0): a genuine repetitive repair loop, so raising max_new_tokens is not justified",
+      "trigger_archive": "stage_b_diag_headroom_RESULTS.zip",
+      "trigger_archive_sha256": "72af3dd8f4032c839a5d1387df11cdb96437c4ee73f1ca6b8e93ed0906a254e8",
+      "trigger_kind": "stage2_smoke_gate_clarification",
+      "trigger_smoke_label": "diag_headroom_v11",
+      "related_nogo_record": "data/manifests/STAGE2_SMOKE_V9_NOGO.json (archive c5bd1fb6ad615618e968847fe695fbb44cae9fbe375620c56b9c226aaf900eca; preserved, never rescored)",
+      "wording": "A Stage-2 response reaching the frozen 2048-token cap is not automatically a technical smoke NO-GO when the request completed normally and the output was correctly persisted. Such an output is genuine model behavior and remains a failed repair if no valid final answer parses. Smoke GO/NO-GO should be based on pipeline/integrity criteria rather than requiring every model response to finish before the token cap.",
+      "changes": [
+        "stage2.smoke.gate = A7_stage2_pipeline_integrity_gate (src/smoke_gate.decide_stage2_a7, used by scripts/09_stage2_smoke_test.py): technical checks (unchanged) + persistence/integrity checks must all pass; cap hits and >90%-of-limit responses are reported descriptively and no longer decide the gate; the parse thresholds (GO <= 1 unparsed, REVIEW 2, NO-GO > 2) apply to the responses that finished normally (finish_reason stop)",
+        "the DIAGNOSTIC-ONLY headroom result is preserved byte-for-byte under data/smoke_records/diag_headroom_v11/ with data/manifests/DIAG_HEADROOM_V11_RECORD.json; it is not scored and never substituted for any Stage-2 output",
+        "full Stage 2 stays locked: scripts/10_run_stage2.py --solver qwen refuses unless a registered data/manifests/STAGE2_SMOKE_GO.json records a NEW smoke archive with decision GO under the A7 gate (none exists in bundle v12)"
+      ],
+      "unchanged": "max_new_tokens 2048, all 244 frozen Stage-2 requests, execution order, frozen smoke selection (sb_gsm8k-107, sb_math-275, sb_math-355; sb_math-355 NOT removed), eligible set (61 Pass-1 CONFIRM items), prompts, parser, scorer (cap-hit outputs without a valid final answer remain failed repairs), four conditions, primary endpoint (V -> L_true vs V -> V), frozen interpretation rule, the preserved v9 NO-GO record (not rescored), the Stage-1 smoke gate",
+      "next": "bundle v12: rerun the same 12-request Stage-2 smoke at 2048 under the A7 gate; full Stage 2 only after a new smoke archive receives GO and is registered",
+      "approved_by": "researcher (2026-10-14 instruction, after the v11 DIAGNOSTIC-ONLY headroom result)",
+      "registered": "2026-10-14T16:09:49+00:00",
+      "trigger_record": "data/smoke_records/diag_headroom_v11/stage_b_diag_headroom_RESULTS.zip",
+      "diagnostic_record": "data/manifests/DIAG_HEADROOM_V11_RECORD.json",
+      "diagnostic_record_sha256": "8f2965318021035688bf67c5d580af223c4bfb178f3a910f3bad693ff363ee1d",
+      "diagnostic_quoted": {
+        "request_key": "s2::sb_math-355::VV",
+        "finish_reason": "length",
+        "generated_tokens": 4096,
+        "max_new_tokens": 4096,
+        "prompt_tokens": 2879,
+        "hit_cap": true,
+        "final_answer_label_present": false,
+        "numeric_parse_status": "missing",
+        "prefix_identical_to_2048_smoke_output": true,
+        "repetition_full": {
+          "long_lines_repeated_3plus": 9,
+          "max_line_repeats": 14,
+          "phrase_counts": {
+            "go back": 7,
+            "not correct": 7,
+            "\\bwait\\b": 7,
+            "let.s try again": 0,
+            "recompute": 0
+          },
+          "last_quarter_50char_shingles_seen_earlier": 1.0,
+          "most_repeated_lines": [
+            [
+              "P(1) = \\prod_{\\epsilon_1, \\epsilon_2, \\epsilon_3 = \\pm 1} \\left( 1 - (\\epsilon_1 \\sqrt{2} + \\epsilon_2 \\sqrt{3} + \\epsilon_3 \\sqrt{5}) \\right)",
+              14
+            ],
+            [
+              "P(x) = \\prod_{\\epsilon_1, \\epsilon_2, \\epsilon_3 = \\pm 1} \\left( x - (\\epsilon_1 \\sqrt{2} + \\epsilon_2 \\sqrt{3} + \\epsilon_3 \\sqrt{5}) \\right)",
+              7
+            ],
+            [
+              "But this is **not** the correct answer. The correct value is:",
+              7
+            ],
+            [
+              "Wait — that’s not correct either. Let’s go back.",
+              7
+            ],
+            [
+              "Let’s consider the **product** of all $ 1 - (\\epsilon_1 \\sqrt{2} + \\epsilon_2 \\sqrt{3} + \\epsilon_3 \\sqrt{5}) $, over all 8 combinations of $ \\epsilon_i = \\pm 1 $.",
+              7
+            ]
+          ]
+        },
+        "repetition_beyond_2048_output": {
+          "long_lines_repeated_3plus": 9,
+          "max_line_repeats": 8,
+          "phrase_counts": {
+            "go back": 4,
+            "not correct": 4,
+            "\\bwait\\b": 4,
+            "let.s try again": 0,
+            "recompute": 0
+          },
+          "last_quarter_50char_shingles_seen_earlier": 1.0,
+          "most_repeated_lines": [
+            [
+              "P(1) = \\prod_{\\epsilon_1, \\epsilon_2, \\epsilon_3 = \\pm 1} \\left( 1 - (\\epsilon_1 \\sqrt{2} + \\epsilon_2 \\sqrt{3} + \\epsilon_3 \\sqrt{5}) \\right)",
+              8
+            ],
+            [
+              "P(x) = \\prod_{\\epsilon_1, \\epsilon_2, \\epsilon_3 = \\pm 1} \\left( x - (\\epsilon_1 \\sqrt{2} + \\epsilon_2 \\sqrt{3} + \\epsilon_3 \\sqrt{5}) \\right)",
+              4
+            ],
+            [
+              "Now, consider the **product** of all $ 1 - (\\epsilon_1 \\sqrt{2} + \\epsilon_2 \\sqrt{3} + \\epsilon_3 \\sqrt{5}) $, over all 8 combinations of $ \\epsilon_i = \\pm 1 $.",
+              4
+            ],
+            [
+              "This is a known result in algebra: the value of this product is:",
+              4
+            ],
+            [
+              "But this is **not** the correct answer. The correct value is:",
+              4
+            ]
+          ]
+        },
+        "raw_output_sha256": "9f56ca11f8be857b828ca9871115157f77ede9d564b9e7b5d4ec2a551f58c064"
+      },
+      "files_before_sha256": {
+        "configs/stage_b.json": "9d8407752ae071e83735eb978abf32851f79884c3a324430254759d93eb91e83",
+        "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90",
+        "src/smoke_gate.py": null,
+        "scripts/09_stage2_smoke_test.py": null,
+        "src/stage2_runner.py": null,
+        "scripts/10_run_stage2.py": null
+      },
+      "files_after_sha256": {
+        "configs/stage_b.json": "074617ad73f42e3d8a597be98470087e088012954cada277b093e338212845f3",
+        "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90",
+        "src/smoke_gate.py": "02f95adbbafe5a901ab8ad8407f9a3039f4e7919b79fda44d70e00db455eb933",
+        "scripts/09_stage2_smoke_test.py": "c257e93ccd0764456cb73685bce49e003f51955e96c909170b8669ad6a3e8fe2",
+        "src/stage2_runner.py": "96c84352a2181969eac0e651a9791602804e3ddadcc91cd8a68d1fd11d65cde4",
+        "scripts/10_run_stage2.py": "8a32adf4d647b868e38ae1bfd65ee5b97c3f74e7268bae505a29051156fadbd7"
+      },
+      "unchanged_sha256_equal_to_bundle_that_ran": {
+        "src/parser.py": "69353ea9a64bbd7566afcdc0f6e8b536d6130f2dacad10fe1b89bd6006586b90",
+        "src/scorer.py": "42370d9bf3a6e1aad2240859f00fee142fea3cb4e97a42ea0e67b40e68a9ea22",
+        "data/processed/stage2_requests.jsonl": "cdd1c1bb7c13a04efe006be757ace0f015401291f1f8ddb508125518be46a19f",
+        "data/processed/stage2_execution_order.json": "1b88a135278c75587bdd2f0608f026a4eff3d66f8afd47270bb36716d8dbe796",
+        "data/manifests/stage2_smoke_selection.json": "5fb15874e83633682fe729227d8fecb0274bfc869258a8226820f5c95137a22c",
+        "data/manifests/stage2_request_manifest.json": "3f22f484c0376878175d4f11941776a450e798f3611caae10313da0e8ebf3904",
+        "data/processed/annotation_review_decisions.json": "b78abe7b126fac4246ff3cdb39d07ad754c8f33bbc2e38273c682f102bc16e04",
+        "data/manifests/INTERPRETATION_RULE_FROZEN.json": "e9c42563ea9300397465fdc3f9f569b291c56c54f768671abda2402dc4c6fc2a",
+        "scripts/22_diag_headroom.py": "ebf602ef0e52e3b5bcc4e823e1be2b7487bdada86687ec019e2408e622f2dcf1"
+      },
+      "max_new_tokens": 2048,
+      "smoke_gate": "A7_stage2_pipeline_integrity_gate",
+      "interpretation_rule_sha256": "595b3100e2fa1bd5588309d24976006465f630f10252152b004be749751b78cb"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+scope,policy,condition,n_received,rescued,rescue_rate,rescue_ci95_low,rescue_ci95_high,n_population,final_repaired,final_repair_rate,final_ci95_low,final_ci95_high
+all,V (one-shot),-,0,,,,,250,189,0.756,0.6991,0.8051
+all,V -> V,VV,61,4,0.0656,0.0258,0.1568,250,193,0.772,0.7161,0.8197
+all,V -> N_true,N_true,61,7,0.1148,0.0567,0.2184,250,196,0.784,0.7289,0.8305
+all,V -> L_true,L_true,61,10,0.1639,0.0916,0.2761,250,199,0.796,0.7417,0.8413
+all,V -> L_false,L_false,61,8,0.1311,0.068,0.238,250,197,0.788,0.7332,0.8341
+gsm8k,V (one-shot),-,0,,,,,116,87,0.75,0.664,0.8199
+gsm8k,V -> V,VV,29,1,0.0345,0.0061,0.1718,116,88,0.7586,0.6733,0.8274
+gsm8k,V -> N_true,N_true,29,5,0.1724,0.076,0.3455,116,92,0.7931,0.7106,0.8568
+gsm8k,V -> L_true,L_true,29,6,0.2069,0.0985,0.3839,116,93,0.8017,0.72,0.8641
+gsm8k,V -> L_false,L_false,29,4,0.1379,0.055,0.3056,116,91,0.7845,0.7012,0.8495
+math,V (one-shot),-,0,,,,,134,102,0.7612,0.6824,0.8255
+math,V -> V,VV,32,3,0.0938,0.0324,0.2422,134,105,0.7836,0.7065,0.8449
+math,V -> N_true,N_true,32,2,0.0625,0.0173,0.2015,134,104,0.7761,0.6984,0.8384
+math,V -> L_true,L_true,32,4,0.125,0.0497,0.2807,134,106,0.791,0.7146,0.8513
+math,V -> L_false,L_false,32,4,0.125,0.0497,0.2807,134,106,0.791,0.7146,0.8513
+math Level 1,V (one-shot),-,0,,,,,7,7,1.0,0.6457,1.0
+math Level 1,V -> V,VV,0,0,,,,7,7,1.0,0.6457,1.0
+math Level 1,V -> N_true,N_true,0,0,,,,7,7,1.0,0.6457,1.0
+math Level 1,V -> L_true,L_true,0,0,,,,7,7,1.0,0.6457,1.0
+math Level 1,V -> L_false,L_false,0,0,,,,7,7,1.0,0.6457,1.0
+math Level 2,V (one-shot),-,0,,,,,14,11,0.7857,0.5241,0.9243
+math Level 2,V -> V,VV,3,0,0.0,0.0,0.5615,14,11,0.7857,0.5241,0.9243
+math Level 2,V -> N_true,N_true,3,0,0.0,0.0,0.5615,14,11,0.7857,0.5241,0.9243
+math Level 2,V -> L_true,L_true,3,0,0.0,0.0,0.5615,14,11,0.7857,0.5241,0.9243
+math Level 2,V -> L_false,L_false,3,0,0.0,0.0,0.5615,14,11,0.7857,0.5241,0.9243
+math Level 3,V (one-shot),-,0,,,,,27,24,0.8889,0.7194,0.9615
+math Level 3,V -> V,VV,3,0,0.0,0.0,0.5615,27,24,0.8889,0.7194,0.9615
+math Level 3,V -> N_true,N_true,3,0,0.0,0.0,0.5615,27,24,0.8889,0.7194,0.9615
+math Level 3,V -> L_true,L_true,3,0,0.0,0.0,0.5615,27,24,0.8889,0.7194,0.9615
+math Level 3,V -> L_false,L_false,3,0,0.0,0.0,0.5615,27,24,0.8889,0.7194,0.9615
+math Level 4,V (one-shot),-,0,,,,,40,29,0.725,0.5717,0.8389
+math Level 4,V -> V,VV,11,2,0.1818,0.0514,0.477,40,31,0.775,0.625,0.8768
+math Level 4,V -> N_true,N_true,11,1,0.0909,0.0162,0.3774,40,30,0.75,0.5981,0.8581
+math Level 4,V -> L_true,L_true,11,2,0.1818,0.0514,0.477,40,31,0.775,0.625,0.8768
+math Level 4,V -> L_false,L_false,11,2,0.1818,0.0514,0.477,40,31,0.775,0.625,0.8768
+math Level 5,V (one-shot),-,0,,,,,46,31,0.6739,0.5297,0.7913
+math Level 5,V -> V,VV,15,1,0.0667,0.0119,0.2982,46,32,0.6957,0.5519,0.8092
+math Level 5,V -> N_true,N_true,15,1,0.0667,0.0119,0.2982,46,32,0.6957,0.5519,0.8092
+math Level 5,V -> L_true,L_true,15,2,0.1333,0.0374,0.3788,46,33,0.7174,0.5745,0.8268
+math Level 5,V -> L_false,L_false,15,2,0.1333,0.0374,0.3788,46,33,0.7174,0.5745,0.8268
+conservative full pool (review-excluded = unrepaired),V (one-shot),-,,,,,,265,189,0.7132,0.656,0.7643
+conservative full pool (review-excluded = unrepaired),V -> V,VV,,,,,,265,193,0.7283,0.6718,0.7783
+conservative full pool (review-excluded = unrepaired),V -> N_true,N_true,,,,,,265,196,0.7396,0.6836,0.7888
+conservative full pool (review-excluded = unrepaired),V -> L_true,L_true,,,,,,265,199,0.7509,0.6955,0.7992
+conservative full pool (review-excluded = unrepaired),V -> L_false,L_false,,,,,,265,197,0.7434,0.6876,0.7922

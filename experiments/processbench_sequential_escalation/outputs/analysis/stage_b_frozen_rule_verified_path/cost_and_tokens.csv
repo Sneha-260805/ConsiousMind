@@ -1,0 +1,6 @@
+policy,n_population,final_repair_rate,repair_calls_per_item_mean,second_calls,unnecessary_second_call_rate,generated_tokens_per_item_mean,prompt_tokens_per_item_mean,additional_generated_tokens_vs_V,final_repair_gain_vs_V_pp,final_repair_gain_vs_VV_pp,gain_vs_V_pp_per_1k_extra_tokens
+V (one-shot),250,0.756,1,0,0.0,582.796,605.652,0.0,0.0,,
+V -> V,250,0.772,1.244,61,0.0,760.24,975.608,177.444,1.6,0.0,9.0169
+V -> N_true,250,0.784,1.244,61,0.0,765.68,975.608,182.884,2.8,1.2,15.3103
+V -> L_true,250,0.796,1.244,61,0.0,760.876,975.852,178.08,4.0,2.4,22.4618
+V -> L_false,250,0.788,1.244,61,0.0,761.844,975.852,179.048,3.2,1.6,17.8723

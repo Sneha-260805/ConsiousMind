@@ -1,0 +1,57 @@
+{
+  "artifact": "llm_review_requests",
+  "amendment": "A3 (reviewer per A4)",
+  "prompt_version": "llm_review_prompts_v2",
+  "STATUS": "PROVISIONAL LLM-assisted annotation review (feasibility study only). NOT human-validated and must never be described as human-validated; final-scale experiments should receive human validation.",
+  "reviewer": "qwen2.5-7b-instruct@a09a3545 nf4 (A4 reviewer)",
+  "failures_sha256": "c69bf6061f41cf0ccad9a06b7cb9e7425875fa51bbae5c364d85b78a237a080e",
+  "items_sha256": "a673751ec2b16f4fcd9191201ffad950210ba56e05a96bbfca8341b02160ca6a",
+  "n_items": 76,
+  "n_requests": {
+    "pass1": 76,
+    "pass2": 76
+  },
+  "system_prompt_sha256": "28d0441634f764ff51a3b470aeebf27b3445c99ff53291ea2f81bee9dbbe1389",
+  "pass1_question_sha256": "0af8d77168bd0f03b46c68dce1ebaeee387ada5db2e3f51501cc097802def9fb",
+  "pass2_question_sha256": "187d0eec31da264a285c6baa472ffd1a480d0b675b5078197574c32458ba6093",
+  "pass1_prompts_sha256": "9509b2c15cc905af275cfb5002bd2e968fe9dcf8def2c772edf0a2818b41c3b2",
+  "pass2_prompts_sha256": "be565e311799a09c8d4dfb7de0750b9959681770ceddd39eb314b380c2f68d2e",
+  "pass1_fields_shown": [
+    "item_id",
+    "question",
+    "steps",
+    "gold_answer",
+    "original_answer"
+  ],
+  "pass2_fields_shown": [
+    "item_id",
+    "question",
+    "steps",
+    "candidate_step"
+  ],
+  "pass2_steps_shown": "Steps 1..f (candidate step f = k-1); later steps omitted",
+  "smoke_item_ids": [
+    "sb_math-186",
+    "sb_gsm8k-132",
+    "sb_math-478",
+    "sb_gsm8k-31",
+    "sb_math-133"
+  ],
+  "max_prompt_chars": {
+    "pass1": 5292,
+    "pass2": 3537
+  },
+  "audit": "passed",
+  "files_sha256": {
+    "data/processed/llm_review/pass1_requests.jsonl": "8b568ffaa37f417118cb8058aec5f9aaaa65f8ad249211c875acb9cab730ba6f",
+    "data/processed/llm_review/pass2_requests.jsonl": "6315cd786b086c8b962225610d8674d9ee434204212b4dee0fb052a634225fb6",
+    "data/processed/llm_review/review_order.json": "9a136f68ac8cc69c4a537372768fad2634b533bbdce2f52fc93f13741f63b95d"
+  },
+  "created": "2026-10-13T15:08:38+00:00",
+  "supersedes": {
+    "system_prompt_sha256": "611b8aac8e8cb7f5b661f6aad75008117ad6854c24bfdedb1647e6e4fdaa1309",
+    "prompt_version": "llm_review_prompts_v1",
+    "reviewer": "qwen2.5-math-7b-instruct@ef9926d7 nf4 (A3 reviewer)",
+    "manifest_sha256": "24658e3eabfb20afcf2d76bd12e589d3761fa63779a9fa0918d573e7811fa9a0"
+  }
+}

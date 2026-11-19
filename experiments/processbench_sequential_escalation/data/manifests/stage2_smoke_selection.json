@@ -1,0 +1,62 @@
+{
+  "stage": 2,
+  "artifact": "stage2_smoke_selection",
+  "rule": "researcher request 2026-10-14 (before any Stage-2 inference): the smoke must contain at least one item whose Stage-1 response hit max_new_tokens (stage1_truncated), because Stage 2 embeds that response verbatim. If the base selection has none, the first execution-order pick (never the longest-prompt context probe) is replaced by the request-set item with stage1_truncated whose longest Stage-2 prompt is largest (prompt_chars, then item_id). Requests / order are unchanged.",
+  "base_rule": "stage2_runner.smoke_keys: longest Stage-2 prompt item first, then Stage-2 execution order",
+  "n_items": 3,
+  "n_requests": 12,
+  "base_items": [
+    "sb_gsm8k-107",
+    "sb_math-275",
+    "sb_math-361"
+  ],
+  "replaced": "sb_math-361",
+  "replacement": "sb_math-355",
+  "items": [
+    "sb_gsm8k-107",
+    "sb_math-275",
+    "sb_math-355"
+  ],
+  "stage1_truncated_items": [
+    "sb_math-355"
+  ],
+  "items_detail": {
+    "sb_gsm8k-107": {
+      "domain": "gsm8k",
+      "stage1_truncated": false,
+      "stage1_new_tokens": 277,
+      "max_stage2_prompt_chars": 2804
+    },
+    "sb_math-275": {
+      "domain": "math",
+      "stage1_truncated": false,
+      "stage1_new_tokens": 1027,
+      "max_stage2_prompt_chars": 8304
+    },
+    "sb_math-355": {
+      "domain": "math",
+      "stage1_truncated": true,
+      "stage1_new_tokens": 2048,
+      "max_stage2_prompt_chars": 8060
+    }
+  },
+  "request_keys": [
+    "s2::sb_gsm8k-107::L_true",
+    "s2::sb_math-275::N_true",
+    "s2::sb_math-355::L_false",
+    "s2::sb_math-275::L_true",
+    "s2::sb_gsm8k-107::N_true",
+    "s2::sb_math-355::VV",
+    "s2::sb_math-355::N_true",
+    "s2::sb_gsm8k-107::L_false",
+    "s2::sb_math-275::VV",
+    "s2::sb_math-275::L_false",
+    "s2::sb_gsm8k-107::VV",
+    "s2::sb_math-355::L_true"
+  ],
+  "request_keys_sha256": "73fa440c6ace579cbf50206d055d0fdf7211400b6b631a2b3eef58fc49b6260f",
+  "requests_sha256": "cdd1c1bb7c13a04efe006be757ace0f015401291f1f8ddb508125518be46a19f",
+  "order_sha256": "1b88a135278c75587bdd2f0608f026a4eff3d66f8afd47270bb36716d8dbe796",
+  "stage2_manifest_sha256": "3f22f484c0376878175d4f11941776a450e798f3611caae10313da0e8ebf3904",
+  "failures_sha256": "c69bf6061f41cf0ccad9a06b7cb9e7425875fa51bbae5c364d85b78a237a080e"
+}

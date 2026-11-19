@@ -1,0 +1,8 @@
+{
+  "bundle": "kaggle/stage_b_bundle.zip",
+  "bundle_sha256": "2b945af76f959f2ac03ff6a8e744a134008b4bd8d8c5b4bade91de44511c99dd",
+  "files": 126,
+  "notebook": "kaggle/stage_b_run.ipynb",
+  "notebook_sha256": "5b5b2fee3cb9a537f9443b73872de302d42600118124c8e069105985c84b4f70",
+  "code_fingerprint": "3ae688a81fe3bd56191a1ca7491e5ac6769c0ced4a0333fefc5c625ea986c7a9"
+}

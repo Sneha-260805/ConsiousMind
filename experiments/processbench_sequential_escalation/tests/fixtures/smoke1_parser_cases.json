@@ -1,0 +1,83 @@
+{
+ "note": "Verbatim responses copied from the REAL Stage-B smoke1 archive (stage_b_smoke1_RESULTS.zip, sha256 c8e965fb87402da84f9298ce584aa91842c702fa02059757d92e5234cafd81b1, NO-GO) as Stage-B parser regression fixtures. The archive itself is preserved unaltered and is NOT rescored; expected values are the researcher-specified (or rule-derived) parses under the Stage-B numeric parser.",
+ "source_archive_sha256": "c8e965fb87402da84f9298ce584aa91842c702fa02059757d92e5234cafd81b1",
+ "cases": [
+  {
+   "item_id": "sb_gsm8k-64",
+   "request_key": "s1::sb_gsm8k-64::V",
+   "finish_reason": "stop",
+   "new_tokens": 327,
+   "raw_response_sha256": "0efdf2c6108a45b23f6d3cb38c68a9e52de345c4b981b95fe4da0d78851e0d63",
+   "expected_numeric_parse_status": "ok",
+   "expected_numeric_parsed_answer": "2000",
+   "why": "explicit FINAL_ANSWER field inside \text{...}; field parse (a); strict parser still non-compliant",
+   "raw_response": "Let's carefully re-evaluate the problem and the proposed solution.\n\n### Problem Summary:\n- Elliott's **goal** is **10,000 steps** per day.\n- He took **half** of his steps on his walks to and from school:  \n  $ \\frac{1}{2} \\times 10,000 = 5,000 $ steps.\n- He then took **1,000 steps** on a short walk with his friend.\n- After that, he **jogged** and realized he had **2,000 steps left** to reach his goal.\n\nWe are asked: **How many steps did Elliott take during his jog?**\n\n---\n\n### Step-by-step Analysis:\n\n1. **Total goal**: 10,000 steps  \n2. **Steps taken to and from school**: 5,000  \n3. **Steps taken on short walk**: 1,000  \n4. **Steps taken before jogging**:  \n   $ 5,000 + 1,000 = 6,000 $  \n5. **Steps remaining after jogging**: 2,000  \n6. **Steps taken during jogging**:  \n   $ 10,000 - 6,000 - 2,000 = 2,000 $\n\n---\n\n### Correct Answer:\n\nElliott took **2,000 steps** during his jog.\n\n$$\n\\text{FINAL_ANSWER: 2000}\n$$"
+  },
+  {
+   "item_id": "sb_gsm8k-82",
+   "request_key": "s1::sb_gsm8k-82::V",
+   "finish_reason": "stop",
+   "new_tokens": 291,
+   "raw_response_sha256": "1d58d4d72752d01d5d76d335931377ab16711cf5684761b1cb0e26c151710169",
+   "expected_numeric_parse_status": "ok",
+   "expected_numeric_parsed_answer": "10",
+   "why": "researcher case: terminal \boxed{10} after '### Final Answer:'",
+   "raw_response": "Let's carefully re-evaluate the problem and the proposed solution.\n\n---\n\n### Problem Summary:\n\n- **Venue 1**: Flat fee of $200, plus $5 per guest for food.\n- **Venue 2**: $25 per guest (includes food).\n\nWe are to find the number of guests $ x $ for which the total cost at both venues is equal.\n\n---\n\n### Step-by-Step Correct Solution:\n\n**Step 1:** Define the total cost for each venue.\n\n- **Venue 1**: Total cost = $200 + 5x\n- **Venue 2**: Total cost = 25x\n\n**Step 2:** Set the two costs equal to each other:\n\n$$\n200 + 5x = 25x\n$$\n\n**Step 3:** Solve for $ x $:\n\n$$\n200 = 25x - 5x \\\\\n200 = 20x \\\\\nx = \\frac{200}{20} = 10\n$$\n\nSo, the cost is equal when there are **10 guests**.\n\n---\n\n### Feedback on the Proposed Solution:\n\nThe proposed solution says that **11 guests** are needed, which is incorrect. The correct number is **10**, because at 10 guests, the costs are equal.\n\n---\n\n### Final Answer:\n\n$$\n\\boxed{10}\n$$"
+  },
+  {
+   "item_id": "sb_math-114",
+   "request_key": "s1::sb_math-114::V",
+   "finish_reason": "length",
+   "new_tokens": 768,
+   "raw_response_sha256": "65d869d74df836c07e932157c298f2d0a16f0507f5477a4cbfd5425d338c67e6",
+   "expected_numeric_parse_status": "incomplete_boxed",
+   "expected_numeric_parsed_answer": null,
+   "why": "researcher case: truncated '\boxed{90' must NOT be accepted (pilot fallback read 90)",
+   "raw_response": "Let's carefully re-examine the proposed solution and correct it.\n\n---\n\n### Step 1: Use the LCM-GCD relationship\n\nWe are given the formula:\n\n$$\n\\text{LCM}(a, b) = \\frac{a \\cdot b}{\\text{GCD}(a, b)}\n$$\n\nSo, we need to compute the **GCD** of $9999$ and $100{,}001$.\n\n---\n\n### Step 2: Factorize both numbers\n\nLet's factorize both numbers correctly.\n\n#### Factorizing $9999$:\n\n$$\n9999 = 9999 = 9 \\times 1111 = 9 \\times 101 \\times 11 = 3^2 \\times 11 \\times 101\n$$\n\n#### Factorizing $100{,}001$:\n\n$$\n100{,}001 = 100{,}001\n$$\n\nWe can factor this as:\n\n$$\n100{,}001 = 10^5 + 1 = (10 + 1)(10^4 - 10^3 + 10^2 - 10 + 1) = 11 \\times 9091\n$$\n\nBut wait — this is **not** correct. Let's do it more carefully.\n\nActually, we can factor $100{,}001$ as:\n\n$$\n100{,}001 = 100{,}001 = 7 \\times 11 \\times 13 \\times 101\n$$\n\nThis is a known factorization.\n\nSo:\n\n$$\n100{,}001 = 7 \\times 11 \\times 13 \\times 101\n$$\n\n---\n\n### Step 3: Find the GCD\n\nNow, compare the prime factorizations:\n\n- $9999 = 3^2 \\times 11 \\times 101$\n- $100{,}001 = 7 \\times 11 \\times 13 \\times 101$\n\nThe **common prime factors** are $11$ and $101$.\n\nSo:\n\n$$\n\\text{GCD}(9999, 100{,}001) = 11 \\times 101 = 1111\n$$\n\nThis is **correct**.\n\n---\n\n### Step 4: Compute the LCM\n\nNow compute:\n\n$$\n\\text{LCM}(9999, 100{,}001) = \\frac{9999 \\times 100{,}001}{1111}\n$$\n\nLet’s compute this step by step.\n\nFirst, compute the numerator:\n\n$$\n9999 \\times 100{,}001 = 9999 \\times 100{,}001\n$$\n\nWe can simplify this by dividing $9999$ by $1111$ first:\n\n$$\n\\frac{9999}{1111} = 9\n$$\n\nSo:\n\n$$\n\\text{LCM} = 9 \\times 100{,}001 = 900{,}009\n$$\n\n---\n\n### Final Answer:\n\n$$\n\\boxed{90"
+  },
+  {
+   "item_id": "sb_math-186",
+   "request_key": "s1::sb_math-186::V",
+   "finish_reason": "stop",
+   "new_tokens": 580,
+   "raw_response_sha256": "9478293892c113e84770cebd8cfc4f1774a449ea279a7ad118cc77a2e7720be0",
+   "expected_numeric_parse_status": "ok",
+   "expected_numeric_parsed_answer": "0",
+   "why": "researcher case: terminal \boxed{0} after '### Final Answer:'",
+   "raw_response": "We are given the equation:\n\n$$\n\\frac{1}{\\sin^2 \\theta} - \\frac{1}{\\cos^2 \\theta} - \\frac{1}{\\tan^2 \\theta} - \\frac{1}{\\cot^2 \\theta} - \\frac{1}{\\sec^2 \\theta} - \\frac{1}{\\csc^2 \\theta} = -3\n$$\n\nand asked to find the number of solutions in the interval $ 0 \\le \\theta \\le 2\\pi $.\n\n---\n\n### Step 1: Express all terms in terms of $\\sin \\theta$ and $\\cos \\theta$\n\nWe use the following identities:\n\n- $\\frac{1}{\\sin^2 \\theta} = \\csc^2 \\theta$\n- $\\frac{1}{\\cos^2 \\theta} = \\sec^2 \\theta$\n- $\\frac{1}{\\tan^2 \\theta} = \\cot^2 \\theta$\n- $\\frac{1}{\\cot^2 \\theta} = \\tan^2 \\theta$\n- $\\frac{1}{\\sec^2 \\theta} = \\cos^2 \\theta$\n- $\\frac{1}{\\csc^2 \\theta} = \\sin^2 \\theta$\n\nSo the equation becomes:\n\n$$\n\\csc^2 \\theta - \\sec^2 \\theta - \\cot^2 \\theta - \\tan^2 \\theta - \\cos^2 \\theta - \\sin^2 \\theta = -3\n$$\n\n---\n\n### Step 2: Use Pythagorean identities\n\nWe know:\n\n- $\\csc^2 \\theta - \\cot^2 \\theta = 1$\n- $\\sec^2 \\theta - \\tan^2 \\theta = 1$\n\nSo we can group terms:\n\n$$\n(\\csc^2 \\theta - \\cot^2 \\theta) - (\\sec^2 \\theta - \\tan^2 \\theta) - \\cos^2 \\theta - \\sin^2 \\theta = -3\n$$\n\n$$\n1 - 1 - \\cos^2 \\theta - \\sin^2 \\theta = -3\n$$\n\n$$\n- (\\cos^2 \\theta + \\sin^2 \\theta) = -3\n$$\n\n$$\n-1 = -3\n$$\n\nThis is a contradiction.\n\n---\n\n### Step 3: Conclusion\n\nThe equation simplifies to a contradiction: $-1 = -3$, which is **false** for all $\\theta$.\n\nTherefore, **there are no solutions** to the equation in the interval $0 \\le \\theta \\le 2\\pi$.\n\n---\n\n### Final Answer:\n\n$$\n\\boxed{0}\n$$"
+  },
+  {
+   "item_id": "sb_math-268",
+   "request_key": "s1::sb_math-268::V",
+   "finish_reason": "stop",
+   "new_tokens": 740,
+   "raw_response_sha256": "59cbc50e77abf007f53fd71cef14002a5549bbac424647ffe50ba034c63b22d4",
+   "expected_numeric_parse_status": "ok",
+   "expected_numeric_parsed_answer": "27",
+   "why": "researcher case: terminal \boxed{27} after '### ... **Final Answer:**'",
+   "raw_response": "Let's carefully re-examine and correct the proposed solution step by step.\n\n---\n\n### **Given Equation:**\n$$\n\\log_2 (\\log_8 x) = \\log_8 (\\log_2 x)\n$$\n\n---\n\n### **Step 1: Use Change of Base Formula**\n\nWe apply the change of base formula to both sides to convert all logarithms to base 2.\n\n- $\\log_8 x = \\frac{\\log_2 x}{\\log_2 8} = \\frac{\\log_2 x}{3}$\n- $\\log_8 (\\log_2 x) = \\frac{\\log_2 (\\log_2 x)}{\\log_2 8} = \\frac{\\log_2 (\\log_2 x)}{3}$\n\nSo the original equation becomes:\n$$\n\\log_2 \\left( \\frac{\\log_2 x}{3} \\right) = \\frac{\\log_2 (\\log_2 x)}{3}\n$$\n\n---\n\n### **Step 2: Simplify the Left-Hand Side**\n\nUse the logarithmic identity:\n$$\n\\log_b \\left( \\frac{a}{c} \\right) = \\log_b a - \\log_b c\n$$\n\nSo:\n$$\n\\log_2 \\left( \\frac{\\log_2 x}{3} \\right) = \\log_2 (\\log_2 x) - \\log_2 3\n$$\n\nNow the equation becomes:\n$$\n\\log_2 (\\log_2 x) - \\log_2 3 = \\frac{\\log_2 (\\log_2 x)}{3}\n$$\n\n---\n\n### **Step 3: Let $ y = \\log_2 (\\log_2 x) $**\n\nThen the equation becomes:\n$$\ny - \\log_2 3 = \\frac{y}{3}\n$$\n\nMultiply both sides by 3 to eliminate the fraction:\n$$\n3y - 3\\log_2 3 = y\n$$\n\nSubtract $ y $ from both sides:\n$$\n2y = 3\\log_2 3\n$$\n\nDivide both sides by 2:\n$$\ny = \\frac{3}{2} \\log_2 3\n$$\n\nRecall that $ y = \\log_2 (\\log_2 x) $, so:\n$$\n\\log_2 (\\log_2 x) = \\frac{3}{2} \\log_2 3\n$$\n\n---\n\n### **Step 4: Solve for $ \\log_2 x $**\n\nLet $ z = \\log_2 x $. Then:\n$$\n\\log_2 z = \\frac{3}{2} \\log_2 3\n$$\n\nExponentiate both sides with base 2:\n$$\nz = 2^{\\frac{3}{2} \\log_2 3} = (2^{\\log_2 3})^{3/2} = 3^{3/2} = \\sqrt{27} = 3\\sqrt{3}\n$$\n\nSo:\n$$\n\\log_2 x = 3\\sqrt{3}\n$$\n\n---\n\n### **Step 5: Find $ (\\log_2 x)^2 $**\n\n$$\n(\\log_2 x)^2 = (3\\sqrt{3})^2 = 9 \\cdot 3 = 27\n$$\n\n---\n\n### ✅ **Final Answer:**\n$$\n\\boxed{27}\n$$"
+  },
+  {
+   "item_id": "sb_math-470",
+   "request_key": "s1::sb_math-470::V",
+   "finish_reason": "length",
+   "new_tokens": 768,
+   "raw_response_sha256": "04c47fed4629e87e8b80503058d6d516ed04b12eb90c60490985b81ab26e04bc",
+   "expected_numeric_parse_status": "missing",
+   "expected_numeric_parsed_answer": null,
+   "why": "truncated at '### Step 5: Final'; pilot last-line fallback read 5 from the heading - no body/heading numbers",
+   "raw_response": "We are asked to find how many **increasing lists of five different single-digit positive integers** have a **sum of 33**.\n\n---\n\n### Step 1: Understand the Problem\n\nWe are to find **all increasing lists** of **five distinct single-digit positive integers** (i.e., from 1 to 9) such that their **sum is 33**.\n\nSince the list is **increasing**, the order is fixed once we choose the five distinct numbers. So we are essentially looking for **combinations** of five distinct numbers from 1 to 9 that sum to 33.\n\n---\n\n### Step 2: Total Possible Sum of Five Distinct Single-Digit Numbers\n\nThe largest possible sum of five distinct single-digit numbers is:\n\n$$\n9 + 8 + 7 + 6 + 5 = 35\n$$\n\nSo 33 is **2 less** than the maximum possible sum.\n\nWe are looking for combinations of five distinct numbers from 1 to 9 that sum to **33**.\n\n---\n\n### Step 3: Strategy\n\nWe can approach this by **subtracting** from the maximum sum (35) and looking for combinations that differ by 2.\n\nLet’s consider all combinations of five distinct numbers from 1 to 9 that sum to 33.\n\nWe can use a **brute-force** or **systematic** approach to find all such combinations.\n\n---\n\n### Step 4: Systematic Search\n\nWe can list all combinations of five distinct numbers from 1 to 9 and check which ones sum to 33.\n\nLet’s do this systematically.\n\nWe know that the maximum sum is 35, so we are looking for combinations that are **2 less** than that.\n\nSo we look for combinations that are **2 less than** the maximum set {5, 6, 7, 8, 9}.\n\nLet’s try replacing one number in that set with a smaller number to reduce the sum by 2.\n\n- Replace 5 with 3: {3, 6, 7, 8, 9} → sum = 33 ✅\n- Replace 5 with 4: {4, 6, 7, 8, 9} → sum = 34 ❌\n- Replace 6 with 4: {5, 4, 7, 8, 9} → sum = 33 ✅\n- Replace 6 with 3: {5, 3, 7, 8, 9} → sum = 32 ❌\n- Replace 7 with 5: {5, 6, 5, 8, 9} → not distinct ❌\n- Replace 7 with 4: {5, 6, 4, 8, 9} → sum = 32 ❌\n- Replace 8 with 6: {5, 6, 7, 6, 9} → not distinct ❌\n- Replace 8 with 5: {5, 6, 7, 5, 9} → not distinct ❌\n- Replace 9 with 7: {5, 6, 7, 8, 7} → not distinct ❌\n\nSo far, we have two valid combinations:\n\n1. {3, 6, 7, 8, 9}\n2. {4, 6, 7, 8, 5} → same as {3, 6, 7, 8, 9} when sorted\n\nSo only **one unique** combination.\n\n---\n\n### Step 5: Final"
+  },
+  {
+   "item_id": "sb_math-64",
+   "request_key": "s1::sb_math-64::V",
+   "finish_reason": "stop",
+   "new_tokens": 655,
+   "raw_response_sha256": "dba9a2b712b53adc0e153b0b3d43bbd27d9cc94c130cf74eb72c8f3a270040f6",
+   "expected_numeric_parse_status": "ok",
+   "expected_numeric_parsed_answer": "0",
+   "why": "researcher case: terminal \boxed{0} after '### Final Answer:'",
+   "raw_response": "We are given a piecewise function:\n\n$$\nf(x) = \\left\\{\n\\begin{array}{cl}\n3 - x & \\text{if } x \\leq 3, \\\\\n-x^3 + 2x^2 + 3x & \\text{if } x > 3.\n\\end{array}\n\\right.\n$$\n\nWe are asked to compute:\n\n$$\nf^{-1}(0) + f^{-1}(6)\n$$\n\n---\n\n### Step 1: Find $ f^{-1}(0) $\n\nWe need to find the value of $ x $ such that $ f(x) = 0 $.\n\n- **Case 1:** $ x \\leq 3 $, so $ f(x) = 3 - x $\n\nSet $ 3 - x = 0 $:\n\n$$\nx = 3\n$$\n\nSo, $ f(3) = 0 $, and since $ x = 3 $ is in the domain $ x \\leq 3 $, we have:\n\n$$\nf^{-1}(0) = 3\n$$\n\n---\n\n### Step 2: Find $ f^{-1}(6) $\n\nWe need to find the value of $ x $ such that $ f(x) = 6 $.\n\n- **Case 1:** $ x \\leq 3 $, so $ f(x) = 3 - x $\n\nSet $ 3 - x = 6 $:\n\n$$\nx = -3\n$$\n\nBut $ x = -3 $ is not in the domain $ x \\leq 3 $, but it is in the domain. However, we must check if this is valid.\n\nWait — actually, $ x = -3 $ is in the domain $ x \\leq 3 $, and $ f(-3) = 3 - (-3) = 6 $, so this is valid.\n\nBut wait — this contradicts the logic in the original solution. Let's double-check.\n\nActually, the function is defined as:\n\n- $ f(x) = 3 - x $ for $ x \\leq 3 $\n- $ f(x) = -x^3 + 2x^2 + 3x $ for $ x > 3 $\n\nSo, for $ x \\leq 3 $, the function is linear and increasing from $ f(3) = 0 $ to $ f(-\\infty) = \\infty $.\n\nSo, $ f(x) = 6 $ is **possible** in the domain $ x \\leq 3 $, and we can solve:\n\n$$\n3 - x = 6 \\Rightarrow x = -3\n$$\n\nSo, $ f(-3) = 6 $, and since $ -3 \\leq 3 $, this is valid.\n\nThus, $ f^{-1}(6) = -3 $\n\n---\n\n### Step 3: Add the two values\n\n$$\nf^{-1}(0) + f^{-1}(6) = 3 + (-3) = 0\n$$\n\n---\n\n### Final Answer:\n\n$$\n\\boxed{0}\n$$"
+  }
+ ]
+}

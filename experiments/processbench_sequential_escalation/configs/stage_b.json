@@ -1,0 +1,398 @@
+{
+  "stage": "B",
+  "title": "Verification-first diagnostic escalation feasibility (sequential V -> X repair)",
+  "config_version": "stage_b_v8 (amendments A1, A2, A3, A4, A5, A6, A7)",
+  "_format_note": "JSON (standard library only), like Stage A.",
+  "oracle_status": "Stage B uses TWO oracle components: (1) the gold answer decides whether Stage 1 failed and therefore whether escalation is triggered; (2) L_true / N_true use the expert-annotated first-error step. Stage B is NOT a deployable system; it asks whether diagnostic escalation has potential value IF failure detection and localisation were available.",
+
+  "limitations": {
+    "test_source_contamination": "Researcher decision 2026-10-12: using GSM8K-test / MATH-test source problems is acceptable for this feasibility study. Qwen3-4B may have seen these problems (or solutions) in training. Absolute accuracy / repair rates must NOT be interpreted as uncontaminated capability; the study's quantities of interest are paired, within-item differences between feedback conditions."
+  },
+
+  "protocol_amendments": [
+    {"id": "A1", "date": "2026-10-12", "status": "approved by the researcher (pre-full-run smoke-test correction)",
+     "trigger": "real-model Stage-1 smoke test smoke1 -> NO-GO (12/20 parsed; 6/20 truncated at 768 tokens; 0 headroom). All technical checks passed.",
+     "trigger_archive": "stage_b_smoke1_RESULTS.zip",
+     "trigger_archive_sha256": "c8e965fb87402da84f9298ce584aa91842c702fa02059757d92e5234cafd81b1",
+     "changes": ["solver.stage_b_overrides.max_new_tokens 768 -> 1536 (Stage 1 AND Stage 2)",
+                 "numeric answer parser: frozen pilot parser 2.0 -> Stage-B parser stage_b_numeric_v1 (see parser); pilot strict parser kept as the format-compliance diagnostic"],
+     "unchanged": "dataset items, Stage-1 requests/prompts/execution order, smoke selection (same 20 requests), conditions, feedback wording, gates, interpretation rule + analysis settings, model + revision, greedy non-thinking decoding",
+     "smoke1_record": "preserved unaltered and NOT rescored (data/smoke_records/smoke1/); it is the record that triggered A1",
+     "next": "smoke2 = same 20 frozen smoke requests with the amended settings; same gate"},
+    {"id": "A2", "date": "2026-10-13", "status": "approved by the researcher (pre-full-run smoke-test correction; smoke2 independently inspected)",
+     "trigger": "real-model Stage-1 smoke test smoke2 (A1 settings) -> NO-GO on generation headroom only: 19/20 parsed; sb_math-150 hit 1536/1536 tokens (truncated, no valid answer); sb_math-7 completed at 1422 tokens > 90% threshold 1382.4. Zero transport failures/retries; prompt/hash integrity, determinism, resume, canary and no-visible-thinking checks all passed; the Stage-B parser amendment (A1) appears successful.",
+     "trigger_archive": "stage_b_smoke2_RESULTS.zip",
+     "trigger_archive_sha256": "e95729e470f55f67cb59595d7c60e3cbf8c09b1bff9d88f1cc876cb671d58c59",
+     "trigger_smoke_label": "smoke2",
+     "changes": ["solver.stage_b_overrides.max_new_tokens 1536 -> 2048 (Stage 1 AND Stage 2)"],
+     "unchanged": "dataset items, Stage-1 requests/prompts/execution order, smoke selection (same 20 requests), conditions, feedback wording, parser (stage_b_numeric_v1, src/parser.py byte-identical), scorer, gates, interpretation rule + analysis settings / statistical plan, model + revision, greedy non-thinking decoding",
+     "smoke_records": "smoke1 and smoke2 preserved byte-for-byte and NOT rescored (data/smoke_records/smoke1/, data/smoke_records/smoke2/); smoke2 is the record that triggered A2",
+     "next": "smoke3 = same 20 frozen smoke requests at max_new_tokens 2048; same gate, 90% headroom threshold = 1843.2 tokens"},
+    {"id": "A3", "date": "2026-10-13", "status": "approved by the researcher (pre-Stage-2 procedure change; no Stage-2 inference run, no annotation decision frozen)",
+     "trigger": "researcher decision: Stage-B feasibility annotation review will use a blinded LLM-assisted reviewer rather than a human reviewer. These judgments are provisional, must never be described as human-validated, and final-scale experiments should receive human validation.",
+     "trigger_archive": null,
+     "changes": ["annotation-fidelity review: manual human review -> blinded two-pass LLM-assisted review (llm_review section; reviewer Qwen/Qwen2.5-Math-7B-Instruct @ ef9926d75ab1d54532f6a30dd5e760355eb9aa4d, 4-bit NF4, greedy, batch 1)",
+                 "new frozen review code + requests: src/llm_review.py, src/reviewer_loader.py, src/llm_review_runner.py, data/processed/llm_review/*, data/manifests/llm_review_request_manifest.json"],
+     "unchanged": "76-item frozen Stage-1 failure set, Stage-1 outputs, dataset, parser, scorer, Stage-2 conditions, feedback wording, annotation_review decision rules (CONFIRM -> primary set; CORRECT -> L_false; >= 50 primary items), interpretation rule + analysis settings, solver model/decoding",
+     "next": "5-item reviewer smoke test on Kaggle (scripts/15); the 76-item review (scripts/16) only after the smoke passes and the researcher approves"},
+    {"id": "A4", "date": "2026-10-13", "status": "approved by the researcher (pre-full-review reviewer replacement; no full review run, no annotation decision frozen)",
+     "trigger": "A3 reviewer smoke (Qwen/Qwen2.5-Math-7B-Instruct @ ef9926d7, NF4, max_new_tokens 768) -> NO-GO: pinned revision / NF4 load, all 20 generations, blinding, deterministic repeats, context window and resume all passed, but Pass-1 valid JSON 0/5 and Pass-2 valid JSON 0/5 (the model ignored the JSON-only format and wrote long mathematical reasoning ending in boxed pseudo-JSON); one Pass-1 item hit 768 tokens. The parser is NOT relaxed to infer classifications from prose.",
+     "trigger_archive": "stage_b_llm_review_smoke_RESULTS.zip",
+     "trigger_archive_sha256": "9205bdda17367f4fb71e4f2520193a95d94af2cf02b11b65cab2da53a0bc934a",
+     "trigger_smoke_label": "review_smoke_a3",
+     "trigger_kind": "review_smoke",
+     "changes": ["llm_review.reviewer: Qwen/Qwen2.5-Math-7B-Instruct @ ef9926d75ab1d54532f6a30dd5e760355eb9aa4d -> Qwen/Qwen2.5-7B-Instruct @ a09a35458c702b33eeacc393d103063234e8bc28 (pinned before inference; max_context_tokens 4096 -> 32768 = the model's max_position_embeddings)",
+                 "llm_review.reviewer.max_new_tokens 768 -> 192",
+                 "llm_review.reviewer.repetition_penalty: explicitly 1.0 (pure greedy; overrides the checkpoint generation_config value 1.05)",
+                 "fixed SYSTEM prompt (src/llm_review.py, prompt version llm_review_prompts_v1 -> v2): rewritten only to state that this is a classification task, not a request to solve the problem conversationally, and that the reply is one JSON object only; Pass-1 / Pass-2 user prompts, questions and output schemas byte-identical",
+                 "reviewer smoke gate: adds an exact-schema check (the whole output is one JSON object with exactly the allowed keys and valid values); every earlier check kept",
+                 "review request files rebuilt only because their rendered_sha256 field includes the system prompt; prompts, prompt_sha256, items and order byte-identical (logged in FROZEN_HASHES)"],
+     "unchanged": "76-item frozen Stage-1 failure set, the five smoke items, Stage-1 outputs, dataset, Stage-B answer parser + scorer, blinded two-pass review procedure (fields shown / hidden, questions, outputs, CONFIRM / DISAGREE / UNCLEAR mapping, no substitution), review parse rules (parse_output), A3 wording, 4-bit NF4 float16 compute, bitsandbytes 0.50.2, batch 1, greedy do_sample=False, no tools / web / history, never regenerate, Stage-2 conditions, feedback wording, decision rules, interpretation rule + analysis settings",
+     "superseded_reviewer": "Qwen/Qwen2.5-Math-7B-Instruct @ ef9926d75ab1d54532f6a30dd5e760355eb9aa4d (A3); its smoke record is preserved byte-for-byte in data/smoke_records/review_smoke_a3/ and is never rescored",
+     "next": "new 5-item reviewer smoke (same five frozen smoke items, 20 generations) on Kaggle; the 152-generation full review only after the smoke passes and the researcher approves"},
+    {"id": "A5",
+     "date": "2026-10-14",
+     "status": "approved by the researcher (pre-full-review; no full LLM review run, no annotation decision frozen, no Stage-2 request built)",
+     "trigger": "A4 reviewer smoke (Qwen/Qwen2.5-7B-Instruct @ a09a3545, NF4, max_new_tokens 192) -> NO-GO: every infrastructure check passed (pinned NF4 load, all 20 generations, blinding, no truncation, deterministic repeats, context window, resume), but valid structured judgments were only Pass 1 3/5 and Pass 2 4/5 (some invalid JSON from unescaped LaTeX backslashes), and - decisive - manual inspection found self-contradictory reviewer reasoning on smoke items. This is NOT repaired by loosening the parser or changing the JSON format: development of the provisional LLM reviewer is STOPPED.",
+     "trigger_archive": "stage_b_llm_review_smoke_RESULTS.zip",
+     "trigger_archive_sha256": "dd15c0cb7bcb2ace9cf1132cbca2e44d9ff0993988590e604f2d015035c9fca9",
+     "trigger_smoke_label": "review_smoke_a4",
+     "trigger_kind": "review_smoke_stop",
+     "changes": ["annotation-fidelity reviewer: the A3/A4 LLM-assisted reviewer -> a blinded HUMAN reviewer (section human_review); scripts 15 / 16 refuse the real reviewer and 17 refuses to freeze into data/ (mock / TEST-ONLY use kept for the regression tests)",
+                 "human review workflow: local browser interface (scripts/19_human_review_server.py, standard library, 127.0.0.1 only) writing an append-only, hash-chained judgment log per pass; every save (including revisions) is kept with its UTC timestamp",
+                 "Pass 1 is frozen (scripts/20_freeze_human_review.py --pass 1) BEFORE the ProcessBench step is read or any agreement computed; the Pass-2 view file is generated only at that freeze",
+                 "Pass-2 freeze fills annotation_review_form_FILLED.csv under the unchanged decision rules (notes: HUMAN blinded review); 07b then freezes decisions only after researcher approval"],
+     "unchanged": "76-item frozen Stage-1 failure set and its packet order (seed 6303), Stage-1 outputs, dataset, Stage-B answer parser + scorer, blinded two-pass procedure (Pass-1 fields shown: item id, problem, numbered original solution, gold answer, original final answer; Pass-2: problem, Steps 1..f, candidate step f = k-1), Pass-1 / Pass-2 questions (verbatim from src/llm_review.py), CONFIRM / DISAGREE / UNCLEAR mapping, no substitution of the reviewer's step, decision rules (CONFIRM -> primary set; L_false only if CORRECT; min 50), Stage-2 conditions, feedback wording, interpretation rule + analysis settings",
+     "superseded_reviewer": "Qwen/Qwen2.5-7B-Instruct @ a09a35458c702b33eeacc393d103063234e8bc28 (A4); its smoke record is preserved byte-for-byte in data/smoke_records/review_smoke_a4/ as a NO-GO record and is never rescored",
+     "next": "export the blinded Pass-1 view (scripts/18_export_human_review.py); the human reviewer completes Pass 1; freeze Pass 1; complete Pass 2; freeze Pass 2; report; 07b and Stage 2 only after researcher approval"},
+    {"id": "A6",
+     "date": "2026-10-14",
+     "status": "approved by the researcher (pre-Stage-2; Pass 1 frozen, no Pass-2 judgment made, no Stage-2 request built, no Stage-2 inference)",
+     "trigger": "researcher decision after the frozen human Pass 1 (61 CONFIRM / 15 DISAGREE / 0 UNCLEAR of 76)",
+     "trigger_archive": null,
+     "trigger_kind": "researcher_decision_pass2_waiver",
+     "wording": "A separate manual Pass-2 review is no longer required. For the 61 items whose ProcessBench first-error step k the human reviewer marked CONFIRM in the frozen Pass 1, that judgment already asserts that Step k is the EARLIEST substantive error; all preceding steps, including the predetermined false-location candidate f = k-1, were therefore implicitly judged not to contain an earlier substantive error. A separate Pass-2 human recheck is waived for feasibility because it would duplicate the same reviewer's earlier judgment. Stage-2 true-location analyses use only the 61 Pass-1 CONFIRM items. L_false uses only those 61 items and the frozen candidate f = k-1; its validity is labelled 'Pass-1-implied false-step validity', NOT independently Pass-2-validated. The 15 DISAGREE items are not used in the primary Stage-2 analysis (excluded from Stage 2 in all conditions; the reviewer's alternative step is recorded only and never substituted). The frozen Pass-1 files and hashes are preserved unchanged and Pass 1 is not reopened. The primary endpoint is unchanged: paired rescue difference V -> L_true vs V -> V.",
+     "changes": ["annotation_review.false_step_verdicts += PASS1_IMPLIED (CONFIRM items: f = k-1 implied valid by the frozen Pass-1 CONFIRM) and NOT_REVIEWED (DISAGREE / UNCLEAR items; no Pass 2 judgment exists)",
+                 "annotation_review.decision_rules.l_false: primary-set items with false_step_verdict CORRECT or PASS1_IMPLIED (decision field false_step_validity_basis records which)",
+                 "human_review.pass2: waived (scripts 19 / 20 refuse --pass 2); the already generated pass2_view.json + HUMAN_REVIEW_PASS2_EXPORT.json are kept unchanged and unused",
+                 "scripts/21_freeze_pass1_only_review.py fills annotation_review_form_FILLED.csv from the frozen Pass-1 mapping only (verifies every Pass-1 file against its registered sha256 first); 07b then freezes the decisions",
+                 "Stage-2 request manifest and analysis outputs carry the A6 statement and the L_false validity label"],
+     "unchanged": "frozen Pass-1 view / log / final judgments / mapping / lock (byte-identical, re-verified), 76-item failure set, Stage-1 outputs, Stage-2 conditions + prompts + feedback wording, interpretation rule + analysis settings (rule lock unchanged; primary comparison L_true vs VV), min_primary_items 50, no substitution of the reviewer's step",
+     "next": "21 -> 07b -> 08 (build + audit Stage-2 requests) -> report counts; no Stage-2 inference before researcher approval"}
+,
+    {"id": "A7",
+     "date": "2026-10-14",
+     "status": "approved by the researcher (pre-full-Stage-2 smoke-gate clarification; no full Stage-2 inference has run)",
+     "trigger": "v9 Stage-2 smoke NO-GO (truncation/headroom checks only: sb_math-355 hit 2048/2048 in all 4 conditions; all technical checks passed) + DIAGNOSTIC-ONLY headroom generation (bundle v11): s2::sb_math-355::VV at max_new_tokens 4096 -> finish_reason length, 4096/4096 tokens, no FINAL_ANSWER, parse status missing, first 2048 tokens identical to the v9 output, repetition continues beyond 2048 (go back 4, not correct 4, wait 4; last-quarter repeated-shingle share 1.0): a genuine repetitive repair loop, so raising max_new_tokens is not justified",
+     "trigger_archive": "stage_b_diag_headroom_RESULTS.zip",
+     "trigger_archive_sha256": "72af3dd8f4032c839a5d1387df11cdb96437c4ee73f1ca6b8e93ed0906a254e8",
+     "trigger_kind": "stage2_smoke_gate_clarification",
+     "trigger_smoke_label": "diag_headroom_v11",
+     "related_nogo_record": "data/manifests/STAGE2_SMOKE_V9_NOGO.json (archive c5bd1fb6ad615618e968847fe695fbb44cae9fbe375620c56b9c226aaf900eca; preserved, never rescored)",
+     "wording": "A Stage-2 response reaching the frozen 2048-token cap is not automatically a technical smoke NO-GO when the request completed normally and the output was correctly persisted. Such an output is genuine model behavior and remains a failed repair if no valid final answer parses. Smoke GO/NO-GO should be based on pipeline/integrity criteria rather than requiring every model response to finish before the token cap.",
+     "changes": ["stage2.smoke.gate = A7_stage2_pipeline_integrity_gate (src/smoke_gate.decide_stage2_a7, used by scripts/09_stage2_smoke_test.py): technical checks (unchanged) + persistence/integrity checks must all pass; cap hits and >90%-of-limit responses are reported descriptively and no longer decide the gate; the parse thresholds (GO <= 1 unparsed, REVIEW 2, NO-GO > 2) apply to the responses that finished normally (finish_reason stop)",
+                 "the DIAGNOSTIC-ONLY headroom result is preserved byte-for-byte under data/smoke_records/diag_headroom_v11/ with data/manifests/DIAG_HEADROOM_V11_RECORD.json; it is not scored and never substituted for any Stage-2 output",
+                 "full Stage 2 stays locked: scripts/10_run_stage2.py --solver qwen refuses unless a registered data/manifests/STAGE2_SMOKE_GO.json records a NEW smoke archive with decision GO under the A7 gate (none exists in bundle v12)"],
+     "unchanged": "max_new_tokens 2048, all 244 frozen Stage-2 requests, execution order, frozen smoke selection (sb_gsm8k-107, sb_math-275, sb_math-355; sb_math-355 NOT removed), eligible set (61 Pass-1 CONFIRM items), prompts, parser, scorer (cap-hit outputs without a valid final answer remain failed repairs), four conditions, primary endpoint (V -> L_true vs V -> V), frozen interpretation rule, the preserved v9 NO-GO record (not rescored), the Stage-1 smoke gate",
+     "next": "bundle v12: rerun the same 12-request Stage-2 smoke at 2048 under the A7 gate; full Stage 2 only after a new smoke archive receives GO and is registered"}
+  ],
+
+  "parser": {
+    "version": "stage_b_numeric_v1 (FINAL_ANSWER field > terminal \\boxed{}; pilot strict 2.0 diagnostic)",
+    "module": "src/parser.py",
+    "hierarchy": ["a: the LAST explicit FINAL_ANSWER: label field must contain exactly one standalone number (pilot field rule); label present -> no fallback; truncated generation whose field runs to end of text -> truncated_field",
+                  "b: only if no label: terminal answer region only (text after the last 'final answer' phrase within the last 6 non-empty lines, else the last paragraph); accept exactly one distinct numeric value from properly closed \\boxed{} answers (normalised like the gold answers)",
+                  "c: the reasoning body is never searched; bare numbers are never taken",
+                  "d: an unclosed \\boxed{ in the terminal region (e.g. truncated '\\boxed{90') -> incomplete_boxed (unparseable)",
+                  "e: multiple incompatible candidate answers in the terminal region -> ambiguous (unparseable)",
+                  "f: strict_format_compliant comes only from the frozen pilot strict parser; fallback parsing never makes a response strictly compliant"],
+    "unparseable_statuses": ["ambiguous", "non_numeric", "missing", "incomplete_boxed", "truncated_field"],
+    "_note": "Frozen by amendment A1; src/parser.py is registered in data/manifests/FROZEN_HASHES.json and its sha256 is recorded in every run manifest."
+  },
+
+  "stage_a_link": {
+    "_note": "Stage A is FROZEN. Stage B only READS these two Stage-A files (sha-verified) to confirm the solver identity; it never imports Stage-A code at run time and never writes into Stage A.",
+    "stage_a_root_relative_to_repo": "experiments/stage_a_reliability_gating",
+    "files_sha256": {
+      "configs/stage_a.json": "63a7b1767de4076b6e94df8f3e887cab5885f84578cd5e70a17fafb9378910c8",
+      "data/manifests/FROZEN_HASHES.json": "f778a93ddf410b324a390ce6b4013230c1bf4c0b480824daf3c31a69422f0306"
+    },
+    "vendored_from_stage_a": {
+      "_note": "Byte-for-byte logic copies (adapted imports/paths only). The sha256 is of the Stage-A source file at copy time.",
+      "src/persistence.py": "8b8fe359a715e05ada5fe0d3008abbac603ef4ebac8690a560f2e96d185819de"
+    }
+  },
+
+  "pilot_link": {
+    "_note": "Frozen pilot files Stage B imports or reads (sha-verified before use, read-only). Same hashes as Stage A records.",
+    "pilot_root_relative_to_repo": "information_placebo_pilot",
+    "files_sha256": {
+      "scripts/parse_answers.py": "e334615ab462a46950fa73ef9852b62d208faf4dd16d6d1e532db264cf64f5d7",
+      "scripts/backends.py": "a1b61b54f93991e9394380ecc079ba212e0e21c9ad6ad61fa34bce0f774096f3",
+      "scripts/kaggle_runner.py": "3b0118e8458e9112b72777ce5eefde53f4e375a0489411e7bd54dd840baff932",
+      "configs/qwen3_4b_kaggle.json": "3118f86d5e0a1fae7228c7db086b2e2ba15210c23d67ee3dc0560ab01c98a77f",
+      "data/raw/test.jsonl": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+      "data/raw/train.jsonl": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+    }
+  },
+
+  "sources": {
+    "processbench": {
+      "repo": "Qwen/ProcessBench (Hugging Face dataset)",
+      "paper": "arXiv:2412.06559",
+      "revision": "3bdcd5371ed567559a78f559c01c13a6deee7604",
+      "local_dir": "data/raw/processbench_3bdcd537",
+      "files_sha256": {
+        "README.md": "525e4455e981213919c574146196258ddb63986c11637116f58d7ba8b990c6f5",
+        "gsm8k.json": "fb1c59dfd1e83e1c5a48dbe598db27e4bc0b8bc524a09445f2d4b69178f61349",
+        "math.json": "60cb0d7a69cbec98d43cf50855b9b7e7294599c3c9a24bdd031abd18c3b6b136",
+        "olympiadbench.json": "e9d801c9f3c03f949adbfa08e90cb21ad85c0b9224bc5e98326f8215c218aa55",
+        "omnimath.json": "e8d7cf4512c82168dae2fe48b1718069a3002e7910af1d180a27ee0d9948ba47"
+      },
+      "hub_git_blob_oids": {
+        "gsm8k.json": "e0de3bcd65fd4dcf0cfd0ec68c57d84336beabe8",
+        "math.json": "8832b851776f6cc17d44f40e0098e492651ec368"
+      }
+    },
+    "gsm8k_reference": {
+      "_note": "ProcessBench has NO reference-answer field. GSM8K-split gold answers come from the GSM8K TEST split (text after '####'), matched by whitespace-normalised exact problem text. The file is the pilot's frozen copy (pilot_link data/raw/test.jsonl).",
+      "pilot_file": "data/raw/test.jsonl"
+    },
+    "math_reference": {
+      "_note": "MATH-split gold answers come from the Hendrycks MATH TEST split: last \\boxed{...} of the reference solution, matched by whitespace-normalised exact problem text. Fetched as JSON through the HF datasets-server rows API (parquet loading is blocked on this machine by Windows Application Control). The rows API serves the dataset's current revision; the parquet files of the pinned revision are kept for provenance and the rows dump is cross-checked against MATH-500's 'answer' field where the two overlap.",
+      "repo": "EleutherAI/hendrycks_math",
+      "revision_at_fetch": "21a5633873b6a120296cce3e2df9d5550074f4a3",
+      "rows_dump": "data/raw/hendrycks_math_21a56338/test_rows_api.jsonl",
+      "rows_dump_sha256": "212e6e02fc2c12a3151031d4ce4d43758b1ad5f23dce6cbe23af16a0da880009",
+      "parquet_dir": "data/raw/hendrycks_math_21a56338",
+      "math500_repo": "HuggingFaceH4/MATH-500",
+      "math500_revision": "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be",
+      "math500_file": "data/raw/math500_6e4ed1a2/test.jsonl",
+      "math500_sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132"
+    }
+  },
+
+  "dataset": {
+    "domains_used": ["gsm8k", "math"],
+    "_domains_note": "OlympiadBench and Omni-MATH are inspected and counted but not used: their reference answers are mostly symbolic/proof-style, outside the frozen numeric parser, and their traces are long (truncation risk). Using them would need an LLM judge or a symbolic checker.",
+    "selection": "all_eligible",
+    "_selection_note": "Researcher decision 2026-10-12 (before any Stage-B model output): Stage 1 uses ALL eligible items (no 100/100 sampling, no reserve). Domain (gsm8k/math), MATH level and MATH subject are kept for stratified SECONDARY analysis.",
+    "target_items": 265,
+    "selection_seed": 20261012,
+    "_selection_seed_note": "Now only fixes the within-domain listing order of the pool and the one-item-per-problem tie-break.",
+    "one_item_per_problem": true,
+    "reserve_policy": "No reserve: every eligible item is in the Stage-1 pool. If the failure gate is not met, no further eligible ProcessBench items exist under the frozen rules.",
+    "max_trace_chars": 6000,
+    "_max_trace_chars_note": "Keeps Stage-2 prompts (problem + trace + Stage-1 response) well inside the model context and limits very long traces; applied before selection, never based on model outcomes."
+  },
+
+  "solver": {
+    "frozen_config": "configs/qwen3_4b_kaggle.json",
+    "frozen_config_sha256": "3118f86d5e0a1fae7228c7db086b2e2ba15210c23d67ee3dc0560ab01c98a77f",
+    "model": "Qwen/Qwen3-4B",
+    "model_revision": "3101254bbe4169895668a0e7653c3fd1f313576e",
+    "solver_tag": "qwen3-4b@3101254b",
+    "stage_b_overrides": {"max_new_tokens": 2048},
+    "_overrides_note": "Every other setting is the frozen pilot protocol (FP16, cuda:0, greedy, enable_thinking false, batch 1, one user message, no system prompt). max_new_tokens is re-checked by the fresh Stage-B truncation smoke test; any change needs researcher approval BEFORE full Stage-1 inference and is then frozen for Stage 1 AND Stage 2. Amendment A1 (approved 2026-10-12, after the smoke1 NO-GO: 6/20 truncated at 768): 768 -> 1536 for Stage 1 and Stage 2. Amendment A2 (approved 2026-10-13, after the smoke2 NO-GO on headroom only: sb_math-150 truncated at 1536, sb_math-7 at 1422 > 1382.4): 1536 -> 2048 for Stage 1 and Stage 2."
+  },
+
+  "stage1": {
+    "condition": "V",
+    "execution_order_seed": 5101,
+    "smoke": {"n_requests": 20, "n_longest_traces": 4, "determinism_repeats": 2,
+              "parse_go_min": 19, "parse_review_min": 18, "headroom_max_fraction": 0.9, "run_label": "smoke3",
+              "_note": "Deterministic selection: the 4 items with the longest rendered Stage-1 prompt (truncation probe), then alternating gsm8k/math in execution order to 20. Gate (researcher decision 2026-10-12): GO if >= 19/20 parse numerically AND no persistent technical failure AND no hash/prompt mismatch AND no truncation AND no response > 90% of max_new_tokens (technical checks: completion, resume, determinism, canary, no visible thinking). REVIEW if 18/20 parse and every other check passes. NO-GO if < 18/20 parse or any technical / truncation / headroom failure. Unparseable outputs are observed outcomes and are never regenerated."}
+  },
+
+  "failure_gate": {
+    "min_stage1_failures": 50,
+    "_note": "Pre-specified. >= 50 Stage-1 failures -> Stage 2 may proceed (after researcher approval). < 50 -> Stage 2 is NOT analysed as adequately powered; report the count and the number of additional source items needed at the observed failure rate."
+  },
+
+  "stage2": {
+    "conditions": ["VV", "N_true", "L_true", "L_false"],
+    "condition_labels": {"VV": "V -> V", "N_true": "V -> N_true", "L_true": "V -> L_true", "L_false": "V -> L_false"},
+    "execution_order_seed": 5202,
+    "smoke": {"n_items": 3, "parse_go_max_failures": 1, "parse_review_max_failures": 2, "headroom_max_fraction": 0.9,
+              "gate": "A7_stage2_pipeline_integrity_gate",
+              "_note": "3 genuine Stage-1 failures (that passed annotation review) x conditions = up to 12 requests; prefer the longest Stage-1 response. Same gate structure as Stage 1: GO <= 1 unparsed, REVIEW 2, NO-GO > 2 or any technical / truncation / headroom failure.",
+              "_note_A7": "Since A7 (2026-10-14) the Stage-2 smoke gate decides on pipeline / integrity criteria only: technical + persistence checks must pass; a response reaching the frozen 2048-token cap that completed normally and was persisted correctly is genuine model behaviour (a failed repair if no valid final answer parses), not a NO-GO; cap hits / >90% headroom are reported descriptively; the parse thresholds apply to responses that finished normally (finish_reason stop). The v9 NO-GO (pre-A7 gate) is preserved and never rescored."},
+    "false_step_rule": "nearest_preceding_correct_step",
+    "_false_step_note": "L_false points at Step (k-1): the step immediately before the annotated first error. ProcessBench annotators judged every step before the first error correct, so this is a genuinely correct, pre-error step (never a downstream propagated step)."
+  },
+
+  "optional_one_shot_references": {
+    "_note": "Supported by the prompt builder (single-shot prompts, no Stage-1 context) but NOT in the request grid unless enabled here with researcher approval.",
+    "supported": ["L_true_1shot", "N_true_1shot", "L_false_1shot", "L0_1shot"],
+    "enabled": []
+  },
+
+  "runner": {
+    "transport_retry_attempts": 3,
+    "transport_retry_backoff_seconds": 5,
+    "checkpoint_every": 10
+  },
+
+  "analysis": {
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 4242,
+    "ci_level": 0.95,
+    "primary_comparison": ["L_true", "VV"],
+    "secondary_comparisons": [["N_true", "VV"], ["L_false", "VV"], ["L_true", "N_true"], ["L_true", "L_false"]]
+  },
+
+  "annotation_review": {
+    "_note_A5": "Since amendment A5 the reviewer is a blinded HUMAN reviewer (section human_review); scripts/20_freeze_human_review.py --pass 2 fills annotation_review_form_FILLED.csv. The A3 note below is historical: no LLM-assisted verdict is ever written into the form.",
+    "_note_A3":"Since amendment A3 the reviewer is the blinded LLM-assisted reviewer of section llm_review (not a human). Its verdicts fill annotation_review_form_FILLED.csv via scripts/17_freeze_llm_review.py; the decision rules below are unchanged. These judgments are PROVISIONAL and must never be described as human-validated.",
+    "_note": "Blinded annotation-fidelity gate between Stage 1 and Stage 2 (researcher decision 2026-10-12). After the Stage-1 failure set is frozen and hashed, ONLY the failed items are exported for manual review WITHOUT any Stage-1 model response or Stage-1 outcome. The reviewer verifies (a) the annotated first-error step and (b) that the proposed false step is genuinely correct. Decisions are frozen and hashed BEFORE Stage-2 prompts are built. Stage-2 outcomes are never used for exclusions.",
+    "packet_order_seed": 6303,
+    "first_error_verdicts": ["CONFIRM", "DISAGREE", "UNCLEAR"],
+    "false_step_verdicts": ["CORRECT", "NOT_CORRECT", "UNCLEAR", "PASS1_IMPLIED", "NOT_REVIEWED"],
+    "_false_step_verdicts_note_A6": "PASS1_IMPLIED / NOT_REVIEWED exist only for the A6 Pass-1-only review (scripts/21): PASS1_IMPLIED = no separate Pass-2 judgment; f = k-1 is implied valid because the same reviewer's frozen Pass 1 CONFIRMED k as the earliest substantive error ('Pass-1-implied false-step validity', NOT independently Pass-2-validated). NOT_REVIEWED = item not CONFIRMED in Pass 1 (excluded from Stage 2 anyway).",
+    "l_false_eligible_verdicts": ["CORRECT", "PASS1_IMPLIED"],
+    "pass2_waiver_A6": {
+      "pass2_waived": true,
+      "statement": "A separate Pass-2 human recheck was waived for feasibility (amendment A6) because it would duplicate the same reviewer's earlier Pass-1 judgment: a Pass-1 CONFIRM of Step k as the earliest substantive error implies that every preceding step, including the false-location candidate f = k-1, contains no earlier substantive error.",
+      "l_false_validity_label": "Pass-1-implied false-step validity (not independently Pass-2-validated)",
+      "primary_set": "the Pass-1 CONFIRM items only (61 of 76); the 15 DISAGREE items are excluded from the primary Stage-2 analysis"
+    },
+    "decision_rules": {
+      "primary_stage2_set": "Stage-1 failures whose first_error_verdict == CONFIRM. Items with DISAGREE/UNCLEAR are excluded from Stage 2 entirely (all conditions, so pairing is preserved); a reviewer-suggested alternative step is recorded but NEVER used to re-point L_true/N_true.",
+      "l_false": "Built only for primary-set items whose false_step_verdict == CORRECT; otherwise the item is ineligible ONLY for L_false.",
+      "l_false_A6": "Since A6: built for primary-set items whose false_step_verdict is in l_false_eligible_verdicts (CORRECT or PASS1_IMPLIED); with the Pass-1-only review every CONFIRM item is PASS1_IMPLIED.",
+      "min_primary_items": 50,
+      "below_min": "If fewer than min_primary_items items pass review, STOP and report (Stage-2 build needs an explicit researcher override)."
+    }
+  },
+
+  "llm_review": {
+    "status": "amendment A3 (approved 2026-10-13); reviewer replaced by amendment A4 (approved 2026-10-13) after the A3 reviewer smoke NO-GO; registered before any full-review output. STOPPED by amendment A5 (2026-10-14) after the A4 reviewer smoke NO-GO: no real LLM review may run or be frozen; this section is kept as the historical record and for the mock regression tests only.",
+    "stopped_by": "A5",
+    "provisional_statement": "PROVISIONAL LLM-assisted annotation review (feasibility study only). NOT human-validated and must never be described as human-validated; final-scale experiments should receive human validation.",
+    "reviewer": {
+      "reviewer_tag": "qwen2.5-7b-instruct@a09a3545 nf4 (A4 reviewer)",
+      "model": "Qwen/Qwen2.5-7B-Instruct",
+      "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+      "_revision_note": "Hub main commit resolved 2026-10-13 (lastModified 2025-01-12), pinned before any inference; config max_position_embeddings 32768; Apache-2.0; not gated.",
+      "quantization": {
+        "method": "bitsandbytes",
+        "load_in_4bit": true,
+        "bnb_4bit_quant_type": "nf4",
+        "bnb_4bit_compute_dtype": "float16",
+        "bnb_4bit_use_double_quant": false
+      },
+      "_quantization_note": "float16 compute because the Kaggle T4 has no bfloat16 support; no double quantization.",
+      "bitsandbytes_version": "0.50.2",
+      "device": "cuda:0",
+      "batch_size": 1,
+      "decoding": "greedy (do_sample=False, num_beams=1)",
+      "max_new_tokens": 192,
+      "max_context_tokens": 32768,
+      "repetition_penalty": 1.0,
+      "_decoding_note": "pure greedy: do_sample=False, num_beams=1, repetition_penalty 1.0 passed explicitly (the checkpoint generation_config has do_sample true, temperature 0.7, top_p 0.8, top_k 20, repetition_penalty 1.05 - none of them apply).",
+      "seed": 0,
+      "message_format": "fixed system message (src/llm_review.py SYSTEM_PROMPT: classification task, one JSON object only; replaces the template's default system prompt) + one user message; no history",
+      "tools": null,
+      "web_access": null,
+      "stage1_outputs_shown": false,
+      "regeneration": "never: every output is stored once and parsed by fixed rules; a judgment is never regenerated because it appears wrong; only transport errors are retried"
+    },
+    "prompt_module": "src/llm_review.py",
+    "prompt_version": "llm_review_prompts_v2",
+    "_prompt_version_note": "v2 (A4) changes ONLY the system prompt; the Pass-1 / Pass-2 user prompts are byte-identical to v1",
+    "execution_order": "annotation-review packet order (annotation_review.packet_order_seed = 6303), same for both passes",
+    "pass1": {
+      "shown": [
+        "item_id",
+        "problem",
+        "numbered ORIGINAL solution",
+        "gold/reference final answer",
+        "original proposed final answer"
+      ],
+      "not_shown": [
+        "ProcessBench first-error step",
+        "proposed false step",
+        "Stage-1 response / answer / outcome",
+        "anything about Stage 2"
+      ],
+      "output": {
+        "earliest_error_step": "integer 1..n_steps | NO_ERROR | UNCLEAR",
+        "confidence": "HIGH | MEDIUM | LOW",
+        "reason": "short explanation"
+      },
+      "mapping_after_all_pass1_complete": {
+        "same step as frozen k": "CONFIRM",
+        "different definite step or NO_ERROR": "DISAGREE",
+        "UNCLEAR or unusable output (no_json / ambiguous / invalid step)": "UNCLEAR"
+      },
+      "no_substitution": "the reviewer's step is recorded only; the ProcessBench annotation is never repaired or replaced"
+    },
+    "pass2": {
+      "starts": "only after all Pass-1 rows exist (bound to the Pass-1 raw-output sha256)",
+      "shown": [
+        "item_id",
+        "problem",
+        "original numbered solution Steps 1..f (later steps omitted)",
+        "candidate step f = k-1"
+      ],
+      "output": {
+        "candidate_step_verdict (recorded as false_step_verdict)": "CORRECT | NOT_CORRECT | UNCLEAR",
+        "confidence": "HIGH | MEDIUM | LOW",
+        "reason": "short explanation"
+      },
+      "mapping": "verdict as given; unusable output -> UNCLEAR"
+    },
+    "parse_rules": "src/llm_review.py parse_output (code fences ignored; JSON objects containing the judgment key; disagreeing objects -> ambiguous; invalid step / verdict -> invalid_judgment -> UNCLEAR; invalid confidence keeps the judgment)",
+    "smoke": {
+      "n_items": 5,
+      "determinism_repeats": 2,
+      "gate": "GO only if ALL pass: model loads at pinned revision in 4-bit NF4; 5/5 Pass-1 outputs are exactly one JSON object with exactly the allowed keys (reason, earliest_error_step, confidence); every earliest_error_step valid; every confidence valid; 5/5 Pass-2 outputs exactly one JSON object with exactly the allowed keys (reason, candidate_step_verdict, confidence) and valid values; no hidden annotation in Pass 1; repeated run gives identical structured judgments; no truncation (every generation stops before max_new_tokens); prompt + max_new_tokens <= max_context_tokens; resume generates nothing. Otherwise NO-GO.",
+      "_gate_note_A4": "exact-schema check added by A4; it is a gate on the smoke only - the review parse rules (parse_output) are unchanged and never infer a classification from prose",
+      "requests": "5 Pass-1 + 5 Pass-1 repeat + 5 Pass-2 + 5 Pass-2 repeat = 20 generations"
+    },
+    "full_review_requests": "76 Pass-1 + 76 Pass-2 = 152 generations",
+    "decision_link": "scripts/17_freeze_llm_review.py fills annotation_review_form_FILLED.csv (notes: PROVISIONAL, NOT human-validated); scripts/07b_freeze_annotation_review.py then freezes decisions under the unchanged rules, only after researcher approval"
+  },
+
+  "human_review": {
+    "status": "amendment A5 (approved 2026-10-14): blinded HUMAN two-pass annotation-fidelity review of the 76 frozen Stage-1 failures",
+    "items": "the frozen Stage-1 failure set (data/processed/stage1_failures.json), in annotation-review packet order (annotation_review.packet_order_seed = 6303), same order in both passes",
+    "interface": "scripts/19_human_review_server.py --pass 1|2 (local web page on 127.0.0.1; standard library only; reads ONLY the view file of its pass)",
+    "pass1": {
+      "view_file": "data/processed/human_review/pass1_view.json (written by scripts/18_export_human_review.py)",
+      "shown": ["item_id", "problem", "numbered ORIGINAL solution", "gold/reference final answer", "original proposed final answer"],
+      "not_shown": ["ProcessBench first-error step", "proposed false step", "Stage-1 response / answer / outcome", "anything about Stage 2", "any LLM-reviewer output"],
+      "question": "verbatim src/llm_review.py PASS1_QUESTION",
+      "record": {"earliest_error_step": "integer 1..n_steps | NO_ERROR | UNCLEAR", "confidence": "HIGH | MEDIUM | LOW", "reason": "optional short text"},
+      "freeze": "scripts/20_freeze_human_review.py --pass 1: all 76 items must have a current judgment; the log is hashed and locked; ONLY THEN is the ProcessBench step read and mapped",
+      "mapping_after_freeze": {"same step as frozen k": "CONFIRM", "different definite step or NO_ERROR": "DISAGREE", "UNCLEAR": "UNCLEAR"},
+      "no_substitution": "the reviewer's step is recorded only; it is never substituted into any Stage-2 prompt and the ProcessBench annotation is never repaired"
+    },
+    "pass2": {
+      "starts": "only after Pass 1 is frozen; the Pass-2 view file is generated at the Pass-1 freeze and bound to it by sha256",
+      "view_file": "data/processed/human_review/pass2_view.json",
+      "shown": ["item_id", "problem", "original numbered solution Steps 1..f (later steps omitted)", "candidate step f = k-1"],
+      "not_shown": ["later steps", "ProcessBench labels (k is not stated)", "the reviewer's own Pass-1 judgment", "Pass-1 agreement", "Stage-1 / Stage-2 information"],
+      "question": "verbatim src/llm_review.py PASS2_QUESTION",
+      "record": {"candidate_step_verdict (recorded as false_step_verdict)": "CORRECT | NOT_CORRECT | UNCLEAR", "confidence": "HIGH | MEDIUM | LOW", "reason": "optional short text"},
+      "freeze": "scripts/20_freeze_human_review.py --pass 2: all 76 items judged; fills annotation_review_form_FILLED.csv + human_review_judgments.json + HUMAN_REVIEW_FROZEN.json (all hashed); does NOT run 07b and never builds Stage 2"
+    },
+    "log": "append-only JSONL per pass (pass1_log.jsonl / pass2_log.jsonl); every save is a new line with UTC saved_at, the time the item was opened, the sha256 of the item view shown, and the sha256 of the previous line (hash chain); the current judgment of an item is its last line; earlier lines (revisions) are never deleted",
+    "reason_max_chars": 500,
+    "pass2_waived_by": "A6",
+    "_pass2_waiver_note": "Pass 2 was waived by amendment A6 (see annotation_review.pass2_waiver_A6); scripts 19 / 20 refuse --pass 2; decisions come from scripts/21_freeze_pass1_only_review.py.",
+    "blinding_limitation": "blinding is procedural for a human: the reviewer must not open stage_b_items.json, the A3 annotation_review_packet.md / form (they show the annotated step) or any Stage-1 / LLM-review file until both passes are frozen"
+  },
+
+  "interpretation_rule": {
+    "status": "FROZEN by researcher decision 2026-10-12 before any Stage-B model output (lock: data/manifests/INTERPRETATION_RULE_FROZEN.json)",
+    "population": "primary Stage-2 set = frozen Stage-1 failures that passed the blinded annotation review",
+    "delta": "Delta_rescue = Rescue(V->L_true) - Rescue(V->V), paired; 95% CI = paired bootstrap percentile interval (analysis.bootstrap_resamples, analysis.bootstrap_seed)",
+    "meaningful_effect": 0.10,
+    "STRONG": "CI lower bound > 0 AND point estimate >= +0.10",
+    "NO_SUPPORT": "CI upper bound < +0.10",
+    "INCONCLUSIVE": "otherwise",
+    "diagnostic_content_contrast": "V->L_true vs V->L_false is reported as a SEPARATE paired contrast (same statistics); it does not enter the label.",
+    "not_in_label": "False-location gain, truncation/parse robustness and domain subgroups are reported as secondary/sensitivity analyses only."
+  }
+}

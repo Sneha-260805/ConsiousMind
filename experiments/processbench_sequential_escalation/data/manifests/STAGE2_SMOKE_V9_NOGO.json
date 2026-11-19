@@ -1,0 +1,75 @@
+{
+  "recorded": "2026-10-14T12:13:59+00:00",
+  "artifact": "Stage-2 smoke (bundle v9) - NO-GO record; preserved byte-for-byte, never rescored",
+  "archive": "data/smoke_records/stage2_smoke_v9/stage_b_stage2_smoke_RESULTS.zip",
+  "archive_sha256": "c5bd1fb6ad615618e968847fe695fbb44cae9fbe375620c56b9c226aaf900eca",
+  "bundle_version": 9,
+  "gate_decision": "NO-GO",
+  "gate_reason": "truncation / headroom check failed: no_truncation_at_max_new_tokens, no_response_over_90pct_of_limit",
+  "researcher_findings_2026_10_14": [
+    "12/12 requests completed",
+    "0 transport failures and 0 retries",
+    "prompt/hash audit passed",
+    "determinism passed",
+    "resume generated nothing",
+    "sb_gsm8k-107 and sb_math-275: all 8 conditions stopped normally and parsed (max 949 tokens)",
+    "sb_math-355: all four conditions hit exactly 2048/2048 tokens with no valid final answer",
+    "manual inspection: repetitive reasoning loops (re-deriving the same algebraic product, 'that's not correct either, let's go back'), not outputs cut off near completion"
+  ],
+  "per_request": {
+    "s2::sb_gsm8k-107::L_false": {
+      "new_tokens": 343,
+      "finish_reason": "stop"
+    },
+    "s2::sb_gsm8k-107::L_true": {
+      "new_tokens": 589,
+      "finish_reason": "stop"
+    },
+    "s2::sb_gsm8k-107::N_true": {
+      "new_tokens": 305,
+      "finish_reason": "stop"
+    },
+    "s2::sb_gsm8k-107::VV": {
+      "new_tokens": 207,
+      "finish_reason": "stop"
+    },
+    "s2::sb_math-275::L_false": {
+      "new_tokens": 786,
+      "finish_reason": "stop"
+    },
+    "s2::sb_math-275::L_true": {
+      "new_tokens": 798,
+      "finish_reason": "stop"
+    },
+    "s2::sb_math-275::N_true": {
+      "new_tokens": 949,
+      "finish_reason": "stop"
+    },
+    "s2::sb_math-275::VV": {
+      "new_tokens": 805,
+      "finish_reason": "stop"
+    },
+    "s2::sb_math-355::L_false": {
+      "new_tokens": 2048,
+      "finish_reason": "length"
+    },
+    "s2::sb_math-355::L_true": {
+      "new_tokens": 2048,
+      "finish_reason": "length"
+    },
+    "s2::sb_math-355::N_true": {
+      "new_tokens": 2048,
+      "finish_reason": "length"
+    },
+    "s2::sb_math-355::VV": {
+      "new_tokens": 2048,
+      "finish_reason": "length"
+    }
+  },
+  "sb_math_355_VV_2048": {
+    "prompt_sha256": "6751d98abee1ebdc7d8aba5b593bf93a320820d7607366ae484d25f7e75a07b1",
+    "raw_response_sha256": "926d9daa406da6515480097dfece5c8c54612d153c9013e7bc97ed8a161d6915",
+    "raw_response_chars": 5477
+  },
+  "status": "Full 244-request Stage 2 NOT run. Follow-up: one DIAGNOSTIC-ONLY headroom generation (s2::sb_math-355::VV, max_new_tokens 4096); not Stage-2 data, not scored, never substituted for the 2048 output."
+}

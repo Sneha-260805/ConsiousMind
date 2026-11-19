@@ -1,0 +1,266 @@
+item_id,domain,math_level,true_error_step,false_step,n_steps,gold_answer,original_answer,stage1_outcome,stage1_answer,stage1_truncated,stage1_failed,review_first_error_verdict,review_false_step_verdict,entered_stage2,s2_VV_outcome,s2_VV_answer,s2_VV_truncated,s2_N_true_outcome,s2_N_true_answer,s2_N_true_truncated,s2_L_true_outcome,s2_L_true_answer,s2_L_true_truncated,s2_L_false_outcome,s2_L_false_answer,s2_L_false_truncated,final_repair_V_oneshot,final_repair_V_to_VV,final_repair_V_to_N_true,final_repair_V_to_L_true,final_repair_V_to_L_false
+sb_gsm8k-34,gsm8k,,4,3,4,45000,43000,repair,45000,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-49,gsm8k,,3,2,16,92,256.7,repair,92,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-29,gsm8k,,2,1,4,92,38,repair,92,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-32,gsm8k,,3,2,5,172,108,repair,172,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-24,gsm8k,,2,1,4,110,50,original_answer_retention,50,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,50,False,original_answer_retention,50,False,original_answer_retention,50,False,original_answer_retention,50,False,0,0,0,0,0
+sb_gsm8k-94,gsm8k,,2,1,3,16,16.75,repair,16,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-65,gsm8k,,5,4,10,150,300,repair,150,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-12,gsm8k,,2,1,7,180,35,repair,180,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-110,gsm8k,,5,4,6,7,6,repair,7,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-7,gsm8k,,2,1,4,2325,1425,repair,2325,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-8,gsm8k,,3,2,6,73,82,repair,73,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-186,gsm8k,,3,2,5,120,96,repair,120,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-158,gsm8k,,3,2,4,20,40,new_wrong_answer,10,False,True,CONFIRM,PASS1_IMPLIED,True,stage1_answer_retention,10,False,repair,20,False,repair,20,False,repair,20,False,0,0,1,1,1
+sb_gsm8k-146,gsm8k,,2,1,3,250,700,repair,250,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-172,gsm8k,,4,3,5,78,39,repair,78,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-179,gsm8k,,2,1,5,7,84,repair,7,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-112,gsm8k,,3,2,5,452,572,repair,452,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-198,gsm8k,,5,4,6,118000,8000,new_wrong_answer,18000,False,True,CONFIRM,PASS1_IMPLIED,True,stage1_answer_retention,18000,False,stage1_answer_retention,18000,False,stage1_answer_retention,18000,False,stage1_answer_retention,18000,False,0,0,0,0,0
+sb_gsm8k-0,gsm8k,,2,1,4,24,30,repair,24,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-38,gsm8k,,6,5,8,5,15,repair,5,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-162,gsm8k,,2,1,3,132,112.8,repair,132,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-64,gsm8k,,4,3,6,2000,4000,repair,2000,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-107,gsm8k,,2,1,4,60,84,original_answer_retention,84,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,84,False,original_answer_retention,84,False,repair,60,False,original_answer_retention,84,False,0,0,0,1,0
+sb_gsm8k-131,gsm8k,,2,1,4,67,70,repair,67,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-182,gsm8k,,3,2,5,16,14.67,repair,16,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-2,gsm8k,,2,1,4,5600,2800,repair,5600,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-83,gsm8k,,4,3,5,40,0,new_wrong_answer,20,False,True,DISAGREE,NOT_REVIEWED,False,,,,,,,,,,,,,,,,,
+sb_gsm8k-79,gsm8k,,2,1,3,24,18,parse_failure,,False,True,CONFIRM,PASS1_IMPLIED,True,parse_failure,,False,repair,24,False,repair,24,False,original_answer_retention,18,False,0,0,1,1,0
+sb_gsm8k-149,gsm8k,,4,3,5,156,56,repair,156,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-196,gsm8k,,3,2,4,360,720,repair,360,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-187,gsm8k,,3,2,6,2,10,repair,2,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-25,gsm8k,,4,3,4,80,160,repair,80,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-84,gsm8k,,4,3,5,315,765,original_answer_retention,765,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,765,False,original_answer_retention,765,False,original_answer_retention,765,False,original_answer_retention,765,False,0,0,0,0,0
+sb_gsm8k-143,gsm8k,,2,1,7,1400,1900,parse_failure,,False,True,CONFIRM,PASS1_IMPLIED,True,new_wrong_answer,3800,False,new_wrong_answer,3800,False,new_wrong_answer,3800,False,new_wrong_answer,3800,False,0,0,0,0,0
+sb_gsm8k-127,gsm8k,,3,2,5,500,750,parse_failure,,False,True,CONFIRM,PASS1_IMPLIED,True,parse_failure,,False,original_answer_retention,750,False,original_answer_retention,750,False,original_answer_retention,750,False,0,0,0,0,0
+sb_gsm8k-96,gsm8k,,2,1,4,120,-80,repair,120,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-31,gsm8k,,7,6,7,20,80,new_wrong_answer,0,False,True,CONFIRM,PASS1_IMPLIED,True,stage1_answer_retention,0,False,stage1_answer_retention,0,False,stage1_answer_retention,0,False,stage1_answer_retention,0,False,0,0,0,0,0
+sb_gsm8k-109,gsm8k,,2,1,8,1450000,1600000,repair,1450000,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-37,gsm8k,,2,1,4,4,24,repair,4,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-15,gsm8k,,3,2,6,6,12,repair,6,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-66,gsm8k,,7,6,10,50,47.5,repair,50,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-147,gsm8k,,2,1,4,25,16,repair,25,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-138,gsm8k,,3,2,4,27,25,repair,27,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-141,gsm8k,,3,2,7,45,47,repair,45,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-51,gsm8k,,6,5,7,147,157,repair,147,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-190,gsm8k,,4,3,10,6,5,repair,6,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-185,gsm8k,,4,3,5,291,252,repair,291,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-142,gsm8k,,2,1,4,25,66.67,repair,25,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-40,gsm8k,,2,1,4,65960,65760,repair,65960,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-1,gsm8k,,2,1,7,17,21,original_answer_retention,21,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,21,False,original_answer_retention,21,False,original_answer_retention,21,False,repair,17,False,0,0,0,0,1
+sb_gsm8k-103,gsm8k,,3,2,7,50,60,repair,50,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-69,gsm8k,,2,1,5,36,32,repair,36,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-50,gsm8k,,3,2,4,300,650,repair,300,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-169,gsm8k,,3,2,4,360,240,repair,360,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-148,gsm8k,,3,2,5,189,47.25,original_answer_retention,47.25,False,True,DISAGREE,NOT_REVIEWED,False,,,,,,,,,,,,,,,,,
+sb_gsm8k-88,gsm8k,,6,5,7,38,42,repair,38,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-178,gsm8k,,2,1,4,74,62,original_answer_retention,62,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,62,False,original_answer_retention,62,False,original_answer_retention,62,False,repair,74,False,0,0,0,0,1
+sb_gsm8k-78,gsm8k,,2,1,9,83,92,repair,83,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-28,gsm8k,,2,1,4,17,7,repair,17,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-144,gsm8k,,2,1,5,9,15,new_wrong_answer,25,False,True,CONFIRM,PASS1_IMPLIED,True,stage1_answer_retention,25,False,stage1_answer_retention,25,False,stage1_answer_retention,25,False,stage1_answer_retention,25,False,0,0,0,0,0
+sb_gsm8k-191,gsm8k,,2,1,6,31,97,repair,31,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-195,gsm8k,,2,1,5,45,15,repair,45,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-197,gsm8k,,3,2,7,50,42,repair,50,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-67,gsm8k,,2,1,5,43200,21600,repair,43200,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-23,gsm8k,,2,1,6,10,5,repair,10,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-61,gsm8k,,2,1,6,26,19,original_answer_retention,19,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,19,False,original_answer_retention,19,False,original_answer_retention,19,False,original_answer_retention,19,False,0,0,0,0,0
+sb_gsm8k-45,gsm8k,,4,3,5,200,1200,repair,200,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-73,gsm8k,,2,1,6,30,34,repair,30,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-129,gsm8k,,2,1,6,10,40,repair,10,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-47,gsm8k,,4,3,6,17500,0,repair,17500,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-82,gsm8k,,8,7,8,10,11,repair,10,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-136,gsm8k,,2,1,4,6,0,original_answer_retention,0,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,0,False,original_answer_retention,0,False,repair,6,False,original_answer_retention,0,False,0,0,0,1,0
+sb_gsm8k-108,gsm8k,,2,1,10,66,5,original_answer_retention,5,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,5,False,original_answer_retention,5,False,original_answer_retention,5,False,original_answer_retention,5,False,0,0,0,0,0
+sb_gsm8k-139,gsm8k,,3,2,9,11,6,new_wrong_answer,68,False,True,CONFIRM,PASS1_IMPLIED,True,stage1_answer_retention,68,False,stage1_answer_retention,68,False,stage1_answer_retention,68,False,stage1_answer_retention,68,False,0,0,0,0,0
+sb_gsm8k-13,gsm8k,,2,1,4,342,348,new_wrong_answer,168,False,True,CONFIRM,PASS1_IMPLIED,True,stage1_answer_retention,168,False,stage1_answer_retention,168,False,stage1_answer_retention,168,False,stage1_answer_retention,168,False,0,0,0,0,0
+sb_gsm8k-101,gsm8k,,3,2,5,120,100,new_wrong_answer,180,False,True,CONFIRM,PASS1_IMPLIED,True,stage1_answer_retention,180,False,stage1_answer_retention,180,False,stage1_answer_retention,180,False,stage1_answer_retention,180,False,0,0,0,0,0
+sb_gsm8k-56,gsm8k,,3,2,12,31,124,new_wrong_answer,1,False,True,CONFIRM,PASS1_IMPLIED,True,stage1_answer_retention,1,False,stage1_answer_retention,1,False,stage1_answer_retention,1,False,stage1_answer_retention,1,False,0,0,0,0,0
+sb_gsm8k-52,gsm8k,,4,3,5,6,7,repair,6,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-30,gsm8k,,3,2,3,91,43,repair,91,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-183,gsm8k,,2,1,5,1260,37800,repair,1260,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-33,gsm8k,,3,2,5,144,288,repair,144,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-128,gsm8k,,2,1,4,5,5.01,repair,5,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-6,gsm8k,,3,2,3,15,-15,repair,15,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-163,gsm8k,,3,2,6,50,0,repair,50,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-14,gsm8k,,5,4,7,10,17,repair,10,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-121,gsm8k,,6,5,7,18,21,repair,18,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-41,gsm8k,,2,1,6,105,115,repair,105,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-59,gsm8k,,3,2,3,6600,6000,new_wrong_answer,6200,False,True,DISAGREE,NOT_REVIEWED,False,,,,,,,,,,,,,,,,,
+sb_gsm8k-5,gsm8k,,3,2,4,7425,7455,repair,7425,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-72,gsm8k,,4,3,4,11,21,original_answer_retention,21,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,21,False,original_answer_retention,21,False,original_answer_retention,21,False,original_answer_retention,21,False,0,0,0,0,0
+sb_gsm8k-80,gsm8k,,3,2,4,1110,1080,original_answer_retention,1080,False,True,DISAGREE,NOT_REVIEWED,False,,,,,,,,,,,,,,,,,
+sb_gsm8k-43,gsm8k,,2,1,5,272,560,new_wrong_answer,112,False,True,CONFIRM,PASS1_IMPLIED,True,stage1_answer_retention,112,False,stage1_answer_retention,112,False,stage1_answer_retention,112,False,stage1_answer_retention,112,False,0,0,0,0,0
+sb_gsm8k-76,gsm8k,,5,4,5,5,6,repair,5,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-118,gsm8k,,2,1,4,40,33,repair,40,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-104,gsm8k,,3,2,6,16,20,repair,16,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-48,gsm8k,,4,3,5,60,5.4,repair,60,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-171,gsm8k,,3,2,7,3,10.5,new_wrong_answer,7.17,False,True,CONFIRM,PASS1_IMPLIED,True,stage1_answer_retention,7.17,False,stage1_answer_retention,7.17,False,stage1_answer_retention,7.17,False,stage1_answer_retention,7.17,False,0,0,0,0,0
+sb_gsm8k-160,gsm8k,,3,2,5,30,36,repair,30,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-165,gsm8k,,3,2,6,284,142,new_wrong_answer,296,False,True,CONFIRM,PASS1_IMPLIED,True,stage1_answer_retention,296,False,stage1_answer_retention,296,False,stage1_answer_retention,296,False,stage1_answer_retention,296,False,0,0,0,0,0
+sb_gsm8k-184,gsm8k,,3,2,3,84,72,repair,84,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-36,gsm8k,,4,3,5,500,400,original_answer_retention,400,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,400,False,original_answer_retention,400,False,original_answer_retention,400,False,original_answer_retention,400,False,0,0,0,0,0
+sb_gsm8k-181,gsm8k,,4,3,8,9,8,repair,9,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-174,gsm8k,,3,2,4,125,96,original_answer_retention,96,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,96,False,repair,125,False,repair,125,False,original_answer_retention,96,False,0,0,1,1,0
+sb_gsm8k-123,gsm8k,,2,1,6,70,63.3,repair,70,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-133,gsm8k,,4,3,6,163,243,repair,163,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-89,gsm8k,,4,3,5,15,14.33,repair,15,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-21,gsm8k,,6,5,7,9,8,repair,9,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-140,gsm8k,,4,3,7,260,300,parse_failure,,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,300,False,repair,260,False,repair,260,False,repair,260,False,0,0,1,1,1
+sb_gsm8k-180,gsm8k,,2,1,5,145,155,repair,145,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-11,gsm8k,,3,2,6,23,22,repair,23,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-199,gsm8k,,3,2,3,7,22,repair,7,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-46,gsm8k,,4,3,5,350,200,repair,350,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-97,gsm8k,,3,2,5,2,0,original_answer_retention,0,False,True,DISAGREE,NOT_REVIEWED,False,,,,,,,,,,,,,,,,,
+sb_gsm8k-77,gsm8k,,4,3,4,131250,129250,repair,131250,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-132,gsm8k,,2,1,4,40,38,original_answer_retention,38,False,True,CONFIRM,PASS1_IMPLIED,True,repair,40,False,repair,40,False,original_answer_retention,38,False,original_answer_retention,38,False,0,1,1,0,0
+sb_gsm8k-62,gsm8k,,2,1,5,3430,2160,repair,3430,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-113,gsm8k,,4,3,7,19,34,new_wrong_answer,13,False,True,CONFIRM,PASS1_IMPLIED,True,stage1_answer_retention,13,False,stage1_answer_retention,13,False,stage1_answer_retention,13,False,stage1_answer_retention,13,False,0,0,0,0,0
+sb_gsm8k-99,gsm8k,,5,4,6,2,1,repair,2,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-86,gsm8k,,2,1,3,6,4,repair,6,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-152,gsm8k,,2,1,4,230,470,repair,230,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_gsm8k-135,gsm8k,,3,2,5,3,1,new_wrong_answer,5,False,True,CONFIRM,PASS1_IMPLIED,True,stage1_answer_retention,5,False,stage1_answer_retention,5,False,stage1_answer_retention,5,False,stage1_answer_retention,5,False,0,0,0,0,0
+sb_math-456,math,Level 5,10,9,12,12,20,original_answer_retention,20,False,True,DISAGREE,NOT_REVIEWED,False,,,,,,,,,,,,,,,,,
+sb_math-281,math,Level 3,3,2,3,2,3,repair,2,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-484,math,Level 4,2,1,9,0,2,original_answer_retention,2,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,2,False,original_answer_retention,2,False,new_wrong_answer,3,False,original_answer_retention,2,False,0,0,0,0,0
+sb_math-133,math,Level 4,3,2,5,5,8,parse_failure,,True,True,CONFIRM,PASS1_IMPLIED,True,parse_failure,,True,parse_failure,,True,parse_failure,,True,parse_failure,,True,0,0,0,0,0
+sb_math-417,math,Level 5,2,1,3,12,11,repair,12,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-478,math,Level 3,3,2,6,225,324,new_wrong_answer,8100,False,True,DISAGREE,NOT_REVIEWED,False,,,,,,,,,,,,,,,,,
+sb_math-198,math,Level 2,3,2,4,15,5,repair,15,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-25,math,Level 4,6,5,11,150,750,repair,150,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-413,math,Level 5,2,1,6,5460,4368,repair,5460,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-387,math,Level 4,2,1,7,64,36,repair,64,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-72,math,Level 3,2,1,3,8,5,repair,8,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-51,math,Level 4,4,3,9,66,46,repair,66,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-329,math,Level 5,5,4,15,11,5.48,repair,11,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-455,math,Level 5,2,1,11,10,-10,original_answer_retention,-10,False,True,CONFIRM,PASS1_IMPLIED,True,new_wrong_answer,-8,False,new_wrong_answer,-8,False,original_answer_retention,-10,False,new_wrong_answer,-8,False,0,0,0,0,0
+sb_math-405,math,Level 3,3,2,5,4,-4,repair,4,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-35,math,Level 3,3,2,5,45,28,repair,45,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-106,math,Level 5,14,13,15,5120,4520,repair,5120,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-419,math,Level 3,2,1,5,3504,309,repair,3504,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-485,math,Level 5,4,3,5,81,63,repair,81,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-186,math,Level 3,5,4,24,4,0,original_answer_retention,0,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,0,False,original_answer_retention,0,False,original_answer_retention,0,False,original_answer_retention,0,False,0,0,0,0,0
+sb_math-358,math,Level 5,4,3,5,8000,1000,repair,8000,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-205,math,Level 4,2,1,3,1,-1,repair,1,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-361,math,Level 2,4,3,7,7004,6974,original_answer_retention,6974,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,6974,False,original_answer_retention,6974,False,original_answer_retention,6974,False,original_answer_retention,6974,False,0,0,0,0,0
+sb_math-45,math,Level 5,6,5,7,12,11,repair,12,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-96,math,Level 5,6,5,6,400,700,repair,400,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-474,math,Level 5,3,2,7,4018,3350,parse_failure,,True,True,DISAGREE,NOT_REVIEWED,False,,,,,,,,,,,,,,,,,
+sb_math-161,math,Level 4,4,3,10,10,7,repair,10,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-276,math,Level 5,3,2,7,48,111,repair,48,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-187,math,Level 4,8,7,8,19,23,repair,19,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-475,math,Level 4,4,3,6,17,11,parse_failure,,True,True,CONFIRM,PASS1_IMPLIED,True,parse_failure,,True,parse_failure,,True,parse_failure,,True,parse_failure,,True,0,0,0,0,0
+sb_math-360,math,Level 5,3,2,5,70,112,repair,70,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-407,math,Level 5,4,3,7,5,7,repair,5,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-119,math,Level 4,11,10,12,225,220,repair,225,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-382,math,Level 2,4,3,4,8,7,repair,8,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-330,math,Level 3,4,3,4,-4,4,repair,-4,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-131,math,Level 3,2,1,4,76,166,repair,76,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-114,math,Level 4,3,2,6,90900909,900009,original_answer_retention,900009,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,900009,False,original_answer_retention,900009,False,original_answer_retention,900009,False,original_answer_retention,900009,False,0,0,0,0,0
+sb_math-379,math,Level 5,2,1,3,20,21,repair,20,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-31,math,Level 1,4,3,5,1,3,repair,1,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-436,math,Level 4,7,6,9,2,1,repair,2,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-339,math,Level 2,2,1,4,2,1.77,repair,2,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-398,math,Level 3,7,6,9,973,734,parse_failure,,True,True,DISAGREE,NOT_REVIEWED,False,,,,,,,,,,,,,,,,,
+sb_math-337,math,Level 5,3,2,5,900,3600,repair,900,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-188,math,Level 3,2,1,4,13,8,original_answer_retention,8,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,8,False,original_answer_retention,8,False,original_answer_retention,8,False,original_answer_retention,8,False,0,0,0,0,0
+sb_math-356,math,Level 5,4,3,6,52,6,repair,52,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-363,math,Level 4,3,2,6,120,50,repair,120,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-146,math,Level 2,2,1,3,180,170,original_answer_retention,170,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,170,False,original_answer_retention,170,False,original_answer_retention,170,False,original_answer_retention,170,False,0,0,0,0,0
+sb_math-93,math,Level 3,3,2,3,210,1024,repair,210,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-451,math,Level 3,6,5,10,122,51,repair,122,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-138,math,Level 4,3,2,7,3,2,repair,3,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-287,math,Level 4,2,1,5,2,16,repair,2,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-130,math,Level 3,2,1,5,41,31,repair,41,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-124,math,Level 3,4,3,5,4,1,original_answer_retention,1,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,1,False,original_answer_retention,1,False,original_answer_retention,1,False,original_answer_retention,1,False,0,0,0,0,0
+sb_math-227,math,Level 3,5,4,5,5,6,repair,5,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-268,math,Level 3,3,2,8,27,0,repair,27,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-401,math,Level 5,3,2,11,5120,64800,parse_failure,,True,True,CONFIRM,PASS1_IMPLIED,True,parse_failure,,True,parse_failure,,True,parse_failure,,True,parse_failure,,True,0,0,0,0,0
+sb_math-238,math,Level 4,4,3,5,8,7,original_answer_retention,7,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,7,False,original_answer_retention,7,False,original_answer_retention,7,False,original_answer_retention,7,False,0,0,0,0,0
+sb_math-311,math,Level 4,9,8,14,-27,3,repair,-27,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-271,math,Level 3,2,1,4,40,10,repair,40,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-354,math,Level 4,2,1,7,1963,8191,repair,1963,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-306,math,Level 3,3,2,4,0,18,repair,0,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-215,math,Level 4,2,1,4,6,24,original_answer_retention,24,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,24,False,original_answer_retention,24,False,original_answer_retention,24,False,original_answer_retention,24,False,0,0,0,0,0
+sb_math-288,math,Level 3,7,6,7,6,9,parse_failure,,True,True,DISAGREE,NOT_REVIEWED,False,,,,,,,,,,,,,,,,,
+sb_math-309,math,Level 5,4,3,6,9,8,parse_failure,,True,True,CONFIRM,PASS1_IMPLIED,True,parse_failure,,True,new_wrong_answer,12,False,parse_failure,,True,parse_failure,,True,0,0,0,0,0
+sb_math-41,math,Level 3,7,6,10,3,0,repair,3,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-341,math,Level 3,2,1,4,5636,6626,repair,5636,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-150,math,Level 4,3,2,5,135,172.8,repair,135,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-100,math,Level 2,2,1,4,1430,2912.5,repair,1430,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-256,math,Level 5,6,5,12,3,2,original_answer_retention,2,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,2,False,original_answer_retention,2,False,original_answer_retention,2,False,original_answer_retention,2,False,0,0,0,0,0
+sb_math-345,math,Level 5,2,1,3,360,90,parse_failure,,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,90,False,repair,360,False,repair,360,False,repair,360,False,0,0,1,1,1
+sb_math-69,math,Level 3,8,7,8,17,34,parse_failure,,True,True,DISAGREE,NOT_REVIEWED,False,,,,,,,,,,,,,,,,,
+sb_math-172,math,Level 4,7,6,8,48,96,repair,48,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-178,math,Level 4,3,2,6,391872,195840,new_wrong_answer,391680,False,True,CONFIRM,PASS1_IMPLIED,True,stage1_answer_retention,391680,False,stage1_answer_retention,391680,False,stage1_answer_retention,391680,False,stage1_answer_retention,391680,False,0,0,0,0,0
+sb_math-245,math,Level 2,4,3,14,3,2,repair,3,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-310,math,Level 4,3,2,8,0,10,repair,0,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-374,math,Level 5,2,1,5,28,21,repair,28,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-212,math,Level 5,4,3,6,2,4,repair,2,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-63,math,Level 5,2,1,10,15,14,parse_failure,,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,14,False,original_answer_retention,14,False,original_answer_retention,14,False,original_answer_retention,14,False,0,0,0,0,0
+sb_math-117,math,Level 5,2,1,5,10090,1090,original_answer_retention,1090,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,1090,False,original_answer_retention,1090,False,original_answer_retention,1090,False,original_answer_retention,1090,False,0,0,0,0,0
+sb_math-75,math,Level 1,2,1,5,3,2,repair,3,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-182,math,Level 4,2,1,4,3,6,parse_failure,,True,True,CONFIRM,PASS1_IMPLIED,True,parse_failure,,True,parse_failure,,True,parse_failure,,True,parse_failure,,True,0,0,0,0,0
+sb_math-275,math,Level 5,5,4,18,12,16,new_wrong_answer,6,False,True,CONFIRM,PASS1_IMPLIED,True,repair,12,False,stage1_answer_retention,6,False,repair,12,False,repair,12,False,0,1,0,1,1
+sb_math-199,math,Level 4,2,1,10,272,24.5,repair,272,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-108,math,Level 4,3,2,5,16,15,repair,16,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-414,math,Level 5,7,6,13,957,1001,original_answer_retention,1001,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,1001,False,original_answer_retention,1001,False,original_answer_retention,1001,False,original_answer_retention,1001,False,0,0,0,0,0
+sb_math-481,math,Level 5,11,10,16,21,26,repair,21,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-334,math,Level 5,3,2,9,226,352,repair,226,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-488,math,Level 5,2,1,4,27648,1,parse_failure,,True,True,DISAGREE,NOT_REVIEWED,False,,,,,,,,,,,,,,,,,
+sb_math-344,math,Level 4,4,3,4,135,285,parse_failure,,False,True,CONFIRM,PASS1_IMPLIED,True,repair,135,False,repair,135,False,repair,135,False,repair,135,False,0,1,1,1,1
+sb_math-226,math,Level 4,4,3,7,24,168,repair,24,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-7,math,Level 4,3,2,7,20,13,repair,20,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-411,math,Level 5,2,1,8,125,4096,parse_failure,,True,True,CONFIRM,PASS1_IMPLIED,True,parse_failure,,True,original_answer_retention,4096,False,original_answer_retention,4096,False,original_answer_retention,4096,False,0,0,0,0,0
+sb_math-380,math,Level 5,2,1,6,0,5,repair,0,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-412,math,Level 1,2,1,3,0,1,repair,0,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-370,math,Level 5,4,3,8,31,11,parse_failure,,True,True,CONFIRM,PASS1_IMPLIED,True,parse_failure,,True,parse_failure,,True,original_answer_retention,11,False,original_answer_retention,11,False,0,0,0,0,0
+sb_math-402,math,Level 5,6,5,9,4,14,original_answer_retention,14,False,True,DISAGREE,NOT_REVIEWED,False,,,,,,,,,,,,,,,,,
+sb_math-232,math,Level 4,4,3,7,864,1440,repair,864,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-16,math,Level 4,3,2,8,2,4,parse_failure,,True,True,CONFIRM,PASS1_IMPLIED,True,parse_failure,,True,parse_failure,,True,parse_failure,,True,parse_failure,,True,0,0,0,0,0
+sb_math-433,math,Level 5,7,6,8,10236,10248,repair,10236,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-483,math,Level 3,4,3,5,371043400,371251400,repair,371043400,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-362,math,Level 3,5,4,7,71,70,repair,71,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-346,math,Level 2,2,1,3,-6,-8,repair,-6,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-496,math,Level 4,3,2,6,10800,43200,repair,10800,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-48,math,Level 3,2,1,4,516,774,parse_failure,,False,True,DISAGREE,NOT_REVIEWED,False,,,,,,,,,,,,,,,,,
+sb_math-274,math,Level 4,3,2,5,11,2,repair,11,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-139,math,Level 3,5,4,7,16,4,repair,16,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-74,math,Level 4,2,1,4,1,0,repair,1,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-82,math,Level 1,2,1,5,81,82,repair,81,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-22,math,Level 2,3,2,5,152,28,original_answer_retention,28,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,28,False,original_answer_retention,28,False,original_answer_retention,28,False,original_answer_retention,28,False,0,0,0,0,0
+sb_math-449,math,Level 1,2,1,4,104,117,repair,104,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-377,math,Level 5,11,10,13,636,780,repair,636,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-109,math,Level 3,6,5,8,2,4,repair,2,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-64,math,Level 5,2,1,5,0,8.37,repair,0,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-151,math,Level 4,2,1,10,7,21,repair,7,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-145,math,Level 5,2,1,8,850,338,repair,850,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-457,math,Level 5,4,3,7,12,22,new_wrong_answer,24,False,True,CONFIRM,PASS1_IMPLIED,True,stage1_answer_retention,24,False,stage1_answer_retention,24,False,stage1_answer_retention,24,False,stage1_answer_retention,24,False,0,0,0,0,0
+sb_math-355,math,Level 5,5,4,6,-71,-1,parse_failure,,True,True,CONFIRM,PASS1_IMPLIED,True,parse_failure,,True,parse_failure,,True,parse_failure,,True,parse_failure,,True,0,0,0,0,0
+sb_math-47,math,Level 3,2,1,4,4,0,repair,4,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-371,math,Level 5,5,4,8,-15,-30,repair,-15,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-159,math,Level 3,4,3,5,13535,6768,repair,13535,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-183,math,Level 5,5,4,8,350,250,new_wrong_answer,400,False,True,CONFIRM,PASS1_IMPLIED,True,stage1_answer_retention,400,False,stage1_answer_retention,400,False,stage1_answer_retention,400,False,stage1_answer_retention,400,False,0,0,0,0,0
+sb_math-77,math,Level 5,4,3,6,4,2,parse_failure,,True,True,DISAGREE,NOT_REVIEWED,False,,,,,,,,,,,,,,,,,
+sb_math-137,math,Level 2,3,2,5,28121600,439400000,repair,28121600,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-427,math,Level 4,4,3,5,5400,10800,repair,5400,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-118,math,Level 2,3,2,4,13,14,repair,13,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-42,math,Level 3,2,1,3,8,17,repair,8,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-197,math,Level 4,3,2,5,16,9,repair,16,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-11,math,Level 5,2,1,4,12,21,repair,12,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-148,math,Level 5,3,2,13,38,50,original_answer_retention,50,False,True,CONFIRM,PASS1_IMPLIED,True,original_answer_retention,50,False,original_answer_retention,50,False,original_answer_retention,50,False,original_answer_retention,50,False,0,0,0,0,0
+sb_math-490,math,Level 2,2,1,5,36,76,repair,36,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-300,math,Level 3,3,2,6,1,0,repair,1,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-177,math,Level 5,9,8,10,5,4,repair,5,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-347,math,Level 5,3,2,7,6,4,repair,6,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-235,math,Level 2,3,2,5,49,31,repair,49,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-333,math,Level 4,3,2,5,90,270,repair,90,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-211,math,Level 1,6,5,7,-7,7,repair,-7,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-163,math,Level 4,4,3,4,13,16,repair,13,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-470,math,Level 4,2,1,9,2,1,original_answer_retention,1,False,True,CONFIRM,PASS1_IMPLIED,True,repair,2,False,original_answer_retention,1,False,repair,2,False,repair,2,False,0,1,0,1,1
+sb_math-269,math,Level 5,4,3,6,7,2,repair,7,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-325,math,Level 2,2,1,4,15554,13534,repair,15554,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-46,math,Level 1,4,3,6,28,25,repair,28,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-437,math,Level 5,3,2,4,1152,8,repair,1152,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-375,math,Level 5,6,5,7,12,14,repair,12,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1
+sb_math-23,math,Level 5,4,3,8,8,27,repair,8,False,False,,,False,,,,,,,,,,,,,1,1,1,1,1

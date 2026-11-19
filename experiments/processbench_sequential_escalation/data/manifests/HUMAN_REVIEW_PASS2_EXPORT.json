@@ -1,0 +1,17 @@
+{
+  "exported": "2026-10-14T11:00:31+00:00",
+  "amendment": "A5",
+  "TEST_ONLY": false,
+  "n_items": 76,
+  "pass1_lock_sha256": "bf074582214403804475ca03096b589920ce11e6e8c68501b2700bf997b10cbc",
+  "pass1_mapping_sha256": "4b7557dc013af091bdd8afa0b48389368b5425facb414d11e456ba69ac6f8ccd",
+  "pass2_view_sha256": "eead88e5a18ce64a29e473ae33003bcc146ae4d3dc48ffade44414a25a8d9992",
+  "pass2_fields_shown": [
+    "index",
+    "item_id",
+    "question",
+    "steps",
+    "candidate_step"
+  ],
+  "blinding_audit": "passed (exact keys; Steps 1..f only; no Stage-1 response text)"
+}
